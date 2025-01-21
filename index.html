@@ -1,43 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Gallacher</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="content-container">
-        <header>
-            <nav role="navigation" aria-label="main menu">
-                <a href="index.html" class="logo">autobodycare</a>
-                <ul class="menu">
-                    <li><a href="/gallery" class="nav-item">My Work</a></li>
-                    <li><a href="faq.html" class="nav-item">About</a></li>
-                    <li><a href="faq.html" class="nav-item">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+    <header>
+        <div class="logo">
+            <!-- SVG logo goes here -->
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+        <button class="contact-button">Contact</button>
+    </header>
 
-        <main>
-            <section class="value-prop-container">
-                <div class="value-prop">
-                    <h1>Mobile Ding and Dent Repair</h1>
-                    <p>Mobile ding and dent repair service covering Glasgow South and Renfrewshire.</p>
-                </div>
-                <figure>
-                    <img src="images/IMG_20150917_133511954_HDR.jpg" alt="dent repair before and after" width="400">
-                    <figcaption>Dent repair before and after</figcaption>
-                </figure>
-            </section>
-        </main>
+    <main>
+        <section class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <p class="eyebrow-text">Eyebrow Text</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            <img src="hero-image.jpg" alt="Hero Image">
+        </section>
 
-        <footer>
-            <p>&copy; 2025 Ryan Gallacher. All rights reserved.</p>
-        </footer>
-    </div>
+        <section class="featured-work">
+            <h2>Featured Work</h2>
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 1 Image">
+                <h3>Project Name 1</h3>
+                <span class="tag">Type of Work</span>
+                <p>Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="Project 2 Image">
+                <h3>Project Name 2</h3>
+                <span class="tag">Type of Work</span>
+                <p>Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <!-- Add more project cards as needed -->
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>
