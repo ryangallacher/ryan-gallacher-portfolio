@@ -7,13 +7,43 @@ body {
 .content-container {
     max-width: 80%;
     margin: 0 auto;
+    padding: 0 24px; /* Add padding to ensure content doesn't touch the edges */
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0; /* Add padding to the hero section */
+}
+
+.hero-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column; /* Stack text elements vertically */
+    padding-right: 24px; /* Add some space between text and image */
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero h1 {
+    font-size: 4rem; /* Set h1 font size to 4rem */
 }
 
 .project-cards-container {
     display: flex;
     flex-wrap: wrap;
     gap: 24px; /* Updated gap to 24px */
-    padding: 24px; /* Add padding around the container */
+    padding: 24px 0; /* Add padding around the container */
 }
 
 .project-card {
