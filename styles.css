@@ -8,9 +8,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 48px; /* Add padding to the header */
+    padding: 16px 24px; /* Add padding to the header */
     border-bottom: 1px solid rgba(6, 7, 12, 0.09); /* Add underline with specified color and opacity */
-
 }
 
 .header-container .logo {
@@ -28,6 +27,7 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+    align-items: center; /* Align items vertically */
 }
 
 .header-container nav ul li {
@@ -37,6 +37,52 @@ body {
 .header-container nav ul li a {
     text-decoration: none;
     color: inherit;
+    padding: 10px 20px; /* Add padding to align with the button */
+    display: flex;
+    align-items: center; /* Ensure text is centered vertically */
+    position: relative; /* Required for the ::after pseudo-element */
+}
+
+.header-container nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor; /* Use the current text color */
+    transition: width 0.3s ease; /* Smooth transition for the underline */
+}
+
+.header-container nav ul li a:hover::after {
+    width: 0; /* No underline on hover */
+}
+
+.header-container nav ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Add grey background on hover */
+    border-radius: 4px; /* Match the button shape */
+}
+
+.header-container nav ul li a.active::after {
+    width: 100%; /* Keep the underline for the active link */
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF; /* Primary button color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #0056b3; /* Darker shade for hover effect */
 }
 
 .content-container {
@@ -71,7 +117,9 @@ body {
 }
 
 .hero h1 {
-    font-size: 4rem; /* Set h1 font size to 4rem */
+    font-size: 54px; /* Set h1 font size to 54px */
+    line-height: 64px; /* Set h1 line height to 64px */
+    margin: 0; /* Remove default margin */
 }
 
 .project-cards-container {
