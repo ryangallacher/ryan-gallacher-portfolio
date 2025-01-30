@@ -143,6 +143,8 @@ body {
     overflow: hidden; /* Ensure content doesn't overflow */
     max-height: 520px; /* Set max height for the card */
     transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
 }
 
 .project-card:hover {
