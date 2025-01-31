@@ -4,8 +4,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>ScotAccount Project</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px; /* Add padding to the header */
+            border-bottom: 1px solid rgba(6, 7, 12, 0.09); /* Add underline with specified color and opacity */
+        }
+
+        .header-container .logo {
+            flex: 0 0 auto;
+        }
+
+        .header-container nav {
+            flex: 1 1 auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .header-container nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            align-items: center; /* Align items vertically */
+        }
+
+        .header-container nav ul li {
+            margin-left: 24px; /* Add space between nav items */
+        }
+
+        .header-container nav ul li a {
+            text-decoration: none;
+            color: inherit;
+            padding: 10px 20px; /* Add padding to align with the button */
+            display: flex;
+            align-items: center; /* Ensure text is centered vertically */
+            position: relative; /* Required for the ::after pseudo-element */
+        }
+
+        .header-container nav ul li a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: currentColor; /* Use the current text color */
+            transition: width 0.3s ease; /* Smooth transition for the underline */
+        }
+
+        .header-container nav ul li a:hover::after {
+            width: 0; /* No underline on hover */
+        }
+
+        .header-container nav ul li a:hover {
+            background-color: rgba(0, 0, 0, 0.1); /* Add grey background on hover */
+            border-radius: 4px; /* Match the button shape */
+        }
+
+        .header-container nav ul li a.active::after {
+            width: 100%; /* Keep the underline for the active link */
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0056b3; /* Primary button color */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-button:hover {
+            background-color: #004494; /* Slightly darker shade for hover effect */
+        }
+
+        .contact-button:hover::after {
+            width: 0; /* Ensure no underline on hover */
+        }
+
+        .content-container {
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 0 24px; /* Add padding to ensure content doesn't touch the edges */
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 0; /* Add padding to the hero section */
+        }
+
+        .hero-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column; /* Stack text elements vertically */
+            padding-right: 24px; /* Add some space between text and image */
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .hero h1 {
+            font-size: 54px; /* Set h1 font size to 54px */
+            line-height: 64px; /* Set h1 line height to 64px */
+            margin: 0; /* Remove default margin */
+        }
+
+        .project-cards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px; /* Updated gap to 24px */
+            padding: 24px 0; /* Add padding around the container */
+        }
+
+        .project-card {
+            flex: 1 1 calc(50% - 24px);
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14); /* Initial shadows */
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Ensure content doesn't overflow */
+            max-height: 520px; /* Set max height for the card */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+            text-decoration: none; /* Remove underline from links */
+            color: inherit; /* Inherit text color */
+        }
+
+        .project-card:hover {
+            background-color: rgba(0, 0, 0, 0.05); /* Slightly darker background on hover */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12), 0px 4px 8px rgba(0, 0, 0, 0.14); /* Updated shadows on hover */
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 66.67%; /* Cover 2/3 of the card height */
+            object-fit: cover; /* Maintain aspect ratio and cover the area */
+        }
+
+        .project-card-content {
+            flex: 1 0 0; /* Cover 1/3 of the card height */
+            padding: 16px; /* Add padding around the content */
+            overflow: auto; /* Ensure content doesn't overflow */
+        }
+    </style>
 </head>
 
 <body>
@@ -16,8 +183,8 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="#work">Work</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#work" class="active">Work</a></li>
                     <li><a href="contact.html" class="contact-button">Contact</a></li>
                 </ul>
             </nav>
@@ -38,7 +205,7 @@
                     <img src="path/to/your/image.jpg" alt="Description of the image">
                 </div>
             </section>
-            <section class="key-stats"></section>
+            <section class="key-stats">
                 <h2>Key Stats</h2>
                 <ul>
                     <li>Over 1 million users registered</li>
@@ -47,14 +214,13 @@
                     <li>Integrated with over 50 public sector services</li>
                 </ul>
             </section>
-
         </main>
     </div>
 
     <footer>
         <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="#work">Work</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#work" class="active">Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
         <p>&copy; 2023 Your Name. All rights reserved.</p>
