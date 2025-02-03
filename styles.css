@@ -71,7 +71,7 @@ body {
 }
 
 .content-container {
-    max-width: 80%;
+    max-width: 1200px; /* Set a sensible max-width for the content */
     margin: 0 auto;
     padding: 0 24px; /* Add padding to ensure content doesn't touch the edges */
 }
@@ -186,10 +186,12 @@ body {
 .contact-form-container input,
 .contact-form-container textarea {
     margin-bottom: 16px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px; /* Add corner radius to input fields */
-    font-size: 14px;
+    padding: 10px; /* Adjust padding to match GOV.UK design system */
+    border: 2px solid #0b0c0c; /* GOV.UK input border color */
+    border-radius: 0; /* GOV.UK input border radius */
+    font-size: 16px; /* Adjust font size to match GOV.UK design system */
+    width: 100%; /* Ensure inputs take full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .contact-form-container textarea {
@@ -211,6 +213,40 @@ body {
 
 .contact-form-container button:hover {
     background-color: #004494; /* Slightly darker shade for hover effect */
+}
+
+.error-summary {
+    border: 2px solid #d4351c;
+    padding: 15px;
+    background-color: #f3f2f1;
+    color: #0b0c0c;
+    margin-bottom: 20px;
+}
+
+.error-summary p {
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.error-summary ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.error-summary ul li {
+    margin-bottom: 5px;
+}
+
+.error-summary ul li a {
+    text-decoration: underline;
+    color: #1d70b8;
+}
+
+.error-message {
+    color: #d4351c;
+    font-weight: bold;
+    margin-top: 5px;
 }
 
 footer {
