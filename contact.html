@@ -29,7 +29,7 @@
             <section class="contact-form">
                 <h1>Contact Us</h1>
                 <p>Add me on Linkedin or fill in the form.</p>
-                <div id="error-summary" class="error-summary" style="display:none;">
+                <div id="error-summary" class="error-summary" style="display:none;" tabindex="-1">
                     <p>There is a problem</p>
                     <ul id="error-summary-list">
                         <!-- Error messages will be inserted here -->
@@ -41,7 +41,7 @@
                         <input type="email" id="email" name="email">
                         <div id="email-error" class="error-message" style="display:none;">Your email is required</div>
 
-                        <label for="message">Your message</label>
+                        <label for="message" class="message-label">Your message</label>
                         <textarea id="message" name="message" rows="4"></textarea>
                         <div id="message-error" class="error-message" style="display:none;">Your message is required</div>
 
@@ -101,6 +101,7 @@
 
             if (hasError) {
                 errorSummary.style.display = 'block';
+                errorSummary.focus();
                 return;
             }
 
