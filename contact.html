@@ -9,48 +9,55 @@
 </head>
 
 <body>
-    <div class="content-container">
-        <header>
+    <header>
+        <div class="header-container">
             <a href="index.html" class="logo">
                 <!-- SVG logo goes here -->
             </a>
-            <nav role="navigation" aria-label="main menu">
+            <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#work">Work</a></li>
-                    <li><a href="contact.html" class="contact-button">Contact</a></li>
+                    <li><a href="contact.html" class="contact-button active">Contact</a></li>
                 </ul>
             </nav>
-        </header>
+        </div>
+    </header>
 
+    <div class="content-container">
         <main>
             <section class="contact-form">
                 <h1>Contact Us</h1>
-                <form action="/submit_form" method="post">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                <div class="contact-form-container">
+                    <form action="/submit_form" method="post">
 
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                        <label for="email">Your email</label>
+                        <input type="email" id="email" name="email" required>
 
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="message">Your message</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
 
-                    <!-- Honeypot field -->
-                    <div style="display:none;">
-                        <label for="honeypot">Leave this field empty</label>
-                        <input type="text" id="honeypot" name="honeypot">
-                    </div>
+                        <!-- Honeypot field -->
+                        <div style="display:none;">
+                            <label for="honeypot">Leave this field empty</label>
+                            <input type="text" id="honeypot" name="honeypot">
+                        </div>
 
-                    <button type="submit">Submit</button>
-                </form>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
             </section>
         </main>
-
-        <footer>
-            <p>&copy; 2023 Ryan Gallacher. All rights reserved.</p>
-        </footer>
     </div>
+
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <p>&copy; 2023 Ryan Gallacher. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
