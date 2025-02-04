@@ -169,13 +169,13 @@ body {
 }
 
 .contact-form-container label {
-    margin-bottom: 8px;
+    margin-bottom: 8px; /* 8px between label and form field */
     font-weight: 600;
 }
 
 .contact-form-container input,
 .contact-form-container textarea {
-    margin-bottom: 8px; /* Adjust margin to 8px to match the requirement */
+    margin-bottom: 0; /* Remove bottom margin to control spacing with error messages */
     padding: 10px; /* Adjust padding to match GOV.UK design system */
     border: 2px solid #0b0c0c; /* GOV.UK input border color */
     border-radius: 0; /* GOV.UK input border radius */
@@ -192,8 +192,24 @@ body {
     margin-top: 24px; /* Ensure the message field is 24px beneath whatever is above it */
 }
 
+.contact-form-container .error-message {
+    margin-top: 8px; /* 8px between form field and error message */
+    margin-bottom: 0; /* Remove bottom margin to control spacing with next element */
+    color: #d4351c;
+    font-weight: bold;
+    display: none; /* Hide error messages by default */
+}
+
+.contact-form-container .form-group {
+    margin-bottom: 24px; /* 24px between form groups */
+}
+
+.contact-form-container .form-group:last-of-type {
+    margin-bottom: 40px; /* 40px between last form group and button */
+}
+
 .contact-form-container button {
-    margin-top: 40px; /* Add margin to create space between the button and the rest of the form */
+    margin-top: 40px; /* 40px between button and whatever is above it */
     padding: 8px 16px; /* Dynamic size with 8px padding on top and bottom, and 16px on the sides */
     background-color: #0056b3; /* Primary button color */
     color: #fff;
