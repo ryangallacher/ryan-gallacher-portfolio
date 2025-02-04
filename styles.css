@@ -168,16 +168,6 @@ body {
     padding: 24px 0; /* Add padding around the contact form section */
 }
 
-.contact-form-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form-container form {
-    display: flex;
-    flex-direction: column;
-}
-
 .contact-form-container label {
     margin-bottom: 8px;
     font-weight: 600;
@@ -204,7 +194,7 @@ body {
 
 .contact-form-container button {
     margin-top: 40px; /* Add margin to create space between the button and the rest of the form */
-    padding: 10px 20px;
+    padding: 8px 16px; /* Dynamic size with 8px padding on top and bottom, and 16px on the sides */
     background-color: #0056b3; /* Primary button color */
     color: #fff;
     border: none;
@@ -214,6 +204,9 @@ body {
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    width: auto; /* Ensure the button width is dynamic */
+    display: inline-block; /* Ensure the button wraps around the text */
+    white-space: nowrap; /* Prevents text from wrapping */
 }
 
 .contact-form-container button:hover {
