@@ -36,7 +36,7 @@
                     </ul>
                 </div>
                 <div class="contact-form-container">
-                    <form id="contact-form" action="/submit_form" method="post" novalidate>
+                    <form id="contact-form" action="https://formsubmit.co/your-email@example.com" method="POST" novalidate>
                         <div class="form-group">
                             <label for="email">Your email</label>
                             <input type="email" id="email" name="email">
@@ -52,8 +52,14 @@
                         <!-- Honeypot field -->
                         <div style="display:none;">
                             <label for="honeypot">Leave this field empty</label>
-                            <input type="text" id="honeypot" name="honeypot">
+                            <input type="text" id="honeypot" name="_honey">
                         </div>
+
+                        <!-- Disable captcha -->
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <!-- Redirect after submission -->
+                        <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
 
                         <button type="submit">Send message</button>
                     </form>
