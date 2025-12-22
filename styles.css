@@ -4,6 +4,88 @@
     --ff-serif: 'Crimson Pro', Georgia, Cambria, 'Times New Roman', Times, serif;
 }
 
+/* Color system: core neutrals, brands, shadows, interactions, forms, feedback */
+:root {
+  /* Text */
+  --color-ink: #1F2A37;
+  --color-text-secondary: #9AA3AF;
+  --color-text-disabled: #B6BDC6;
+
+  /* Backgrounds */
+  --color-bg-body: #F7F6F2;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-surface-alt: #F4F5F3; /* softened zebra */
+  --color-bg-surface-raised: #EEF1F3;
+  --color-bg-disabled: #EEF1F3;
+
+  /* Borders */
+  --color-border-default: #E1E4E8;
+  --color-border-strong: #D1D5DB;
+
+  /* Brand / Pattern-safe variants */
+  --color-brand-ink-base: #1F2A37;
+  --color-brand-ink-wash: #E9EDF1;
+  --color-brand-ink-pattern: #F3F5F7;
+
+  --color-teal-base: #0A4A4E;
+  --color-teal-wash: #E6F0EF;
+  --color-teal-pattern: #F1F7F7;
+
+  --color-camel-base: #B08D57;
+  --color-camel-wash: #F1E9DC;
+  --color-camel-pattern: #F8F3EC;
+
+  /* Elevation / Shadows */
+  --shadow-level-1: 0 1px 2px rgba(31, 42, 55, 0.08);
+  --shadow-level-2: 0 4px 8px rgba(31, 42, 55, 0.10);
+  --shadow-level-3: 0 8px 16px rgba(31, 42, 55, 0.14);
+
+  /* Interactive States */
+  --color-link-default: #1a0dab;     /* standard link blue */
+  --color-link-hover:  #0b0a94;     /* darker blue on hover */
+  --color-link-visited: #551A8B;    /* standard visited purple */
+  --color-focus-ring: #CFE3E2;
+
+  /* Hover tints: subtle translucent variations of base colours (same hue) */
+  --ink-hover-bg: rgba(31, 42, 55, 0.06); /* tint of --color-ink */
+  --camel-hover-bg: rgba(176, 141, 87, 0.08); /* tint of --color-camel-base */
+  --teal-hover-bg: rgba(10, 74, 78, 0.06); /* tint of --color-teal-base */
+  --surface-hover: rgba(31, 42, 55, 0.03); /* very subtle surface tint */
+
+  --btn-primary-bg: #1F2A37;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover-bg: #273444;
+  --btn-primary-disabled-bg: #D1D5DB;
+  --btn-primary-disabled-text: #9AA3AF;
+
+  --btn-secondary-text: #1F2A37;
+  --btn-secondary-border: #1F2A37;
+  --btn-secondary-hover-bg: #EEF1F3;
+
+  /* Forms */
+  --input-bg: #FFFFFF;
+  --input-border: #D1D5DB;
+  --input-border-hover: #9AA3AF;
+  --input-border-focus: #0A4A4E;
+  --input-focus-ring: #CFE3E2;
+
+  --input-error-border: #8C2F39;
+  --input-error-bg: #F4E6E8;
+
+  /* Semantic Feedback */
+  --info-base: #355C7D;
+  --info-bg: #E8EEF3;
+
+  --success-base: #2E6F5E;
+  --success-bg: #E7F2EE;
+
+  --warning-base: #B7791F;
+  --warning-bg: #F6EEDF;
+
+  --error-base: #8C2F39;
+  --error-bg: #F4E6E8;
+}
+
 body {
     font-family: var(--ff-sans);
     font-weight: 400;
@@ -11,6 +93,8 @@ body {
     padding: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-bg-body);
+    color: var(--color-ink);
 }
 
 /* Default heading styles use the serif face */
@@ -20,12 +104,46 @@ h1, h2, h3, h4, h5 {
     margin: 0;
 } 
 
+/* Links: by default links inherit surrounding text color; use .link--brand for branded camel links */
+a {
+    color: var(--color-link-default);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--color-link-visited);
+}
+
+a:focus {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+}
+
+/* Branded link utility: use when you want camel brand color */
+a.link--brand, .link--brand {
+    color: var(--color-camel-base);
+}
+
+a.link--brand:hover, .link--brand:hover {
+    color: var(--color-camel-base);
+    text-decoration: underline;
+}
+
+/* Ensure footer hover uses color system */
+footer ul li a:hover {
+    background-color: var(--ink-hover-bg);
+}
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 16px 24px; /* Add padding to the header */
-    border-bottom: 1px solid rgba(6, 7, 12, 0.09); /* Add underline with specified color and opacity */
+    border-bottom: 1px solid var(--color-border-default); /* Add underline using color system */
 }
 
 .header-container .logo {
@@ -76,7 +194,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .header-container nav ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Add grey background on hover */
+    background-color: var(--ink-hover-bg); /* use tint of the nav text color (same hue) */
     border-radius: 4px; /* Match the button shape */
 }
 
@@ -134,8 +252,8 @@ h1, h2, h3, h4, h5 {
 .project-card {
     flex: 1 1 calc(50% - 24px);
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgba(0, 0, 0, 0.14); /* Initial shadows */
+    border: 1px solid var(--color-border-default);
+    box-shadow: var(--shadow-level-1); /* Initial shadow */
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Ensure content doesn't overflow */
@@ -147,8 +265,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .project-card:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Slightly darker background on hover */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12), 0px 4px 8px rgba(0, 0, 0, 0.14); /* Updated shadows on hover */
+    background-color: var(--color-bg-surface-raised); /* Slightly raised background on hover */
+    box-shadow: var(--shadow-level-2); /* Updated shadow on hover */
 }
 
 .project-card img {
@@ -171,8 +289,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .tag {
-    background-color: #e0e0e0; /* Background color for the tag */
-    color: #333; /* Text color for the tag */
+    background-color: var(--color-bg-surface-alt); /* Background color for the tag */
+    color: var(--color-ink); /* Text color for the tag */
     padding: 4px 8px; /* Padding inside the tag */
     border-radius: 12px; /* Rounded corners for the tag */
     font-size: 12px; /* Font size for the tag */
@@ -198,7 +316,7 @@ h1, h2, h3, h4, h5 {
 .contact-form-container textarea {
     margin-bottom: 0; /* Remove bottom margin to control spacing with error messages */
     padding: 10px; /* Adjust padding to match GOV.UK design system */
-    border: 2px solid #0b0c0c; /* GOV.UK input border color */
+    border: 2px solid var(--input-border); /* Use design system input border */
     border-radius: 0; /* GOV.UK input border radius */
     font-size: 16px; /* Adjust font size to match GOV.UK design system */
     width: 100%; /* Ensure inputs take full width */
@@ -217,7 +335,7 @@ h1, h2, h3, h4, h5 {
 .contact-form-container .error-message {
     margin-top: 8px; /* 8px between form field and error message */
     margin-bottom: 0; /* Remove bottom margin to control spacing with next element */
-    color: #d4351c;
+    color: var(--error-base);
     font-weight: bold;
     display: none; /* Hide error messages by default */
 }
@@ -233,8 +351,8 @@ h1, h2, h3, h4, h5 {
 .contact-form-container button {
     margin-top: 40px; /* 40px between button and whatever is above it */
     padding: 8px 16px; /* Dynamic size with 8px padding on top and bottom, and 16px on the sides */
-    background-color: #0056b3; /* Primary button color */
-    color: #fff;
+    background-color: var(--btn-primary-bg); /* Primary button color */
+    color: var(--btn-primary-text);
     border: none;
     border-radius: 4px; /* Add corner radius to buttons */
     font-size: 16px;
@@ -248,18 +366,21 @@ h1, h2, h3, h4, h5 {
 }
 
 .contact-form-container button:hover {
-    background-color: #004494; /* Slightly darker shade for hover effect */
+    background-color: var(--btn-primary-hover-bg); /* Slightly darker shade for hover effect */
 }
 
 .error-summary {
-    border: 2px solid #d4351c;
+    border: 2px solid var(--error-base);
     padding: 15px;
-    background-color: #f3f2f1;
-    color: #0b0c0c;
+    background-color: var(--error-bg);
+    color: var(--color-ink);
     margin-bottom: 20px;
 }
 
 .error-summary p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     font-weight: bold;
     margin: 0 0 10px 0;
 }
@@ -270,23 +391,31 @@ h1, h2, h3, h4, h5 {
     list-style: none;
 }
 
+.error-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
 .error-summary ul li {
     margin-bottom: 5px;
 }
 
 .error-summary ul li a {
     text-decoration: underline;
-    color: #1d70b8;
+    color: var(--color-link-default);
 }
 
 .error-message {
-    color: #d4351c;
+    color: var(--error-base);
     font-weight: bold;
     margin-top: 8px; /* Adjust margin to 8px to match the requirement */
 }
 
 footer {
-    border-top: 1px solid rgba(6, 7, 12, 0.09); /* Add underline with specified color and opacity */
+    border-top: 1px solid var(--color-border-default); /* Add underline using color system */
     padding: 16px 24px;
     margin-top: 64px; /* Space above the footer */
     text-align: center;
@@ -315,5 +444,5 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: var(--ink-hover-bg);
 }
