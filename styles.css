@@ -299,9 +299,6 @@ footer ul li a:hover {
     border-radius: 4px; /* Add corner radius to images */
 }
 
-/* .hero h1 inherits global h1 styles (responsive size & regular weight) */
-.hero h1 { }
-
 .project-cards-container {
     display: flex;
     flex-wrap: wrap;
@@ -510,53 +507,44 @@ footer ul li a:hover {
 /* Timeline styles */
 .timeline, .company-timeline { list-style: none; margin: 0; padding: 0; }
 .timeline {
-    position: relative;
     margin: 40px 0;
-    padding-left: 40px;
 }
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 20px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--color-border-default);
-}
+/* Remove decorative vertical line and node to simplify layout */
+.timeline::before { display: none; }
+.timeline-node { display: none; }
+
 .company-group {
     margin-bottom: 36px;
 }
 .company-header {
-    margin-left: 60px;
+    margin-left: 0; /* keep header aligned with content */
     margin-bottom: 12px;
 }
 .company-name { margin: 0; font-size: 1.125rem; }
 .company-meta { margin: 0; color: var(--color-text-secondary); }
-.company-timeline { margin-left: 20px; }
+.company-timeline { margin-left: 0; }
 
+/* Two-column layout: date left, content right */
 .timeline-item {
-    position: relative;
-    margin: 20px 0 20px 60px;
+    display: grid;
+    grid-template-columns: 140px 1fr; /* date column + content */
+    gap: 16px;
+    align-items: start;
+    padding: 12px 0;
+    border-left: none;
 }
-.timeline-node {
-    position: absolute;
-    left: -40px;
-    top: 10px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: var(--btn-primary-bg);
-    border: 3px solid var(--color-bg-body);
-    box-shadow: var(--shadow-level-1);
-}
+
 .timeline-date {
     font-size: var(--fs-sm);
     color: var(--color-text-secondary);
-    margin-bottom: 6px;
+    text-align: right;
+    padding-right: 8px;
+    white-space: nowrap;
 }
+
 .timeline-content {
     background: transparent;
-    padding: 14px 18px;
+    padding: 0;
     border-radius: 0;
     border: none;
     max-width: 900px;
@@ -566,17 +554,23 @@ footer ul li a:hover {
 .timeline-content .meta { margin: 0 0 8px 0; color: var(--color-text-secondary); font-size: var(--fs-xs); }
 .timeline-content .description { margin: 0; line-height: var(--lh-base); }
 
-@media (min-width: 860px) {
-    .timeline { padding-left: 60px; }
-    .company-header { margin-left: 80px; }
-    .timeline-item { margin-left: 80px; }
-    .timeline-node { left: -50px; top: 14px; width: 16px; height: 16px; }
+@media (min-width: 1200px) {
+    /* wider screens: give more room for the date column */
+    .timeline-item { grid-template-columns: 180px 1fr; }
 }
 
 @media (max-width: 600px) {
-    .timeline { padding-left: 30px; }
-    .company-header { margin-left: 48px; }
-    .timeline-item { margin-left: 48px; }
-    .timeline-node { left: -34px; top: 12px; }
-    .timeline-content { padding: 12px; }
+    /* mobile: stack date above content */
+    .timeline-item {
+        display: block;
+        padding: 8px 0;
+    }
+    .timeline-date {
+        position: static;
+        width: auto;
+        text-align: left;
+        margin-bottom: 6px;
+        display: block;
+    }
+    .timeline-content { padding: 12px 0 0 0; }
 }
