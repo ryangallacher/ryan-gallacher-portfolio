@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carbon Estimator – Input Field Types</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      line-height: 1.4;
+      max-width: 720px;
+      margin: 40px auto;
+    }
+    section {
+      margin-bottom: 32px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    input, select {
+      padding: 6px 8px;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    input[type="range"] {
+      width: 240px;
+      margin-bottom: 6px;
+      vertical-align: middle;
+    }
+    .control {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .valueLabel {
+      display: inline-block;
+      width: 48px;
+      text-align: right;
+      font-weight: 600;
+      color: #222;
+    }
+    input[type="number"].small {
+      width: 68px;
+      padding: 6px 8px;
+      box-sizing: border-box;
+      text-align: right;
+    }
+    .spacer { flex: 1; height: 0; }
+    .row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .hint {
+      font-size: 12px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Technology Carbon Estimator – Input Field Types</h1>
+
+<section>
+  <h2>Organisation</h2>
+
+  <label for="employees">Number of employees (approximate)</label>
+  <input
+    type="number"
+    id="employees"
+    min="1"
+    max="1000000"
+    step="1"
+    value="100"
+  />
+</section>
+
+<section>
+  <h2>Employee devices</h2>
+
+  <label for="devicePreset">Device profile</label>
+  <select id="devicePreset">
+    <option value="office">Office-based (80% laptops / 20% desktops)</option>
+    <option value="remote">Remote-first (90% laptops / 10% desktops)</option>
+    <option value="ops">Fixed desk / operations (30% laptops / 70% desktops)</option>
+    <option value="unsure">Not sure (50% / 50%)</option>
+    <option value="custom">Custom</option>
+  </select>
+
+  <div class="row">
+    <div>
+      <label for="laptops">Laptops (%)</label>
+      <div class="control">
+        <input type="range" id="laptopsRange" min="0" max="100" step="1" value="80" aria-describedby="laptopsValue" />
+        <span id="laptopsValue" class="valueLabel" aria-live="polite">80%</span>
+        <input type="number" id="laptops" class="small" min="0" max="100" step="1" value="80" aria-label="Laptops percentage" />
+      </div>
+    </div>
+    <div>
+      <label for="desktops">Desktops (%)</label>
+      <div class="control">
+        <div class="spacer" aria-hidden="true"></div>
+        <input type="number" id="desktops" class="small" min="0" max="100" step="1" value="20" aria-label="Desktops percentage" />
+      </div>
+    </div>
+  </div>
+
+  <div class="hint">Percentages are auto-normalised to 100%</div>
+</section>
+
+<section>
+  <h2>Servers</h2>
+
+  <label for="servers">Number of on-premise servers</label>
+  <input
+    type="number"
+    id="servers"
+    min="0"
+    max="100000"
+    step="1"
+    value="10"
+  />
+
+  <label for="serverLocation">Where are they primarily located?</label>
+  <select id="serverLocation">
+    <option value="not-sure" selected>Not sure</option>
+    <option value="on-site">On-site data centre (company-owned)</option>
+    <option value="colocated">Colocated / leased data centre</option>
+    <option value="office-floor">Office floor / on-premise rooms</option>
+    <option value="distributed">Multiple / distributed sites</option>
+  </select>
+
+  <div class="hint">
+    If unknown, use estimate: servers ≈ 10% of employees
+    <button type="button" id="estimateServers">Use estimate</button>
+  </div>
+</section>
+
+<section>
+  <h2>Cloud infrastructure</h2>
+
+  <label for="cloudPercent">Cloud workload (%)</label>
+  <input
+    type="number"
+    id="cloudPercent"
+    min="0"
+    max="100"
+    step="1"
+    value="50"
+  />
+
+  <label for="cloudSpend">Monthly cloud spend (approximate)</label>
+  <select id="cloudSpend">
+    <option value="0">None</option>
+    <option value="500">$0 – $1k</option>
+    <option value="3000">$1k – $5k</option>
+    <option value="10000">$5k – $20k</option>
+    <option value="50000">$20k+</option>
+  </select>
+</section>
+
+<section>
+  <h2>Customers & digital services</h2>
+
+  <label for="maus">Monthly active users (approximate)</label>
+  <input
+    type="number"
+    id="maus"
+    min="0"
+    max="1000000000"
+    step="1"
+    value="100"
+  />
+
+  <label for="userPreset">User device profile</label>
+  <select id="userPreset">
+    <option value="consumer">Consumer-facing (70% mobile / 30% desktop)</option>
+    <option value="b2b">B2B / professional (40% mobile / 60% desktop)</option>
+    <option value="unsure">Not sure (50% / 50%)</option>
+    <option value="custom">Custom</option>
+  </select>
+
+  <div class="row">
+    <div>
+      <label for="mobileUsers">Mobile (%)</label>
+      <input type="number" id="mobileUsers" min="0" max="100" step="1" value="70" />
+    </div>
+    <div>
+      <label for="desktopUsers">Desktop (%)</label>
+      <input type="number" id="desktopUsers" min="0" max="100" step="1" value="30" />
+    </div>
+  </div>
+</section>
+
+<script>
+  function applyPreset(preset, a, b) {
+    if (preset === "office") [a.value, b.value] = [80, 20];
+    if (preset === "remote") [a.value, b.value] = [90, 10];
+    if (preset === "ops") [a.value, b.value] = [30, 70];
+    if (preset === "unsure") [a.value, b.value] = [50, 50];
+  }
+
+  function normalize(a, b) {
+    const total = Number(a.value) + Number(b.value);
+    if (total === 0) return;
+    a.value = Math.round((a.value / total) * 100);
+    b.value = 100 - a.value;
+  }
+
+  // Sync device preset to inputs and slider
+  devicePreset.onchange = () => {
+    if (devicePreset.value !== "custom") {
+      applyPreset(devicePreset.value, laptops, desktops);
+      laptopsRange.value = laptops.value;
+    }
+  };
+
+  userPreset.onchange = () => {
+    if (userPreset.value === "consumer") [mobileUsers.value, desktopUsers.value] = [70, 30];
+    if (userPreset.value === "b2b") [mobileUsers.value, desktopUsers.value] = [40, 60];
+    if (userPreset.value === "unsure") [mobileUsers.value, desktopUsers.value] = [50, 50];
+  };
+
+  // Slider and numeric inputs stay in sync.
+  // Update the numeric inputs and a visible value label while sliding.
+  laptopsRange.oninput = () => {
+    laptops.value = laptopsRange.value;
+    desktops.value = 100 - Number(laptopsRange.value);
+    const label = document.getElementById('laptopsValue');
+    if (label) label.textContent = laptopsRange.value + '%';
+  };
+
+  // When the user finishes adjusting the coarse control, move keyboard focus to the fine-grained control
+  // so they can type an exact value if desired (NN/g recommendation).
+  laptopsRange.addEventListener('change', () => {
+    laptops.focus();
+  });
+
+  laptops.oninput = () => {
+    laptopsRange.value = laptops.value;
+    normalize(laptops, desktops);
+    const label = document.getElementById('laptopsValue');
+    if (label) label.textContent = laptops.value + '%';
+  };
+  desktops.oninput = () => {
+    normalize(desktops, laptops);
+    laptopsRange.value = laptops.value;
+    const label = document.getElementById('laptopsValue');
+    if (label) label.textContent = laptops.value + '%';
+  };
+
+  mobileUsers.onchange = () => normalize(mobileUsers, desktopUsers);
+  desktopUsers.onchange = () => normalize(desktopUsers, mobileUsers);
+
+  // initialise slider value and live label
+  laptopsRange.value = laptops.value;
+  const laptopsValueLabel = document.getElementById('laptopsValue');
+  if (laptopsValueLabel) laptopsValueLabel.textContent = laptops.value + '%';
+
+  estimateServers.onclick = () => {
+    servers.value = Math.round(employees.value * 0.1);
+  };
+</script>
+
+</body>
+</html>
