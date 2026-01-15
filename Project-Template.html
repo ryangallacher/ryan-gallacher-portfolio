@@ -185,6 +185,371 @@
             line-height: var(--lh-base);
             color: var(--color-ink);
         }
+
+        .best-practices {
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .best-practices h2 {
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--color-border-default);
+            margin-bottom: 40px;
+        }
+
+        .practice-item {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--color-border-default);
+            align-items: start;
+        }
+
+        .practice-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .practice-title {
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        .practice-description {
+            font-size: var(--fs-base);
+            line-height: var(--lh-base);
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        .contact-section {
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: start;
+            border-bottom: 1px solid var(--color-border-default);
+            padding-bottom: 40px;
+        }
+
+        .contact-intro h2 {
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 16px 0;
+        }
+
+        .contact-intro p {
+            font-size: var(--fs-sm);
+            line-height: var(--lh-base);
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .contact-column h3 {
+            font-size: var(--fs-base);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .contact-item {
+            margin-bottom: 28px;
+        }
+
+        .contact-item h4 {
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 6px 0;
+        }
+
+        .contact-item p {
+            font-size: var(--fs-sm);
+            line-height: var(--lh-base);
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: var(--color-camel-base);
+        }
+
+        .postit-card {
+            background-color: var(--color-camel-wash);
+            border: 1px solid var(--color-border-default);
+            border-radius: 2px;
+            padding: 24px;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(31, 42, 55, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
+        }
+
+        .postit-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            width: 31px;
+            height: 31px;
+            background-color: var(--color-camel-wash);
+            border-right: 1px solid var(--color-border-default);
+            border-top: 1px solid var(--color-border-default);
+            pointer-events: none;
+        }
+
+        .postit-card::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 31px 31px 0;
+            border-color: transparent var(--color-bg-surface-raised) transparent transparent;
+            box-shadow: -2px 2px 3px rgba(31, 42, 55, 0.15);
+            pointer-events: none;
+        }
+
+        .postit-card-icon {
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        .postit-card h3 {
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        .postit-card p {
+            font-size: var(--fs-sm);
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .postit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-header {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .research-section {
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .research-header {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid var(--color-border-default);
+            margin-bottom: 40px;
+            align-items: start;
+        }
+
+        .research-header h2 {
+            font-size: var(--fs-xxl);
+            line-height: var(--lh-lg);
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        .research-header p {
+            font-size: var(--fs-base);
+            line-height: var(--lh-base);
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        .research-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .research-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .research-card h3 {
+            font-size: var(--fs-base);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 12px 0;
+        }
+
+        .research-card p {
+            font-size: var(--fs-sm);
+            line-height: var(--lh-base);
+            color: var(--color-text-secondary);
+            margin: 0 0 20px 0;
+        }
+
+        .research-image {
+            width: 100%;
+            height: 250px;
+            background-color: var(--color-bg-surface-alt);
+            border-radius: 4px;
+            border: 1px solid var(--color-border-default);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .research-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .research-meta {
+            font-size: var(--fs-xs);
+            line-height: var(--lh-base);
+            color: var(--color-text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .research-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .contact-section {
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .contact-column h3 {
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-bg-surface-alt);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item {
+            margin-bottom: 30px;
+        }
+
+        .contact-item h4 {
+            font-size: var(--fs-base);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 8px 0;
+        }
+
+        .contact-item p {
+            font-size: var(--fs-sm);
+            line-height: var(--lh-base);
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: var(--color-camel-base);
+        }
+
+        @media (max-width: 900px) {
+            .research-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .research-header,
+            .practice-item {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .research-cards,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -258,6 +623,153 @@
             </div>
         </div>
     </div>
+
+    <section class="best-practices">
+        <h2>Best practices</h2>
+        
+        <div class="practice-item">
+            <h3 class="practice-title">Lead with IBM</h3>
+            <p class="practice-description">Feature a product or sub-brand at an event but be sure IBM is the first impression. Use the building blocks of our design language to create cohesiveness in expressing the singular IBM brand.</p>
+        </div>
+
+        <div class="practice-item">
+            <h3 class="practice-title">Show, don't tell</h3>
+            <p class="practice-description">Engage attendees with activations and demos for memorable, hands-on experiences with our products and offerings.</p>
+        </div>
+
+        <div class="practice-item">
+            <h3 class="practice-title">Keep it simple</h3>
+            <p class="practice-description">Present with clarity and honesty to explain simply how IBM's solutions can solve complex problems.</p>
+        </div>
+
+        <div class="practice-item">
+            <h3 class="practice-title">Be bold</h3>
+            <p class="practice-description">Make a lasting impression by evoking courage and innovation with a brave, singular gesture, not several small ones.</p>
+        </div>
+
+        <div class="practice-item">
+            <h3 class="practice-title">Create hierarchy</h3>
+            <p class="practice-description">Focus on impactful headlines that attract attendees from across the exhibit floor. Reserve deeper dives for intimate one-on-one conversations.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-header">
+            <div class="contact-intro">
+                <h2>Contact IBM</h2>
+                <p>We're here to help. Get answers to your questions about products, sales, support or anything else IBM</p>
+            </div>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-column">
+                <h3>
+                    <span class="contact-icon">📱</span>
+                    Phone numbers
+                </h3>
+                <div class="contact-item">
+                    <h4>General inquiries</h4>
+                    <p>800-IBM-4YOU (800-426-4968)</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Shopping assistance</h4>
+                    <p>888-SHOP-IBM (888-746-7426)</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Corporate headquarters:</h4>
+                    <p>IBM Corporation<br>1 New Orchard Road<br>Armonk, New York 10504-1722<br>United States<br>914-499-1900</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Managed and cloud services providers</h4>
+                    <p>877-IBM-ACCESS (877-426-2223)<br>Phone code: C377002W<br><a href="#">Contact a representative</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>IBM Easy Access</h4>
+                    <p>For large enterprise, government and education customers.<br>888-839-9289<br><a href="#">evs@us.ibm.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>TTY service</h4>
+                    <p>800-IBM-3383 (800-426-3383)<br>(within North America)</p>
+                </div>
+            </div>
+
+            <div class="contact-column">
+                <h3>
+                    <span class="contact-icon">🎧</span>
+                    Support
+                </h3>
+                <div class="contact-item">
+                    <h4>E-Mail</h4>
+                    <p>General 'non-technical' questions, concerns, or website feedback.<br><a href="#">For technical questions, please see our "Support directories" section.</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Customer support</h4>
+                    <p>Contracts, order status, delivery, inventory, invoices, and payments.</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Technical support directory</h4>
+                    <p><a href="#">Technical support phone numbers by product.</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>IBM Business Partner support</h4>
+                    <p>General BP support and inquiries</p>
+                </div>
+            </div>
+
+            <div class="contact-column">
+                <h3>
+                    <span class="contact-icon">🌐</span>
+                    Directory of worldwide contacts
+                </h3>
+                <div class="contact-item">
+                    <h4>Country-based contacts</h4>
+                    <p><a href="#">Country-based contacts for technical support, sales, or other assistance.</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Shop and buy</h4>
+                    <p><a href="#">Find a sales rep</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Self-help resources</h4>
+                    <p><a href="#">Marketplace support community</a><br><a href="#">Support & downloads</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Former IBMers</h4>
+                    <p><a href="#">Visit AlumIBM site</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>For benefits information</h4>
+                    <p>Call 800-796-9876</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="postit-grid">
+        <div class="postit-card">
+            <div class="postit-card-icon">🐍</div>
+            <h3>Python Templates</h3>
+            <p>Quick start templates for Python development</p>
+        </div>
+
+        <div class="postit-card">
+            <div class="postit-card-icon">📱</div>
+            <h3>Mobile Design</h3>
+            <p>Responsive patterns for mobile applications</p>
+        </div>
+
+        <div class="postit-card">
+            <div class="postit-card-icon">⚡</div>
+            <h3>Performance</h3>
+            <p>Optimization strategies and best practices</p>
+        </div>
+
+        <div class="postit-card">
+            <div class="postit-card-icon">🎨</div>
+            <h3>Design System</h3>
+            <p>Comprehensive color and typography guidelines</p>
+        </div>
+    </section>
 
     <footer>
         <ul>
