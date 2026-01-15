@@ -15,7 +15,7 @@
             justify-content: space-between;
             gap: 60px;
             min-height: 500px;
-            background-color: var(--color-bg-surface-raised);
+            background-color: var(--color-teal-base);
         }
 
         .hero-content {
@@ -28,12 +28,14 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            color: var(--color-bg-surface);
         }
 
         .hero-content p {
             margin: 15px 0;
             font-size: var(--fs-base);
             line-height: var(--lh-base);
+            color: var(--color-bg-surface);
         }
 
         .hero-buttons {
@@ -63,11 +65,12 @@
 
         .btn-secondary {
             background: transparent;
-            color: var(--btn-secondary-text);
-            border: 1px solid var(--btn-secondary-border);
+            color: var(--color-bg-surface);
+            border: 1px solid var(--color-bg-surface);
         }
 
         .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
             background-color: var(--btn-secondary-hover-bg);
         }
 
