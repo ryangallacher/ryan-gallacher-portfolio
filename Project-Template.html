@@ -7,6 +7,11 @@
     <title>Project Template</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Crimson+Pro:wght@300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Ant Design CSS only -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd@5.11.0/dist/reset.css">
+    <!-- React and ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
         .hero-section {
             padding: 80px 40px;
@@ -774,12 +779,103 @@
         </div>
     </section>
 
+    <section id="react-timeline" style="padding: 40px; max-width: 1200px; margin: 0 auto;"></section>
+
     <footer>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="#work" class="active">Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
+
+    <script>
+        // Wait for React to load
+        setTimeout(() => {
+            console.log('Timeline rendering...');
+
+            try {
+                const timelineData = [
+                    {
+                        title: 'Planning',
+                        content: 'Initial project planning and requirements gathering',
+                    },
+                    {
+                        title: 'Design',
+                        content: 'Design phase with mockups and prototypes',
+                    },
+                    {
+                        title: 'Development',
+                        content: 'Active development and implementation',
+                    },
+                    {
+                        title: 'Testing',
+                        content: 'QA and comprehensive testing',
+                    },
+                    {
+                        title: 'Launch',
+                        content: 'Deploy to production and go live',
+                    },
+                ];
+
+                const timeline = React.createElement('div', { style: { position: 'relative', paddingLeft: '60px' } },
+                    React.createElement('h2', { style: { textAlign: 'center', marginBottom: '40px', paddingLeft: '-60px' } }, 'Project Timeline'),
+                    timelineData.map((item, index) =>
+                        React.createElement('div', {
+                            key: index,
+                            style: {
+                                position: 'relative',
+                                paddingBottom: '40px',
+                            }
+                        },
+                            // Connecting line
+                            index < timelineData.length - 1 ? React.createElement('div', {
+                                style: {
+                                    position: 'absolute',
+                                    left: '-30px',
+                                    top: '30px',
+                                    width: '2px',
+                                    height: '40px',
+                                    backgroundColor: '#1890ff',
+                                }
+                            }) : null,
+                            // Circle node
+                            React.createElement('div', {
+                                style: {
+                                    position: 'absolute',
+                                    left: '-50px',
+                                    top: '0px',
+                                    width: '40px',
+                                    height: '40px',
+                                    borderRadius: '50%',
+                                    backgroundColor: '#1890ff',
+                                    border: '3px solid white',
+                                    boxShadow: '0 0 0 2px #1890ff',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: 'white',
+                                    fontWeight: 'bold',
+                                    fontSize: '14px',
+                                }
+                            }, index + 1),
+                            // Content
+                            React.createElement('div', null,
+                                React.createElement('h3', { style: { margin: '0 0 5px 0', fontSize: '16px', fontWeight: '600' } }, item.title),
+                                React.createElement('p', { style: { margin: '0', fontSize: '14px', color: '#666', lineHeight: '1.5' } }, item.content)
+                            )
+                        )
+                    )
+                );
+
+                const root = ReactDOM.createRoot(document.getElementById('react-timeline'));
+                root.render(timeline);
+                console.log('Timeline rendered successfully');
+            } catch (error) {
+                console.error('Error rendering timeline:', error);
+                document.getElementById('react-timeline').innerHTML = '<p style="color:red; padding: 20px;">Error: ' + error.message + '</p>';
+            }
+        }, 500);
+    </script>
         <p>&copy; 2026 Ryan Gallacher. All rights reserved.</p>
     </footer>
 </body>
