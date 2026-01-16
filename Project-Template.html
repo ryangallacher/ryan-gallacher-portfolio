@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Template</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Crimson+Pro:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero-section {
+            padding: 80px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            min-height: 500px;
+            background-color: var(--color-teal-base);
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .hero-content h1 {
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--color-bg-surface);
+        }
+
+        .hero-content p {
+            margin: 15px 0;
+            font-size: var(--fs-base);
+            line-height: var(--lh-base);
+            color: var(--color-bg-surface);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .hero-buttons button {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: var(--fs-button);
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--btn-primary-bg);
+            color: var(--btn-primary-text);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--btn-primary-hover-bg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-bg-surface);
+            border: 1px solid var(--color-bg-surface);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--btn-secondary-hover-bg);
+        }
+
+        .hero-image {
+            flex: 1;
+            background: var(--color-bg-surface);
+            border-radius: 4px;
+            border: 1px solid var(--color-border-default);
+            padding: 20px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .tabs-section {
+            border-bottom: 1px solid var(--color-border-default);
+            padding: 0 40px;
+            margin: 0;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .tabs li {
+            margin: 0;
+        }
+
+        .tabs a {
+            display: block;
+            padding: 20px 0;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: var(--fs-sm);
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .tabs a.active {
+            color: var(--color-ink);
+            border-bottom-color: var(--color-camel-base);
+        }
+
+        .tabs a:hover {
+            color: var(--color-ink);
+        }
+
+        .tab-number {
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            margin-right: 8px;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 60px;
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .content-text {
+            flex: 0 1 400px;
+        }
+
+        .content-text h2 {
+            font-size: var(--fs-xl);
+            line-height: var(--lh-lg);
+            color: var(--color-ink);
+        }
+
+        .stats-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .stat-item {
+            padding-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 300;
+            color: var(--color-camel-base);
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: var(--fs-sm);
+            color: var(--color-text-secondary);
+            line-height: var(--lh-base);
+        }
+
+        .stat-label a {
+            color: var(--color-camel-base);
+            text-decoration: underline;
+        }
+
+        .description-text {
+            grid-column: 1 / -1;
+            font-size: var(--fs-base);
+            line-height: var(--lh-base);
+            color: var(--color-ink);
+        }
+
+        .best-practices {
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .best-practices h2 {
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--color-border-default);
+            margin-bottom: 40px;
+        }
+
+        .practice-item {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            padding: 40px 0;
+            border-bottom: 1px solid var(--color-border-default);
+            align-items: start;
+        }
+
+        .practice-item:last-of-type {
+            border-bottom: none;
+        }
+
+        .practice-title {
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        .practice-description {
+            font-size: var(--fs-base);
+            line-height: var(--lh-base);
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        .contact-section {
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            align-items: start;
+            border-bottom: 1px solid var(--color-border-default);
+            padding-bottom: 40px;
+        }
+
+        .contact-intro h2 {
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 16px 0;
+        }
+
+        .contact-intro p {
+            font-size: var(--fs-sm);
+            line-height: var(--lh-base);
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .contact-column h3 {
+            font-size: var(--fs-base);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .contact-item {
+            margin-bottom: 28px;
+        }
+
+        .contact-item h4 {
+            font-size: var(--fs-sm);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 6px 0;
+        }
+
+        .contact-item p {
+            font-size: var(--fs-sm);
+            line-height: var(--lh-base);
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: var(--color-camel-base);
+        }
+
+        .postit-card {
+            background-color: var(--color-camel-wash);
+            border: 1px solid var(--color-border-default);
+            border-radius: 2px;
+            padding: 24px;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(31, 42, 55, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
+        }
+
+        .postit-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            width: 31px;
+            height: 31px;
+            background-color: var(--color-camel-wash);
+            border-right: 1px solid var(--color-border-default);
+            border-top: 1px solid var(--color-border-default);
+            pointer-events: none;
+        }
+
+        .postit-card::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            right: -1px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 31px 31px 0;
+            border-color: transparent var(--color-bg-surface-raised) transparent transparent;
+            box-shadow: -2px 2px 3px rgba(31, 42, 55, 0.15);
+            pointer-events: none;
+        }
+
+        .postit-card-icon {
+            font-size: 32px;
+            line-height: 1;
+        }
+
+        .postit-card h3 {
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        .postit-card p {
+            font-size: var(--fs-sm);
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .postit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-header {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .research-section {
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .research-header {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 60px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid var(--color-border-default);
+            margin-bottom: 40px;
+            align-items: start;
+        }
+
+        .research-header h2 {
+            font-size: var(--fs-xxl);
+            line-height: var(--lh-lg);
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        .research-header p {
+            font-size: var(--fs-base);
+            line-height: var(--lh-base);
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        .research-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .research-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .research-card h3 {
+            font-size: var(--fs-base);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 12px 0;
+        }
+
+        .research-card p {
+            font-size: var(--fs-sm);
+            line-height: var(--lh-base);
+            color: var(--color-text-secondary);
+            margin: 0 0 20px 0;
+        }
+
+        .research-image {
+            width: 100%;
+            height: 250px;
+            background-color: var(--color-bg-surface-alt);
+            border-radius: 4px;
+            border: 1px solid var(--color-border-default);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .research-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .research-meta {
+            font-size: var(--fs-xs);
+            line-height: var(--lh-base);
+            color: var(--color-text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .research-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .contact-section {
+            padding: 60px 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+        }
+
+        .contact-column h3 {
+            font-size: var(--fs-lg);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 30px 0;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-bg-surface-alt);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item {
+            margin-bottom: 30px;
+        }
+
+        .contact-item h4 {
+            font-size: var(--fs-base);
+            font-weight: 600;
+            color: var(--color-ink);
+            margin: 0 0 8px 0;
+        }
+
+        .contact-item p {
+            font-size: var(--fs-sm);
+            line-height: var(--lh-base);
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .contact-item a {
+            color: var(--color-camel-base);
+        }
+
+        @media (max-width: 900px) {
+            .research-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .research-header,
+            .practice-item {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .research-cards,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <!-- SVG logo goes here -->
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#work" class="active">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <p class="eyebrow-text">Company Name</p>
+            <h1>Project Title <span>🌐</span></h1>
+            <p>Brief description of the project goes here. This is the main value proposition.</p>
+            <p>Additional context about the project and its impact.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary">View project</button>
+                <button class="btn-secondary">Get started →</button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="path/to/image.jpg" alt="Project showcase">
+        </div>
+    </section>
+
+    <div class="tabs-section">
+        <ul class="tabs">
+            <li><a href="#" class="active"><span class="tab-number">01</span>About</a></li>
+            <li><a href="#"><span class="tab-number">02</span>Key Features</a></li>
+            <li><a href="#"><span class="tab-number">03</span>Case Studies</a></li>
+            <li><a href="#"><span class="tab-number">04</span>Ecosystem</a></li>
+            <li><a href="#"><span class="tab-number">05</span>Resources</a></li>
+            <li><a href="#"><span class="tab-number">06</span>Advocates</a></li>
+            <li><a href="#"><span class="tab-number">07</span>Updates</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="content-text">
+            <h2>Section heading goes here</h2>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">13M</div>
+                <div class="stat-label">Key metric one</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">69%</div>
+                <div class="stat-label">Metric description with <a href="#">link</a></div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">83x</div>
+                <div class="stat-label">Faster than alternatives</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">7K+</div>
+                <div class="stat-label">Dependent projects</div>
+            </div>
+            <div class="description-text">
+                <p>Add your detailed description here. This section can contain more information about the project, its impact, and key achievements.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="best-practices">
+        <h2>Best practices</h2>
+        
+        <div class="practice-item">
+            <h3 class="practice-title">Lead with IBM</h3>
+            <p class="practice-description">Feature a product or sub-brand at an event but be sure IBM is the first impression. Use the building blocks of our design language to create cohesiveness in expressing the singular IBM brand.</p>
+        </div>
+
+        <div class="practice-item">
+            <h3 class="practice-title">Show, don't tell</h3>
+            <p class="practice-description">Engage attendees with activations and demos for memorable, hands-on experiences with our products and offerings.</p>
+        </div>
+
+        <div class="practice-item">
+            <h3 class="practice-title">Keep it simple</h3>
+            <p class="practice-description">Present with clarity and honesty to explain simply how IBM's solutions can solve complex problems.</p>
+        </div>
+
+        <div class="practice-item">
+            <h3 class="practice-title">Be bold</h3>
+            <p class="practice-description">Make a lasting impression by evoking courage and innovation with a brave, singular gesture, not several small ones.</p>
+        </div>
+
+        <div class="practice-item">
+            <h3 class="practice-title">Create hierarchy</h3>
+            <p class="practice-description">Focus on impactful headlines that attract attendees from across the exhibit floor. Reserve deeper dives for intimate one-on-one conversations.</p>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-header">
+            <div class="contact-intro">
+                <h2>Contact IBM</h2>
+                <p>We're here to help. Get answers to your questions about products, sales, support or anything else IBM</p>
+            </div>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-column">
+                <h3>
+                    <span class="contact-icon">📱</span>
+                    Phone numbers
+                </h3>
+                <div class="contact-item">
+                    <h4>General inquiries</h4>
+                    <p>800-IBM-4YOU (800-426-4968)</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Shopping assistance</h4>
+                    <p>888-SHOP-IBM (888-746-7426)</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Corporate headquarters:</h4>
+                    <p>IBM Corporation<br>1 New Orchard Road<br>Armonk, New York 10504-1722<br>United States<br>914-499-1900</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Managed and cloud services providers</h4>
+                    <p>877-IBM-ACCESS (877-426-2223)<br>Phone code: C377002W<br><a href="#">Contact a representative</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>IBM Easy Access</h4>
+                    <p>For large enterprise, government and education customers.<br>888-839-9289<br><a href="#">evs@us.ibm.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>TTY service</h4>
+                    <p>800-IBM-3383 (800-426-3383)<br>(within North America)</p>
+                </div>
+            </div>
+
+            <div class="contact-column">
+                <h3>
+                    <span class="contact-icon">🎧</span>
+                    Support
+                </h3>
+                <div class="contact-item">
+                    <h4>E-Mail</h4>
+                    <p>General 'non-technical' questions, concerns, or website feedback.<br><a href="#">For technical questions, please see our "Support directories" section.</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Customer support</h4>
+                    <p>Contracts, order status, delivery, inventory, invoices, and payments.</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Technical support directory</h4>
+                    <p><a href="#">Technical support phone numbers by product.</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>IBM Business Partner support</h4>
+                    <p>General BP support and inquiries</p>
+                </div>
+            </div>
+
+            <div class="contact-column">
+                <h3>
+                    <span class="contact-icon">🌐</span>
+                    Directory of worldwide contacts
+                </h3>
+                <div class="contact-item">
+                    <h4>Country-based contacts</h4>
+                    <p><a href="#">Country-based contacts for technical support, sales, or other assistance.</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Shop and buy</h4>
+                    <p><a href="#">Find a sales rep</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Self-help resources</h4>
+                    <p><a href="#">Marketplace support community</a><br><a href="#">Support & downloads</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Former IBMers</h4>
+                    <p><a href="#">Visit AlumIBM site</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>For benefits information</h4>
+                    <p>Call 800-796-9876</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="postit-grid">
+        <div class="postit-card">
+            <div class="postit-card-icon">🐍</div>
+            <h3>Python Templates</h3>
+            <p>Quick start templates for Python development</p>
+        </div>
+
+        <div class="postit-card">
+            <div class="postit-card-icon">📱</div>
+            <h3>Mobile Design</h3>
+            <p>Responsive patterns for mobile applications</p>
+        </div>
+
+        <div class="postit-card">
+            <div class="postit-card-icon">⚡</div>
+            <h3>Performance</h3>
+            <p>Optimization strategies and best practices</p>
+        </div>
+
+        <div class="postit-card">
+            <div class="postit-card-icon">🎨</div>
+            <h3>Design System</h3>
+            <p>Comprehensive color and typography guidelines</p>
+        </div>
+    </section>
+
+    <section style="padding: 40px 20px;">
+        <div class="timeline-container">
+            <div class="timeline-header">
+                <div class="timeline-icon">📅</div>
+                <div class="timeline-month">January 2026</div>
+            </div>
+
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+                <div class="timeline-node has-icon">👶</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Milestone</span>
+                        <span class="timeline-date">• August 04, 2025</span>
+                    </div>
+                    <div class="timeline-title">Barnet ble født</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node has-icon">📄</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Application</span>
+                        <span class="timeline-date">• August 22, 2025</span>
+                    </div>
+                    <div class="timeline-title">Du søkte om FORELDREPENGER</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Documents</span>
+                        <span class="timeline-date">• August 23, 2025 Kl. 09:05</span>
+                    </div>
+                    <div class="timeline-title">Du la til 2 vedlegg</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Documents</span>
+                        <span class="timeline-date">• August 23, 2025 Kl. 11:30</span>
+                    </div>
+                    <div class="timeline-title">Du la til 4 vedlegg</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node has-icon">✉️</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Response</span>
+                        <span class="timeline-date">• August 25, 2025</span>
+                    </div>
+                    <div class="timeline-title">Du har fått et svar på søknaden din</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node has-icon">⚠️</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Action Required</span>
+                        <span class="timeline-date">• August 26, 2025</span>
+                    </div>
+                    <div class="timeline-title">Nav har etterspurt opplysninger</div>
+                    <div class="sub-item-status">Aktiv</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node has-icon">📝</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Code</span>
+                        <span class="timeline-date">• January 15, 2026</span>
+                    </div>
+                    <div class="timeline-title">Version 7.40.0</div>
+                    
+                    <div class="timeline-section">
+                        <div class="section-title">@navikt/aksel-icons</div>
+                        <ul class="section-items">
+                            <li class="section-item">Icons: New icon MagnifyingGlassCheckmark<a href="#">( #4489 )</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-section">
+                        <div class="section-title">@navikt/ds-react</div>
+                        <ul class="section-items">
+                            <li class="section-item">DatePicker/MonthPicker: Remove role=dialog from popover<a href="#">( #4463 )</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Code</span>
+                        <span class="timeline-date">• January 14, 2026</span>
+                    </div>
+                    <div class="timeline-title">Version 7.39.1</div>
+                    
+                    <div class="timeline-section">
+                        <div class="section-title">@navikt/ds-react</div>
+                        <ul class="section-items">
+                            <li class="section-item">Dialog: Removed 'aria-expanded' from Dialog.Trigger<a href="#">( #4478 )</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-section">
+                        <div class="section-title">@navikt/ds-css</div>
+                        <ul class="section-items">
+                            <li class="section-item">Modal, Dialog: Handle scroll for extreme zoom-levels better<a href="#">( #4488 )</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#work" class="active">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+</body>
+
+</html>

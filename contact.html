@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Crimson+Pro:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <!-- SVG logo goes here -->
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content-container">
+        <main>
+            <section class="contact-form">
+                <h1>Contact Us</h1>
+                <p>Add me on Linkedin or fill in the form.</p>
+                <div id="error-summary" class="error-summary" style="display:none;" tabindex="-1" role="alert" aria-labelledby="error-summary-heading">
+                    <p id="error-summary-heading"><img src="Assets/Icons/status-icon.svg" alt="" class="error-icon" aria-hidden="true">There is a problem</p>
+                    <ul id="error-summary-list">
+                        <!-- Error messages will be inserted here -->
+                    </ul>
+                </div> 
+
+                    <div class="contact-form-container">
+                        <form id="contact-form" action="https://formsubmit.co/ryan.gallacher2@gmail.com" method="POST" novalidate>
+                            <!-- REQUIRED: recipient email -->
+                            <input type="hidden" name="_replyto" value="ryan.gallacher2@gmail.com">
+                            
+                            <!-- OPTIONAL: disable captcha -->
+                            <input type="hidden" name="_captcha" value="false">
+
+                            <!-- OPTIONAL: customize email subject -->
+                            <input type="hidden" name="_subject" value="New Contact Form Submission">
+
+                            <!-- Redirect after success -->
+                            <input type="hidden" name="_next" value="https://www.linkedin.com/in/ryan-gallacher-a19473160/">
+
+                            <!-- Visitor email -->
+                            <div class="form-group">
+                            <label for="email">Your email</label>
+                            <input type="email" id="email" name="email" required>
+                            <div id="email-error" class="error-message">Your email is required</div>
+                            </div>
+
+                            <!-- Visitor message -->
+                            <div class="form-group">
+                            <label for="message" class="message-label">Your message</label>
+                            <textarea id="message" name="message" rows="4" maxlength="1000" required style="height: 200px;"></textarea>
+                            <div id="message-error" class="error-message">Your message is required</div>
+                            </div>
+
+                            <button type="submit">Send message</button>
+                        </form>
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <p>&copy; 2023 Ryan Gallacher. All rights reserved.</p>
+    </footer>
+
+    <script>
+    (function() {
+        var form = document.getElementById('contact-form');
+        if (!form) {
+            console.error('Contact form not found.');
+            return;
+        }
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            try {
+                var email = document.getElementById('email');
+                var message = document.getElementById('message');
+                var emailError = document.getElementById('email-error');
+                var messageError = document.getElementById('message-error');
+                var errorSummary = document.getElementById('error-summary');
+                var errorSummaryList = document.getElementById('error-summary-list');
+                var hasError = false;
+
+                // Defensive null-checks: if key elements are missing, log and submit to avoid blocking the user
+                if (!email || !message || !emailError || !messageError || !errorSummary || !errorSummaryList) {
+                    console.warn('One or more form elements are missing; proceeding to submit to allow fallback.');
+                    form.submit();
+                    return;
+                }
+
+                // Reset error states
+                emailError.style.display = 'none';
+                messageError.style.display = 'none';
+                errorSummary.style.display = 'none';
+                errorSummaryList.innerHTML = '';
+
+                // Validate form
+                if (!email.value) {
+                    emailError.style.display = 'block';
+                    var emailErrorItem = document.createElement('li');
+                    emailErrorItem.innerHTML = '<a href="#email">Your email is required</a>';
+                    errorSummaryList.appendChild(emailErrorItem);
+                    hasError = true;
+                }
+
+                if (!message.value) {
+                    messageError.style.display = 'block';
+                    var messageErrorItem = document.createElement('li');
+                    messageErrorItem.innerHTML = '<a href="#message">Your message is required</a>';
+                    errorSummaryList.appendChild(messageErrorItem);
+                    hasError = true;
+                }
+
+                if (hasError) {
+                    errorSummary.style.display = 'block';
+                    errorSummary.focus();
+                    return;
+                }
+
+                console.log('Validation passed — submitting form.');
+                form.submit();
+            } catch (err) {
+                console.error('Error in submit handler:', err);
+                // Fallback: attempt a normal submit so the POST still happens
+                try {
+                    form.submit();
+                } catch (e2) {
+                    console.error('Fallback submit failed:', e2);
+                }
+            }
+        });
+    })();
+    </script>
+</body>
+
+</html>

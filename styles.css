@@ -1,36 +1,784 @@
-/* Import GitHub Primer CSS */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/primer/12.0.0/build.css');
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+/* Fonts: Source Sans 3 (variable) and Crimson Pro — loaded via the link in your HTML head */
+:root {
+    --ff-sans: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --ff-serif: 'Crimson Pro', Georgia, Cambria, 'Times New Roman', Times, serif;
 }
 
-header {
+/* Typography scale (use rems for accessibility and scalability)
+   Base font-size: 16px = 1rem. Use rem-based steps for consistent scaling. */
+:root {
+  /* Font sizes */
+  --fs-xxl: 3.375rem; /* 54px */
+  --fs-xl: 2.25rem;   /* 36px */
+  --fs-lg: 1.125rem;  /* 18px */
+  --fs-md: 1rem;      /* 16px (base) */
+  --fs-base: 1rem;    /* alias */
+  --fs-sm: 0.875rem;  /* 14px */
+  --fs-xs: 0.75rem;   /* 12px */
+
+  /* Line-heights (unitless for flexibility) */
+  --lh-xxl: 1.185;    /* ~64/54 */
+  --lh-xl: 1.25;
+  --lh-lg: 1.4;
+  --lh-base: 1.5;
+
+  /* Common text sizes */
+  --fs-button: var(--fs-sm);
+  --fs-label: var(--fs-sm);
+  --fs-table: var(--fs-sm);
+}
+
+/* Color system: core neutrals, brands, shadows, interactions, forms, feedback */
+:root {
+  /* Text */
+  --color-ink: #1F2A37;
+  --color-text-secondary: #9AA3AF;
+  --color-text-disabled: #B6BDC6;
+
+  /* Backgrounds */
+  --color-bg-body: #F7F6F2;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-surface-alt: #F4F5F3; /* softened zebra */
+  --color-bg-surface-raised: #EEF1F3;
+  --color-bg-disabled: #EEF1F3;
+
+  /* Borders */
+  --color-border-default: #E1E4E8;
+  --color-border-strong: #D1D5DB;
+
+  /* Brand / Pattern-safe variants */
+  --color-brand-ink-base: #1F2A37;
+  --color-brand-ink-wash: #E9EDF1;
+  --color-brand-ink-pattern: #F3F5F7;
+
+  --color-teal-base: #0A4A4E;
+  --color-teal-wash: #E6F0EF;
+  --color-teal-pattern: #F1F7F7;
+
+  --color-camel-base: #B08D57;
+  --color-camel-wash: #F1E9DC;
+  --color-camel-pattern: #F8F3EC;
+
+  /* Elevation / Shadows */
+  --shadow-level-1: 0 1px 2px rgba(31, 42, 55, 0.08);
+  --shadow-level-2: 0 4px 8px rgba(31, 42, 55, 0.10);
+  --shadow-level-3: 0 8px 16px rgba(31, 42, 55, 0.14);
+
+  /* Interactive States */
+  --color-link-default: #1a0dab;     /* standard link blue */
+  --color-link-hover:  #0b0a94;     /* darker blue on hover */
+  --color-link-visited: #551A8B;    /* standard visited purple */
+  --color-focus-ring: #CFE3E2;
+
+  /* Hover tints: subtle translucent variations of base colours (same hue) */
+  --ink-hover-bg: rgba(31, 42, 55, 0.06); /* tint of --color-ink */
+  --camel-hover-bg: rgba(176, 141, 87, 0.08); /* tint of --color-camel-base */
+  --teal-hover-bg: rgba(10, 74, 78, 0.06); /* tint of --color-teal-base */
+  --surface-hover: rgba(31, 42, 55, 0.03); /* very subtle surface tint */
+
+  --btn-primary-bg: #1F2A37;
+  --btn-primary-text: #FFFFFF;
+  --btn-primary-hover-bg: #273444;
+  --btn-primary-disabled-bg: #D1D5DB;
+  --btn-primary-disabled-text: #9AA3AF;
+
+  --btn-secondary-text: #1F2A37;
+  --btn-secondary-border: #1F2A37;
+  --btn-secondary-hover-bg: #EEF1F3;
+
+  /* Forms */
+  --input-bg: #FFFFFF;
+  --input-border: #D1D5DB;
+  --input-border-hover: #9AA3AF;
+  --input-border-focus: #0A4A4E;
+  --input-focus-ring: #CFE3E2;
+
+  --input-error-border: #8C2F39;
+  --input-error-bg: #F4E6E8;
+
+  /* Semantic Feedback */
+  --info-base: #355C7D;
+  --info-bg: #E8EEF3;
+
+  --success-base: #2E6F5E;
+  --success-bg: #E7F2EE;
+
+  --warning-base: #B7791F;
+  --warning-bg: #F6EEDF;
+
+  --error-base: #8C2F39;
+  --error-bg: #F4E6E8;
+}
+
+body {
+    font-family: var(--ff-sans);
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-bg-body);
+    color: var(--color-ink);
+}
+
+/* Default heading styles use the serif face */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-serif);
+    font-weight: 400; /* regular across headings */
+    margin: 0;
+} 
+
+/* Ensure all h1s are responsive and consistent */
+h1 {
+    /* Responsive, clamped heading: scales between ~36px and 64px depending on viewport */
+    font-size: clamp(2.25rem, 5vw + 1rem, 4rem);
+    line-height: var(--lh-xxl);
+}
+
+/* Typography helpers: blockquotes, callouts, small/meta, and table text */
+blockquote {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-lg); /* 18px */
+    line-height: var(--lh-lg);
+    font-style: italic;
+    color: var(--color-ink);
+    padding: 12px 16px;
+    border-left: 4px solid var(--color-teal-base);
+    background-color: var(--color-bg-surface-alt);
+    margin: 0 0 1rem 0;
+}
+
+.callout {
+    padding: 12px 16px;
+    border-radius: 4px;
+    background-color: var(--color-bg-surface-raised);
+    border-left: 4px solid var(--color-camel-base);
+    font-size: var(--fs-base);
+    line-height: var(--lh-base);
+}
+
+/* Small/meta text and captions */
+.small, .meta, figcaption {
+    font-size: var(--fs-xs);
+    color: var(--color-text-secondary);
+}
+
+/* Table typography */
+table, th, td {
+    font-size: var(--fs-table); /* 14px */
+    line-height: var(--lh-base);
+}
+
+/* Links: by default links inherit surrounding text color; use .link--brand for branded camel links */
+a {
+    color: var(--color-link-default);
+    text-decoration: underline;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--color-link-visited);
+}
+
+a:focus {
+    outline: 2px solid var(--color-focus-ring);
+    outline-offset: 2px;
+}
+
+/* Branded link utility: use when you want camel brand color */
+a.link--brand, .link--brand {
+    color: var(--color-camel-base);
+}
+
+a.link--brand:hover, .link--brand:hover {
+    color: var(--color-camel-base);
+    text-decoration: underline;
+}
+
+/* Ensure footer hover uses color system */
+footer ul li a:hover {
+    background-color: var(--ink-hover-bg);
+}
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px;
-    background-color: #f6f8fa;
-    border-bottom: 1px solid #e1e4e8;
+    padding: 16px 24px; /* Add padding to the header */
+    border-bottom: 1px solid var(--color-border-default); /* Add underline using color system */
 }
 
-header .logo {
+.header-container .logo {
+    flex: 0 0 auto;
+}
+
+.header-container nav {
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-container nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center; /* Align items vertically */
+}
+
+.header-container nav ul li {
+    margin-left: 24px; /* Add space between nav items */
+}
+
+.header-container nav ul li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 20px; /* Add padding to align with the button */
+    display: flex;
+    align-items: center; /* Ensure text is centered vertically */
+    position: relative; /* Required for the ::after pseudo-element */
+    border-radius: 4px; /* Add corner radius to nav items */
+}
+
+.header-container nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor; /* Use the current text color */
+    transition: width 0.3s ease; /* Smooth transition for the underline */
+}
+
+.header-container nav ul li a:hover::after {
+    width: 0; /* No underline on hover */
+}
+
+.header-container nav ul li a:hover {
+    background-color: var(--ink-hover-bg); /* use tint of the nav text color (same hue) */
+    border-radius: 4px; /* Match the button shape */
+}
+
+.header-container nav ul li a.active::after {
+    width: 100%; /* Keep the underline for the active link */
+}
+
+.content-container {
+    max-width: 1200px; /* Set a sensible max-width for the content */
+    margin: 0 auto;
+    padding: 0 24px; /* Add padding to ensure content doesn't touch the edges */
+}
+
+.hero {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 24px 0; /* Add padding to the hero section */
 }
 
-header nav {
+.hero-text {
+    flex: 1;
     display: flex;
-    flex-direction: row; /* Ensure horizontal layout */
-    gap: 16px;
+    flex-direction: column; /* Stack text elements vertically */
+    padding-right: 24px; /* Add some space between text and image */
 }
 
-header a {
-    color: #0366d6;
-    text-decoration: none;
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px; /* Add corner radius to images */
+}
+
+.project-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px; /* Updated gap to 24px */
+    padding: 24px 0; /* Add padding around the container */
+}
+
+.project-card {
+    flex: 1 1 calc(50% - 24px);
+    box-sizing: border-box;
+    border: 1px solid var(--color-border-default);
+    box-shadow: var(--shadow-level-1); /* Initial shadow */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    max-height: 520px; /* Set max height for the card */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit text color */
+    border-radius: 4px; /* Add corner radius to project cards */
+}
+
+.project-card:hover {
+    background-color: var(--color-bg-surface-raised); /* Slightly raised background on hover */
+    box-shadow: var(--shadow-level-2); /* Updated shadow on hover */
+}
+
+.project-card img {
+    width: 100%;
+    height: 66.67%; /* Cover 2/3 of the card height */
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    border-radius: 4px 4px 0 0; /* Add corner radius to the top of the image */
+}
+
+.project-card-content {
+    flex: 1 0 0; /* Cover 1/3 of the card height */
+    padding: 16px; /* Add padding around the content */
+    overflow: auto; /* Ensure content doesn't overflow */
+}
+
+.tags {
+    display: flex;
+    gap: 8px; /* Space between tags */
+    margin-bottom: 8px; /* Space below tags */
+}
+
+.tag {
+    background-color: var(--color-bg-surface-alt); /* Background color for the tag */
+    color: var(--color-ink); /* Text color for the tag */
+    padding: 4px 8px; /* Padding inside the tag */
+    border-radius: 12px; /* Rounded corners for the tag */
+    font-size: var(--fs-xs); /* Font size for the tag */
+    font-weight: 600; /* Font weight for the tag */
+    display: inline-block; /* Ensure the tag is inline-block */
+}
+
+.contact-form {
+    padding: 24px 0; /* Add padding around the contact form section */
+}
+
+.contact-form-container {
+    max-width: 600px; /* Set a maximum width for the form container */
+    /* Removed margin: 0 auto; to prevent centering */
+}
+
+.contact-form-container label {
+    margin-bottom: 8px; /* 8px between label and form field */
     font-weight: 600;
 }
 
-header a:hover {
+.contact-form-container input,
+.contact-form-container textarea {
+    margin-bottom: 0; /* Remove bottom margin to control spacing with error messages */
+    padding: 10px; /* Adjust padding to match GOV.UK design system */
+    border: 2px solid var(--input-border); /* Use design system input border */
+    border-radius: 0; /* GOV.UK input border radius */
+    font-size: var(--fs-base); /* 16px base */
+    width: 100%; /* Ensure inputs take full width */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.contact-form-container textarea {
+    resize: none; /* Make the textarea non-resizable */
+    height: 200px; /* Set a fixed height for the message box */
+}
+
+.contact-form-container .message-label {
+    margin-top: 24px; /* Ensure the message field is 24px beneath whatever is above it */
+}
+
+.contact-form-container .error-message {
+    margin-top: 8px; /* 8px between form field and error message */
+    margin-bottom: 0; /* Remove bottom margin to control spacing with next element */
+    color: var(--error-base);
+    font-weight: bold;
+    display: none; /* Hide error messages by default */
+}
+
+.contact-form-container .form-group {
+    margin-bottom: 24px; /* 24px between form groups */
+}
+
+.contact-form-container .form-group:last-of-type {
+    margin-bottom: 40px; /* 40px between last form group and button */
+}
+
+.contact-form-container button {
+    margin-top: 40px; /* 40px between button and whatever is above it */
+    padding: 8px 16px; /* Dynamic size with 8px padding on top and bottom, and 16px on the sides */
+    background-color: var(--btn-primary-bg); /* Primary button color */
+    color: var(--btn-primary-text);
+    border: none;
+    border-radius: 4px; /* Add corner radius to buttons */
+    font-size: var(--fs-button);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: auto; /* Ensure the button width is dynamic */
+    display: inline-block; /* Ensure the button wraps around the text */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.contact-form-container button:hover {
+    background-color: var(--btn-primary-hover-bg); /* Slightly darker shade for hover effect */
+}
+
+.error-summary {
+    border: 2px solid var(--error-base);
+    padding: 15px;
+    background-color: var(--error-bg);
+    color: var(--color-ink);
+    margin-bottom: 20px;
+}
+
+.error-summary p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.error-summary ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.error-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+.error-summary ul li {
+    margin-bottom: 5px;
+}
+
+.error-summary ul li a {
     text-decoration: underline;
+    color: var(--color-link-default);
+}
+
+.error-message {
+    color: var(--error-base);
+    font-weight: bold;
+    margin-top: 8px; /* Adjust margin to 8px to match the requirement */
+}
+
+footer {
+    border-top: 1px solid var(--color-border-default); /* Add underline using color system */
+    padding: 16px 24px;
+    margin-top: 64px; /* Space above the footer */
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 16px 0;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+footer ul li {
+    margin: 0;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+footer ul li a:hover {
+    background-color: var(--ink-hover-bg);
+}
+
+/* Timeline styles for about page */
+.timeline, .company-timeline { list-style: none; margin: 0; padding: 0; }
+.timeline {
+    margin: 40px 0;
+}
+/* Remove decorative vertical line and node to simplify layout */
+.timeline::before { display: none; }
+.about-page .timeline-node { display: none; }
+
+.company-group {
+    margin-bottom: 36px;
+}
+.company-header {
+    margin-left: 0; /* keep header aligned with content */
+    margin-bottom: 12px;
+}
+.company-name { margin: 0; font-size: 1.125rem; }
+.company-meta { margin: 0; color: var(--color-text-secondary); }
+.company-timeline { margin-left: 0; }
+
+/* Two-column layout for about page timeline */
+.about-page .timeline-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 12px 0;
+    border-left: none;
+}
+
+.about-page .timeline-date {
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    text-align: right;
+    padding-right: 8px;
+    white-space: nowrap;
+}
+
+.about-page .timeline-content {
+    background: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    max-width: 900px;
+    box-shadow: none;
+}
+.about-page .timeline-content h3 { margin: 0 0 6px 0; }
+.about-page .timeline-content .meta { margin: 0 0 8px 0; color: var(--color-text-secondary); font-size: var(--fs-xs); }
+.about-page .timeline-content .description { margin: 0; line-height: var(--lh-base); }
+
+@media (min-width: 1200px) {
+    .about-page .timeline-item { grid-template-columns: 180px 1fr; }
+}
+
+@media (max-width: 600px) {
+    .about-page .timeline-item {
+        display: block;
+        padding: 8px 0;
+    }
+    .about-page .timeline-date {
+        position: static;
+        width: auto;
+        text-align: left;
+        margin-bottom: 6px;
+        display: block;
+    }
+    .about-page .timeline-content { padding: 12px 0 0 0; }
+}
+
+/* ============================================
+   Timeline Component (Project pages)
+   ============================================ */
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    padding-left: 16px;
+}
+
+.timeline-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--color-bg-surface, white);
+    border: 2px solid var(--color-border-default, #e0e0e0);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.timeline-month {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--color-ink, #1a1a1a);
+}
+
+.timeline-line {
+    position: absolute;
+    left: 35px;
+    top: 80px;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border-default, #e0e0e0);
+}
+
+.timeline-container .timeline-item {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+    padding-left: 70px;
+    line-height: normal;
+    font-size: initial;
+}
+
+.timeline-container .timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-container .timeline-node {
+    display: block;
+    position: absolute;
+    left: 27px;
+    top: 8px;
+    width: 18px;
+    height: 18px;
+    background: var(--color-text-secondary, #6b7280);
+    border: 3px solid var(--color-bg-surface, white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--color-border-default, #e0e0e0);
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.timeline-container .timeline-node.has-icon {
+    width: 36px;
+    height: 36px;
+    left: 18px;
+    top: 0;
+    background: var(--color-teal-base, #4a7c9c);
+    border: 3px solid var(--color-bg-surface, white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-bg-surface, white);
+    font-size: 16px;
+}
+
+.timeline-container .timeline-content {
+    flex: 1;
+    background: var(--color-bg-surface, white);
+    border: 1px solid var(--color-border-default, #e0e0e0);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: var(--shadow-level-1, 0 1px 3px rgba(0, 0, 0, 0.05));
+}
+
+.timeline-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: var(--fs-sm, 13px);
+    color: var(--color-text-secondary, #6b7280);
+}
+
+.timeline-label {
+    padding: 2px 8px;
+    background: var(--color-bg-surface-alt, #f3f4f6);
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+.timeline-container .timeline-date {
+    color: var(--color-text-secondary, #6b7280);
+    text-align: left;
+    padding-right: 0;
+}
+
+.timeline-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-ink, #1a1a1a);
+    margin-bottom: 16px;
+}
+
+.timeline-section {
+    margin-bottom: 16px;
+}
+
+.timeline-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-ink, #1a1a1a);
+    margin-bottom: 8px;
+}
+
+.section-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section-item {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+    font-size: var(--fs-sm, 14px);
+    line-height: 1.6;
+    color: var(--color-ink, #374151);
+}
+
+.section-item:last-child {
+    margin-bottom: 0;
+}
+
+.section-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    background: var(--color-teal-base, #3b82f6);
+    border-radius: 50%;
+}
+
+.section-item a {
+    color: var(--color-text-secondary, #6b7280);
+    text-decoration: none;
+    margin-left: 4px;
+}
+
+.section-item a:hover {
+    text-decoration: underline;
+}
+
+.sub-item-status {
+    display: inline-block;
+    padding: 2px 8px;
+    background: var(--info-bg, #dbeafe);
+    color: var(--info-base, #1e40af);
+    border-radius: 4px;
+    font-size: var(--fs-xs, 12px);
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .timeline-container .timeline-item {
+        padding-left: 50px;
+    }
+
+    .timeline-line {
+        left: 25px;
+    }
+
+    .timeline-container .timeline-node {
+        left: 17px;
+    }
+
+    .timeline-container .timeline-node.has-icon {
+        left: 8px;
+    }
 }

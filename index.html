@@ -4,40 +4,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ryan Gallacher</title>
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Crimson+Pro:wght@300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="content-container">
-        <header>
-            <nav role="navigation" aria-label="main menu">
-                <a href="index.html" class="logo">autobodycare</a>
-                <ul class="menu">
-                    <li><a href="/gallery" class="nav-item">My Work</a></li>
-                    <li><a href="faq.html" class="nav-item">About</a></li>
-                    <li><a href="faq.html" class="nav-item">Contact</a></li>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <!-- SVG logo goes here -->
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="contact.html" class="contact-button">Contact</a></li>
+                    <li><a href="Project-Template.html" style="font-size: 0.75rem; opacity: 0.6;">Template</a></li>
                 </ul>
             </nav>
-        </header>
+        </div>
+    </header>
 
+    <div class="content-container">
         <main>
-            <section class="value-prop-container">
-                <div class="value-prop">
-                    <h1>Mobile Ding and Dent Repair</h1>
-                    <p>Mobile ding and dent repair service covering Glasgow South and Renfrewshire.</p>
+            <section class="hero">
+                <div class="hero-text">
+                    <p class="eyebrow-text">Senior UX Designer</p>
+                    <h1>Ryan Gallacher</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
                 </div>
-                <figure>
-                    <img src="images/IMG_20150917_133511954_HDR.jpg" alt="dent repair before and after" width="400">
-                    <figcaption>Dent repair before and after</figcaption>
-                </figure>
+                <div class="hero-image">
+                    <img src="Assets/Images/Compressed/SL_UX-3_compressed.avif" alt="Hero Image">
+                </div>
+            </section>
+
+            <section class="featured-work">
+                <h2>Featured Work</h2>
+                <div class="project-cards-container">
+                    <a href="safeguarding-project.html" class="project-card">
+                        <img src="assets/images/mockup.png" alt="Project 1 Image">
+                        <div class="project-card-content">
+                            <h3>Safeguarding Project</h3>
+                            <div class="tags">
+                                <span class="tag">Interaction Design</span>
+                                <span class="tag">Service Design</span>
+                                <span class="tag">User Research</span>
+                            </div>
+                            <p>Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </a>
+                    <a href="westmorland-project.html" class="project-card">
+                        <img src="assets/images/mockup.png" alt="Project 2 Image">
+                        <div class="project-card-content">
+                            <h3>Westmorland & Furness Council - Digital Ambition for Family Hubs</h3>
+                            <div class="tags">
+                                <span class="tag">Service Design</span>
+                                <span class="tag">Digital Strategy</span>
+                                <span class="tag">Public Sector</span>
+                            </div>
+                            <p>Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </a>
+                    <div class="project-card">
+                        <img src="assets/images/mockup.png" alt="Project 1 Image">
+                        <div class="project-card-content">
+                            <h3>Global Investment Bank</h3>
+                            <div class="tags">
+                                <span class="tag">UX Design</span>
+                            </div>
+                            <p>Rolled out to 3,700 users within a 6 month timeframe</p>
+                        </div>
+                    </div>
+                    <a href="scotaccount-project.html" class="project-card">
+                        <img src="assets/images/mockup.png" alt="Project 2 Image">
+                        <div class="project-card-content">
+                            <h3>ScotAccount</h3>
+                            <div class="tags">
+                                <span class="tag">Interaction Design</span>
+                                <span class="tag">Service Design</span>
+                                <span class="tag">Public Sector</span>
+                            </div>
+                            <p>Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </a>
+                    <a href="cs-project.html" class="project-card">
+                        <img src="assets/images/mockup.png" alt="Project 3 Image">
+                        <div class="project-card-content">
+                            <h3>Global Investment Bank</h3>
+                            <div class="tags">
+                                <span class="tag">Discovery</span>
+                                <span class="tag">User Research</span>
+                                <span class="tag">UX Design</span>
+                                <span class="tag">Private Sector</span>
+                            </div>
+                            <p>Project description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </a>
+                    <a href="scotpayments-project.html" class="project-card">
+                        <img src="assets/images/mockup.png" alt="Project 4 Image">
+                        <div class="project-card-content">
+                            <h3>ScotPayments</h3>
+                            <div class="tags">
+                                <span class="tag">Interaction Design</span>
+                                <span class="tag">Service Design</span>
+                                <span class="tag">Public Sector</span>
+                            </div>
+                            <p>Secure, centralised payments platform, supporting the digital transformation of public services in Scotland. public sector organisations in Scotland can make quick and secure payments to payees.</p>
+                        </div>
+                    </a>
+                    <!-- Add more project cards as needed -->
+                </div>
             </section>
         </main>
-
-        <footer>
-            <p>&copy; 2025 Ryan Gallacher. All rights reserved.</p>
-        </footer>
     </div>
+
+    <footer>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
 </body>
 
 </html>
