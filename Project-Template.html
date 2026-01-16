@@ -7,11 +7,6 @@
     <title>Project Template</title>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Crimson+Pro:wght@300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- Ant Design CSS only -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/antd@5.11.0/dist/reset.css">
-    <!-- React and ReactDOM -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <style>
         .hero-section {
             padding: 80px 40px;
@@ -779,7 +774,133 @@
         </div>
     </section>
 
-    <section id="react-timeline" style="padding: 40px; max-width: 1200px; margin: 0 auto;"></section>
+    <section style="padding: 40px 20px;">
+        <div class="timeline-container">
+            <div class="timeline-header">
+                <div class="timeline-icon">📅</div>
+                <div class="timeline-month">January 2026</div>
+            </div>
+
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+                <div class="timeline-node has-icon">👶</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Milestone</span>
+                        <span class="timeline-date">• August 04, 2025</span>
+                    </div>
+                    <div class="timeline-title">Barnet ble født</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node has-icon">📄</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Application</span>
+                        <span class="timeline-date">• August 22, 2025</span>
+                    </div>
+                    <div class="timeline-title">Du søkte om FORELDREPENGER</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Documents</span>
+                        <span class="timeline-date">• August 23, 2025 Kl. 09:05</span>
+                    </div>
+                    <div class="timeline-title">Du la til 2 vedlegg</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Documents</span>
+                        <span class="timeline-date">• August 23, 2025 Kl. 11:30</span>
+                    </div>
+                    <div class="timeline-title">Du la til 4 vedlegg</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node has-icon">✉️</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Response</span>
+                        <span class="timeline-date">• August 25, 2025</span>
+                    </div>
+                    <div class="timeline-title">Du har fått et svar på søknaden din</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node has-icon">⚠️</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Action Required</span>
+                        <span class="timeline-date">• August 26, 2025</span>
+                    </div>
+                    <div class="timeline-title">Nav har etterspurt opplysninger</div>
+                    <div class="sub-item-status">Aktiv</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node has-icon">📝</div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Code</span>
+                        <span class="timeline-date">• January 15, 2026</span>
+                    </div>
+                    <div class="timeline-title">Version 7.40.0</div>
+                    
+                    <div class="timeline-section">
+                        <div class="section-title">@navikt/aksel-icons</div>
+                        <ul class="section-items">
+                            <li class="section-item">Icons: New icon MagnifyingGlassCheckmark<a href="#">( #4489 )</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-section">
+                        <div class="section-title">@navikt/ds-react</div>
+                        <ul class="section-items">
+                            <li class="section-item">DatePicker/MonthPicker: Remove role=dialog from popover<a href="#">( #4463 )</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Code</span>
+                        <span class="timeline-date">• January 14, 2026</span>
+                    </div>
+                    <div class="timeline-title">Version 7.39.1</div>
+                    
+                    <div class="timeline-section">
+                        <div class="section-title">@navikt/ds-react</div>
+                        <ul class="section-items">
+                            <li class="section-item">Dialog: Removed 'aria-expanded' from Dialog.Trigger<a href="#">( #4478 )</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-section">
+                        <div class="section-title">@navikt/ds-css</div>
+                        <ul class="section-items">
+                            <li class="section-item">Modal, Dialog: Handle scroll for extreme zoom-levels better<a href="#">( #4488 )</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <ul>
@@ -787,97 +908,6 @@
             <li><a href="#work" class="active">Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-
-    <script>
-        // Wait for React to load
-        setTimeout(() => {
-            console.log('Timeline rendering...');
-
-            try {
-                const timelineData = [
-                    {
-                        title: 'Planning',
-                        content: 'Initial project planning and requirements gathering',
-                    },
-                    {
-                        title: 'Design',
-                        content: 'Design phase with mockups and prototypes',
-                    },
-                    {
-                        title: 'Development',
-                        content: 'Active development and implementation',
-                    },
-                    {
-                        title: 'Testing',
-                        content: 'QA and comprehensive testing',
-                    },
-                    {
-                        title: 'Launch',
-                        content: 'Deploy to production and go live',
-                    },
-                ];
-
-                const timeline = React.createElement('div', { style: { position: 'relative', paddingLeft: '60px' } },
-                    React.createElement('h2', { style: { textAlign: 'center', marginBottom: '40px', paddingLeft: '-60px' } }, 'Project Timeline'),
-                    timelineData.map((item, index) =>
-                        React.createElement('div', {
-                            key: index,
-                            style: {
-                                position: 'relative',
-                                paddingBottom: '40px',
-                            }
-                        },
-                            // Connecting line
-                            index < timelineData.length - 1 ? React.createElement('div', {
-                                style: {
-                                    position: 'absolute',
-                                    left: '-30px',
-                                    top: '30px',
-                                    width: '2px',
-                                    height: '40px',
-                                    backgroundColor: '#1890ff',
-                                }
-                            }) : null,
-                            // Circle node
-                            React.createElement('div', {
-                                style: {
-                                    position: 'absolute',
-                                    left: '-50px',
-                                    top: '0px',
-                                    width: '40px',
-                                    height: '40px',
-                                    borderRadius: '50%',
-                                    backgroundColor: '#1890ff',
-                                    border: '3px solid white',
-                                    boxShadow: '0 0 0 2px #1890ff',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    color: 'white',
-                                    fontWeight: 'bold',
-                                    fontSize: '14px',
-                                }
-                            }, index + 1),
-                            // Content
-                            React.createElement('div', null,
-                                React.createElement('h3', { style: { margin: '0 0 5px 0', fontSize: '16px', fontWeight: '600' } }, item.title),
-                                React.createElement('p', { style: { margin: '0', fontSize: '14px', color: '#666', lineHeight: '1.5' } }, item.content)
-                            )
-                        )
-                    )
-                );
-
-                const root = ReactDOM.createRoot(document.getElementById('react-timeline'));
-                root.render(timeline);
-                console.log('Timeline rendered successfully');
-            } catch (error) {
-                console.error('Error rendering timeline:', error);
-                document.getElementById('react-timeline').innerHTML = '<p style="color:red; padding: 20px;">Error: ' + error.message + '</p>';
-            }
-        }, 500);
-    </script>
-        <p>&copy; 2026 Ryan Gallacher. All rights reserved.</p>
-    </footer>
 </body>
 
 </html>
