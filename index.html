@@ -137,7 +137,8 @@
             <li><a href="#work">Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <p>&copy; 2023 Your Name. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Ryan Gallacher. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
 
     <script>
