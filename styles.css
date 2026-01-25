@@ -76,9 +76,9 @@
   --teal-hover-bg: rgba(10, 74, 78, 0.06); /* tint of --color-teal-base */
   --surface-hover: rgba(31, 42, 55, 0.03); /* very subtle surface tint */
 
-  --btn-primary-bg: #1F2A37;
+  --btn-primary-bg: var(--color-teal-base);
   --btn-primary-text: #FFFFFF;
-  --btn-primary-hover-bg: #273444;
+  --btn-primary-hover-bg: #083a3d; /* Darker teal for hover */
   --btn-primary-disabled-bg: #D1D5DB;
   --btn-primary-disabled-text: #9AA3AF;
 
@@ -108,6 +108,10 @@
 
   --error-base: #8C2F39;
   --error-bg: #F4E6E8;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -197,6 +201,58 @@ a.link--brand, .link--brand {
 a.link--brand:hover, .link--brand:hover {
     color: var(--color-camel-base);
     text-decoration: underline;
+}
+
+/* Primary action button styling */
+.btn-primary,
+.cta-button,
+a.cta-button,
+a.cta-button:visited {
+    height: 40px; /* Fixed height */
+    padding: 0 24px; /* 24px horizontal padding */
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: none;
+    border-radius: 6px; /* 6px corner radius */
+    font-size: var(--fs-button);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; /* 4px spacing between icon and text */
+    white-space: nowrap;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: fit-content; /* Size to content */
+    align-self: flex-start; /* Prevent stretching in flex containers */
+}
+
+.btn-primary svg,
+.cta-button svg {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.btn-primary:hover svg,
+.cta-button:hover svg {
+    transform: translateY(2px);
+}
+
+.btn-primary:hover,
+.cta-button:hover,
+a.cta-button:hover {
+    background-color: var(--btn-primary-hover-bg);
+    color: var(--btn-primary-text);
+    text-decoration: none;
+}
+
+.btn-primary:disabled {
+    background-color: var(--btn-primary-disabled-bg);
+    color: var(--btn-primary-disabled-text);
+    cursor: not-allowed;
 }
 
 /* Ensure footer hover uses color system */
@@ -407,18 +463,21 @@ footer ul li a:hover {
 
 .contact-form-container button {
     margin-top: 40px; /* 40px between button and whatever is above it */
-    padding: 8px 16px; /* Dynamic size with 8px padding on top and bottom, and 16px on the sides */
+    height: 40px; /* Fixed height */
+    padding: 0 24px; /* 24px horizontal padding, vertical centered by height */
     background-color: var(--btn-primary-bg); /* Primary button color */
     color: var(--btn-primary-text);
     border: none;
-    border-radius: 4px; /* Add corner radius to buttons */
+    border-radius: 6px; /* 6px corner radius */
     font-size: var(--fs-button);
     font-weight: 600;
     text-align: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: auto; /* Ensure the button width is dynamic */
-    display: inline-block; /* Ensure the button wraps around the text */
+    display: inline-flex; /* Use flexbox for vertical centering */
+    align-items: center; /* Center text vertically */
+    justify-content: center; /* Center text horizontally */
     white-space: nowrap; /* Prevents text from wrapping */
 }
 

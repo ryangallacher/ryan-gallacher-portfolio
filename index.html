@@ -33,7 +33,12 @@
                     <p class="eyebrow-text">Senior UX Designer</p>
                     <h1>Ryan Gallacher</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-                    <a href="#projects" class="cta-button">View My Work</a>
+                    <a href="#projects" class="cta-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+                            <path d="M24.59 16.59L17 24.17V4h-2v20.17l-7.59-7.58L6 18l10 10 10-10-1.41-1.41z"/>
+                        </svg>
+                        View My Work
+                    </a>
                 </div>
                 <div class="hero-image">
                     <img src="Assets/Images/Compressed/SL_UX-3_compressed.avif" alt="Hero Image">
@@ -134,6 +139,37 @@
         </ul>
         <p>&copy; 2023 Your Name. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                if (target) {
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+                    const startPosition = window.pageYOffset;
+                    const distance = targetPosition - startPosition;
+                    const duration = 200;
+                    let start = null;
+
+                    function animation(currentTime) {
+                        if (start === null) start = currentTime;
+                        const timeElapsed = currentTime - start;
+                        const progress = Math.min(timeElapsed / duration, 1);
+                        const ease = progress < 0.5 
+                            ? 2 * progress * progress 
+                            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+                        window.scrollTo(0, startPosition + distance * ease);
+                        if (timeElapsed < duration) {
+                            requestAnimationFrame(animation);
+                        }
+                    }
+                    requestAnimationFrame(animation);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
