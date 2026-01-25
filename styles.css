@@ -1,31 +1,43 @@
-/* Fonts: Source Sans 3 (variable) and Crimson Pro — loaded via the link in your HTML head */
+/* Fonts: Source Sans 3 (variable) and Lora — loaded via the link in your HTML head */
 :root {
     --ff-sans: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --ff-serif: 'Crimson Pro', Georgia, Cambria, 'Times New Roman', Times, serif;
+    --ff-serif: 'Lora', Georgia, Cambria, 'Times New Roman', Times, serif;
 }
 
 /* Typography scale (use rems for accessibility and scalability)
-   Base font-size: 16px = 1rem. Use rem-based steps for consistent scaling. */
+   Base font-size: 16px = 1rem. Based on Figma text styles. */
 :root {
-  /* Font sizes */
-  --fs-xxl: 3.375rem; /* 54px */
-  --fs-xl: 2.25rem;   /* 36px */
-  --fs-lg: 1.125rem;  /* 18px */
-  --fs-md: 1rem;      /* 16px (base) */
-  --fs-base: 1rem;    /* alias */
-  --fs-sm: 0.875rem;  /* 14px */
-  --fs-xs: 0.75rem;   /* 12px */
+  /* Display */
+  --fs-display-lg: 3.75rem;   /* 60px */
+  --lh-display-lg: 4.5rem;    /* 72px */
+  --fs-display-sm: 3rem;      /* 48px */
+  --lh-display-sm: 3.75rem;   /* 60px */
 
-  /* Line-heights (unitless for flexibility) */
-  --lh-xxl: 1.185;    /* ~64/54 */
-  --lh-xl: 1.25;
-  --lh-lg: 1.4;
-  --lh-base: 1.5;
+  /* Headings */
+  --fs-h1: 2.25rem;           /* 36px */
+  --lh-h1: 2.75rem;           /* 44px */
+  --fs-h2: 1.5rem;            /* 24px */
+  --lh-h2: 1.75rem;           /* 28px */
+  --fs-h3: 1.25rem;           /* 20px */
+  --lh-h3: 1.5rem;            /* 24px */
 
-  /* Common text sizes */
-  --fs-button: var(--fs-sm);
-  --fs-label: var(--fs-sm);
-  --fs-table: var(--fs-sm);
+  /* Body */
+  --fs-body: 1rem;            /* 16px */
+  --lh-body: 1.5rem;          /* 24px */
+  --fs-body-sm: 0.875rem;     /* 14px */
+  --lh-body-sm: 1.25rem;      /* 20px */
+  --fs-body-compact: 0.75rem; /* 12px */
+  --lh-body-compact: 1rem;    /* 16px */
+
+  /* Label */
+  --fs-label-lg: 0.875rem;    /* 14px */
+  --lh-label-lg: 1.25rem;     /* 20px */
+  --fs-label: 0.75rem;        /* 12px */
+  --lh-label: 1rem;           /* 16px */
+
+  /* Common aliases */
+  --fs-button: var(--fs-body-sm);
+  --fs-table: var(--fs-body-sm);
 }
 
 /* Color system: core neutrals, brands, shadows, interactions, forms, feedback */
@@ -117,6 +129,8 @@ html {
 body {
     font-family: var(--ff-sans);
     font-weight: 400;
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -128,22 +142,63 @@ body {
 /* Default heading styles use the serif face */
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--ff-serif);
-    font-weight: 400; /* regular across headings */
+    font-weight: 400;
     margin: 0;
-} 
+}
 
-/* Ensure all h1s are responsive and consistent */
 h1 {
-    /* Responsive, clamped heading: scales between ~36px and 64px depending on viewport */
-    font-size: clamp(2.25rem, 5vw + 1rem, 4rem);
-    line-height: var(--lh-xxl);
+    font-size: var(--fs-display-lg);
+    line-height: var(--lh-display-lg);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+}
+
+/* Display text styles */
+.display-lg {
+    font-size: var(--fs-display-lg);
+    line-height: var(--lh-display-lg);
+}
+
+.display-sm {
+    font-size: var(--fs-display-sm);
+    line-height: var(--lh-display-sm);
+}
+
+/* Body text variants */
+.body-sm {
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
+}
+
+.body-compact {
+    font-size: var(--fs-body-compact);
+    line-height: var(--lh-body-compact);
+}
+
+/* Label styles */
+.label-lg {
+    font-size: var(--fs-label-lg);
+    line-height: var(--lh-label-lg);
+}
+
+.label {
+    font-size: var(--fs-label);
+    line-height: var(--lh-label);
 }
 
 /* Typography helpers: blockquotes, callouts, small/meta, and table text */
 blockquote {
     font-family: var(--ff-serif);
-    font-size: var(--fs-lg); /* 18px */
-    line-height: var(--lh-lg);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
     font-style: italic;
     color: var(--color-ink);
     padding: 12px 16px;
@@ -157,20 +212,21 @@ blockquote {
     border-radius: 4px;
     background-color: var(--color-bg-surface-raised);
     border-left: 4px solid var(--color-camel-base);
-    font-size: var(--fs-base);
-    line-height: var(--lh-base);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
 }
 
 /* Small/meta text and captions */
 .small, .meta, figcaption {
-    font-size: var(--fs-xs);
+    font-size: var(--fs-body-compact);
+    line-height: var(--lh-body-compact);
     color: var(--color-text-secondary);
 }
 
 /* Table typography */
 table, th, td {
-    font-size: var(--fs-table); /* 14px */
-    line-height: var(--lh-base);
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
 }
 
 /* Links: by default links inherit surrounding text color; use .link--brand for branded camel links */
@@ -406,7 +462,7 @@ footer ul li a:hover {
     color: var(--color-ink); /* Text color for the tag */
     padding: 4px 8px; /* Padding inside the tag */
     border-radius: 12px; /* Rounded corners for the tag */
-    font-size: var(--fs-xs); /* Font size for the tag */
+    font-size: var(--fs-body-compact); /* Font size for the tag */
     font-weight: 600; /* Font weight for the tag */
     display: inline-block; /* Ensure the tag is inline-block */
 }
@@ -431,7 +487,7 @@ footer ul li a:hover {
     padding: 10px; /* Adjust padding to match GOV.UK design system */
     border: 2px solid var(--input-border); /* Use design system input border */
     border-radius: 0; /* GOV.UK input border radius */
-    font-size: var(--fs-base); /* 16px base */
+    font-size: var(--fs-body); /* 16px base */
     width: 100%; /* Ensure inputs take full width */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
@@ -594,7 +650,7 @@ footer ul li a:hover {
 }
 
 .about-page .timeline-date {
-    font-size: var(--fs-sm);
+    font-size: var(--fs-body-sm);
     color: var(--color-text-secondary);
     text-align: right;
     padding-right: 8px;
@@ -610,8 +666,8 @@ footer ul li a:hover {
     box-shadow: none;
 }
 .about-page .timeline-content h3 { margin: 0 0 6px 0; }
-.about-page .timeline-content .meta { margin: 0 0 8px 0; color: var(--color-text-secondary); font-size: var(--fs-xs); }
-.about-page .timeline-content .description { margin: 0; line-height: var(--lh-base); }
+.about-page .timeline-content .meta { margin: 0 0 8px 0; color: var(--color-text-secondary); font-size: var(--fs-body-compact); }
+.about-page .timeline-content .description { margin: 0; line-height: var(--lh-body); }
 
 @media (min-width: 1200px) {
     .about-page .timeline-item { grid-template-columns: 180px 1fr; }
@@ -734,7 +790,7 @@ footer ul li a:hover {
     align-items: center;
     gap: 8px;
     margin-bottom: 12px;
-    font-size: var(--fs-sm, 13px);
+    font-size: var(--fs-body-sm, 13px);
     color: var(--color-text-secondary, #6b7280);
 }
 
@@ -783,7 +839,7 @@ footer ul li a:hover {
     padding-left: 20px;
     position: relative;
     margin-bottom: 8px;
-    font-size: var(--fs-sm, 14px);
+    font-size: var(--fs-body-sm, 14px);
     line-height: 1.6;
     color: var(--color-ink, #374151);
 }
@@ -819,7 +875,7 @@ footer ul li a:hover {
     background: var(--info-bg, #dbeafe);
     color: var(--info-base, #1e40af);
     border-radius: 4px;
-    font-size: var(--fs-xs, 12px);
+    font-size: var(--fs-body-compact, 12px);
     font-weight: 500;
     margin-top: 4px;
 }
