@@ -130,10 +130,17 @@
   /* Motion */
   --motion-fast: 150ms ease-in-out;
 
+  /* --- Link Blue --- */
+  --blue-base: #0066CC;
+  --blue-hover: #004C99;
+  --blue-active: #003366;
+  --blue-visited: #551A8B;
+
   /* Interactive States */
-  --color-link-default: var(--p-base);
-  --color-link-hover: var(--p-hover);
-  --color-link-visited: var(--p-active);
+  --color-link-default: var(--blue-base);
+  --color-link-hover: var(--blue-hover);
+  --color-link-active: var(--blue-active);
+  --color-link-visited: var(--blue-visited);
   --color-focus-ring: var(--teal-light);
 
   /* Hover tints: subtle translucent variations of base colours */
@@ -284,15 +291,20 @@ table, th, td {
     line-height: var(--lh-body-sm);
 }
 
-/* Links: by default links inherit surrounding text color; use .link--brand for branded camel links */
+/* Links: standard blue for inline text links */
 a {
     color: var(--color-link-default);
     text-decoration: underline;
+    transition: color var(--motion-fast);
 }
 
 a:hover {
     color: var(--color-link-hover);
     text-decoration: underline;
+}
+
+a:active {
+    color: var(--color-link-active);
 }
 
 a:visited {
@@ -302,6 +314,27 @@ a:visited {
 a:focus {
     outline: 2px solid var(--color-focus-ring);
     outline-offset: 2px;
+}
+
+/* Reset link styles for navigation, cards, and buttons */
+.header-container nav a,
+.project-card,
+footer nav a,
+footer ul a,
+a.cta-button,
+a.btn-primary,
+a.btn-secondary {
+    color: inherit;
+    text-decoration: none;
+}
+
+.header-container nav a:visited,
+.project-card:visited,
+footer nav a:visited,
+footer ul a:visited,
+a.cta-button:visited,
+a.btn-primary:visited {
+    color: inherit;
 }
 
 /* Branded link utility: use when you want camel brand color */
@@ -468,13 +501,13 @@ footer ul li a:hover {
 
 .project-cards-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column; /* Stack cards vertically */
     gap: 24px; /* Updated gap to 24px */
     padding: 24px 0; /* Add padding around the container */
 }
 
 .project-card {
-    flex: 1 1 calc(50% - 24px);
+    width: 100%; /* Full width, one per line */
     box-sizing: border-box;
     background-color: var(--n-0); /* White background */
     border: 1px solid var(--color-border-default);
@@ -482,7 +515,6 @@ footer ul li a:hover {
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Ensure content doesn't overflow */
-    max-height: 520px; /* Set max height for the card */
     transition: background-color var(--motion-fast), box-shadow var(--motion-fast), transform var(--motion-fast); /* Smooth transition for hover effects */
     text-decoration: none; /* Remove underline from links */
     color: inherit; /* Inherit text color */
@@ -493,19 +525,63 @@ footer ul li a:hover {
     background-color: var(--n-50); /* Subtle off-white on hover */
     box-shadow: var(--shadow-level-3); /* Elevated shadow on hover */
     transform: translateY(-2px); /* Subtle lift effect */
+    text-decoration: none; /* No underline on hover */
 }
 
 .project-card img {
     width: 100%;
-    height: 66.67%; /* Cover 2/3 of the card height */
+    height: 300px; /* Fixed height for image */
     object-fit: cover; /* Maintain aspect ratio and cover the area */
     border-radius: 4px 4px 0 0; /* Add corner radius to the top of the image */
 }
 
 .project-card-content {
-    flex: 1 0 0; /* Cover 1/3 of the card height */
     padding: 16px; /* Add padding around the content */
-    overflow: auto; /* Ensure content doesn't overflow */
+}
+
+/* ============================================
+   Breadcrumb Navigation
+   ============================================ */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 0;
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body-sm);
+}
+
+.breadcrumb a {
+    color: var(--color-link-default);
+    text-decoration: none;
+}
+
+.breadcrumb a:visited {
+    color: var(--color-link-visited);
+}
+
+.breadcrumb a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+.breadcrumb-separator {
+    color: var(--color-text-secondary);
+    user-select: none;
+}
+
+.breadcrumb-current {
+    color: var(--color-ink);
+    font-weight: 500;
+}
+
+/* Responsive breadcrumbs */
+@media (max-width: 480px) {
+    .breadcrumb {
+        font-size: var(--fs-body-compact);
+        padding: 12px 0;
+        flex-wrap: wrap;
+    }
 }
 
 .tags {
