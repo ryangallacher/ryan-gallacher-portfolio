@@ -42,84 +42,139 @@
 
 /* Color system: core neutrals, brands, shadows, interactions, forms, feedback */
 :root {
+  /* --- Neutral Scale --- */
+  --n-0: #FFFFFF;
+  --n-50: #F9FAFA;
+  --n-100: #F0F4F4;
+  --n-200: #E1E8E8;
+  --n-300: #9BA9A9;
+  --n-500: #5E6E70;
+  --n-600: #455456;
+  --n-800: #233D4D;
+  --n-900: #142224;
+
+  /* --- Brand Petrol --- */
+  --p-base: #034C53;
+  --p-hover: #023D42;
+  --p-active: #012629;
+  --p-tint: #E6EDEE;
+
+  /* --- Teal --- */
+  --teal-base: #007074;
+  --teal-hover: #005B5E;
+  --teal-active: #004547;
+  --teal-light: #E6F1F1;
+
+  /* --- Peach --- */
+  --peach-base: #F79B72;
+  --peach-hover: #DF8C67;
+  --peach-active: #C77D5C;
+  --peach-light: #FFF7F1;
+
+  /* --- Accent Orange --- */
+  --a-base: #FE7F2D;
+  --a-hover: #E57229;
+  --a-active: #CC6624;
+  --a-light: #FFF3E6;
+  --a-text: #142224;
+
+  /* --- Semantic Red --- */
+  --red-base: #DA1E28;
+  --red-hover: #C41B24;
+  --red-active: #AE1820;
+  --red-light: #FBE8E9;
+
+  /* --- Semantic Green --- */
+  --green-base: #4A9A51;
+  --green-hover: #428A49;
+  --green-active: #3B7B41;
+  --green-light: #EDF5EE;
+
+  /* --- Functional UI Mappings --- */
   /* Text */
-  --color-ink: #1F2A37;
-  --color-text-secondary: #9AA3AF;
-  --color-text-disabled: #B6BDC6;
+  --color-ink: var(--n-800);
+  --color-text-secondary: var(--n-500);
+  --color-text-disabled: var(--n-300);
 
   /* Backgrounds */
-  --color-bg-body: #F7F6F2;
-  --color-bg-surface: #FFFFFF;
-  --color-bg-surface-alt: #F4F5F3; /* softened zebra */
-  --color-bg-surface-raised: #EEF1F3;
-  --color-bg-disabled: #EEF1F3;
+  --color-bg-body: var(--n-50);
+  --color-bg-surface: var(--n-0);
+  --color-bg-surface-alt: var(--n-100);
+  --color-bg-surface-raised: var(--n-200);
+  --color-bg-disabled: var(--n-200);
 
   /* Borders */
-  --color-border-default: #E1E4E8;
-  --color-border-strong: #D1D5DB;
+  --color-border-default: var(--n-200);
+  --color-border-strong: var(--n-300);
 
   /* Brand / Pattern-safe variants */
-  --color-brand-ink-base: #1F2A37;
-  --color-brand-ink-wash: #E9EDF1;
-  --color-brand-ink-pattern: #F3F5F7;
+  --color-brand-ink-base: var(--n-800);
+  --color-brand-ink-wash: var(--n-100);
+  --color-brand-ink-pattern: var(--n-50);
 
-  --color-teal-base: #0A4A4E;
-  --color-teal-wash: #E6F0EF;
-  --color-teal-pattern: #F1F7F7;
+  --color-teal-base: var(--p-base);
+  --color-teal-wash: var(--teal-light);
+  --color-teal-pattern: var(--p-tint);
 
-  --color-camel-base: #B08D57;
-  --color-camel-wash: #F1E9DC;
-  --color-camel-pattern: #F8F3EC;
+  --color-camel-base: var(--peach-base);
+  --color-camel-wash: var(--peach-light);
+  --color-camel-pattern: var(--a-light);
 
   /* Elevation / Shadows */
-  --shadow-level-1: 0 1px 2px rgba(31, 42, 55, 0.08);
-  --shadow-level-2: 0 4px 8px rgba(31, 42, 55, 0.10);
-  --shadow-level-3: 0 8px 16px rgba(31, 42, 55, 0.14);
+  --shadow-level-1: var(--shadow-sm);
+  --shadow-level-2: var(--shadow-md);
+  --shadow-level-3: 0 8px 16px rgba(20, 34, 36, 0.14);
+  --shadow-sm: 0 2px 4px rgba(20, 34, 36, 0.08);
+  --shadow-md: 0 4px 12px rgba(20, 34, 36, 0.12);
+
+  /* Motion */
+  --motion-fast: 150ms ease-in-out;
 
   /* Interactive States */
-  --color-link-default: #1a0dab;     /* standard link blue */
-  --color-link-hover:  #0b0a94;     /* darker blue on hover */
-  --color-link-visited: #551A8B;    /* standard visited purple */
-  --color-focus-ring: #CFE3E2;
+  --color-link-default: var(--p-base);
+  --color-link-hover: var(--p-hover);
+  --color-link-visited: var(--p-active);
+  --color-focus-ring: var(--teal-light);
 
-  /* Hover tints: subtle translucent variations of base colours (same hue) */
-  --ink-hover-bg: rgba(31, 42, 55, 0.06); /* tint of --color-ink */
-  --camel-hover-bg: rgba(176, 141, 87, 0.08); /* tint of --color-camel-base */
-  --teal-hover-bg: rgba(10, 74, 78, 0.06); /* tint of --color-teal-base */
-  --surface-hover: rgba(31, 42, 55, 0.03); /* very subtle surface tint */
+  /* Hover tints: subtle translucent variations of base colours */
+  --ink-hover-bg: rgba(35, 61, 77, 0.06);
+  --camel-hover-bg: rgba(247, 155, 114, 0.12);
+  --teal-hover-bg: rgba(0, 112, 116, 0.08);
+  --surface-hover: rgba(35, 61, 77, 0.03);
 
-  --btn-primary-bg: var(--color-teal-base);
-  --btn-primary-text: #FFFFFF;
-  --btn-primary-hover-bg: #083a3d; /* Darker teal for hover */
-  --btn-primary-disabled-bg: #D1D5DB;
-  --btn-primary-disabled-text: #9AA3AF;
+  --btn-primary-bg: var(--p-base);
+  --btn-primary-text: var(--n-0);
+  --btn-primary-hover-bg: var(--p-hover);
+  --btn-primary-disabled-bg: var(--n-200);
+  --btn-primary-disabled-text: var(--n-300);
 
-  --btn-secondary-text: #1F2A37;
-  --btn-secondary-border: #1F2A37;
-  --btn-secondary-hover-bg: #EEF1F3;
+  --btn-secondary-text: var(--n-800);
+  --btn-secondary-border: var(--n-800);
+  --btn-secondary-hover-bg: var(--n-100);
 
   /* Forms */
-  --input-bg: #FFFFFF;
-  --input-border: #D1D5DB;
-  --input-border-hover: #9AA3AF;
-  --input-border-focus: #0A4A4E;
-  --input-focus-ring: #CFE3E2;
+  --input-bg: var(--n-0);
+  --input-border: var(--n-300);
+  --input-border-hover: var(--n-500);
+  --input-border-focus: var(--p-base);
+  --input-focus-ring: var(--teal-light);
 
-  --input-error-border: #8C2F39;
-  --input-error-bg: #F4E6E8;
+  --input-error-border: var(--red-base);
+  --input-error-bg: var(--red-light);
 
   /* Semantic Feedback */
-  --info-base: #355C7D;
-  --info-bg: #E8EEF3;
+  --info-base: var(--teal-base);
+  --info-bg: var(--teal-light);
 
-  --success-base: #2E6F5E;
-  --success-bg: #E7F2EE;
+  --success-base: var(--green-base);
+  --success-bg: var(--green-light);
 
-  --warning-base: #B7791F;
-  --warning-bg: #F6EEDF;
+  --warning-base: var(--n-800); /* Dark text for accessibility - never use orange for text */
+  --warning-bg: var(--a-light);
+  --warning-accent: var(--a-base); /* Use only for icons/borders, not text */
 
-  --error-base: #8C2F39;
-  --error-bg: #F4E6E8;
+  --error-base: var(--red-base);
+  --error-bg: var(--red-light);
 }
 
 html {
@@ -421,21 +476,23 @@ footer ul li a:hover {
 .project-card {
     flex: 1 1 calc(50% - 24px);
     box-sizing: border-box;
+    background-color: var(--n-0); /* White background */
     border: 1px solid var(--color-border-default);
     box-shadow: var(--shadow-level-1); /* Initial shadow */
     display: flex;
     flex-direction: column;
     overflow: hidden; /* Ensure content doesn't overflow */
     max-height: 520px; /* Set max height for the card */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    transition: background-color var(--motion-fast), box-shadow var(--motion-fast), transform var(--motion-fast); /* Smooth transition for hover effects */
     text-decoration: none; /* Remove underline from links */
     color: inherit; /* Inherit text color */
     border-radius: 4px; /* Add corner radius to project cards */
 }
 
 .project-card:hover {
-    background-color: var(--color-bg-surface-raised); /* Slightly raised background on hover */
-    box-shadow: var(--shadow-level-2); /* Updated shadow on hover */
+    background-color: var(--n-50); /* Subtle off-white on hover */
+    box-shadow: var(--shadow-level-3); /* Elevated shadow on hover */
+    transform: translateY(-2px); /* Subtle lift effect */
 }
 
 .project-card img {
