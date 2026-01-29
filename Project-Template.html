@@ -553,6 +553,210 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ============================================
+           Template Page Responsive Styles
+           ============================================ */
+        
+        /* Tablet (max-width: 1024px) */
+        @media (max-width: 1024px) {
+            .hero-section {
+                padding: 60px 24px;
+                gap: 40px;
+            }
+
+            .main-content {
+                padding: 40px 24px;
+                gap: 40px;
+            }
+
+            .best-practices,
+            .research-section,
+            .contact-section,
+            .postit-grid {
+                padding: 40px 24px;
+            }
+
+            .tabs-section {
+                padding: 0 24px;
+            }
+
+            .tabs {
+                gap: 24px;
+            }
+        }
+
+        /* Tablet portrait (max-width: 768px) */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+                padding: 40px 16px;
+                min-height: auto;
+                text-align: center;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                order: 2;
+            }
+
+            .hero-content h1 {
+                justify-content: center;
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .hero-image {
+                order: 1;
+                width: 100%;
+                min-height: 200px;
+            }
+
+            .tabs-section {
+                padding: 0 16px;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .tabs {
+                gap: 16px;
+                min-width: max-content;
+            }
+
+            .tabs a {
+                padding: 16px 0;
+                white-space: nowrap;
+            }
+
+            .main-content {
+                flex-direction: column;
+                padding: 32px 16px;
+                gap: 32px;
+            }
+
+            .content-text {
+                flex: 1 1 auto;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+
+            .best-practices,
+            .research-section,
+            .contact-section {
+                padding: 32px 16px;
+            }
+
+            .practice-item {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .postit-grid {
+                padding: 32px 16px;
+                gap: 20px;
+            }
+        }
+
+        /* Mobile (max-width: 480px) */
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 24px 12px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.5rem;
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .hero-content p {
+                font-size: var(--fs-body-sm);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+                width: 100%;
+            }
+
+            .hero-buttons button {
+                width: 100%;
+            }
+
+            .tabs-section {
+                padding: 0 12px;
+            }
+
+            .tabs {
+                gap: 12px;
+            }
+
+            .tabs a {
+                font-size: var(--fs-body-compact);
+                padding: 12px 0;
+            }
+
+            .tab-number {
+                display: none;
+            }
+
+            .main-content {
+                padding: 24px 12px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .best-practices,
+            .research-section,
+            .contact-section {
+                padding: 24px 12px;
+            }
+
+            .best-practices h2,
+            .research-header h2 {
+                font-size: var(--fs-h2);
+            }
+
+            .practice-title {
+                font-size: var(--fs-body);
+            }
+
+            .postit-grid {
+                padding: 24px 12px;
+                grid-template-columns: 1fr;
+            }
+
+            .postit-card {
+                padding: 16px;
+            }
+
+            .research-image {
+                height: 180px;
+            }
+
+            .contact-column h3 {
+                font-size: var(--fs-body);
+            }
+
+            .contact-icon {
+                width: 32px;
+                height: 32px;
+            }
+        }
     </style>
 </head>
 
