@@ -1111,6 +1111,40 @@ footer ul li a:hover {
     margin-bottom: 0;
 }
 
+/* ============================================
+   Timeline Colored Variant
+   ============================================ */
+.timeline-colored .timeline-icon {
+    background: var(--p-base);
+    border-color: var(--p-hover);
+    color: var(--n-0);
+}
+
+.timeline-colored .timeline-line {
+    background: var(--n-200);
+}
+
+.timeline-colored .timeline-node {
+    background: var(--teal-base); /* Teal inner */
+    border: 3px solid var(--n-0); /* White middle ring */
+    box-shadow: 0 0 0 2px var(--n-200); /* Light outer ring */
+}
+
+.timeline-colored .timeline-content {
+    background: var(--n-0);
+    border-color: var(--n-200);
+}
+
+.timeline-colored .timeline-label {
+    background: var(--teal-light);
+    color: var(--p-base);
+}
+
+.timeline-colored .sub-item-status {
+    background: var(--peach-light);
+    color: var(--peach-active);
+}
+
 .section-title {
     font-size: 15px;
     font-weight: 600;
