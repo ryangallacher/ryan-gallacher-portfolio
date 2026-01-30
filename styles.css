@@ -48,6 +48,7 @@
   --n-100: #F0F4F4;
   --n-200: #E1E8E8;
   --n-300: #9BA9A9;
+  --n-400: #7A8B8D;
   --n-500: #5E6E70;
   --n-600: #455456;
   --n-800: #233D4D;
@@ -591,13 +592,16 @@ footer ul li a:hover {
 }
 
 .tag {
-    background-color: var(--color-bg-surface-alt); /* Background color for the tag */
-    color: var(--color-ink); /* Text color for the tag */
-    padding: 4px 8px; /* Padding inside the tag */
-    border-radius: 12px; /* Rounded corners for the tag */
-    font-size: var(--fs-body-compact); /* Font size for the tag */
-    font-weight: 600; /* Font weight for the tag */
-    display: inline-block; /* Ensure the tag is inline-block */
+    background-color: var(--n-100);
+    color: var(--color-ink);
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid var(--n-300);
+    font-size: var(--fs-label);
+    line-height: var(--lh-label);
+    font-weight: 400;
+    display: inline-block;
+    box-sizing: border-box;
 }
 
 .contact-form {
