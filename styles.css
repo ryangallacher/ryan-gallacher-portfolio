@@ -1,3 +1,36 @@
+/* Card-like section over pattern background */
+.pattern-card {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    left: 50%;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: -4px 0 24px 0 rgba(20, 34, 36, 0.10);
+    border-radius: 0;
+    padding: 3rem 3rem 3rem 2.5rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: unset;
+    max-width: unset;
+}
+
+.pattern-card h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: var(--n-900);
+}
+
+.pattern-card p {
+    margin: 0;
+    color: var(--n-600);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
 /* Fonts: Source Sans 3 (variable) and Lora — loaded via the link in your HTML head */
 :root {
     --ff-sans: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -15,15 +48,15 @@
     align-items: center;
 }
 .pattern-img {
-    width: 105%;
-    height: 105%;
+    width: 122%;
+    height: 122%;
     object-fit: contain;
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    min-width: 105%;
-    min-height: 105%;
+    min-width: 122%;
+    min-height: 122%;
     max-width: none;
     max-height: none;
     pointer-events: none;
@@ -41,8 +74,8 @@
     align-items: center;
 }
 .pattern-bg img {
-    width: 105vw;
-    height: 105vh;
+    width: 122%;
+    height: 122%;
     max-width: none;
     max-height: none;
     object-fit: contain;
