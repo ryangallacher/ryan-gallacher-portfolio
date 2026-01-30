@@ -38,8 +38,9 @@
 }
 /* Pattern background section for SVG scaling and cropping (container-relative) */
 .pattern-bg {
-    /* background removed to allow SVG image to show through */
-    width: 100%;
+    background: #142224;
+    width: 100vw;
+    min-width: 100vw;
     height: 500px;
     position: relative;
     overflow: hidden;
@@ -64,14 +65,7 @@
 }
 /* Pattern background section for SVG scaling and cropping */
 .pattern-bg {
-    /* background removed to allow SVG image to show through */
-    width: 100vw;
-    height: 500px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* duplicate removed, see above for main .pattern-bg rule */
 }
 .pattern-bg img {
     width: 122%;
