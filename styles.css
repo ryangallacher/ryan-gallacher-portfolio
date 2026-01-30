@@ -41,7 +41,7 @@
     background: #142224;
     width: 100vw;
     min-width: 100vw;
-    height: 500px;
+    height: 650px;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -2164,8 +2164,28 @@ img {
 
 .contact-section .contact-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 60px;
+}
+
+/* 12-column grid utility for future use */
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 32px;
+}
+.grid-12 > .col-span-3 {
+    grid-column: span 3;
+}
+.grid-12 > .col-span-4 {
+    grid-column: span 4;
+}
+.grid-12 > .col-span-6 {
+    grid-column: span 6;
+}
+.grid-12 > .col-span-12 {
+    grid-column: span 12;
+}
 }
 
 .contact-section .contact-column h3 {
