@@ -40,6 +40,22 @@
   --fs-table: var(--fs-body-sm);
 }
 
+/* Spacing scale (multiples of 4)
+   Use these for consistent vertical rhythm */
+:root {
+  --sp-1: 0.25rem;   /* 4px */
+  --sp-2: 0.5rem;    /* 8px */
+  --sp-3: 0.75rem;   /* 12px */
+  --sp-4: 1rem;      /* 16px */
+  --sp-5: 1.25rem;   /* 20px */
+  --sp-6: 1.5rem;    /* 24px */
+  --sp-8: 2rem;      /* 32px */
+  --sp-10: 2.5rem;   /* 40px */
+  --sp-12: 3rem;     /* 48px */
+  --sp-16: 4rem;     /* 64px */
+  --sp-20: 5rem;     /* 80px */
+}
+
 /* Color system: core neutrals, brands, shadows, interactions, forms, feedback */
 :root {
   /* --- Neutral Scale --- */
@@ -161,11 +177,12 @@
   --btn-secondary-hover-bg: var(--n-100);
 
   /* Forms */
-  --input-bg: var(--n-0);
+  --input-bg: var(--n-100);
   --input-border: var(--n-300);
   --input-border-hover: var(--n-500);
   --input-border-focus: var(--p-base);
   --input-focus-ring: var(--teal-light);
+  --input-inset-shadow: inset 0 1px 2px rgba(20, 34, 36, 0.06);
 
   --input-error-border: var(--red-base);
   --input-error-bg: var(--red-light);
@@ -187,6 +204,7 @@
 
 html {
     scroll-behavior: smooth;
+    scrollbar-gutter: stable; /* Prevent layout shift when scrollbar appears/disappears */
 }
 
 body {
@@ -479,6 +497,7 @@ footer ul li a:hover {
     align-items: center;
     justify-content: space-between;
     padding: 24px 0; /* Add padding to the hero section */
+    margin-bottom: var(--sp-10); /* 40px gap to next section */
 }
 
 .hero-text {
@@ -486,6 +505,18 @@ footer ul li a:hover {
     display: flex;
     flex-direction: column; /* Stack text elements vertically */
     padding-right: 24px; /* Add some space between text and image */
+}
+
+.hero-text .eyebrow-text {
+    margin-bottom: 0; /* Reset default margin, use gap instead */
+}
+
+.hero-text h1 {
+    margin-bottom: var(--sp-2); /* 8px between h1 and text */
+}
+
+.hero-text > p {
+    margin-bottom: var(--sp-10); /* 40px between text and button */
 }
 
 .hero-image {
@@ -504,7 +535,7 @@ footer ul li a:hover {
     display: flex;
     flex-direction: column; /* Stack cards vertically */
     gap: 24px; /* Updated gap to 24px */
-    padding: 24px 0; /* Add padding around the container */
+    padding-bottom: 24px; /* Padding only at the bottom */
 }
 
 .project-card {
@@ -627,6 +658,8 @@ footer ul li a:hover {
     font-size: var(--fs-body); /* 16px base */
     width: 100%; /* Ensure inputs take full width */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
+    background-color: var(--input-bg); /* Slightly darker to appear recessed */
+    box-shadow: var(--input-inset-shadow); /* Subtle inner shadow for depth */
 }
 
 .contact-form-container textarea {
@@ -864,11 +897,11 @@ footer ul li a:hover {
 
 /* Featured work section */
 .featured-work {
-    padding: 24px 0;
+    padding-bottom: 24px; /* Bottom padding only */
 }
 
 .featured-work h2 {
-    margin-bottom: 16px;
+    margin-bottom: var(--sp-6); /* 24px gap to cards */
 }
 
 /* Timeline styles for about page */
