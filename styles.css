@@ -1102,9 +1102,7 @@ footer ul li a:hover {
 .timeline {
     margin: 40px 0;
 }
-/* Remove decorative vertical line and node to simplify layout */
-.timeline::before { display: none; }
-.about-page .timeline-node { display: none; }
+/* Remove About page timeline overrides so they don't affect other timelines */
 
 .company-group {
     margin-bottom: 36px;
@@ -1207,12 +1205,11 @@ footer ul li a:hover {
 
 .timeline-line {
     position: absolute;
-    left: 36px; /* Center of node (18px node at left: 27px) */
+    left: 35px;
     top: 80px;
     bottom: 0;
     width: 2px;
     background: var(--color-border-default, #e0e0e0);
-    z-index: 1;
 }
 
 .timeline-container .timeline-item {
@@ -1232,7 +1229,7 @@ footer ul li a:hover {
     display: block;
     position: absolute;
     left: 27px;
-    top: calc(50% - 9px); /* Vertically center node in item (18px node) */
+    top: 8px;
     width: 18px;
     height: 18px;
     background: var(--color-text-secondary, #6b7280);
@@ -1399,11 +1396,9 @@ footer ul li a:hover {
 
 @media (max-width: 900px) {
     /* No override needed, column layout is default */
-}
     .timeline-container .timeline-node {
         left: 17px;
     }
-
     .timeline-container .timeline-node.has-icon {
         left: 8px;
     }
@@ -1730,34 +1725,31 @@ footer ul li a:hover {
     }
 
     /* Timeline adjustments for mobile */
+@media (max-width: 600px) {
     .timeline-container {
         padding: 0 8px;
     }
-
     .timeline-container .timeline-item {
         padding-left: 40px;
     }
-
     .timeline-line {
         left: 18px;
     }
-
     .timeline-container .timeline-node {
         left: 10px;
         width: 14px;
         height: 14px;
     }
-
     .timeline-container .timeline-node.has-icon {
         left: 4px;
         width: 28px;
         height: 28px;
         font-size: 12px;
     }
-
     .timeline-container .timeline-content {
         padding: 12px;
     }
+}
 
     .timeline-title {
         font-size: 16px;
