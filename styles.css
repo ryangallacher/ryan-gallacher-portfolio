@@ -833,7 +833,7 @@ footer ul li a:hover {
     margin-bottom: 0; /* Remove bottom margin to control spacing with error messages */
     padding: 10px; /* Adjust padding to match GOV.UK design system */
     border: 2px solid var(--input-border); /* Use design system input border */
-    border-radius: 0; /* GOV.UK input border radius */
+    border-radius: 6px;
     font-size: var(--fs-body); /* 16px base */
     width: 100%; /* Ensure inputs take full width */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
@@ -1166,12 +1166,14 @@ footer ul li a:hover {
    Timeline Component (Project pages)
    ============================================ */
 .timeline-section {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 40px 24px;
 }
 
 .timeline-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0;
     position: relative;
 }
 
