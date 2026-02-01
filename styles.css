@@ -1,3 +1,78 @@
+@media (max-width: 1024px) {
+    .header-container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+@media (max-width: 768px) {
+    .header-container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+@media (max-width: 480px) {
+    .header-container {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+/* Restore arrow icon hover animation for CTA */
+.cta-icon-wrapper {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 6px;
+}
+.cta-arrow-icon {
+    display: inline;
+    vertical-align: middle;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s;
+}
+.cta-button:hover .cta-arrow-icon {
+    transform: translateY(2px);
+}
+/* Petrol SVG filter for secondary button icon */
+:root {
+    /* Petrol SVG filter for #034C53 */
+    --petrol-svg-filter: invert(16%) sepia(25%) saturate(2227%) hue-rotate(153deg) brightness(97%) contrast(101%);
+}
+/* Secondary button for CV (white background, border) */
+.btn-secondary {
+    height: 40px;
+    padding: 0 24px;
+    background: #fff;
+    color: var(--btn-primary-bg, #1a1a1a);
+    border: 2px solid var(--btn-primary-bg, #1a1a1a);
+    border-radius: 6px;
+    font-size: var(--fs-button, 1rem);
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    white-space: nowrap;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: fit-content;
+    align-self: flex-start;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+ .btn-secondary:hover {
+    border-color: var(--p-base, #034C53);
+    color: var(--p-base, #034C53);
+    background: #e6edee;
+    outline: none;
+}
+}
+.btn-secondary:focus {
+    border-color: var(--btn-primary-hover-bg, #005fa3);
+    color: var(--btn-primary-hover-bg, #005fa3);
+    background: #f5f5f5;
+    outline: 2px solid var(--btn-primary-hover-bg, #005fa3);
+    outline-offset: 2px;
+}
 /* Card-like section over pattern background */
 .pattern-card {
     position: absolute;
@@ -507,8 +582,11 @@ footer ul li a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 24px; /* Add padding to the header */
-    border-bottom: 1px solid var(--color-border-default); /* Add underline using color system */
+    padding: 0 24px;
+    border-bottom: 1px solid var(--color-border-default);
+    height: 48px;
+    min-height: 48px;
+    box-sizing: border-box;
 }
 
 .header-container .logo {
@@ -554,11 +632,12 @@ footer ul li a:hover {
 .header-container nav ul li a {
     text-decoration: none;
     color: inherit;
-    padding: 10px 20px; /* Add padding to align with the button */
+    padding: 0 20px;
+    height: 48px;
     display: flex;
-    align-items: center; /* Ensure text is centered vertically */
-    position: relative; /* Required for the ::after pseudo-element */
-    border-radius: 4px; /* Add corner radius to nav items */
+    align-items: center;
+    position: relative;
+    border-radius: 0;
 }
 
 .header-container nav ul li a::after {
@@ -577,8 +656,9 @@ footer ul li a:hover {
 }
 
 .header-container nav ul li a:hover {
-    background-color: var(--ink-hover-bg); /* use tint of the nav text color (same hue) */
-    border-radius: 4px; /* Match the button shape */
+    background-color: var(--ink-hover-bg);
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .header-container nav ul li a.active::after {
@@ -881,7 +961,7 @@ footer ul li a {
     padding: 10px 20px;
     display: flex;
     align-items: center;
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 footer ul li a:hover {
