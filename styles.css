@@ -1018,6 +1018,20 @@ footer ul li a:hover {
 
 .activities-list li {
     display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: flex-start;
+}
+
+.activities-list img {
+    max-width: 100%;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.activities-list li {
+    display: flex;
     gap: 16px;
     margin-bottom: 24px;
     align-items: flex-start;
@@ -1193,11 +1207,12 @@ footer ul li a:hover {
 
 .timeline-line {
     position: absolute;
-    left: 35px;
+    left: 36px; /* Center of node (18px node at left: 27px) */
     top: 80px;
     bottom: 0;
     width: 2px;
     background: var(--color-border-default, #e0e0e0);
+    z-index: 1;
 }
 
 .timeline-container .timeline-item {
@@ -1217,7 +1232,7 @@ footer ul li a:hover {
     display: block;
     position: absolute;
     left: 27px;
-    top: 8px;
+    top: calc(50% - 9px); /* Vertically center node in item (18px node) */
     width: 18px;
     height: 18px;
     background: var(--color-text-secondary, #6b7280);
@@ -1382,15 +1397,9 @@ footer ul li a:hover {
     margin-top: 4px;
 }
 
-@media (max-width: 768px) {
-    .timeline-container .timeline-item {
-        padding-left: 50px;
-    }
-
-    .timeline-line {
-        left: 25px;
-    }
-
+@media (max-width: 900px) {
+    /* No override needed, column layout is default */
+}
     .timeline-container .timeline-node {
         left: 17px;
     }
