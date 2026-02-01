@@ -1149,11 +1149,9 @@ footer ul li a:hover {
     .about-page .timeline-item { grid-template-columns: 180px 1fr; }
 }
 
-@media (max-width: 600px) {
-    .about-page .timeline-item {
-        display: block;
-        padding: 8px 0;
-    }
+@media (max-width: 900px) {
+    /* Removed left: 8px; for .timeline-node.has-icon to fix alignment */
+}
     .about-page .timeline-date {
         position: static;
         width: auto;
@@ -1396,12 +1394,7 @@ footer ul li a:hover {
 
 @media (max-width: 900px) {
     /* No override needed, column layout is default */
-    .timeline-container .timeline-node {
-        left: 17px;
-    }
-    .timeline-container .timeline-node.has-icon {
-        left: 8px;
-    }
+    /* Removed left: 17px for .timeline-node to fix alignment */
 }
 
 /* ============================================
@@ -1733,18 +1726,15 @@ footer ul li a:hover {
         padding-left: 40px;
     }
     .timeline-line {
-        left: 18px;
+        left: 26px;
     }
     .timeline-container .timeline-node {
         left: 10px;
-        width: 14px;
-        height: 14px;
+        /* width and height unchanged for consistent alignment */
     }
     .timeline-container .timeline-node.has-icon {
         left: 4px;
-        width: 28px;
-        height: 28px;
-        font-size: 12px;
+        /* width, height, font-size unchanged for consistent alignment */
     }
     .timeline-container .timeline-content {
         padding: 12px;
