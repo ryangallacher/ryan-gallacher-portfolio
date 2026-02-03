@@ -2446,11 +2446,11 @@ img {
     gap: 60px;
 }
 
-/* 12-column grid utility for future use */
+/* 12-column grid utility */
 .grid-12 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 32px;
+    gap: 24px;
 }
 .grid-12 > .col-span-3 {
     grid-column: span 3;
@@ -2458,11 +2458,83 @@ img {
 .grid-12 > .col-span-4 {
     grid-column: span 4;
 }
+.grid-12 > .col-span-5 {
+    grid-column: span 5;
+}
 .grid-12 > .col-span-6 {
     grid-column: span 6;
 }
+.grid-12 > .col-span-7 {
+    grid-column: span 7;
+}
+.grid-12 > .col-span-8 {
+    grid-column: span 8;
+}
 .grid-12 > .col-span-12 {
     grid-column: span 12;
+}
+
+/* ============================================
+   Testimonial Grid Section
+   ============================================ */
+.testimonial-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 24px;
+}
+
+.testimonial-section .section-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.testimonial-section .section-header h2 {
+    font-size: var(--fs-h1);
+    font-weight: 600;
+    color: var(--color-ink);
+    margin: 0 0 12px 0;
+}
+
+.testimonial-section .section-header p {
+    font-size: var(--fs-body);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.testimonial-card {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    border-radius: 8px;
+    padding: 32px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial-card.card-tall {
+    min-height: 300px;
+}
+
+.testimonial-card.card-dark {
+    background: var(--n-800);
+    border-color: var(--n-800);
+}
+
+.testimonial-card.card-medium {
+    min-height: 250px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-section .grid-12 {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .testimonial-section .grid-12 > * {
+        grid-column: span 1 !important;
+    }
 }
 
 .contact-section .contact-column h3 {
