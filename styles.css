@@ -59,19 +59,25 @@
     align-self: flex-start;
     transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
- .btn-secondary:hover {
+.btn-secondary:hover {
     border-color: var(--p-base, #034C53);
     color: var(--p-base, #034C53);
     background: #e6edee;
     outline: none;
 }
+
+.btn-secondary:focus-visible {
+    border-color: var(--color-focus-ring);
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 3px;
 }
-.btn-secondary:focus {
-    border-color: var(--btn-primary-hover-bg, #005fa3);
-    color: var(--btn-primary-hover-bg, #005fa3);
-    background: #f5f5f5;
-    outline: 2px solid var(--btn-primary-hover-bg, #005fa3);
-    outline-offset: 2px;
+
+@supports not selector(:focus-visible) {
+    .btn-secondary:focus {
+        border-color: var(--color-focus-ring);
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 3px;
+    }
 }
 /* Card-like section over pattern background */
 .pattern-card {
@@ -145,9 +151,7 @@ html, body {
     user-select: none;
 }
 /* Pattern background section for SVG scaling and cropping */
-.pattern-bg {
-    /* duplicate removed, see above for main .pattern-bg rule */
-}
+/* duplicate removed, see above for main .pattern-bg rule */
 .pattern-bg img {
     width: 122%;
     height: 122%;
@@ -314,7 +318,7 @@ html, body {
   --color-link-hover: var(--blue-hover);
   --color-link-active: var(--blue-active);
   --color-link-visited: var(--blue-visited);
-  --color-focus-ring: var(--teal-light);
+  --color-focus-ring: var(--p-base); /* Brand petrol color for focus states */
 
   /* Hover tints: subtle translucent variations of base colours */
   --ink-hover-bg: rgba(35, 61, 77, 0.06);
@@ -486,9 +490,20 @@ a:visited {
     color: var(--color-link-visited);
 }
 
-a:focus {
-    outline: 2px solid var(--color-focus-ring);
-    outline-offset: 2px;
+/* Keyboard-only focus styles using :focus-visible */
+a:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Fallback for browsers that don't support :focus-visible */
+@supports not selector(:focus-visible) {
+    a:focus {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 3px;
+        border-radius: 2px;
+    }
 }
 
 /* Reset link styles for navigation, cards, and buttons */
@@ -572,6 +587,139 @@ a.cta-button:hover {
     background-color: var(--btn-primary-disabled-bg);
     color: var(--btn-primary-disabled-text);
     cursor: not-allowed;
+}
+
+/* ============================================
+   Keyboard Focus States (:focus-visible)
+   Using brand petrol color for accessibility
+   ============================================ */
+
+/* Primary buttons and CTA buttons */
+.btn-primary:focus-visible,
+.cta-button:focus-visible,
+a.cta-button:focus-visible,
+button[type="submit"]:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 3px;
+}
+
+@supports not selector(:focus-visible) {
+    .btn-primary:focus,
+    .cta-button:focus,
+    a.cta-button:focus,
+    button[type="submit"]:focus {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 3px;
+    }
+}
+
+/* Navigation links */
+.header-container nav a:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@supports not selector(:focus-visible) {
+    .header-container nav a:focus {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+}
+
+/* Logo link */
+.header-container .logo:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@supports not selector(:focus-visible) {
+    .header-container .logo:focus {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+}
+
+/* Project cards */
+.project-card:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 3px;
+    border-radius: 8px;
+}
+
+@supports not selector(:focus-visible) {
+    .project-card:focus {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 3px;
+        border-radius: 8px;
+    }
+}
+
+/* Footer links */
+footer ul li a:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@supports not selector(:focus-visible) {
+    footer ul li a:focus {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+}
+
+/* Form inputs */
+input[type="text"]:focus-visible,
+input[type="email"]:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 3px;
+    border-color: var(--color-focus-ring);
+}
+
+@supports not selector(:focus-visible) {
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus,
+    select:focus {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 3px;
+        border-color: var(--color-focus-ring);
+    }
+}
+
+/* Error summary */
+.error-summary:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 2px;
+}
+
+@supports not selector(:focus-visible) {
+    .error-summary:focus {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 2px;
+    }
+}
+
+/* Error summary links */
+.error-summary a:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 2px;
+    background-color: var(--p-tint);
+}
+
+@supports not selector(:focus-visible) {
+    .error-summary a:focus {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 2px;
+        background-color: var(--p-tint);
+    }
 }
 
 /* Ensure footer hover uses color system */
@@ -1151,7 +1299,6 @@ footer ul li a:hover {
 
 @media (max-width: 900px) {
     /* Removed left: 8px; for .timeline-node.has-icon to fix alignment */
-}
     .about-page .timeline-date {
         position: static;
         width: auto;
@@ -2316,7 +2463,6 @@ img {
 }
 .grid-12 > .col-span-12 {
     grid-column: span 12;
-}
 }
 
 .contact-section .contact-column h3 {
