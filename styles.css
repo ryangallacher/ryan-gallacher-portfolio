@@ -727,6 +727,58 @@ select:focus-visible,
 footer ul li a:hover {
     background-color: var(--ink-hover-bg);
 }
+
+/* Back to top button */
+.back-to-top {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--btn-primary-bg);
+    color: var(--btn-primary-text);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(3, 76, 83, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.back-to-top:hover {
+    background-color: var(--btn-primary-hover-bg);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(3, 76, 83, 0.4);
+}
+
+.back-to-top:active {
+    transform: translateY(0);
+}
+
+.back-to-top:focus-visible {
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 3px;
+}
+
+@supports not selector(:focus-visible) {
+    .back-to-top:focus {
+        outline: 3px solid var(--color-focus-ring);
+        outline-offset: 3px;
+    }
+}
+
 .header-container {
     display: flex;
     justify-content: space-between;
