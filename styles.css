@@ -1891,13 +1891,47 @@ img {
    Project Template Page Styles
    ============================================ */
 .hero-section {
-    padding: 80px 40px;
+    padding: 40px;
+    min-height: 500px;
+    background-color: var(--color-teal-base);
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.hero-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
-    min-height: 500px;
-    background-color: var(--color-teal-base);
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(255, 255, 255, 0.18) 19px, rgba(255, 255, 255, 0.18) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(255, 255, 255, 0.18) 19px, rgba(255, 255, 255, 0.18) 20px);
+    background-size: 20px 20px;
+    opacity: 0.6;
+    mask-image:
+        linear-gradient(to bottom, transparent 0%, black 100%),
+        linear-gradient(to right, transparent 0%, transparent 50%, black 100%);
+    mask-composite: intersect;
+    -webkit-mask-image:
+        linear-gradient(to bottom, transparent 0%, black 100%),
+        linear-gradient(to right, transparent 0%, transparent 50%, black 100%);
+    -webkit-mask-composite: source-in;
+    pointer-events: none;
 }
 
 .hero-content {
@@ -2335,6 +2369,9 @@ img {
 @media (max-width: 1024px) {
     .hero-section {
         padding: 60px 24px;
+    }
+
+    .hero-wrapper {
         gap: 40px;
     }
 
@@ -2382,9 +2419,12 @@ img {
 
 @media (max-width: 768px) {
     .hero-section {
-        flex-direction: column;
         padding: 40px 16px;
         min-height: auto;
+    }
+
+    .hero-wrapper {
+        flex-direction: column;
         text-align: center;
     }
 
