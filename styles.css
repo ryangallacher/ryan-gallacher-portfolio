@@ -1223,6 +1223,44 @@ footer ul li a:hover {
     margin-bottom: 24px;
 }
 
+/* Why section — 2-col icon + text grid */
+.why-section {
+    padding: 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.why-section h2 {
+    margin-bottom: var(--sp-8);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-8) var(--sp-16);
+}
+
+.why-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--sp-4);
+}
+
+.why-icon {
+    flex-shrink: 0;
+    color: var(--color-ink);
+}
+
+.why-item p {
+    margin: 0;
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+}
+
+.why-item strong {
+    font-weight: 600;
+}
+
 /* Work history section base styles */
 .work-history {
     max-width: 1200px;
@@ -2056,6 +2094,12 @@ footer ul li a:hover {
         font-size: var(--fs-body-sm);
     }
 
+    /* Why section */
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: var(--sp-6);
+    }
+
     /* Contact form */
     .contact-form h1 {
         font-size: var(--fs-h1);
@@ -2596,7 +2640,7 @@ img {
 
 .research-header {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 60px;
     padding-bottom: 60px;
     border-bottom: 1px solid var(--color-border-default);
@@ -2611,7 +2655,7 @@ img {
     margin: 0;
 }
 
-.research-header p {
+.research-header-body p {
     font-size: var(--fs-body);
     line-height: var(--lh-body);
     color: var(--color-ink);
@@ -2675,6 +2719,193 @@ img {
     flex-wrap: wrap;
 }
 
+.research-topic {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--color-border-default);
+    align-items: start;
+}
+
+.research-topic:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.research-topic-intro h3 {
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+    color: var(--color-ink);
+    margin: 0 0 12px 0;
+}
+
+.research-topic-intro p {
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body);
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.research-topic .research-cards {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   Pull Quote
+   ============================================ */
+.pull-quote-section {
+    padding: 80px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pull-quote {
+    background: none;
+    border-left: none;
+    padding: 0;
+    margin: 0;
+    max-width: 900px;
+}
+
+.pull-quote-icon {
+    width: 36px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.pull-quote p {
+    font-family: var(--ff-serif);
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    line-height: 1.5;
+    font-style: normal;
+    color: var(--color-ink);
+    margin: 0 0 24px 0;
+}
+
+.pull-quote footer {
+    border-top: none;
+    margin-top: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.pull-quote cite {
+    display: flex;
+    flex-direction: column;
+    font-style: normal;
+    gap: 2px;
+}
+
+.cite-name {
+    font-family: var(--ff-sans);
+    font-size: var(--fs-body);
+    font-weight: 600;
+    color: var(--color-ink);
+}
+
+.cite-role {
+    font-family: var(--ff-sans);
+    font-size: var(--fs-body-sm);
+    color: var(--color-text-secondary);
+}
+
+/* ============================================
+   Testimonials Cards
+   ============================================ */
+.testimonials-section {
+    padding: 80px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.testimonials-header {
+    margin-bottom: 40px;
+}
+
+.eyebrow-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--teal-base);
+    background-color: var(--teal-light);
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+}
+
+.testimonials-header h2 {
+    font-size: var(--fs-h1);
+    line-height: var(--lh-h1);
+    color: var(--color-ink);
+    margin: 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.testimonial-quote-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-surface-alt);
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.tq-icon {
+    width: 28px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.tq-text {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--color-ink);
+    margin: 0 0 auto 0;
+    padding-bottom: 32px;
+}
+
+.tq-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tq-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--n-300);
+    flex-shrink: 0;
+}
+
+.tq-author-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.tq-name {
+    font-size: var(--fs-body-sm);
+    font-weight: 600;
+    color: var(--color-ink);
+}
+
+.tq-role {
+    font-size: var(--fs-body-compact);
+    color: var(--color-text-secondary);
+}
+
 /* Template page contact section (scoped to avoid conflicts) */
 .contact-section {
     padding: 60px 40px;
@@ -2714,6 +2945,72 @@ img {
 }
 .grid-12 > .col-span-12 {
     grid-column: span 12;
+}
+
+/* ============================================
+   Value Proposition Banner
+   ============================================ */
+.value-banner-section {
+    padding: 40px;
+}
+
+.value-banner {
+    display: flex;
+    align-items: center;
+    background-color: var(--n-900);
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.value-banner-tagline {
+    flex: 0 0 260px;
+    padding-right: 40px;
+    border-right: 1px solid var(--n-600);
+}
+
+.value-banner-tagline p {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--n-0);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.value-banner-stats {
+    display: flex;
+    flex: 1;
+    gap: 0;
+}
+
+.value-banner-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0 32px;
+    border-right: 1px solid var(--n-600);
+}
+
+.value-banner-item:last-child {
+    border-right: none;
+}
+
+.value-banner-eyebrow {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--teal-base);
+}
+
+.value-banner-value {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--n-0);
 }
 
 /* ============================================
@@ -3098,7 +3395,8 @@ img {
     .best-practices,
     .research-section,
     .contact-section,
-    .postit-grid {
+    .postit-grid,
+    .why-section {
         padding: 40px 24px;
     }
 
@@ -3108,6 +3406,33 @@ img {
 
     .tabs {
         gap: 24px;
+    }
+
+    .value-banner-section {
+        padding: 40px 24px;
+    }
+
+    .value-banner {
+        flex-direction: column;
+        gap: 24px;
+        padding: 32px;
+    }
+
+    .value-banner-tagline {
+        flex: none;
+        padding-right: 0;
+        padding-bottom: 24px;
+        border-right: none;
+        border-bottom: 1px solid var(--n-600);
+        width: 100%;
+    }
+
+    .value-banner-stats {
+        width: 100%;
+    }
+
+    .value-banner-item {
+        padding: 0 20px;
     }
 }
 
@@ -3126,9 +3451,14 @@ img {
     }
 
     .research-header,
+    .research-topic,
     .practice-item {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -3157,6 +3487,30 @@ img {
         order: 1;
         width: 100%;
         min-height: 200px;
+    }
+
+    .value-banner-section {
+        padding: 24px 16px;
+    }
+
+    .value-banner {
+        padding: 24px;
+    }
+
+    .value-banner-stats {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .value-banner-item {
+        padding: 16px 0;
+        border-right: none;
+        border-bottom: 1px solid var(--n-600);
+    }
+
+    .value-banner-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
     }
 
     .tabs-section {
@@ -3192,7 +3546,8 @@ img {
 
     .best-practices,
     .research-section,
-    .contact-section {
+    .contact-section,
+    .why-section {
         padding: 32px 16px;
     }
 
@@ -3261,7 +3616,8 @@ img {
 
     .best-practices,
     .research-section,
-    .contact-section {
+    .contact-section,
+    .why-section {
         padding: 24px 12px;
     }
 
