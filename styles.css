@@ -1401,7 +1401,7 @@ footer ul li a:hover {
     grid-template-columns: 140px 1fr;
     gap: 16px;
     align-items: start;
-    padding: 12px 0;
+    padding: 0;
     border-left: none;
 }
 
@@ -1413,7 +1413,8 @@ footer ul li a:hover {
     white-space: nowrap;
 }
 
-.about-page .timeline-content {
+.about-page .timeline-content,
+.about-page .timeline-container .timeline-content {
     background: transparent;
     padding: 0;
     border-radius: 0;
@@ -1421,9 +1422,24 @@ footer ul li a:hover {
     max-width: 900px;
     box-shadow: none;
 }
+.about-page .timeline-container .timeline-node {
+    top: 1px;
+}
 .about-page .timeline-content h3 { margin: 0 0 6px 0; }
 .about-page .timeline-content .meta { margin: 0 0 8px 0; color: var(--color-text-secondary); font-size: var(--fs-body-compact); }
 .about-page .timeline-content .description { margin: 0; line-height: var(--lh-body); }
+
+/* Stop the timeline line at the last node */
+.about-page .timeline-container .timeline-item:last-child::after {
+    content: '';
+    position: absolute;
+    left: 33px;
+    top: 19px;
+    bottom: 0;
+    width: 6px;
+    background: var(--color-bg-body);
+    z-index: 1;
+}
 
 @media (min-width: 1200px) {
     .about-page .timeline-item { grid-template-columns: 180px 1fr; }
@@ -2161,6 +2177,9 @@ footer ul li a:hover {
     }
     .timeline-line {
         left: 26px;
+    }
+    .about-page .timeline-container .timeline-item:last-child::after {
+        left: 24px;
     }
     .timeline-container .timeline-node {
         left: 10px;
