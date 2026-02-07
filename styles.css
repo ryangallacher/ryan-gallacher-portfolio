@@ -1428,17 +1428,30 @@ footer ul li a:hover {
 .about-page .timeline-content h3 { margin: 0 0 6px 0; }
 .about-page .timeline-content .meta { margin: 0 0 8px 0; color: var(--color-text-secondary); font-size: var(--fs-body-compact); }
 .about-page .timeline-content .description { margin: 0; line-height: var(--lh-body); }
+.about-page .timeline-label { display: none; }
 
-/* Stop the timeline line at the last node */
-.about-page .timeline-container .timeline-item:last-child::after {
+/* Larger heading for employment history */
+.about-page .timeline-header h2 {
+    font-size: var(--fs-display-sm);
+    line-height: var(--lh-display-sm);
+}
+
+/* Replace fixed line with per-item segments so heading size has no effect */
+.about-page .timeline-line { display: none; }
+
+.about-page .timeline-container .timeline-item::before {
     content: '';
     position: absolute;
-    left: 33px;
-    top: 19px;
-    bottom: 0;
-    width: 6px;
-    background: var(--color-bg-body);
-    z-index: 1;
+    left: 35px;
+    top: 0;
+    bottom: -40px;
+    width: 2px;
+    background: var(--n-200);
+    z-index: 0;
+}
+
+.about-page .timeline-container .timeline-item:last-child::before {
+    display: none;
 }
 
 @media (min-width: 1200px) {
@@ -2178,8 +2191,8 @@ footer ul li a:hover {
     .timeline-line {
         left: 26px;
     }
-    .about-page .timeline-container .timeline-item:last-child::after {
-        left: 24px;
+    .about-page .timeline-container .timeline-item::before {
+        left: 18px;
     }
     .timeline-container .timeline-node {
         left: 10px;
