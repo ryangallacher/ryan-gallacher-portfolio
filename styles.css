@@ -3080,6 +3080,60 @@ img {
 }
 
 /* ============================================
+   Bounding Box Cards
+   ============================================ */
+
+.bbox-section {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.bbox-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+}
+
+.bbox-card {
+    position: relative;
+    border: 1px solid #2196F3;
+    border-radius: 2px;
+    padding: 4px;
+    background: var(--color-bg-surface);
+}
+
+.bbox-handle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border: 1px solid #2196F3;
+    z-index: 1;
+}
+
+.bbox-tl { top: -5px; left: -5px; }
+.bbox-tr { top: -5px; right: -5px; }
+.bbox-bl { bottom: -5px; left: -5px; }
+.bbox-br { bottom: -5px; right: -5px; }
+
+.bbox-card-inner {
+    padding: 32px;
+    min-height: 280px;
+    background: var(--color-bg-surface-alt);
+    border-radius: 2px;
+}
+
+.bbox-card-inner h3 {
+    margin: 0 0 8px;
+}
+
+.bbox-card-inner p {
+    margin: 0;
+    color: var(--color-text-secondary);
+}
+
+/* ============================================
    Testimonial Grid Section
    ============================================ */
 .testimonial-section {
@@ -3585,6 +3639,14 @@ img {
     .value-banner-item:last-child {
         border-bottom: none;
         padding-bottom: 0;
+    }
+
+    .bbox-section {
+        padding: 24px 16px;
+    }
+
+    .bbox-grid {
+        grid-template-columns: 1fr;
     }
 
     .tabs-section {
