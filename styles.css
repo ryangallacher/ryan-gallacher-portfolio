@@ -2545,7 +2545,8 @@ img {
 }
 
 .stat-number {
-    font-size: clamp(3rem, 8vw, 4.5rem);
+    font-size: var(--fs-display-sm);
+    line-height: var(--lh-display-sm);
     font-weight: 300;
     color: var(--color-camel-base);
     margin-bottom: 10px;
@@ -3764,7 +3765,8 @@ img {
     }
 
     .stat-number {
-        font-size: 2.5rem;
+        font-size: var(--fs-display-sm);
+        line-height: var(--lh-display-sm);
     }
 
     .best-practices,
