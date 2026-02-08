@@ -179,9 +179,8 @@ html, body {
     z-index: 0;
     pointer-events: none;
     background-image:
-        repeating-linear-gradient(0deg, var(--color-border-default) 0 1px, transparent 1px 48px),
-        repeating-linear-gradient(90deg, var(--color-border-default) 0 1px, transparent 1px 48px);
-    opacity: 0.45;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' shape-rendering='crispEdges'%3E%3Crect x='15.5' y='12' width='1' height='8' fill='%23E1E8E8'/%3E%3Crect x='12' y='15.5' width='8' height='1' fill='%23E1E8E8'/%3E%3Cpath d='M16 4 L16 6 M16 12 L16 14 M16 18 L16 20 M16 26 L16 28 M4 16 L6 16 M12 16 L14 16 M18 16 L20 16 M26 16 L28 16' stroke='%23E1E8E8' stroke-width='1' stroke-linecap='square'/%3E%3C/svg%3E");
+    opacity: 1;
     mask-image: linear-gradient(to right, black 30%, transparent 100%), linear-gradient(to bottom, black 50%, transparent 95%);
     mask-composite: intersect;
     -webkit-mask-image: linear-gradient(to right, black 30%, transparent 100%), linear-gradient(to bottom, black 50%, transparent 95%);
@@ -198,9 +197,8 @@ html, body {
     z-index: 0;
     pointer-events: none;
     background-image:
-        repeating-linear-gradient(0deg, var(--color-border-default) 0 1px, transparent 1px 48px),
-        repeating-linear-gradient(90deg, var(--color-border-default) 0 1px, transparent 1px 48px);
-    opacity: 0.45;
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' shape-rendering='crispEdges'%3E%3Crect x='15.5' y='12' width='1' height='8' fill='%23E1E8E8'/%3E%3Crect x='12' y='15.5' width='8' height='1' fill='%23E1E8E8'/%3E%3Cpath d='M16 4 L16 6 M16 12 L16 14 M16 18 L16 20 M16 26 L16 28 M4 16 L6 16 M12 16 L14 16 M18 16 L20 16 M26 16 L28 16' stroke='%23E1E8E8' stroke-width='1' stroke-linecap='square'/%3E%3C/svg%3E");
+    opacity: 1;
     mask-image: linear-gradient(to left, black 0%, transparent 60%), linear-gradient(to bottom, black 50%, transparent 95%);
     mask-composite: intersect;
     -webkit-mask-image: linear-gradient(to left, black 0%, transparent 60%), linear-gradient(to bottom, black 50%, transparent 95%);
