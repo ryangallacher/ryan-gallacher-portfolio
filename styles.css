@@ -210,6 +210,17 @@ html, body {
     z-index: 1;
 }
 
+/* Flip the vertical fade for the video section (fade in from top to bottom) */
+.video-section.line-grid-accent::before {
+    mask-image: linear-gradient(to right, black 30%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 100%);
+    -webkit-mask-image: linear-gradient(to right, black 30%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 100%);
+}
+
+.video-section.line-grid-accent::after {
+    mask-image: linear-gradient(to left, black 0%, transparent 60%), linear-gradient(to bottom, transparent 0%, black 100%);
+    -webkit-mask-image: linear-gradient(to left, black 0%, transparent 60%), linear-gradient(to bottom, transparent 0%, black 100%);
+}
+
 /* Typography scale (use rems for accessibility and scalability)
    Base font-size: 16px = 1rem. Based on Figma text styles. */
 :root {
@@ -1227,7 +1238,7 @@ footer ul li a:hover {
 footer {
     border-top: 1px solid var(--color-border-default); /* Add underline using color system */
     padding: 16px 24px;
-    margin-top: 64px; /* Space above the footer */
+    margin-top: 0;
     text-align: center;
 }
 
@@ -1259,7 +1270,7 @@ footer ul li a:hover {
 
 /* Video section base styles */
 .video-section {
-    padding: 24px 0;
+    padding: 24px 0 64px;
 }
 
 .video-section h2 {
