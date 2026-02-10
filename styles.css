@@ -3162,8 +3162,8 @@ img {
     position: relative;
     border: 1px solid var(--teal-vivid);
     border-radius: 2px;
-    padding: 4px;
-    background: var(--color-bg-surface);
+    padding: 0;
+    background: var(--color-bg-surface-alt);
 }
 
 .bbox-handle {
@@ -3175,15 +3175,23 @@ img {
     z-index: 1;
 }
 
-.bbox-tl { top: -5px; left: -5px; }
-.bbox-tr { top: -5px; right: -5px; }
-.bbox-bl { bottom: -5px; left: -5px; }
-.bbox-br { bottom: -5px; right: -5px; }
+.bbox-tl { top: -4px; left: -4px; }
+.bbox-tr { top: -4px; right: -4px; }
+.bbox-bl { bottom: -4px; left: -4px; }
+.bbox-br { bottom: -4px; right: -4px; }
+
+/* Inset variant – card background inset from border (original gapped look) */
+.bbox-card--inset {
+    padding: 4px;
+    background: var(--color-bg-surface);
+}
+.bbox-card--inset .bbox-card-inner {
+    background: var(--color-bg-surface-alt);
+}
 
 .bbox-card-inner {
     padding: 32px;
     min-height: 280px;
-    background: var(--color-bg-surface-alt);
     border-radius: 2px;
 }
 
