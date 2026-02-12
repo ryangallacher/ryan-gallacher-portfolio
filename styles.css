@@ -2790,6 +2790,36 @@ img {
     margin-top: 16px;
 }
 
+.user-need {
+    margin: 0;
+    padding: 16px 24px 16px 24px;
+    border-left: 3px solid var(--color-ink);
+    font-style: normal;
+}
+
+.user-need-label {
+    font-family: var(--ff-sans);
+    font-size: var(--fs-small);
+    line-height: var(--lh-body);
+    color: var(--color-ink-subtle);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.user-need-statement {
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
+    color: var(--color-ink);
+    margin: 0 0 24px 0;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.user-need-statement:last-child {
+    margin-bottom: 0;
+}
+
 .research-cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -3139,6 +3169,37 @@ img {
     font-size: 1rem;
     font-weight: 400;
     color: var(--n-0);
+}
+
+/* ScotAccount page overrides */
+.page-scotaccount .value-banner {
+    align-items: stretch;
+}
+
+.page-scotaccount .value-banner-tagline {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.page-scotaccount .value-banner-tagline p {
+    font-size: 1.5rem;
+}
+
+.page-scotaccount .value-banner-eyebrow {
+    font-family: 'Lora', serif;
+    font-size: var(--fs-display-sm);
+    line-height: var(--lh-display-sm);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--color-camel-base);
+}
+
+.page-scotaccount .value-banner-value {
+    font-size: var(--fs-body-sm);
+    color: var(--n-300);
+    line-height: var(--lh-body);
 }
 
 /* ============================================
@@ -3841,7 +3902,7 @@ img {
     .research-section,
     .contact-section,
     .why-section {
-        padding: 24px 12px;
+        padding: 24px 20px;
     }
 
     .best-practices h2,

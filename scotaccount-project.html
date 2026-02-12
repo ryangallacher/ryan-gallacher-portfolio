@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="page-scotaccount">
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">Ryan Gallacher</a>
@@ -27,7 +27,7 @@
         <div class="hero-wrapper">
             <div class="hero-content">
                 <p class="eyebrow-text">The Scottish Government</p>
-                <h1>ScotAccount</h1>
+                <h1>ScotAccount Beta</h1>
                 <p>A single login and digital identity verification platform that is transforming the way half a million Scottish citizens access public services.</p>
                 <div class="hero-stats">
                     <div class="hero-stat">
@@ -49,17 +49,32 @@
         </div>
     </section>
 
-    <div class="tabs-section">
-        <ul class="tabs">
-            <li><a href="#" class="active"><span class="tab-number">01</span>About</a></li>
-            <li><a href="#"><span class="tab-number">02</span>Key Features</a></li>
-            <li><a href="#"><span class="tab-number">03</span>Case Studies</a></li>
-            <li><a href="#"><span class="tab-number">04</span>Ecosystem</a></li>
-            <li><a href="#"><span class="tab-number">05</span>Resources</a></li>
-            <li><a href="#"><span class="tab-number">06</span>Advocates</a></li>
-            <li><a href="#"><span class="tab-number">07</span>Updates</a></li>
-        </ul>
-    </div>
+    <!-- Key Results Banner -->
+    <section class="value-banner-section">
+        <div class="value-banner">
+            <div class="value-banner-tagline">
+                <p>Key results</p>
+            </div>
+            <div class="value-banner-stats">
+                <div class="value-banner-item">
+                    <span class="value-banner-eyebrow">£1,000s</span>
+                    <span class="value-banner-value">saved per week in postage and processing for Disclosure checks alone.</span>
+                </div>
+                <div class="value-banner-item">
+                    <span class="value-banner-eyebrow">99%</span>
+                    <span class="value-banner-value">of users choose to save their details for reuse.</span>
+                </div>
+                <div class="value-banner-item">
+                    <span class="value-banner-eyebrow">~500,000</span>
+                    <span class="value-banner-value">ScotAccounts created as of 2025.</span>
+                </div>
+                <div class="value-banner-item">
+                    <span class="value-banner-eyebrow">~27%</span>
+                    <span class="value-banner-value">increase in identity verification success rate</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Context & Stakes -->
     <section class="research-section">
@@ -67,59 +82,45 @@
             <h2 style="display: flex; align-items: center; gap: 24px;"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32" fill="currentColor" style="flex-shrink: 0;"><path d="M9.495,29.359c-0.485,0-0.976-0.123-1.424-0.383c-0.662-0.382-1.135-0.999-1.333-1.736c-0.198-0.738-0.096-1.509,0.286-2.17c0.788-1.364,2.54-1.838,3.906-1.047c0.662,0.382,1.135,0.999,1.333,1.736c0.198,0.738,0.096,1.509-0.286,2.17C11.447,28.846,10.484,29.359,9.495,29.359z M9.503,24.361c-0.74,0-1.461,0.383-1.856,1.068c-0.286,0.495-0.361,1.072-0.213,1.624s0.502,1.014,0.997,1.3c1.022,0.588,2.333,0.237,2.922-0.783c0.286-0.495,0.362-1.072,0.214-1.624s-0.502-1.014-0.997-1.3C10.233,24.453,9.866,24.361,9.503,24.361z M22.495,29.359c-0.485,0-0.976-0.123-1.425-0.383c-1.365-0.788-1.835-2.541-1.047-3.906c0.788-1.366,2.54-1.837,3.906-1.047c1.365,0.788,1.835,2.541,1.047,3.906C24.447,28.846,23.484,29.359,22.495,29.359z M20.646,25.43c-0.589,1.022-0.238,2.334,0.783,2.924c1.022,0.589,2.333,0.238,2.924-0.783c0.589-1.022,0.238-2.334-0.783-2.924C22.549,24.058,21.237,24.408,20.646,25.43z M28.5,18.86c-1.577,0-2.86-1.283-2.86-2.86s1.283-2.86,2.86-2.86s2.86,1.283,2.86,2.86S30.077,18.86,28.5,18.86z M28.5,13.86c-1.18,0-2.14,0.96-2.14,2.14s0.96,2.139,2.14,2.139S30.64,17.18,30.64,16S29.68,13.86,28.5,13.86z M16,18.86c-1.577,0-2.86-1.283-2.86-2.86s1.283-2.86,2.86-2.86s2.86,1.283,2.86,2.86S17.577,18.86,16,18.86z M16,13.86c-1.18,0-2.14,0.96-2.14,2.14s0.96,2.14,2.14,2.14s2.14-0.959,2.14-2.139S17.18,13.86,16,13.86z M3.5,18.86c-1.577,0-2.86-1.283-2.86-2.86s1.283-2.86,2.86-2.86S6.36,14.423,6.36,16S5.077,18.86,3.5,18.86z M3.5,13.86c-1.18,0-2.14,0.96-2.14,2.14s0.96,2.14,2.14,2.14S5.64,17.181,5.64,16S4.68,13.86,3.5,13.86z M9.504,8.361c-0.248,0-0.498-0.033-0.745-0.099C8.021,8.064,7.405,7.591,7.023,6.93C6.641,6.269,6.54,5.498,6.737,4.76S7.408,3.405,8.07,3.023c0.661-0.382,1.431-0.482,2.169-0.286c0.738,0.198,1.354,0.671,1.736,1.332c0.382,0.662,0.483,1.433,0.286,2.17s-0.671,1.354-1.332,1.736C10.489,8.231,10,8.361,9.504,8.361z M9.496,3.359c-0.371,0-0.736,0.097-1.066,0.288C7.935,3.933,7.58,4.394,7.433,4.946C7.285,5.498,7.361,6.075,7.647,6.57c0.285,0.495,0.747,0.849,1.299,0.997c0.55,0.147,1.128,0.071,1.624-0.214c0.495-0.286,0.849-0.747,0.997-1.299c0.147-0.552,0.072-1.128-0.214-1.624s-0.747-0.849-1.299-0.997C9.869,3.384,9.682,3.359,9.496,3.359z M22.505,8.359c-0.989,0-1.952-0.513-2.481-1.429c-0.788-1.366-0.318-3.118,1.047-3.906c1.367-0.789,3.118-0.318,3.906,1.046c0.788,1.366,0.318,3.119-1.047,3.907C23.48,8.236,22.989,8.359,22.505,8.359z M20.646,6.57c0.286,0.495,0.748,0.849,1.3,0.997c0.55,0.146,1.128,0.072,1.624-0.214c1.021-0.59,1.372-1.901,0.783-2.923c-0.591-1.022-1.901-1.372-2.924-0.783C20.409,4.237,20.058,5.548,20.646,6.57z"/></svg><span>The cost of fragmented public services</span></h2>
             <div class="research-header-body">
                 <p>Before The Scottish Government introduced ScotAccount, its flagship digital service, Scotland's digital landscape had become siloed and disconnected, with each public sector organisation wasting time and money managing their own independent back-office processes.</p>
-                <p>This landscape not only led to duplicated effort and infrastructure across the public sector, it forced a repeated burden on citizens, who had to navigate inconsistent and inaccessible processes every time they had to access public services or prove their identity.</p>
+                <p>This landscape not only led to duplicated effort and infrastructure across the public sector, it was a repetitive burden for citizens, who had to navigate inconsistent and inaccessible processes every time they tried to access public services or prove their identity.</p>
+                <p>With complexity and inconsistency compounding, The Scottish Government partnered with Scott Logic to deliver ScotAccount, one of their priority common platforms.</p>
             </div>
         </div>
     </section>
 
-    <div class="main-content">
-        <div class="content-text">
-            <h2>Section heading goes here</h2>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">£1,000s</div>
-                <div class="stat-label">saved per week in postage and processing for Disclosure checks alone.  </div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">99%</div>
-                <div class="stat-label">of users choose to save their details for reuse.</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">~500,000</div>
-                <div class="stat-label">ScotAccounts have been created as of 2025.</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">~27%</div>
-                <div class="stat-label">increase in identity verification success rate</div>
-            </div>
-            <div class="description-text">
-                <p>Add your detailed description here. This section can contain more information about the project, its impact, and key achievements.</p>
+    <!-- The Challenge -->
+    <section class="research-section">
+        <div class="research-header">
+            <h2>The challenge</h2>
+            <div class="research-header-body">
+                <p>successful onboarding of new Service Customers and demonstrable utility of features like MySafe being fundamental to the service’s value proposition.</p>
+                <p>technical, ethical, security</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Value Proposition Banner -->
-    <section class="value-banner-section">
-        <div class="value-banner">
-            <div class="value-banner-tagline">
-                <p>A user-centred approach to digital transformation</p>
+    <!-- Designing for Trust -->
+    <section class="research-section">
+        <div class="research-header">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32" fill="currentColor" style="display: block; margin-bottom: 16px;"><path d="M24.36,31h-0.72v-7.492c0-3.556-2.414-6.612-5.872-7.432c-0.15-0.036-0.261-0.163-0.275-0.316c-0.015-0.154,0.071-0.3,0.212-0.363c1.517-0.675,2.496-2.181,2.496-3.836c0-2.316-1.884-4.201-4.2-4.201s-4.2,1.884-4.2,4.201c0,1.656,0.98,3.162,2.496,3.836c0.141,0.063,0.226,0.209,0.212,0.363c-0.014,0.153-0.125,0.281-0.275,0.316c-3.458,0.819-5.872,3.875-5.872,7.432V31h-0.72v-7.492c0-3.597,2.256-6.725,5.585-7.887c-1.327-0.907-2.147-2.421-2.147-4.06c0-1.964,1.157-3.664,2.825-4.452C14.101,6.617,14.2,6.097,14.2,5.561c0-2.316-1.884-4.201-4.2-4.201S5.799,3.244,5.799,5.561c0,1.655,0.98,3.162,2.496,3.836C8.437,9.46,8.522,9.606,8.507,9.76c-0.014,0.153-0.125,0.281-0.275,0.316C4.774,10.896,2.36,13.948,2.36,17.5V25H1.64v-7.5c0-3.592,2.257-6.718,5.585-7.879C5.899,8.714,5.08,7.2,5.08,5.561c0-2.713,2.207-4.92,4.92-4.92s4.92,2.207,4.92,4.92c0,0.422-0.052,0.836-0.157,1.237c0.791-0.205,1.683-0.205,2.473,0c-0.104-0.401-0.157-0.815-0.157-1.237c0-2.713,2.208-4.92,4.921-4.92s4.921,2.207,4.921,4.92c0,1.64-0.82,3.154-2.146,4.061c3.329,1.161,5.586,4.287,5.586,7.879V25H29.64v-7.5c0-3.552-2.414-6.604-5.872-7.424c-0.15-0.036-0.261-0.163-0.275-0.316c-0.015-0.154,0.071-0.3,0.212-0.363C25.221,8.722,26.2,7.216,26.2,5.561c0-2.316-1.884-4.201-4.2-4.201s-4.2,1.884-4.2,4.201c0,0.536,0.099,1.056,0.295,1.548c1.669,0.789,2.826,2.488,2.826,4.452c0,1.64-0.82,3.154-2.146,4.061c3.329,1.162,5.586,4.29,5.586,7.887L24.36,31L24.36,31z M19.255,24.255l-0.51-0.51L15,27.491l-1.746-1.746l-0.509,0.51L15,28.509L19.255,24.255z"/></svg>
+                <h2>Designing for trust and accessibility at scale</h2>
             </div>
-            <div class="value-banner-stats">
-                <div class="value-banner-item">
-                    <span class="value-banner-eyebrow">Discovery</span>
-                    <span class="value-banner-value">25+ user interviews</span>
-                </div>
-                <div class="value-banner-item">
-                    <span class="value-banner-eyebrow">Impact</span>
-                    <span class="value-banner-value">500,000 users onboarded</span>
-                </div>
-                <div class="value-banner-item">
-                    <span class="value-banner-eyebrow">Delivery</span>
-                    <span class="value-banner-value">Live in under 12 months</span>
-                </div>
+            <div class="research-header-body">
             </div>
         </div>
+    </section>
+
+    <!-- User Need -->
+    <section class="research-section">
+        <blockquote class="user-need">
+            <p class="user-need-label">As an</p>
+            <p class="user-need-statement">assistive technology user</p>
+            <p class="user-need-label">I need</p>
+            <p class="user-need-statement">to be able to verify my identity without taking photographs</p>
+            <p class="user-need-label">So that</p>
+            <p class="user-need-statement">I am not blocked from accessing the service I need</p>
+        </blockquote>
     </section>
 
     <!-- Bounding Box Cards -->
