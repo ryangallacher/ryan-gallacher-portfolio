@@ -3109,7 +3109,7 @@ img {
    Value Proposition Banner
    ============================================ */
 .value-banner-section {
-    padding: 40px;
+    padding: 24px 40px;
 }
 
 .value-banner {
@@ -3117,7 +3117,7 @@ img {
     align-items: center;
     background-color: var(--n-900);
     border-radius: 8px;
-    padding: 40px;
+    padding: 28px 40px;
     max-width: 1400px;
     margin: 0 auto;
     gap: 40px;
@@ -3150,7 +3150,6 @@ img {
     flex-direction: column;
     gap: 6px;
     padding: 0 32px;
-    border-right: 1px solid var(--n-600);
 }
 
 .value-banner-item:last-child {
@@ -3208,6 +3207,93 @@ img {
     font-size: var(--fs-body-sm);
     color: var(--color-text-secondary);
     line-height: var(--lh-body);
+}
+
+/* Weighted Left Layout */
+.weighted-left-heading {
+    margin-bottom: 40px;
+}
+
+.weighted-left-heading h2 {
+    font-size: var(--fs-h1);
+    line-height: var(--lh-h1);
+    color: var(--color-ink);
+    margin: 0;
+}
+
+.weighted-left-subtitle {
+    font-family: 'Lora', serif;
+    font-size: var(--fs-h3);
+    color: var(--teal-base);
+    margin: 4px 0 0;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.weighted-left-columns {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.weighted-left-main p {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--color-ink);
+    margin: 0;
+}
+
+.weighted-left-main p + p {
+    margin-top: 16px;
+}
+
+.weighted-left-sidebar {
+    background-color: var(--n-50);
+    padding: 32px;
+    border-left: 3px solid var(--teal-base);
+}
+
+.weighted-left-sidebar h3 {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    font-weight: 700;
+    color: var(--teal-base);
+    margin: 0 0 12px;
+}
+
+.weighted-left-sidebar p {
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body);
+    color: var(--color-ink);
+    margin: 0 0 24px;
+}
+
+.weighted-left-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.weighted-left-sidebar ul li {
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body);
+    color: var(--color-ink);
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.weighted-left-sidebar ul li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    color: var(--teal-base);
+    font-weight: 600;
+}
+
+.weighted-left-sidebar ul li:last-child {
+    margin-bottom: 0;
 }
 
 /* ============================================
@@ -3720,6 +3806,10 @@ img {
         gap: 30px;
     }
 
+    .weighted-left-columns {
+        grid-template-columns: 1fr;
+    }
+
     .testimonials-grid {
         grid-template-columns: 1fr;
     }
@@ -3779,12 +3869,9 @@ img {
 
     .value-banner-item {
         padding: 16px 0;
-        border-right: none;
-        border-bottom: 1px solid var(--n-600);
     }
 
     .value-banner-item:last-child {
-        border-bottom: none;
         padding-bottom: 0;
     }
 
