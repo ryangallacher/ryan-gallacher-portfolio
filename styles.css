@@ -3174,31 +3174,39 @@ img {
 /* ScotAccount page overrides */
 .page-scotaccount .value-banner {
     align-items: stretch;
+    background-color: var(--teal-light);
 }
 
 .page-scotaccount .value-banner-tagline {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
+    border-right-color: #a3caca;
 }
 
 .page-scotaccount .value-banner-tagline p {
     font-size: 1.5rem;
+    color: var(--color-ink);
 }
 
 .page-scotaccount .value-banner-eyebrow {
     font-family: 'Lora', serif;
-    font-size: var(--fs-display-sm);
-    line-height: var(--lh-display-sm);
+    font-size: 2rem;
+    line-height: 1.2;
     font-weight: 400;
     text-transform: none;
     letter-spacing: normal;
-    color: var(--color-camel-base);
+    color: var(--teal-base);
+}
+
+.page-scotaccount .value-banner-item {
+    border-right: none;
+    border-bottom: none;
 }
 
 .page-scotaccount .value-banner-value {
     font-size: var(--fs-body-sm);
-    color: var(--n-300);
+    color: var(--color-text-secondary);
     line-height: var(--lh-body);
 }
 
