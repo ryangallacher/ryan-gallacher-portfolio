@@ -3209,6 +3209,74 @@ img {
     line-height: var(--lh-body);
 }
 
+/* Dependency Chain Diagram */
+.dependency-heading {
+    font-size: var(--fs-h3);
+    color: var(--color-ink);
+    margin: 0 0 24px;
+}
+
+.dependency-chain {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    max-width: 100%;
+}
+
+.dependency-node {
+    flex: 1;
+    min-width: 0;
+    padding: 24px 32px;
+    border: 1.5px solid var(--n-200);
+    border-radius: 4px;
+    text-align: center;
+    background-color: var(--n-0);
+    box-sizing: border-box;
+}
+
+.dependency-node--critical {
+    border: 2px solid var(--error-base);
+    background-color: var(--error-bg);
+}
+
+.dependency-label {
+    font-size: var(--fs-body);
+    font-weight: 600;
+    line-height: var(--lh-body);
+    color: var(--color-ink);
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.dependency-node--critical .dependency-label {
+    color: var(--error-base);
+}
+
+.dependency-arrow {
+    flex-shrink: 0;
+    padding: 0 12px;
+    color: var(--n-300);
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .dependency-chain {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dependency-node {
+        padding: 20px 24px;
+    }
+
+    .dependency-arrow {
+        padding: 8px 0;
+        align-self: center;
+        transform: rotate(90deg);
+    }
+}
+
 /* Weighted Left Layout */
 .weighted-left-heading {
     margin-bottom: 40px;
@@ -4007,6 +4075,18 @@ img {
 
     .practice-title {
         font-size: var(--fs-body);
+    }
+
+    .dependency-node {
+        padding: 16px 20px;
+    }
+
+    .dependency-label {
+        font-size: var(--fs-body-sm);
+    }
+
+    .dependency-arrow svg {
+        width: 28px;
     }
 
     .postit-grid {
