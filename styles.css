@@ -233,10 +233,10 @@ html, body {
   /* Headings */
   --fs-h1: 2.25rem;           /* 36px */
   --lh-h1: 2.75rem;           /* 44px */
-  --fs-h2: 1.5rem;            /* 24px */
-  --lh-h2: 1.75rem;           /* 28px */
-  --fs-h3: 1.25rem;           /* 20px */
-  --lh-h3: 1.5rem;            /* 24px */
+  --fs-h2: 2rem;              /* 32px */
+  --lh-h2: 2.5rem;            /* 40px */
+  --fs-h3: 1.5rem;            /* 24px */
+  --lh-h3: 2rem;              /* 32px */
 
   /* Body */
   --fs-body: 1rem;            /* 16px */
@@ -1020,12 +1020,16 @@ footer ul li a:hover {
     justify-content: space-between;
 }
 
+.project-card-content h3 {
+    margin-bottom: 8px;
+}
+
 /* Project card stats container */
 .project-card-stats {
     display: flex;
     gap: 32px;
-    margin-top: 24px;
-    margin-bottom: 16px;
+    margin-top: auto;
+    margin-bottom: 0;
 }
 
 .project-card-stat {
@@ -2809,8 +2813,8 @@ img {
 }
 
 .user-need-statement {
-    font-size: var(--fs-h2);
-    line-height: var(--lh-h2);
+    font-size: 1.5rem;         /* 24px — kept at previous size */
+    line-height: 1.75rem;
     color: var(--color-ink);
     margin: 0 0 24px 0;
     font-weight: 600;
@@ -2943,6 +2947,10 @@ img {
     font-style: normal;
     color: var(--color-ink);
     margin: 0 0 24px 0;
+}
+
+blockquote footer {
+    background: none;
 }
 
 .pull-quote footer {
