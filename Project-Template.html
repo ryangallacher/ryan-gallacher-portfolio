@@ -5,563 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Template</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Crimson+Pro:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Lora:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .hero-section {
-            padding: 80px 40px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 60px;
-            min-height: 500px;
-            background-color: var(--color-teal-base);
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 500px;
-        }
-
-        .hero-content h1 {
-            margin: 20px 0;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            color: var(--color-bg-surface);
-        }
-
-        .hero-content p {
-            margin: 15px 0;
-            font-size: var(--fs-base);
-            line-height: var(--lh-base);
-            color: var(--color-bg-surface);
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .hero-buttons button {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: var(--fs-button);
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--btn-primary-bg);
-            color: var(--btn-primary-text);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--btn-primary-hover-bg);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--color-bg-surface);
-            border: 1px solid var(--color-bg-surface);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            background-color: var(--btn-secondary-hover-bg);
-        }
-
-        .hero-image {
-            flex: 1;
-            background: var(--color-bg-surface);
-            border-radius: 4px;
-            border: 1px solid var(--color-border-default);
-            padding: 20px;
-            min-height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        .tabs-section {
-            border-bottom: 1px solid var(--color-border-default);
-            padding: 0 40px;
-            margin: 0;
-        }
-
-        .tabs {
-            display: flex;
-            gap: 40px;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .tabs li {
-            margin: 0;
-        }
-
-        .tabs a {
-            display: block;
-            padding: 20px 0;
-            color: var(--color-text-secondary);
-            text-decoration: none;
-            font-size: var(--fs-sm);
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        .tabs a.active {
-            color: var(--color-ink);
-            border-bottom-color: var(--color-camel-base);
-        }
-
-        .tabs a:hover {
-            color: var(--color-ink);
-        }
-
-        .tab-number {
-            font-weight: 600;
-            color: var(--color-text-secondary);
-            margin-right: 8px;
-        }
-
-        .main-content {
-            display: flex;
-            gap: 60px;
-            padding: 60px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .content-text {
-            flex: 0 1 400px;
-        }
-
-        .content-text h2 {
-            font-size: var(--fs-xl);
-            line-height: var(--lh-lg);
-            color: var(--color-ink);
-        }
-
-        .stats-grid {
-            flex: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .stat-item {
-            padding-bottom: 20px;
-        }
-
-        .stat-number {
-            font-size: clamp(3rem, 8vw, 4.5rem);
-            font-weight: 300;
-            color: var(--color-camel-base);
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-size: var(--fs-sm);
-            color: var(--color-text-secondary);
-            line-height: var(--lh-base);
-        }
-
-        .stat-label a {
-            color: var(--color-camel-base);
-            text-decoration: underline;
-        }
-
-        .description-text {
-            grid-column: 1 / -1;
-            font-size: var(--fs-base);
-            line-height: var(--lh-base);
-            color: var(--color-ink);
-        }
-
-        .best-practices {
-            padding: 60px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .best-practices h2 {
-            padding-bottom: 24px;
-            border-bottom: 1px solid var(--color-border-default);
-            margin-bottom: 40px;
-        }
-
-        .practice-item {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 60px;
-            padding: 40px 0;
-            border-bottom: 1px solid var(--color-border-default);
-            align-items: start;
-        }
-
-        .practice-item:last-of-type {
-            border-bottom: none;
-        }
-
-        .practice-title {
-            font-size: var(--fs-lg);
-            font-weight: 600;
-            color: var(--color-ink);
-            margin: 0;
-        }
-
-        .practice-description {
-            font-size: var(--fs-base);
-            line-height: var(--lh-base);
-            color: var(--color-ink);
-            margin: 0;
-        }
-
-        .contact-section {
-            padding: 60px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .contact-header {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 60px;
-            margin-bottom: 60px;
-            align-items: start;
-            border-bottom: 1px solid var(--color-border-default);
-            padding-bottom: 40px;
-        }
-
-        .contact-intro h2 {
-            font-size: var(--fs-lg);
-            font-weight: 600;
-            color: var(--color-ink);
-            margin: 0 0 16px 0;
-        }
-
-        .contact-intro p {
-            font-size: var(--fs-sm);
-            line-height: var(--lh-base);
-            color: var(--color-text-secondary);
-            margin: 0;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 60px;
-        }
-
-        .contact-column h3 {
-            font-size: var(--fs-base);
-            font-weight: 600;
-            color: var(--color-ink);
-            margin: 0 0 30px 0;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-        }
-
-        .contact-item {
-            margin-bottom: 28px;
-        }
-
-        .contact-item h4 {
-            font-size: var(--fs-sm);
-            font-weight: 600;
-            color: var(--color-ink);
-            margin: 0 0 6px 0;
-        }
-
-        .contact-item p {
-            font-size: var(--fs-sm);
-            line-height: var(--lh-base);
-            color: var(--color-text-secondary);
-            margin: 0;
-        }
-
-        .contact-item a {
-            color: var(--color-camel-base);
-        }
-
-        .postit-card {
-            background-color: var(--color-camel-wash);
-            border: 1px solid var(--color-border-default);
-            border-radius: 2px;
-            padding: 24px;
-            position: relative;
-            box-shadow: 0 4px 6px rgba(31, 42, 55, 0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%);
-        }
-
-        .postit-card::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            right: -1px;
-            width: 31px;
-            height: 31px;
-            background-color: var(--color-camel-wash);
-            border-right: 1px solid var(--color-border-default);
-            border-top: 1px solid var(--color-border-default);
-            pointer-events: none;
-        }
-
-        .postit-card::after {
-            content: '';
-            position: absolute;
-            top: -1px;
-            right: -1px;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 0 31px 31px 0;
-            border-color: transparent var(--color-bg-surface-raised) transparent transparent;
-            box-shadow: -2px 2px 3px rgba(31, 42, 55, 0.15);
-            pointer-events: none;
-        }
-
-        .postit-card-icon {
-            font-size: 32px;
-            line-height: 1;
-        }
-
-        .postit-card h3 {
-            font-size: var(--fs-lg);
-            font-weight: 600;
-            color: var(--color-ink);
-            margin: 0;
-        }
-
-        .postit-card p {
-            font-size: var(--fs-sm);
-            color: var(--color-text-secondary);
-            margin: 0;
-        }
-
-        .postit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            padding: 60px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 900px) {
-            .contact-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-header {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .research-section {
-            padding: 60px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .research-header {
-            display: grid;
-            grid-template-columns: 300px 1fr;
-            gap: 60px;
-            padding-bottom: 60px;
-            border-bottom: 1px solid var(--color-border-default);
-            margin-bottom: 40px;
-            align-items: start;
-        }
-
-        .research-header h2 {
-            font-size: var(--fs-xxl);
-            line-height: var(--lh-lg);
-            color: var(--color-ink);
-            margin: 0;
-        }
-
-        .research-header p {
-            font-size: var(--fs-base);
-            line-height: var(--lh-base);
-            color: var(--color-ink);
-            margin: 0;
-        }
-
-        .research-cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-            margin-bottom: 60px;
-        }
-
-        .research-card {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .research-card h3 {
-            font-size: var(--fs-base);
-            font-weight: 600;
-            color: var(--color-ink);
-            margin: 0 0 12px 0;
-        }
-
-        .research-card p {
-            font-size: var(--fs-sm);
-            line-height: var(--lh-base);
-            color: var(--color-text-secondary);
-            margin: 0 0 20px 0;
-        }
-
-        .research-image {
-            width: 100%;
-            height: 250px;
-            background-color: var(--color-bg-surface-alt);
-            border-radius: 4px;
-            border: 1px solid var(--color-border-default);
-            margin-bottom: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .research-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .research-meta {
-            font-size: var(--fs-xs);
-            line-height: var(--lh-base);
-            color: var(--color-text-secondary);
-            margin-bottom: 12px;
-        }
-
-        .research-tags {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-        }
-
-        .contact-section {
-            padding: 60px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 60px;
-        }
-
-        .contact-column h3 {
-            font-size: var(--fs-lg);
-            font-weight: 600;
-            color: var(--color-ink);
-            margin: 0 0 30px 0;
-            display: flex;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background-color: var(--color-bg-surface-alt);
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-item {
-            margin-bottom: 30px;
-        }
-
-        .contact-item h4 {
-            font-size: var(--fs-base);
-            font-weight: 600;
-            color: var(--color-ink);
-            margin: 0 0 8px 0;
-        }
-
-        .contact-item p {
-            font-size: var(--fs-sm);
-            line-height: var(--lh-base);
-            color: var(--color-text-secondary);
-            margin: 0;
-        }
-
-        .contact-item a {
-            color: var(--color-camel-base);
-        }
-
-        @media (max-width: 900px) {
-            .research-cards {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .contact-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .research-header,
-            .practice-item {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .research-cards,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
 </head>
 
 <body>
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo">
-                <!-- SVG logo goes here -->
-            </a>
+            <a href="index.html" class="logo">Ryan Gallacher</a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -573,18 +24,30 @@
     </header>
 
     <section class="hero-section">
-        <div class="hero-content">
-            <p class="eyebrow-text">Company Name</p>
-            <h1>Project Title <span>🌐</span></h1>
-            <p>Brief description of the project goes here. This is the main value proposition.</p>
-            <p>Additional context about the project and its impact.</p>
-            <div class="hero-buttons">
-                <button class="btn-primary">View project</button>
-                <button class="btn-secondary">Get started →</button>
+        <div class="hero-wrapper">
+            <div class="hero-content">
+                <p class="eyebrow-text">The Scottish Government</p>
+                <h1>ScotAccount</h1>
+                <p>Transforming the way half a million Scottish citizens access public services.</p>
+                <p>Reducing duplication.</p>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-label">Sector</span>
+                        <span class="hero-stat-number">Public Sector</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-label">My Responsibilities</span>
+                        <span class="hero-stat-number">Interaction Design, Service Design</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-label">Duration</span>
+                        <span class="hero-stat-number">~18 Months</span>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="path/to/image.jpg" alt="Project showcase">
+            <div class="hero-image">
+                <img src="path/to/image.jpg" alt="Project showcase">
+            </div>
         </div>
     </section>
 
@@ -606,24 +69,357 @@
         </div>
         <div class="stats-grid">
             <div class="stat-item">
-                <div class="stat-number">13M</div>
-                <div class="stat-label">Key metric one</div>
+                <div class="stat-number">£1,000s</div>
+                <div class="stat-label">saved per week in postage and processing for Disclosure checks alone.  </div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">69%</div>
-                <div class="stat-label">Metric description with <a href="#">link</a></div>
+                <div class="stat-number">99%</div>
+                <div class="stat-label">of users choose to save their details for reuse.</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">83x</div>
-                <div class="stat-label">Faster than alternatives</div>
+                <div class="stat-number">~500,000</div>
+                <div class="stat-label">ScotAccounts have been created as of 2025.</div>
             </div>
             <div class="stat-item">
-                <div class="stat-number">7K+</div>
-                <div class="stat-label">Dependent projects</div>
+                <div class="stat-number">~27%</div>
+                <div class="stat-label">increase in identity verification success rate</div>
             </div>
             <div class="description-text">
                 <p>Add your detailed description here. This section can contain more information about the project, its impact, and key achievements.</p>
             </div>
+        </div>
+    </div>
+
+    <!-- Value Proposition Banner -->
+    <section class="value-banner-section">
+        <div class="value-banner">
+            <div class="value-banner-tagline">
+                <p>A user-centred approach to digital transformation</p>
+            </div>
+            <div class="value-banner-stats">
+                <div class="value-banner-item">
+                    <span class="value-banner-eyebrow">Discovery</span>
+                    <span class="value-banner-value">25+ user interviews</span>
+                </div>
+                <div class="value-banner-item">
+                    <span class="value-banner-eyebrow">Impact</span>
+                    <span class="value-banner-value">500,000 users onboarded</span>
+                </div>
+                <div class="value-banner-item">
+                    <span class="value-banner-eyebrow">Delivery</span>
+                    <span class="value-banner-value">Live in under 12 months</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bounding Box Cards -->
+    <section class="bbox-section">
+        <div class="bbox-grid">
+            <div class="bbox-card bbox-card--inset">
+                <span class="bbox-handle bbox-tl"></span>
+                <span class="bbox-handle bbox-tr"></span>
+                <span class="bbox-handle bbox-bl"></span>
+                <span class="bbox-handle bbox-br"></span>
+                <div class="bbox-card-inner">
+                    <h3>Card title</h3>
+                    <p>Card description goes here.</p>
+                </div>
+            </div>
+            <div class="bbox-card bbox-card--inset">
+                <span class="bbox-handle bbox-tl"></span>
+                <span class="bbox-handle bbox-tr"></span>
+                <span class="bbox-handle bbox-bl"></span>
+                <span class="bbox-handle bbox-br"></span>
+                <div class="bbox-card-inner">
+                    <h3>Card title</h3>
+                    <p>Card description goes here.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Weighted Left -->
+    <section class="research-section">
+        <div class="weighted-left">
+            <div class="weighted-left-heading">
+                <h2>Weighted Left</h2>
+                <p class="weighted-left-subtitle">Subtitle Placeholder</p>
+            </div>
+            <div class="weighted-left-columns">
+                <div class="weighted-left-main">
+                    <p>Integer ultrices lobortis eros. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin semper, ante vitae sollicitudin posuere, metus quam iaculis nibh, vitae scelerisque nunc massa eget pede.</p>
+                    <p>In in nunc. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Donec ullamcorper fringilla eros. Fusce in sapien eu purus dapibus commodo.</p>
+                    <p>Vestibulum quis dolor a felis congue vehicula. Maecenas pede purus, tristique ac, tempus eget, egestas quis, mauris. Curabitur non eros. Nullam hendrerit bibendum justo.</p>
+                    <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</strong></p>
+                </div>
+                <div class="weighted-left-sidebar">
+                    <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</h3>
+                    <p>Incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Maecenas pede purus, tristique.</p>
+                    <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa.</h3>
+                    <ul>
+                        <li>Qui officia deserunt mollit anim id est</li>
+                        <li>Proin semper, ante vitae</li>
+                        <li>Massa eget pede</li>
+                        <li>Sed velit urna, interdum vel, ultricies vel, faucibus at, quam</li>
+                        <li>Maecenas pede purus, tristique</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Grid Section -->
+    <section class="testimonial-section">
+        <div class="section-header">
+            <h2>The Dotwork Difference</h2>
+            <p>See how product leaders are transforming their operations with our platform</p>
+        </div>
+
+        <div class="grid-12">
+            <!-- Top Row -->
+            <div class="testimonial-card card-tall col-span-6"></div>
+            <div class="testimonial-card card-medium col-span-3"></div>
+            <div class="testimonial-card col-span-3"></div>
+
+            <!-- Bottom Row -->
+            <div class="testimonial-card col-span-3"></div>
+            <div class="testimonial-card card-medium col-span-3"></div>
+            <div class="testimonial-card card-tall col-span-6"></div>
+        </div>
+    </section>
+
+    <!-- Bounding Box Testimonial Grid -->
+    <section class="bbox-section">
+        <div class="section-header">
+            <h2>The Dotwork Difference</h2>
+            <p>See how product leaders are transforming their operations with our platform</p>
+        </div>
+        <div class="bbox-grid bbox-grid-3">
+            <div class="bbox-card bbox-card--inset">
+                <span class="bbox-handle bbox-tl"></span>
+                <span class="bbox-handle bbox-tr"></span>
+                <span class="bbox-handle bbox-bl"></span>
+                <span class="bbox-handle bbox-br"></span>
+                <div class="bbox-card-inner">
+                    <img src="Assets/Icons/quotes.svg" alt="" class="tq-icon" aria-hidden="true" />
+                    <p class="tq-text">The team didn't just deliver a product, they helped us fundamentally rethink how citizens interact with government services. The result speaks for itself.</p>
+                    <div class="tq-author">
+                        <div class="tq-avatar"></div>
+                        <div class="tq-author-info">
+                            <span class="tq-name">Sarah Mitchell</span>
+                            <span class="tq-role">Head of Digital, Scottish Government</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bbox-card bbox-card--inset">
+                <span class="bbox-handle bbox-tl"></span>
+                <span class="bbox-handle bbox-tr"></span>
+                <span class="bbox-handle bbox-bl"></span>
+                <span class="bbox-handle bbox-br"></span>
+                <div class="bbox-card-inner">
+                    <img src="Assets/Icons/quotes.svg" alt="" class="tq-icon" aria-hidden="true" />
+                    <p class="tq-text">ScotAccount has transformed how we process disclosure checks. The savings in postage and processing alone have been remarkable, and our users love the simplicity.</p>
+                    <div class="tq-author">
+                        <div class="tq-avatar"></div>
+                        <div class="tq-author-info">
+                            <span class="tq-name">James Crawford</span>
+                            <span class="tq-role">Service Owner, Disclosure Scotland</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bbox-card bbox-card--inset">
+                <span class="bbox-handle bbox-tl"></span>
+                <span class="bbox-handle bbox-tr"></span>
+                <span class="bbox-handle bbox-bl"></span>
+                <span class="bbox-handle bbox-br"></span>
+                <div class="bbox-card-inner">
+                    <img src="Assets/Icons/quotes.svg" alt="" class="tq-icon" aria-hidden="true" />
+                    <p class="tq-text">The research-led approach gave us confidence that every design decision was grounded in real user needs. It's exactly the kind of rigour public services demand.</p>
+                    <div class="tq-author">
+                        <div class="tq-avatar"></div>
+                        <div class="tq-author-info">
+                            <span class="tq-name">Fiona Stewart</span>
+                            <span class="tq-role">UX Lead, Social Security Scotland</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Masonry Image Gallery -->
+    <section class="masonry-gallery">
+        <div class="section-header">
+            <h2>Project Gallery</h2>
+            <p>Visual highlights and key moments from the project</p>
+        </div>
+
+        <div class="masonry-grid">
+            <!-- Row 1-2 -->
+            <div class="gallery-item size-2x2"></div>
+            <div class="gallery-item size-2x2"></div>
+            <div class="gallery-item size-2x2"></div>
+
+            <!-- Row 3-4 -->
+            <div class="gallery-item size-3x2"></div>
+            <div class="gallery-item size-2x2 featured-quote">
+                <div class="stat-number">99%</div>
+                <div class="stat-label">User satisfaction</div>
+            </div>
+            <div class="gallery-item size-1x2"></div>
+
+            <!-- Row 5-6 -->
+            <div class="gallery-item size-1x2"></div>
+            <div class="gallery-item size-2x2"></div>
+            <div class="gallery-item size-3x2"></div>
+        </div>
+    </section>
+
+    <!-- Research / Publications Section -->
+    <section class="research-section">
+        <div class="research-header">
+            <h2>Advancing design through user research</h2>
+            <div class="research-header-body">
+                <p>Research-driven insights that enabled known improvements to be delivered sooner and new opportunities to be uncovered. By working closely with users across key service areas, we built a clear understanding of where design could deliver the most value.</p>
+            </div>
+        </div>
+
+        <div class="research-topic">
+            <div class="research-topic-intro">
+                <h3>Discovery</h3>
+                <p>User research and contextual inquiry across multiple service touchpoints, uncovering key pain points and opportunities.</p>
+            </div>
+            <div class="research-cards">
+                <div class="research-card">
+                    <div class="research-image"></div>
+                    <h3>Understanding citizen needs for digital identity</h3>
+                    <p class="research-meta">Gallacher, R., et al. | Discovery Report (2024)</p>
+                    <div class="research-tags">
+                        <span class="tag">User Research</span>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-image"></div>
+                    <h3>Mapping service journeys across public sector touchpoints</h3>
+                    <p class="research-meta">Gallacher, R., et al. | Service Design (2024)</p>
+                    <div class="research-tags">
+                        <span class="tag">Service Design</span>
+                        <span class="tag">Journey Mapping</span>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-image"></div>
+                    <h3>Accessibility audit and inclusive design recommendations</h3>
+                    <p class="research-meta">Gallacher, R., et al. | Accessibility Review (2024)</p>
+                    <div class="research-tags">
+                        <span class="tag">Accessibility</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="research-topic">
+            <div class="research-topic-intro">
+                <h3>Interaction Design</h3>
+                <p>Prototyping and testing solutions that simplify complex government processes for everyday users.</p>
+            </div>
+            <div class="research-cards">
+                <div class="research-card">
+                    <div class="research-image"></div>
+                    <h3>Iterative prototyping for identity verification flows</h3>
+                    <p class="research-meta">Gallacher, R., et al. | Design Iteration (2024)</p>
+                    <div class="research-tags">
+                        <span class="tag">Prototyping</span>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-image"></div>
+                    <h3>Reducing cognitive load in multi-step forms</h3>
+                    <p class="research-meta">Gallacher, R., et al. | Usability Study (2025)</p>
+                    <div class="research-tags">
+                        <span class="tag">Interaction Design</span>
+                        <span class="tag">Usability</span>
+                    </div>
+                </div>
+                <div class="research-card">
+                    <div class="research-image"></div>
+                    <h3>Design system patterns for government services</h3>
+                    <p class="research-meta">Gallacher, R., et al. | Design Systems (2025)</p>
+                    <div class="research-tags">
+                        <span class="tag">Design Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blockquote -->
+    <section class="pull-quote-section">
+        <blockquote class="pull-quote">
+            <img src="Assets/Icons/quotes.svg" alt="" class="pull-quote-icon" aria-hidden="true" />
+            <p>The team didn't just deliver a product, they helped us fundamentally rethink how citizens interact with government services. The result speaks for itself.</p>
+            <footer>
+                <cite>
+                    <span class="cite-name">Sarah Mitchell</span>
+                    <span class="cite-role">Head of Digital, Scottish Government</span>
+                </cite>
+            </footer>
+        </blockquote>
+    </section>
+
+    <!-- Testimonials Cards -->
+    <section class="testimonials-section">
+        <div class="testimonials-header">
+            <span class="eyebrow-tag">Testimonials</span>
+            <h2>What stakeholders say</h2>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-quote-card">
+                <img src="Assets/Icons/quotes.svg" alt="" class="tq-icon" aria-hidden="true" />
+                <p class="tq-text">The team didn't just deliver a product, they helped us fundamentally rethink how citizens interact with government services. The result speaks for itself.</p>
+                <div class="tq-author">
+                    <div class="tq-avatar"></div>
+                    <div class="tq-author-info">
+                        <span class="tq-name">Sarah Mitchell</span>
+                        <span class="tq-role">Head of Digital, Scottish Government</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-quote-card">
+                <img src="Assets/Icons/quotes.svg" alt="" class="tq-icon" aria-hidden="true" />
+                <p class="tq-text">ScotAccount has transformed how we process disclosure checks. The savings in postage and processing alone have been remarkable, and our users love the simplicity.</p>
+                <div class="tq-author">
+                    <div class="tq-avatar"></div>
+                    <div class="tq-author-info">
+                        <span class="tq-name">James Crawford</span>
+                        <span class="tq-role">Service Owner, Disclosure Scotland</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-quote-card">
+                <img src="Assets/Icons/quotes.svg" alt="" class="tq-icon" aria-hidden="true" />
+                <p class="tq-text">The research-led approach gave us confidence that every design decision was grounded in real user needs. It's exactly the kind of rigour public services demand.</p>
+                <div class="tq-author">
+                    <div class="tq-avatar"></div>
+                    <div class="tq-author-info">
+                        <span class="tq-name">Fiona Stewart</span>
+                        <span class="tq-role">UX Lead, Social Security Scotland</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pattern section with dark background, SVG scaled to 105% of container and cropped -->
+
+    <div class="pattern-bg">
+        <img src="Assets/dotted gradient background wide.svg" alt="Pattern" class="pattern-img" />
+        <div class="pattern-card">
+            <h2>Section Title</h2>
+            <p>This is a card-like section with some text. It is positioned on the right, visually splitting the section into two.</p>
         </div>
     </div>
 
@@ -658,13 +454,13 @@
 
     <section class="contact-section">
         <div class="contact-header">
-            <div class="contact-intro">
-                <h2>Contact IBM</h2>
-                <p>We're here to help. Get answers to your questions about products, sales, support or anything else IBM</p>
-            </div>
         </div>
 
         <div class="contact-grid">
+            <div class="contact-column contact-intro">
+                <h2>Contact IBM</h2>
+                <p>We're here to help. Get answers to your questions about products, sales, support or anything else IBM</p>
+            </div>
             <div class="contact-column">
                 <h3>
                     <span class="contact-icon">📱</span>
@@ -748,6 +544,63 @@
         </div>
     </section>
 
+    <section class="why-section">
+        <h2>Why Work With Me</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <svg class="why-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="16" cy="10" r="5" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M6 28c0-5.523 4.477-10 10-10s10 4.477 10 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <path d="M22 7l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <p><strong>User-centred approach</strong> grounded in research and real-world insight</p>
+            </div>
+            <div class="why-item">
+                <svg class="why-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <rect x="4" y="6" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M4 12h24" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="8" cy="9" r="1" fill="currentColor"/>
+                    <circle cx="12" cy="9" r="1" fill="currentColor"/>
+                </svg>
+                <p><strong>End-to-end delivery</strong> from discovery through to implementation</p>
+            </div>
+            <div class="why-item">
+                <svg class="why-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M16 4v6l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <p><strong>Rapid iteration</strong> with continuous feedback loops</p>
+            </div>
+            <div class="why-item">
+                <svg class="why-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M8 6h16a2 2 0 012 2v16a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2z" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M12 16l3 3 5-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <p><strong>Practical outputs</strong> that teams can act on immediately</p>
+            </div>
+            <div class="why-item">
+                <svg class="why-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="16" cy="16" r="4" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="6" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="26" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M9 10h3.5M19.5 10H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <circle cx="6" cy="22" r="3" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="26" cy="22" r="3" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M9 22h3.5M19.5 22H23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <p><strong>Cross-functional collaboration</strong> bridging design, product and engineering</p>
+            </div>
+            <div class="why-item">
+                <svg class="why-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path d="M6 26V10l10-6 10 6v16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 26h20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <rect x="12" y="18" width="8" height="8" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+                <p><strong>Public &amp; private sector experience</strong> across complex, regulated environments</p>
+            </div>
+        </div>
+    </section>
+
     <section class="postit-grid">
         <div class="postit-card">
             <div class="postit-card-icon">🐍</div>
@@ -774,7 +627,7 @@
         </div>
     </section>
 
-    <section style="padding: 40px 20px;">
+    <section class="timeline-section">
         <div class="timeline-container">
             <div class="timeline-header">
                 <div class="timeline-icon">📅</div>
@@ -902,12 +755,141 @@
         </div>
     </section>
 
+    <!-- Timeline variant: Colored with small nodes only -->
+    <section class="timeline-section timeline-colored">
+        <div class="timeline-container">
+            <div class="timeline-header">
+                <div class="timeline-icon">📅</div>
+                <div class="timeline-month">January 2026 (Colored variant)</div>
+            </div>
+
+            <div class="timeline-line"></div>
+            
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Milestone</span>
+                        <span class="timeline-date">• August 04, 2025</span>
+                    </div>
+                    <div class="timeline-title">Barnet ble født</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Application</span>
+                        <span class="timeline-date">• August 22, 2025</span>
+                    </div>
+                    <div class="timeline-title">Du søkte om FORELDREPENGER</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Documents</span>
+                        <span class="timeline-date">• August 23, 2025 Kl. 09:05</span>
+                    </div>
+                    <div class="timeline-title">Du la til 2 vedlegg</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Response</span>
+                        <span class="timeline-date">• August 25, 2025</span>
+                    </div>
+                    <div class="timeline-title">Du har fått et svar på søknaden din</div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-node"></div>
+                <div class="timeline-content">
+                    <div class="timeline-meta">
+                        <span class="timeline-label">Action Required</span>
+                        <span class="timeline-date">• August 26, 2025</span>
+                    </div>
+                    <div class="timeline-title">Nav har etterspurt opplysninger</div>
+                    <div class="sub-item-status">Aktiv</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       <!-- Project Wrap-up / Results / Where is ScotAccount Now -->
+    <section class="project-wrapup">
+        <div class="wrapup-content">
+            <h2>Project Outcomes & Impact</h2>
+            <p>ScotAccount was shortlisted as one of three finalists in the 2025 Civil Service Awards' <a href="https://www.civilserviceawards.com/delivering-for-citizens-award-2/" target="_blank" rel="noopener">"Delivering for Citizens"</a> category, recognising its proven value to the people of Scotland. The awards attracted 2,500 entries across all categories and featured a wide range of programmes from across the UK Public Sector.</p>
+
+            <!-- Pass Rate Improvement -->
+            <div class="impact-visualization">
+                <div style="text-align: center; margin-top: 1.5rem; padding: 1rem; background-color: #f5f5f5; border-left: 4px solid #2e7d32; max-width: 700px; margin-left: auto; margin-right: auto;">
+                    <p style="margin: 0; color: #333; font-size: 0.95rem;"><strong>Impact:</strong> Design changes drove pass rates from 53% to 80%. Critically, performance remained consistently above 76% for months after implementation, demonstrating this was a fundamental UX improvement, not a temporary spike.</p>
+                </div>
+            </div>
+
+            <ul>
+                <li><strong>Over 500,000 users</strong> onboarded within the first year</li>
+                <li><strong>Significant reduction</strong> in support requests and onboarding time</li>
+                <li>Recognized as a model for digital inclusion and accessibility</li>
+            </ul>
+            <h3>Where is ScotAccount now?</h3>
+            <p>As of 2025, around 10,000 new ScotAccounts are created weekly.</p>
+        </div>
+    </section>
+
     <footer>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="#work" class="active">Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-</body>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+    // Back to top button functionality
+    (function() {
+        var backToTopButton = document.getElementById('back-to-top');
+        if (!backToTopButton) return;
+
+        // Show/hide button based on scroll position
+        function toggleBackToTop() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        }
+
+        // Scroll to top smoothly
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', toggleBackToTop);
+
+        // Check initial state
+        toggleBackToTop();
+    })();
+    </script></body>
 
 </html>

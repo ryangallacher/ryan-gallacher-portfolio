@@ -5,16 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScotAccount Project</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Crimson+Pro:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Lora:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo">
-                <!-- SVG logo goes here -->
-            </a>
+            <a href="index.html" class="logo">Ryan Gallacher</a>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -26,6 +24,7 @@
     </header>
 
     <div class="content-container">
+            <!-- Breadcrumb removed for optimal UX: flat site architecture does not require breadcrumbs -->
         <main>
             <section class="hero">
                 <div class="hero-text">
@@ -153,8 +152,46 @@
             <li><a href="#work" class="active">Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <p>&copy; 2023 Ryan Gallacher. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Ryan Gallacher. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
-</body>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+    // Back to top button functionality
+    (function() {
+        var backToTopButton = document.getElementById('back-to-top');
+        if (!backToTopButton) return;
+
+        // Show/hide button based on scroll position
+        function toggleBackToTop() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        }
+
+        // Scroll to top smoothly
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', toggleBackToTop);
+
+        // Check initial state
+        toggleBackToTop();
+    })();
+    </script></body>
 
 </html>

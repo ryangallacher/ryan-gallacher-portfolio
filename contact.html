@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Crimson+Pro:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Lora:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo">
-                <!-- SVG logo goes here -->
-            </a>
-            <nav>
+            <a href="index.html" class="logo">Ryan Gallacher</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
+                <span class="hamburger-icon" aria-hidden="true"></span>
+            </button>
+            <nav id="main-navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -48,8 +49,8 @@
                             <!-- OPTIONAL: customize email subject -->
                             <input type="hidden" name="_subject" value="New Contact Form Submission">
 
-                            <!-- Redirect after success -->
-                            <input type="hidden" name="_next" value="https://www.linkedin.com/in/ryan-gallacher-a19473160/">
+                            <!-- Redirect after success (FormSubmit requires absolute URL) -->
+                            <input type="hidden" name="_next" value="https://ryangallacher.github.io/ai-practice/thank-you.html">
 
                             <!-- Visitor email -->
                             <div class="form-group">
@@ -78,8 +79,16 @@
             <li><a href="#work">Work</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
-        <p>&copy; 2023 Ryan Gallacher. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Ryan Gallacher. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
 
     <script>
     (function() {
@@ -150,6 +159,92 @@
         });
     })();
     </script>
-</body>
+
+    <script>
+    // Accessible mobile menu toggle
+    (function() {
+        var menuToggle = document.querySelector('.mobile-menu-toggle');
+        var nav = document.querySelector('#main-navigation');
+
+        if (!menuToggle || !nav) return;
+
+        // Toggle menu on button click
+        menuToggle.addEventListener('click', function() {
+            var isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+
+            // Toggle states
+            menuToggle.setAttribute('aria-expanded', !isOpen);
+            nav.classList.toggle('open');
+
+            // Manage body scroll when menu is open
+            if (!isOpen) {
+                // Menu opening - trap focus
+                var firstFocusable = nav.querySelector('a');
+                if (firstFocusable) {
+                    setTimeout(function() { firstFocusable.focus(); }, 100);
+                }
+            }
+        });
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && nav.classList.contains('open')) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                nav.classList.remove('open');
+                menuToggle.focus();
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (nav.classList.contains('open') &&
+                !nav.contains(e.target) &&
+                !menuToggle.contains(e.target)) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                nav.classList.remove('open');
+            }
+        });
+
+        // Close menu when a nav link is clicked
+        var navLinks = nav.querySelectorAll('a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                nav.classList.remove('open');
+            });
+        });
+    })();
+    </script>
+
+    <script>
+    // Back to top button functionality
+    (function() {
+        var backToTopButton = document.getElementById('back-to-top');
+        if (!backToTopButton) return;
+
+        // Show/hide button based on scroll position
+        function toggleBackToTop() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        }
+
+        // Scroll to top smoothly
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', toggleBackToTop);
+
+        // Check initial state
+        toggleBackToTop();
+    })();
+    </script></body>
 
 </html>

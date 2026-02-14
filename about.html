@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ScotAccount Project</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Crimson+Pro:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Lora:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="about-page">
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo">
-                <!-- SVG logo goes here -->
-            </a>
-            <nav>
+            <a href="index.html" class="logo">Ryan Gallacher</a>
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
+                <span class="hamburger-icon" aria-hidden="true"></span>
+            </button>
+            <nav id="main-navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About</a></li>
@@ -31,14 +32,19 @@
                 <div class="hero-text">
                     <p class="eyebrow-text">The Scottish Government</p>
                     <h1>ScotPayments</h1>
-                    
+                    <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                        <a href="Assets/CV-Ryan-Gallacher.pdf" class="btn-secondary" target="_blank" rel="noopener">
+                            <img src="Assets/Icons/launch.svg" alt="" width="20" height="20" style="margin-right: 6px; display: inline; vertical-align: middle; filter: var(--petrol-svg-filter, none);" aria-hidden="true" />
+                            View My CV
+                        </a>
+                    </div>
                 </div>
                 <div class="hero-image">
                     <img src="path/to/your/image.jpg" alt="Description of the image">
                 </div>
             </section>
             <section class="key-stats">
-                <h2>Mention sustainability and work on Tech Carbon Standard tool</h2>
+                <h2>Mention contribution to projects for sustainable tech and Tech Carbon Standard tool, ESG tool for the Public Sector, DWP</h2>
                 <ul>
                     <li>stat</li>
                 </ul>
@@ -47,94 +53,66 @@
     </div>
 
     <section class="work-history">
-        <h2>Work History</h2>
-        <ol class="timeline" aria-label="Work history timeline">
-
-            <div class="company-group">
-                <div class="company-header">
-                    <h3 class="company-name">Scott Logic</h3>
-                    <p class="company-meta small">Edinburgh, Scotland, United Kingdom</p>
+        <!-- Timeline variant: Colored with small nodes only -->
+        <div class="timeline-section timeline-colored">
+            <div class="timeline-container">
+                <div class="timeline-header">
+                    <h2>Employment History</h2>
                 </div>
-                <ol class="company-timeline">
-                    <li class="timeline-item">
-                        <span class="timeline-node" aria-hidden="true"></span>
-                        <div class="timeline-date">2023 - Present</div>
-                        <div class="timeline-content">
-                            <h3>Senior UX Consultant</h3>
-                            <p class="meta small">Full-time</p>
-                            <p class="description">Lead UX strategy and delivery for client projects; ran workshops, user research, and high-fidelity prototyping to support product decisions.</p>
-                        </div>
-                    </li>
 
-                    <li class="timeline-item">
-                        <span class="timeline-node" aria-hidden="true"></span>
-                        <div class="timeline-date">2022 - 2023</div>
-                        <div class="timeline-content">
-                            <h3>UX Consultant</h3>
-                            <p class="meta small">Experienced UX practitioner delivering research and interaction design.</p>
-                            <p class="description">Delivered UX design work across multidisciplinary teams, conducted user research, and produced interaction designs and specifications.</p>
-                        </div>
-                    </li>
+                <div class="timeline-line"></div>
 
-                    <li class="timeline-item">
-                        <span class="timeline-node" aria-hidden="true"></span>
-                        <div class="timeline-date">2021 - 2022</div>
-                        <div class="timeline-content">
-                            <h3>Associate UX Designer</h3>
-                            <p class="meta small">Supported design and research activities for client projects.</p>
-                            <p class="description">Supported senior designers on client projects, ran usability testing, and developed wireframes and prototypes.</p>
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Senior UX Consultant - Scott Logic</div>
+                        <div class="timeline-meta">
+                            <span class="timeline-date">2021 - Present</span>
                         </div>
-                    </li>
-
-                    <li class="timeline-item">
-                        <span class="timeline-node" aria-hidden="true"></span>
-                        <div class="timeline-date">2021</div>
-                        <div class="timeline-content">
-                            <h3>Graduate UX Designer</h3>
-                            <p class="meta small">Graduate role</p>
-                            <p class="description">Graduate role focused on learning UX methods, conducting research, and creating design deliverables for clients.</p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-
-            <div class="company-group">
-                <div class="company-header">
-                    <h3 class="company-name">Housing Options Scotland</h3>
-                    <p class="company-meta small">Greater Glasgow Area</p>
+                        <p class="timeline-description">Progressed from Graduate level.</p>
+                        <ul class="timeline-responsibilities">
+                            <li>Bespoke solutions that address complex problems</li>
+                            <li>Ran discovery workshops, user research sessions, and stakeholder interviews</li>
+                            <li>Produced high-fidelity prototypes and interaction design specifications</li>
+                            <li>Mentored junior designers and shaped team design practices</li>
+                        </ul>
+                        <p class="timeline-clients-label">I've worked on projects with:</p>
+                        <ul class="timeline-clients">
+                            <li><strong>The Scottish Government</strong>, including some of its executive agencies</li>
+                            <li><strong>Westmorland &amp; Furness Council</strong></li>
+                            <li><strong>Two Global Tier 1 Financial Institutions</strong></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="company-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-date">2018</div>
-                        <div class="timeline-content">
-                            <h3>Client Communications</h3>
-                            <p class="meta small">Temporary</p>
-                            <p class="description">Handled client communications and outreach for the organisation.</p>
+
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Stock Associate - Hollister Co.</div>
+                        <div class="timeline-meta">
+                            <span class="timeline-date">2014 - 2021</span>
                         </div>
+                        <p class="timeline-description">Part-time retail role managing stock and assisting customers.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-node"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">Client Communications - Housing Options Scotland</div>
+                        <div class="timeline-meta">
+                            <span class="timeline-date">2018</span>
+                        </div>
+                        <p class="timeline-description">Handled client communications and outreach for the organisation.</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="company-group">
-                <div class="company-header">
-                    <h3 class="company-name">Hollister Co.</h3>
-                    <p class="company-meta small">Greater Glasgow Area</p>
-                </div>
-                <ol class="company-timeline">
-                    <li class="timeline-item">
-                        <span class="timeline-node" aria-hidden="true"></span>
-                        <div class="timeline-date">2014 - 2021</div>
-                        <div class="timeline-content">
-                            <h3>Stock Associate</h3>
-                            <p class="meta small">Part-time</p>
-                            <p class="description">Part-time retail role managing stock and assisting customers.</p>
-                        </div>
-                    </li>
-                </ol>
-            </div>
-
-        </ol>
-    </section> 
+    <section class="workshop-image">
+        <img src="Assets/Images/workshop.jfif" alt="Workshop">
+    </section>
 
     <footer>
         <ul>
@@ -142,8 +120,102 @@
             <li><a href="#work" class="active">Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <p>&copy; 2023 Ryan Gallacher. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Ryan Gallacher. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
-</body>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script>
+    // Accessible mobile menu toggle
+    (function() {
+        var menuToggle = document.querySelector('.mobile-menu-toggle');
+        var nav = document.querySelector('#main-navigation');
+
+        if (!menuToggle || !nav) return;
+
+        // Toggle menu on button click
+        menuToggle.addEventListener('click', function() {
+            var isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+
+            // Toggle states
+            menuToggle.setAttribute('aria-expanded', !isOpen);
+            nav.classList.toggle('open');
+
+            // Manage body scroll when menu is open
+            if (!isOpen) {
+                // Menu opening - trap focus
+                var firstFocusable = nav.querySelector('a');
+                if (firstFocusable) {
+                    setTimeout(function() { firstFocusable.focus(); }, 100);
+                }
+            }
+        });
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && nav.classList.contains('open')) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                nav.classList.remove('open');
+                menuToggle.focus();
+            }
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (nav.classList.contains('open') &&
+                !nav.contains(e.target) &&
+                !menuToggle.contains(e.target)) {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                nav.classList.remove('open');
+            }
+        });
+
+        // Close menu when a nav link is clicked
+        var navLinks = nav.querySelectorAll('a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                nav.classList.remove('open');
+            });
+        });
+    })();
+    </script>
+
+    <script>
+    // Back to top button functionality
+    (function() {
+        var backToTopButton = document.getElementById('back-to-top');
+        if (!backToTopButton) return;
+
+        // Show/hide button based on scroll position
+        function toggleBackToTop() {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        }
+
+        // Scroll to top smoothly
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', toggleBackToTop);
+
+        // Check initial state
+        toggleBackToTop();
+    })();
+    </script></body>
 
 </html>

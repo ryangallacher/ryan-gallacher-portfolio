@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You</title>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Crimson+Pro:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Lora:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -39,7 +39,8 @@
             <li><a href="#work">Work</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <p>&copy; 2023 Ryan Gallacher. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Ryan Gallacher. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
 </body>
 </html>
