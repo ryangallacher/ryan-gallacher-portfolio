@@ -2812,6 +2812,12 @@ img {
     margin: 0 auto;
 }
 
+.project-wrapup {
+    padding: 20px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .research-header {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -3982,6 +3988,7 @@ blockquote footer {
 
     .best-practices,
     .research-section,
+    .project-wrapup,
     .contact-section,
     .postit-grid,
     .why-section {
@@ -4155,6 +4162,7 @@ blockquote footer {
 
     .best-practices,
     .research-section,
+    .project-wrapup,
     .contact-section,
     .why-section {
         padding: 32px 16px;
@@ -4234,6 +4242,7 @@ blockquote footer {
 
     .best-practices,
     .research-section,
+    .project-wrapup,
     .contact-section,
     .why-section {
         padding: 24px 20px;
