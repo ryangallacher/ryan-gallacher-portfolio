@@ -875,6 +875,32 @@ footer ul li a:hover {
     text-decoration: none;
 }
 
+.back-button {
+    text-decoration: none;
+    color: #fff;
+    font-size: var(--fs-body);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 64px;
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+.back-button:visited,
+.back-button:active {
+    color: #fff;
+}
+
+.back-button:hover {
+    opacity: 1;
+}
+
+.back-button svg {
+    flex-shrink: 0;
+}
+
 .header-container nav {
     flex: 1 1 auto;
     display: flex;
@@ -2399,16 +2425,25 @@ img {
    ============================================ */
 .zoomable {
     cursor: zoom-in;
+    position: relative;
+}
+
+/* Tap-to-zoom hint on touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .zoomable {
+        cursor: default;
+    }
 }
 
 .lightbox-overlay {
     position: fixed;
     inset: 0;
     z-index: 9999;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.92);
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 16px;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.25s ease, visibility 0.25s ease;
@@ -2422,24 +2457,46 @@ img {
 
 .lightbox-img {
     max-width: 95vw;
-    max-height: 90vh;
+    max-height: 85vh;
     object-fit: contain;
-    touch-action: pinch-zoom;
+    touch-action: manipulation;
     border-radius: 4px;
+    user-select: none;
+    -webkit-user-select: none;
+    cursor: zoom-in;
+    transition: max-width 0.2s ease, max-height 0.2s ease;
+}
+
+.lightbox-img.zoomed {
+    max-width: none;
+    max-height: none;
+    cursor: zoom-out;
 }
 
 .lightbox-close {
     position: absolute;
-    top: 16px;
-    right: 20px;
-    background: none;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.5);
     border: none;
     color: #fff;
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     line-height: 1;
-    padding: 8px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1;
+    border-radius: 50%;
+    transition: background 0.2s ease;
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
 }
 
 /* ============================================
@@ -2479,12 +2536,18 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 60px;
     max-width: 1400px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
     width: 100%;
+}
+
+.hero-wrapper > .back-button {
+    width: 100%;
+    margin-bottom: -40px;
 }
 
 .hero-section::before {
@@ -4074,6 +4137,12 @@ blockquote footer {
     .hero-wrapper {
         flex-direction: column;
         text-align: center;
+    }
+
+    .hero-wrapper > .back-button {
+        order: 0;
+        align-self: flex-start;
+        margin-bottom: 24px;
     }
 
     .hero-content {

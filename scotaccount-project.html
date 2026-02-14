@@ -13,18 +13,12 @@
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">Ryan Gallacher</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#work" class="active">Work</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
     <section class="hero-section">
         <div class="hero-wrapper">
+            <a href="index.html" class="back-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M10 16L20 6l1.4 1.4-8.6 8.6 8.6 8.6L20 26z"/></svg> Back</a>
             <div class="hero-content">
                 <p class="eyebrow-text">The Scottish Government</p>
                 <h1>ScotAccount Beta</h1>
@@ -564,8 +558,6 @@
     <footer>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
         </ul>
     </footer>
 
@@ -602,10 +594,25 @@
         function closeLightbox() {
             overlay.classList.remove('active');
             overlay.setAttribute('aria-hidden', 'true');
+            lightboxImg.classList.remove('zoomed');
+            overlay.style.overflow = 'hidden';
             document.body.style.overflow = '';
         }
 
         closeBtn.addEventListener('click', closeLightbox);
+
+        // Click image to toggle zoom on desktop
+        lightboxImg.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (lightboxImg.classList.contains('zoomed')) {
+                lightboxImg.classList.remove('zoomed');
+                overlay.style.overflow = 'hidden';
+            } else {
+                lightboxImg.classList.add('zoomed');
+                overlay.style.overflow = 'auto';
+            }
+        });
+
         overlay.addEventListener('click', function(e) {
             if (e.target === overlay) closeLightbox();
         });
