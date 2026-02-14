@@ -71,12 +71,17 @@
         </div>
     </section>
 
-    <!-- Context & Stakes -->
+    <!-- Context -->
     <section class="research-section">
         <div class="research-header">
             <div>
-                <p class="eyebrow-text">Context</p>
-                <h2>The cost of fragmented public services</h2>
+                <h2>Context</h2>
+            </div>
+        </div>
+
+        <div class="research-header">
+            <div>
+                <h3>The cost of fragmented public services</h3>
                 <div class="research-header-body">
                     <p>Before The Scottish Government introduced ScotAccount, its flagship digital service, Scotland's digital landscape had become siloed and disconnected, with each public sector organisation wasting time and money managing their own independent back-office processes.</p>
                     <p>This landscape not only led to duplicated effort and infrastructure across the public sector, it was a repetitive burden for citizens, who had to navigate inconsistent and inaccessible processes every time they tried to access public services or prove their identity.</p>
@@ -84,14 +89,10 @@
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- The Challenge -->
-    <section class="research-section">
         <div class="research-header">
             <div>
-                <p class="eyebrow-text">Context</p>
-                <h2>The challenge</h2>
+                <h3>The challenge</h3>
                 <div class="research-header-body">
                     <p>ScotAccount aimed to solve these problems by providing a single bridge between citizens and various public sector organisations.
                         We needed to design a service-agnostic system that would let users log in to these organisations, verify their identity and store those verified details for reuse.
@@ -152,7 +153,8 @@
                 <span class="dependency-label">Our value proposition collapses</span>
             </div>
         </div>
-        <img src="Assets/Images/Compressed/sg-sensemaking.png" alt="ScotAccount sensemaking session" style="width: 100%; border-radius: 8px; margin-top: 48px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <img class="zoomable" src="Assets/Images/Compressed/sg-sensemaking.png" alt="ScotAccount sensemaking session" style="width: 100%; border-radius: 8px; margin-top: 48px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <img class="zoomable" src="Assets/Images/Compressed/VYI flows.png" alt="ScotAccount identity verification flow diagrams, screens and edge case scenarios" style="width: 100%; border-radius: 8px; margin-top: 48px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
     </section>
 
     <!-- Designing for Trust -->
@@ -553,8 +555,8 @@
     </section>
 
     <section class="research-section">
-        <img src="Assets/Images/Compressed/sg-workshop.jpeg" alt="Scottish Government user needs review workshop">
-        <img src="Assets/Images/Compressed/sg maps.png" alt="Scottish Government service maps">
+        <img class="zoomable" src="Assets/Images/Compressed/sg-workshop.jpeg" alt="Scottish Government user needs review workshop">
+        <img class="zoomable" src="Assets/Images/Compressed/sg maps.png" alt="Scottish Government service maps">
     </section>
 
     <footer>
@@ -572,7 +574,44 @@
         </svg>
     </button>
 
+    <!-- Lightbox overlay -->
+    <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close">&times;</button>
+        <img class="lightbox-img" src="" alt="">
+    </div>
+
     <script>
+    // Lightbox for zoomable images
+    (function() {
+        var overlay = document.getElementById('lightbox');
+        var lightboxImg = overlay.querySelector('.lightbox-img');
+        var closeBtn = overlay.querySelector('.lightbox-close');
+
+        document.querySelectorAll('.zoomable').forEach(function(img) {
+            img.addEventListener('click', function() {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                overlay.classList.add('active');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        function closeLightbox() {
+            overlay.classList.remove('active');
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+        overlay.addEventListener('click', function(e) {
+            if (e.target === overlay) closeLightbox();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    })();
+
     // Back to top button functionality
     (function() {
         var backToTopButton = document.getElementById('back-to-top');
