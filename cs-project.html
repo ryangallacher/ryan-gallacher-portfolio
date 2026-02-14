@@ -74,26 +74,26 @@
                             <p>P&L exposure when you mark the curve, currently done external tool copy paste values (?). Currently users need to work back and undo changes to see what caused P&L to go down, dangerous if you undo the correct thing</p>
                             <p>in edit mode, need to get feedback for new events currently they just pop up and they are relevant to what user doing</p>
                             <p>user need to know how changes will affect curve and other curves, which changes are their edits and which are published</p>
-                            <blockquote>
-                                <p>"We would've went way through our target instead of a modest profit"</p>
-                                <footer>— Local user</footer>
-                            </blockquote>
-                            <blockquote>
-                                <p>"anything that adds 5 seconds here or 10 seconds there all adds up... there are days where I don't have 30 seconds to rub together. "</p>
-                                <footer>— Local user</footer>
-                            </blockquote>
-                            <blockquote>
-                                <p>"There's a big premium for clarity, I have limited time to allocate attention to each thing"</p>
-                                <footer>— Local user</footer>
-                            </blockquote>
-                            <blockquote>
-                                <p>"Did my publish go through? I'm really hoping this doesn't revert to the last published state"</p>
-                                <footer>— Local user</footer>
-                            </blockquote>
-                            <blockquote>
-                                <p>"I'm interested in how the system behaves under pressure, that's where I need to work quickly... I don't want it to lead us into avoidable mistakes."</p>
-                                <footer>— Local user</footer>
-                            </blockquote>
+                            <div class="bbox-card">
+                                <span class="bbox-handle bbox-tl"></span>
+                                <span class="bbox-handle bbox-tr"></span>
+                                <span class="bbox-handle bbox-bl"></span>
+                                <span class="bbox-handle bbox-br"></span>
+                                <blockquote class="bbox-card-inner">
+                                    <p>"We would've went way through our target instead of a modest profit"</p>
+                                    <footer>— Local user</footer>
+                                </blockquote>
+                            </div>
+                            <div class="bbox-card">
+                                <span class="bbox-handle bbox-tl"></span>
+                                <span class="bbox-handle bbox-tr"></span>
+                                <span class="bbox-handle bbox-bl"></span>
+                                <span class="bbox-handle bbox-br"></span>
+                                <blockquote class="bbox-card-inner">
+                                    <p>"I'm interested in how the system behaves under pressure, that's where I need to work quickly... I don't want it to lead us into avoidable mistakes."</p>
+                                    <footer>— Local user</footer>
+                                </blockquote>
+                            </div>
                         </li>
                         <li>
                             <img src="images/analysis.jpg" alt="Analysis">
@@ -159,6 +159,49 @@
                     <p>Migration scope defined - UI enhances from a UX pov, optimise information hierarchy, build loosely-couples modular widgets that can be remixed into bespoke workflows</p>
                     <p>Out of scope - backend processes eg publishing, market environment maintenance, model interaction. Some causes of slowness eg publish delays, slow recalc</p>
                 </article>
+            </section>
+
+            <!-- Pull Quote -->
+            <section class="pull-quote-section" style="margin-top: 40px;">
+                <div class="bbox-card">
+                    <span class="bbox-handle bbox-tl"></span>
+                    <span class="bbox-handle bbox-tr"></span>
+                    <span class="bbox-handle bbox-bl"></span>
+                    <span class="bbox-handle bbox-br"></span>
+                    <blockquote class="pull-quote bbox-card-inner">
+                        <img src="Assets/Icons/quotes.svg" alt="" class="pull-quote-icon" aria-hidden="true" />
+                        <p>There's a big premium for clarity, anything that adds 5 seconds here or 10 seconds there all adds up. There are days where I don't have 30 seconds to rub together.</p>
+                        <footer>
+                            <cite>
+                                <span class="cite-name">APAC Trader</span>
+                                <span class="cite-role">Singapore</span>
+                            </cite>
+                        </footer>
+                    </blockquote>
+                </div>
+            </section>
+
+            <!-- Pull Quote 2 -->
+            <section class="pull-quote-section" style="margin-top: 40px;">
+                <div class="bbox-card">
+                    <span class="bbox-handle bbox-tl"></span>
+                    <span class="bbox-handle bbox-tr"></span>
+                    <span class="bbox-handle bbox-bl"></span>
+                    <span class="bbox-handle bbox-br"></span>
+                    <blockquote class="pull-quote bbox-card-inner">
+                        <img src="Assets/Icons/quotes.svg" alt="" class="pull-quote-icon" aria-hidden="true" />
+                        <p>Did my publish go through? I'm really hoping this doesn't revert to the last published state</p>
+                        <footer>
+                            <cite>
+                                <span class="cite-name">G10 Trader</span>
+                                <span class="cite-role">London</span>
+                            </cite>
+                        </footer>
+                    </blockquote>
+                </div>
+            </section>
+
+            <section class="case-study">
                 <article class="challenges">
                     <p>iframe constraint - incremental before full rollout meant features constrained to boxes eg tooltip</p>
                     <p>error messaging container vs global level</p>
@@ -166,6 +209,30 @@
                     <p>you load a currency pair and the main view inherits the cut from that surface. for most pairs only one cut but for some can be more than one</p>
                     <p>automation of risk reversals</p>
                 </article>
+            </section>
+
+            <section class="best-practices" style="margin-top: 40px;">
+                <h2>A framework for modelling complexity</h2>
+
+                <div class="practice-item">
+                    <h3 class="practice-title">Integration</h3>
+                    <p class="practice-description">System fails to publish creating significant risk of error, confusion and financial loss. Loss of edits delays task completion and creates rework, particularly relevant with a global user base with multiple users able to edit simultaneously but not collaboratively, overwriting. Manual process to mark risk reversal and butterfly.</p>
+                </div>
+
+                <div class="practice-item">
+                    <h3 class="practice-title">Information</h3>
+                    <p class="practice-description">System grown organically which has led to inconsistency in information delivery systems. Lack of a cohesive visual language and notification system creating significant risk of banner blindness and error-making.</p>
+                </div>
+
+                <div class="practice-item">
+                    <h3 class="practice-title">Keep it simple</h3>
+                    <p class="practice-description">Present with clarity and honesty to explain simply how IBM's solutions can solve complex problems.</p>
+                </div>
+
+                <div class="practice-item">
+                    <h3 class="practice-title">Be bold</h3>
+                    <p class="practice-description">Make a lasting impression by evoking courage and innovation with a brave, singular gesture, not several small ones.</p>
+                </div>
             </section>
         </main>
     </div>

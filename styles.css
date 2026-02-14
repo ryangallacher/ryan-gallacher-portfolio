@@ -3657,7 +3657,6 @@ blockquote footer {
 
 .bbox-card-inner {
     padding: 32px;
-    min-height: 280px;
     border-radius: 2px;
 }
 
@@ -3668,6 +3667,10 @@ blockquote footer {
 .bbox-card-inner p {
     margin: 0;
     color: var(--color-text-secondary);
+}
+
+.bbox-card-inner.pull-quote p {
+    margin: 0 0 24px 0;
 }
 
 /* ============================================
