@@ -2763,7 +2763,7 @@ img {
 }
 
 .research-section {
-    padding: 60px 40px;
+    padding: 20px 40px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -2772,8 +2772,8 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
-    padding-bottom: 60px;
-    margin-bottom: 40px;
+    padding-bottom: 0;
+    margin-bottom: 0;
     align-items: start;
 }
 
@@ -2782,6 +2782,10 @@ img {
     line-height: var(--lh-h1);
     color: var(--color-ink);
     margin: 0;
+}
+
+.research-header-body {
+    margin-top: 16px;
 }
 
 .research-header-body p {
@@ -3228,33 +3232,36 @@ blockquote footer {
 .core-value-panels {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
-    gap: 32px;
-    align-items: center;
+    gap: 24px;
+    align-items: stretch;
+    margin-top: 40px;
 }
 
 .core-value-panel {
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid var(--n-200, #ddd);
+    border-radius: 8px;
+    padding: 32px 24px;
+    background: #fff;
 }
 
 .core-value-panel-label {
     font-family: var(--ff-sans);
-    font-size: var(--fs-body-sm);
+    font-size: var(--fs-h3);
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--n-400);
-    margin-bottom: 24px;
+    color: var(--teal-base);
+    margin: 0 0 4px;
 }
 
 .core-value-panel--after .core-value-panel-label {
-    color: var(--p-base);
+    color: var(--teal-base);
 }
 
 .core-value-svg {
     width: 100%;
-    max-width: 400px;
+    max-width: 320px;
     height: auto;
 }
 
@@ -3268,18 +3275,19 @@ blockquote footer {
 
 .core-value-panel-caption {
     font-family: var(--ff-sans);
-    font-size: var(--fs-body);
+    font-size: var(--fs-body-sm);
     line-height: var(--lh-body);
     color: var(--color-text-secondary);
     text-align: center;
-    margin: 24px 0 0;
-    max-width: 280px;
+    margin: 0 0 20px;
+    max-width: 300px;
 }
 
 @media (max-width: 900px) {
     .core-value-panels {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 24px;
+        padding: 24px 16px;
     }
 
     .core-value-arrow {
