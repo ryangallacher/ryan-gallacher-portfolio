@@ -961,6 +961,12 @@ footer ul li a:hover {
     padding: 0 24px; /* Add padding to ensure content doesn't touch the edges */
 }
 
+.content-container main > section > p,
+.content-container main > section > ol,
+.content-container main > section > ul {
+    max-width: 720px;
+}
+
 .hero {
     display: flex;
     align-items: center;
@@ -1011,7 +1017,7 @@ footer ul li a:hover {
     width: 100%; /* Full width, one per line */
     box-sizing: border-box;
     background-color: var(--n-0); /* White background */
-    border: 1px solid rgba(0, 112, 116, 0.15);
+    border: 1px solid rgba(3, 76, 83, 0.25);
     box-shadow: none;
     display: flex;
     flex-direction: row; /* Horizontal layout */
@@ -1144,7 +1150,7 @@ footer ul li a:hover {
 .tags {
     display: flex;
     gap: 8px; /* Space between tags */
-    margin-bottom: 8px; /* Space below tags */
+    margin-bottom: 40px;
 }
 
 .tag {
@@ -2966,6 +2972,55 @@ img {
     background-color: var(--peach-base);
 }
 
+/* CS page discovery section full-bleed */
+.page-cs .discovery-section {
+    background-color: var(--n-100);
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    padding: 40px calc(50vw - 50%) 60px;
+}
+
+/* CS page postit overrides */
+.page-cs .postit-grid {
+    background-color: transparent;
+    padding: 0;
+    grid-template-columns: repeat(2, minmax(0, 320px));
+}
+
+.page-cs .postit-card {
+    border: none;
+    padding: 32px;
+}
+
+.page-cs .postit-card::before {
+    background-color: inherit;
+    border: none;
+}
+
+.page-cs .postit-card:nth-child(odd) {
+    background-color: #00C4C8;
+}
+
+.page-cs .postit-card:nth-child(even) {
+    background-color: var(--peach-base);
+}
+
+.page-cs .postit-card p {
+    font-size: 1.25rem;
+    color: var(--color-ink);
+    font-style: italic;
+    line-height: var(--lh-body);
+}
+
+.page-cs .postit-card-icon {
+    font-size: 48px;
+}
+
+.page-cs .postit-card-icon svg {
+    width: 48px;
+    height: 48px;
+}
+
 .research-section {
     padding: 20px 40px;
     max-width: 1400px;
@@ -4520,6 +4575,10 @@ blockquote footer {
 
     .postit-grid {
         padding: 24px 12px;
+        grid-template-columns: 1fr;
+    }
+
+    .page-cs .postit-grid {
         grid-template-columns: 1fr;
     }
 
