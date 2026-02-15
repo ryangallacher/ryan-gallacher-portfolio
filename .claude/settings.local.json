@@ -6,7 +6,9 @@
       "WebFetch(domain:github.com)",
       "Bash(powershell -Command:*)",
       "Bash(npx --yes sharp-cli:*)",
-      "Bash(npx sharp-cli:*)"
+      "Bash(npx sharp-cli:*)",
+      "WebFetch(domain:unpkg.com)",
+      "WebFetch(domain:app.unpkg.com)"
     ]
   }
 }

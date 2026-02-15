@@ -2777,6 +2777,84 @@ img {
     margin: 0;
 }
 
+/* 5 Layers of Complexity Framework */
+.complexity-framework {
+    padding: 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.complexity-framework h2 {
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--color-border-default);
+    margin-bottom: 24px;
+}
+
+.complexity-intro {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--color-ink-subtle);
+    margin-bottom: 40px;
+    max-width: 720px;
+}
+
+.complexity-layer {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 60px;
+    padding: 40px 0;
+    border-bottom: 1px solid var(--color-border-default);
+    align-items: start;
+}
+
+.complexity-layer:last-of-type {
+    border-bottom: none;
+}
+
+.complexity-layer-left {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.complexity-pictogram {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.complexity-layer-title {
+    font-size: var(--fs-h3);
+    font-weight: 600;
+    color: var(--color-ink);
+    margin: 0 0 8px 0;
+}
+
+.complexity-layer-definition {
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body);
+    color: var(--color-ink-subtle);
+    margin: 0;
+    font-style: italic;
+}
+
+.complexity-insights {
+    list-style: disc;
+    padding: 0 0 0 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.complexity-insights li {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--color-ink);
+}
+
 .contact-header {
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -4053,6 +4131,7 @@ blockquote footer {
     }
 
     .best-practices,
+    .complexity-framework,
     .research-section,
     .project-wrapup,
     .contact-section,
@@ -4233,6 +4312,7 @@ blockquote footer {
     }
 
     .best-practices,
+    .complexity-framework,
     .research-section,
     .project-wrapup,
     .contact-section,
@@ -4243,6 +4323,15 @@ blockquote footer {
     .practice-item {
         grid-template-columns: 1fr;
         gap: 16px;
+    }
+
+    .complexity-layer {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .complexity-insights {
+        padding-left: 48px;
     }
 
     .postit-grid {
@@ -4313,6 +4402,7 @@ blockquote footer {
     }
 
     .best-practices,
+    .complexity-framework,
     .research-section,
     .project-wrapup,
     .contact-section,
@@ -4321,6 +4411,7 @@ blockquote footer {
     }
 
     .best-practices h2,
+    .complexity-framework h2,
     .research-header h2 {
         font-size: var(--fs-h2);
     }
