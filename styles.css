@@ -1011,7 +1011,7 @@ footer ul li a:hover {
     width: 100%; /* Full width, one per line */
     box-sizing: border-box;
     background-color: var(--n-0); /* White background */
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 112, 116, 0.15);
     box-shadow: none;
     display: flex;
     flex-direction: row; /* Horizontal layout */
