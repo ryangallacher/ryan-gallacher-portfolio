@@ -1003,7 +1003,7 @@ footer ul li a:hover {
 .project-cards-container {
     display: flex;
     flex-direction: column; /* Stack cards vertically */
-    gap: 24px; /* Updated gap to 24px */
+    gap: 40px;
     padding-bottom: 24px; /* Padding only at the bottom */
 }
 
@@ -1011,8 +1011,8 @@ footer ul li a:hover {
     width: 100%; /* Full width, one per line */
     box-sizing: border-box;
     background-color: var(--n-0); /* White background */
-    border: 1px solid var(--color-border-default);
-    box-shadow: var(--shadow-level-1); /* Initial shadow */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: none;
     display: flex;
     flex-direction: row; /* Horizontal layout */
     overflow: hidden; /* Ensure content doesn't overflow */
@@ -1030,12 +1030,28 @@ footer ul li a:hover {
     text-decoration: none; /* No underline on hover */
 }
 
-.project-card img {
-    width: 40%; /* Image takes 40% of card width */
-    height: auto;
+.project-card-image-wrapper {
+    width: 40%;
     min-height: 100%;
-    object-fit: cover; /* Maintain aspect ratio and cover the area */
-    border-radius: 4px 0 0 4px; /* Add corner radius to the left side of the image */
+    position: relative;
+    background-color: var(--color-teal-wash);
+    background-image: radial-gradient(circle, rgba(0, 112, 116, 0.15) 1px, transparent 1px);
+    background-size: 16px 16px;
+    border-radius: 4px 0 0 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.project-card-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 4px;
+    position: relative;
+    z-index: 1;
 }
 
 .project-card-content {
@@ -1899,10 +1915,12 @@ footer ul li a:hover {
         min-height: auto;
     }
 
-    .project-card img {
+    .project-card-image-wrapper {
         width: 100%;
         height: 200px;
-        border-radius: 4px 4px 0 0; /* Restore top radius */
+        min-height: auto;
+        border-radius: 4px 4px 0 0;
+        padding: 16px;
     }
 
     .project-card-content {
@@ -2160,9 +2178,10 @@ footer ul li a:hover {
         min-height: auto;
     }
 
-    .project-card img {
+    .project-card-image-wrapper {
         width: 100%;
         height: 160px;
+        min-height: auto;
         border-radius: 4px 4px 0 0;
     }
 
@@ -2381,7 +2400,7 @@ footer ul li a:hover {
         padding: 0 8px;
     }
 
-    .project-card img {
+    .project-card-image-wrapper {
         height: 140px;
     }
 
@@ -2584,6 +2603,8 @@ img {
     align-items: center;
     gap: 15px;
     color: var(--color-bg-surface);
+    font-size: 2.5rem;
+    line-height: 1.2;
 }
 
 .hero-content p {
@@ -4108,6 +4129,73 @@ blockquote footer {
 
 .contact-section .contact-item a {
     color: var(--color-camel-base);
+}
+
+/* Tradeoff Graphic */
+.tradeoff-graphic {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+}
+
+.tradeoff-side h3 {
+    color: var(--color-teal-base);
+    margin-bottom: 16px;
+}
+
+.tradeoff-side ul {
+    padding-left: 20px;
+    margin: 0;
+    color: var(--color-text-secondary);
+    font-size: var(--fs-body-sm);
+    line-height: var(--lh-body);
+}
+
+.tradeoff-side ul li {
+    margin-bottom: 8px;
+}
+
+.tradeoff-icon {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+}
+
+.tradeoff-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--color-teal-wash);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tradeoff-circle svg {
+    fill: var(--teal-base);
+}
+
+@media (max-width: 768px) {
+    .tradeoff-graphic {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .tradeoff-icon {
+        order: -1;
+    }
+
+    .tradeoff-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .tradeoff-circle svg {
+        width: 48px;
+        height: 48px;
+    }
 }
 
 /* ============================================
