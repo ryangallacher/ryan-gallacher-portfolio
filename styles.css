@@ -3201,7 +3201,7 @@ img {
    Pull Quote
    ============================================ */
 .pull-quote-section {
-    padding: 80px 40px;
+    padding: 0;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -4657,5 +4657,18 @@ blockquote footer {
 
     .synthesis-split .synthesis-image {
         max-width: 100%;
+    }
+}
+
+.context-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .context-grid {
+        grid-template-columns: 1fr;
     }
 }
