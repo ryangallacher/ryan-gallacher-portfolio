@@ -3677,6 +3677,18 @@ blockquote footer {
     max-width: 620px;
 }
 
+.wrapup-content p {
+    max-width: 620px;
+}
+
+.caption {
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: var(--color-ink);
+    margin-top: 12px;
+    max-width: 620px;
+}
+
 @media (max-width: 900px) {
     .dependency-chain {
         flex-direction: column;
