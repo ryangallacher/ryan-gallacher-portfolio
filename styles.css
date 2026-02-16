@@ -2979,6 +2979,17 @@ img {
     background-color: var(--peach-base);
 }
 
+.postit-grid > h3 {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+.page-scotaccount .postit-grid > h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-ink);
+}
+
 /* CS page discovery section full-bleed */
 .page-cs .discovery-section {
     background-color: var(--n-100);
@@ -3024,6 +3035,13 @@ img {
     font-size: 1.25rem;
     color: var(--color-ink);
     font-style: italic;
+    line-height: var(--lh-body);
+}
+
+.page-scotaccount .postit-card p {
+    font-size: 1.25rem;
+    color: var(--color-ink);
+    font-weight: 400;
     line-height: var(--lh-body);
 }
 

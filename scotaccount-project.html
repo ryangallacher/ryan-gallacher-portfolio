@@ -147,23 +147,88 @@
                 <span class="dependency-label">Our value proposition collapses</span>
             </div>
         </div>
-        <h2 style="margin-top: 40px;">Defining the problem space</h2>
+        <h2 style="margin-top: 40px;">Understanding the problem space</h2>
         <p class="dependency-description" style="margin-top: 16px;">When I joined the project, a basic foundation for the primary identity verification method was already in place - we hadn't gone live, but we did have a working build that our User Centred Design team were planning to test over several rounds of User Research.</p>
-        <p>We had a dedicated team of User Researchers who ran the sessions themselves, but I played a role throughout these rounds by producing design prototypes to test various assumptions as and when appropriate. I helped with and was present for around 25</p>
+        <p>We had a dedicated team of User Researchers who ran the sessions themselves, but I played a role throughout these rounds by producing design prototypes to test various assumptions as and when appropriate. I was present for and contributed to around 25 rounds of research throughout my time on the project, each with several interviews, usability tests, sensemaking and "Insights to Action" sessions afterwards.</p>
+        <h3 style="margin-top: 40px;">The existing core journey</h3>
+        <p class="dependency-description" style="margin-top: 16px;">At this stage, the primary verification method was done using biometrics, with the user providing a few details and taking live photos of an ID document and their face. Using two third party systems, the system then used user input to match their identity records to the specific user interacting with the service.</p>
+        <p>This method was deemed by Product to be the most sensible starting place, as it generally sees the highest pass rates for most people. It's also more secure than other methods like knowledge based verification.</p>
+        <img src="Assets/Icons/vyi.svg" alt="ScotAccount identity verification flow diagram" loading="lazy" decoding="async" style="width: 100%; margin-top: 48px;">
+        <h3 style="margin-top: 40px;">Honing in on the sticking points</h3>
+        <p class="dependency-description" style="margin-top: 16px;">Taking photos was overwhelmingly the most problematic part of the biometric process for test participants. This was due to a number of reasons, namely:</p>
+        <ul style="margin-top: 12px;">
+            <li>Inability to provide a suitable document</li>
+            <li>Difficulty taking photos using a desktop machine</li>
+            <li>Inability to use a QR code to transfer to a mobile device</li>
+            <li>Camera permissions</li>
+            <li>Lighting conditions</li>
+            <li>Difficulty interpreting error messaging from our third party image capture technology</li>
+        </ul>
         <img class="zoomable" src="Assets/Images/Compressed/image issues highlight.png" alt="Highlighted image capture issues in the identity verification flow" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 48px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-        <img class="zoomable" src="Assets/Images/Compressed/VYI flows.png" alt="ScotAccount identity verification flow diagrams, screens and edge case scenarios" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 48px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <p class="caption">This image is taken from a sensemaking board the team and I used after the research. It clearly demonstrates the concentration of talking points (mostly negative) on the image capture part of the flow</p>
+        <div class="postit-grid" style="margin-top: 40px;">
+            <h3>Key insights</h3>
+            <div class="postit-card">
+                <h3>Participant 1:</h3>
+                <p>Participant used a blue ring binder as a dark background when taking photos of their ID</p>
+            </div>
+            <div class="postit-card">
+                <h3>Participant 2:</h3>
+                <p>Participant struggled to access the camera on their laptop</p>
+            </div>
+            <div class="postit-card">
+                <h3>Participant 3:</h3>
+                <p>Participant incorrectly anticipated that they would need to find a saved passport photo from their computer</p>
+            </div>
+            <div class="postit-card">
+                <h3>Participant 4:</h3>
+                <p>Photo capture timed out twice</p>
+            </div>
+        </div>
+        <h3 style="margin-top: 40px;">The difference between what participants say and do</h3>
+        <img class="zoomable" src="Assets/Images/Compressed/sg single ease.png" alt="Single Ease Question scale showing participant responses from 1 (Very difficult) to 7 (Very easy)" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <p class="caption">Fascinatingly, when asked for their subjective opinion on the session after the fact, every participant said that they found the experience relatively easy - even one participant that got stuck on the first photo and needed to borrow a phone from the User Researcher to complete the task. I think this told us a lot about bias and self-reported evidence.</p>
+        <h2 style="margin-top: 40px;">Fixing the image capture process</h2>
+        <p class="dependency-description" style="margin-top: 16px;">I worked with our development team to plug some gaps in the existing flow, for example: providing suitable routing for situations where the user's device can't detect a camera. I also worked with our Content Designer to adjust some messaging, to ensure users had what they needed before they got to the image capture stage.</p>
+        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2026-02-16 at 11.01.05 (1).png" alt="Camera not detected flow diagram showing desktop and mobile handoff scenarios" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2025-01-30 at 16.42.17 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <h2 style="margin-top: 40px;">New insights from the live service</h2>
+        <p class="dependency-description" style="margin-top: 16px;">Going live with Disclosure meant that real analytics data began to trickle down from production. This complemented our ongoing qualitative research activities by providing hard performance numbers, pinpointing where we were seeing specific failure points that we should explore further.</p>
+        <p class="dependency-summary">Crucially, we were seeing an initial identity verification pass rate of ~53%, which was a considerable amount lower than the ~65% benchmark hit by similar national identity services.</p>
+        <h3 style="margin-top: 40px;">Designing for the largest failure points</h3>
+        <p class="dependency-description" style="margin-top: 16px;">The data also told us the main reasons legitimate users were failing to pass the verification process. These were:</p>
+        <ul style="margin-top: 12px;">
+            <li>Expired ID document</li>
+            <li>Name entered doesn't match ID document</li>
+            <li>Poor image quality</li>
+        </ul>
+        <p class="dependency-description" style="margin-top: 16px;">I worked with another Interaction Designer to produce a set of 'retry scenario' designs that aimed to get more users through the process successfully.</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px;">
+            <img class="zoomable" src="Assets/Images/Compressed/sg maps.png" alt="Scottish Government service maps" loading="lazy" decoding="async" style="width: 48%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+            <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260122_142740.png" alt="ScotAccount Select your photo ID screen showing identity document options" loading="lazy" decoding="async" style="width: 48%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        </div>
+        <h3 style="margin-top: 40px;">The impact of retry scenario designs</h3>
+        <div style="margin-top: 16px; padding: 1rem; background-color: #f5f5f5; border-left: 4px solid #2e7d32; max-width: 700px;">
+            <p style="margin: 0; color: #333; font-size: 0.95rem;">These design changes drove pass rates from <strong style="font-size: 1.4rem;">53%</strong> to <strong style="font-size: 1.4rem;">80%</strong>. Critically, performance remained consistently above 76% for months after implementation, demonstrating this was a fundamental UX improvement, not a temporary spike.</p>
+        </div>
+        <img class="zoomable" src="Assets/Images/Compressed/scotaccount-graph-anno.png" alt="Graph showing ScotAccount identity verification pass rate improvement from 53% to 80%" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
     </section>
 
     <!-- Designing for Trust -->
     <section class="research-section">
         <div class="research-header">
             <div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 32 32" fill="currentColor" style="display: block; margin-bottom: 16px;"><path d="M24.36,31h-0.72v-7.492c0-3.556-2.414-6.612-5.872-7.432c-0.15-0.036-0.261-0.163-0.275-0.316c-0.015-0.154,0.071-0.3,0.212-0.363c1.517-0.675,2.496-2.181,2.496-3.836c0-2.316-1.884-4.201-4.2-4.201s-4.2,1.884-4.2,4.201c0,1.656,0.98,3.162,2.496,3.836c0.141,0.063,0.226,0.209,0.212,0.363c-0.014,0.153-0.125,0.281-0.275,0.316c-3.458,0.819-5.872,3.875-5.872,7.432V31h-0.72v-7.492c0-3.597,2.256-6.725,5.585-7.887c-1.327-0.907-2.147-2.421-2.147-4.06c0-1.964,1.157-3.664,2.825-4.452C14.101,6.617,14.2,6.097,14.2,5.561c0-2.316-1.884-4.201-4.2-4.201S5.799,3.244,5.799,5.561c0,1.655,0.98,3.162,2.496,3.836C8.437,9.46,8.522,9.606,8.507,9.76c-0.014,0.153-0.125,0.281-0.275,0.316C4.774,10.896,2.36,13.948,2.36,17.5V25H1.64v-7.5c0-3.592,2.257-6.718,5.585-7.879C5.899,8.714,5.08,7.2,5.08,5.561c0-2.713,2.207-4.92,4.92-4.92s4.92,2.207,4.92,4.92c0,0.422-0.052,0.836-0.157,1.237c0.791-0.205,1.683-0.205,2.473,0c-0.104-0.401-0.157-0.815-0.157-1.237c0-2.713,2.208-4.92,4.921-4.92s4.921,2.207,4.921,4.92c0,1.64-0.82,3.154-2.146,4.061c3.329,1.161,5.586,4.287,5.586,7.879V25H29.64v-7.5c0-3.552-2.414-6.604-5.872-7.424c-0.15-0.036-0.261-0.163-0.275-0.316c-0.015-0.154,0.071-0.3,0.212-0.363C25.221,8.722,26.2,7.216,26.2,5.561c0-2.316-1.884-4.201-4.2-4.201s-4.2,1.884-4.2,4.201c0,0.536,0.099,1.056,0.295,1.548c1.669,0.789,2.826,2.488,2.826,4.452c0,1.64-0.82,3.154-2.146,4.061c3.329,1.162,5.586,4.29,5.586,7.887L24.36,31L24.36,31z M19.255,24.255l-0.51-0.51L15,27.491l-1.746-1.746l-0.509,0.51L15,28.509L19.255,24.255z"/></svg>
                 <h2>Designing for trust and accessibility at scale</h2>
             </div>
             <div class="research-header-body">
             </div>
         </div>
+        <p class="dependency-description" style="margin-top: 16px;">Our pass rate was now stable and the system was exceeding expectation, but as we looked to scale, we needed to ensure that the service was accessible to a wider user base. We knew from our research, for example, that citizens may:</p>
+        <ul style="margin-top: 12px;">
+            <li>Not have a suitable ID document at all</li>
+            <li>Struggle to take photos due to disability</li>
+            <li>Not have enough of a credit history for us to reliably verify their identity</li>
+        </ul>
     </section>
 
     <!-- User Need -->
@@ -176,84 +241,32 @@
             <p class="user-need-label">So that</p>
             <p class="user-need-statement">I am not blocked from accessing the service I need</p>
         </blockquote>
-    </section>
-
-    <!-- Blockquote -->
-    <section class="pull-quote-section">
-        <blockquote class="pull-quote">
-            <img src="Assets/Icons/quotes.svg" alt="" class="pull-quote-icon" aria-hidden="true" />
-            <p>The team didn't just deliver a product, they helped us fundamentally rethink how citizens interact with government services. The result speaks for itself.</p>
-            <footer>
-                <cite>
-                    <span class="cite-name">Sarah Mitchell</span>
-                    <span class="cite-role">Head of Digital, Scottish Government</span>
-                </cite>
-            </footer>
-        </blockquote>
-    </section>
-
-
-    <section class="postit-grid">
-        <div class="postit-card">
-            <div class="postit-card-icon">🐍</div>
-            <h3>Python Templates</h3>
-            <p>Quick start templates for Python development</p>
+        <h3 style="margin-top: 40px;">Alternative verification routes</h3>
+        <p class="dependency-description" style="margin-top: 16px;">I worked with a Service Designer to define new user flows that, at appropriate points, would route users to processes that were designed to work for them. Namely, this involved reshuffling the journey by adding upfront screening questions and drop off points that led to alternative methods.</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: flex-end; margin-top: 40px;">
+            <div style="width: 48%;">
+                <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2024-06-27 at 15.49.42 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+            </div>
+            <div style="width: 48%;">
+                <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2024-06-27 at 15.49.57 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+            </div>
         </div>
-
-        <div class="postit-card">
-            <div class="postit-card-icon">📱</div>
-            <h3>Mobile Design</h3>
-            <p>Responsive patterns for mobile applications</p>
-        </div>
-
-        <div class="postit-card">
-            <div class="postit-card-icon">⚡</div>
-            <h3>Performance</h3>
-            <p>Optimization strategies and best practices</p>
-        </div>
-
-        <div class="postit-card">
-            <div class="postit-card-icon">🎨</div>
-            <h3>Design System</h3>
-            <p>Comprehensive color and typography guidelines</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+            <p class="caption" style="width: 48%;">Working out the logic that would lead users to each route</p>
+            <p class="caption" style="width: 48%;">Routing the user towards the appropriate process: Biometric, Knowledge Based Verification or Vouching. This involved designing the seams between organisations and systems, as we used a third party supplier for the Vouching route</p>
         </div>
     </section>
 
        <!-- Project Wrap-up / Results / Where is ScotAccount Now -->
     <section class="project-wrapup">
         <div class="wrapup-content">
-            <h2>Project Outcomes & Impact</h2>
+            <h2>Where is ScotAccount now?</h2>
             <p>ScotAccount was shortlisted as one of three finalists in the 2025 Civil Service Awards' <a href="https://www.civilserviceawards.com/delivering-for-citizens-award-2/" target="_blank" rel="noopener">"Delivering for Citizens"</a> category, recognising its proven value to the people of Scotland. The awards attracted 2,500 entries across all categories and featured a wide range of programmes from across the UK Public Sector.</p>
 
-            <!-- Pass Rate Improvement -->
-            <div class="impact-visualization">
-                <img class="zoomable" src="Assets/Images/Compressed/scotaccount-graph-anno.png" alt="Graph showing ScotAccount identity verification pass rate improvement from 53% to 80%" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 1.5rem;">
-                <div style="text-align: center; margin-top: 1.5rem; padding: 1rem; background-color: #f5f5f5; border-left: 4px solid #2e7d32; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    <p style="margin: 0; color: #333; font-size: 0.95rem;"><strong>Impact:</strong> Design changes drove pass rates from 53% to 80%. Critically, performance remained consistently above 76% for months after implementation, demonstrating this was a fundamental UX improvement, not a temporary spike.</p>
-                </div>
+            <div style="margin-top: 16px; padding: 1rem; background-color: #f5f5f5; border-left: 4px solid #2e7d32; max-width: 700px;">
+                <p style="margin: 0; color: #333; font-size: 0.95rem;">As of 2025, around 10,000 new ScotAccounts are created weekly, and <strong style="font-size: 1.4rem;">99%</strong> of users choose to save their details for reuse. This stat speaks to the team's ability to build trust in the service, in turn driving the value it provides.</p>
             </div>
-
-            <img class="zoomable" src="Assets/Images/Compressed/sg single ease.png" alt="Single Ease Question scale showing participant responses from 1 (Very difficult) to 7 (Very easy)" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-
-            <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260122_142740.png" alt="ScotAccount Select your photo ID screen showing identity document options" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-
-            <ul>
-                <li><strong>Over 500,000 users</strong> onboarded within the first year</li>
-                <li><strong>Significant reduction</strong> in support requests and onboarding time</li>
-                <li>Recognized as a model for digital inclusion and accessibility</li>
-            </ul>
-            <h3>Where is ScotAccount now?</h3>
-            <p>As of 2025, around 10,000 new ScotAccounts are created weekly.</p>
         </div>
-    </section>
-
-    <section class="research-section">
-        <img class="zoomable" src="Assets/Images/Compressed/sg-workshop-opt.jpeg" alt="Scottish Government user needs review workshop" loading="lazy" decoding="async">
-        <img class="zoomable" src="Assets/Images/Compressed/sg maps.png" alt="Scottish Government service maps" loading="lazy" decoding="async">
-        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2024-06-27 at 15.49.42 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2024-06-27 at 15.49.57 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2024-06-27 at 15.51.39 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2025-01-30 at 16.42.17 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
     </section>
 
     <footer>
