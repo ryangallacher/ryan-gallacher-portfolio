@@ -855,10 +855,6 @@ footer ul li a:hover {
     box-sizing: border-box;
 }
 
-/* Hide mobile menu toggle by default (shown at 480px) */
-.mobile-menu-toggle {
-    display: none;
-}
 
 .header-container .logo {
     flex: 0 0 auto;
@@ -2022,143 +2018,15 @@ footer ul li a:hover {
         --lh-h3: 1.5rem;           /* 24px down from 32px */
     }
 
-    /* Header with hamburger menu */
+    /* Header - compact for mobile */
     .header-container {
-        flex-wrap: nowrap; /* Don't wrap - hamburger menu instead */
         padding: 10px 12px;
         gap: 8px;
-        height: 48px; /* Fixed height for mobile header */
-        position: relative;
-    }
-
-    /* Hamburger menu button */
-    .mobile-menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 40px;
-        height: 40px;
-        padding: 0;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        z-index: 100;
-        margin-left: auto;
-    }
-
-    .mobile-menu-toggle:focus-visible {
-        outline: 3px solid var(--color-focus-ring);
-        outline-offset: 3px;
-        border-radius: 4px;
-    }
-
-    @supports not selector(:focus-visible) {
-        .mobile-menu-toggle:focus {
-            outline: 3px solid var(--color-focus-ring);
-            outline-offset: 3px;
-            border-radius: 4px;
-        }
-    }
-
-    /* Hamburger icon (three lines) */
-    .hamburger-icon {
-        position: relative;
-        width: 24px;
-        height: 2px;
-        background-color: var(--color-ink);
-        transition: background-color 0.3s ease;
-    }
-
-    .hamburger-icon::before,
-    .hamburger-icon::after {
-        content: '';
-        position: absolute;
-        width: 24px;
-        height: 2px;
-        background-color: var(--color-ink);
-        transition: transform 0.3s ease;
-    }
-
-    .hamburger-icon::before {
-        top: -8px;
-    }
-
-    .hamburger-icon::after {
-        top: 8px;
-    }
-
-    /* Hamburger icon animation when menu is open */
-    .mobile-menu-toggle[aria-expanded="true"] .hamburger-icon {
-        background-color: transparent;
-    }
-
-    .mobile-menu-toggle[aria-expanded="true"] .hamburger-icon::before {
-        transform: rotate(45deg) translate(5px, 6px);
-    }
-
-    .mobile-menu-toggle[aria-expanded="true"] .hamburger-icon::after {
-        transform: rotate(-45deg) translate(5px, -6px);
-    }
-
-    /* Navigation - dropdown style */
-    .header-container nav {
-        position: absolute;
-        top: 48px;
-        left: 0;
-        right: 0;
-        width: 100%;
-        background-color: var(--color-bg-surface);
-        border-bottom: 1px solid var(--color-border-default);
-        box-shadow: var(--shadow-level-2);
-        display: none; /* Hidden by default */
-        z-index: 99;
-    }
-
-    /* Show nav when menu is open */
-    .header-container nav.open {
-        display: block;
-    }
-
-    .header-container nav ul {
-        flex-direction: column;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-    }
-
-    .header-container nav ul li {
-        margin: 0;
-        width: 100%;
     }
 
     .header-container nav ul li a {
-        padding: 16px 20px;
-        font-size: var(--fs-body);
-        width: 100%;
-        height: auto;
-        display: block;
-        border-bottom: 1px solid var(--color-border-default);
-    }
-
-    .header-container nav ul li:last-child a {
-        border-bottom: none;
-    }
-
-    /* Active indicator for mobile menu */
-    .header-container nav ul li a::after {
-        display: none; /* Hide bottom indicator in dropdown menu */
-    }
-
-    /* Show indicator on left side instead for mobile */
-    .header-container nav ul li a.active {
-        border-left: 4px solid var(--p-base);
-        background-color: var(--p-tint);
-    }
-
-    /* Hide template link on mobile */
-    .header-container nav ul li a[style*="font-size: 0.75rem"] {
-        display: none;
+        font-size: var(--fs-body-sm);
+        padding: 0 6px;
     }
 
     /* Content */
