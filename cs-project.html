@@ -260,11 +260,19 @@
 
             <section style="margin-top: 40px;">
                 <h3>Scenario 1: Finding events within a rough date range</h3>
-                <p><strong>User knows:</strong> the general date range they're interested in.<br><strong>Interested in:</strong> highest impact events.</p>
-                <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260215_220424.png" alt="Date dropdown filter for selecting month range in Scenario 1" loading="lazy" decoding="async" style="width: 100%; max-width: 460px; display: block; margin: 24px 0 0; border-radius: 8px;">
+                <p><strong>User knows:</strong> the general date range they're interested in.<br><strong>Interested in:</strong> highest impact events - <em>"when I'm pricing stuff I need to get the info quickly and get it right, this is noise"</em></p>
+                <div class="scenario1-grid">
+                    <img class="zoomable scenario1-img1" src="Assets/Images/Compressed/AI_Snip_20260215_220424.png" alt="Date dropdown filter for selecting month range in Scenario 1" loading="lazy" decoding="async" style="border-radius: 8px;">
+                    <img class="zoomable scenario1-img2" src="Assets/Images/Compressed/bp-filter.png" alt="Basis point filter with radio options for No Filter, greater than 0, 5, 10, and 20" loading="lazy" decoding="async" style="border-radius: 8px;">
+                    <p class="caption scenario1-cap1">A date-range dropdown lets users quickly narrow down to the period they care about. The instinctive solution for locating items within a time range might be a date range filter, but the way event data was structured meant that it wasn't always clear which dates would be relevant. Having the flexibility to jump to different time ranges without removing dates from the dataset was a less risky alternative.</p>
+                    <p class="caption scenario1-cap2">Combining this with a filter for the most impactful events allows the user to remove excess noise from the view, without the risk of missing important information.</p>
+                </div>
                 <h3 style="margin-top: 40px;">Scenario 2: Checking recently edited events</h3>
-                <p><strong>User knows:</strong> name of event, often who updated it (if they are in communication with that user).<br><strong>Interested in:</strong> recently updated event data.</p>
-                <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260215_215518.png" alt="Event table with filter options for recently edited events" loading="lazy" decoding="async" style="width: 100%; max-width: 900px; display: block; margin: 24px 0 0; border-radius: 8px;">
+                <p><strong>User knows:</strong> name of event, often who updated it, impact numbers they may need to match manually.<br><strong>Interested in:</strong> recently updated event data, specific event identifiers.</p>
+                <figure style="margin: 24px 0 0; max-width: 900px;">
+                    <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260216_072942.png" alt="Event table with filter options for recently edited events" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px;">
+                    <p class="caption">Exploration into options that facilitate quick, low effort location of specific events. Our project sponsor particularly liked the 'recently edited' suggestion.</p>
+                </figure>
             </section>
 
             <!-- Delivery Strategy -->
@@ -295,32 +303,23 @@
                     </div>
                 </div>
 
-                <p>The project followed an incremental delivery strategy. Rather than replacing the legacy platform in one go, we drip-fed individual pieces of new functionality into WebView2 containers embedded within the existing interface.</p>
-                <img class="zoomable" src="Assets/Icons/cs-table-warn.svg" alt="Table warning state" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px;">
+                <p>The project followed an incremental delivery strategy. Rather than replacing the legacy platform in one go, we drip-fed individual pieces of new functionality into WebView2 containers embedded within the existing interface.
+                    While this strategy would allow for a smoother transition towards a standalone solution, it provided a tricky enironment to design for in the interim. Here are some examples of design decisions we made to compensate for the challenges our delivery strategy brought:
+                </p>
+                <h3 style="margin-top: 40px;">Designing for the containers</h3>
                 <img class="zoomable" src="Assets/Images/Compressed/cs-tooltip.png" alt="CS project tooltip design" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px;">
+                <p class="caption">Screen real estate was tight due to functionality being cased inside individual containers. This, combined with a user need to be able to compare numbers from different grid columns, meant that we had to go in-depth on defining tooltip interaction patterns with the Developers.</p>
+                <h3 style="margin-top: 40px;">Feedback in the absence of a global notification system</h3>
+                <p>Designs had to communicate emerging alerts and errors that were often generated by the system rather than the user. These would often relate to specific cells within contained grids, which made notifying the user difficult.</p>
                 <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260215_123927.png" alt="UI flow showing successful and unsuccessful server call handling with error banners and contextual tooltips" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px;">
-            </section>
+                <img class="zoomable" src="Assets/Icons/cs-table-warn.svg" alt="Table warning state" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; margin-top: 40px;">
 
-            <section class="case-study" style="margin-top: 40px;">
-                <article class="outcomes">
-                    <h3>Outcomes</h3>
-                    <p>Migration scope defined - UI enhances from a UX pov, optimise information hierarchy, build loosely-couples modular widgets that can be remixed into bespoke workflows</p>
-                    <p>Out of scope - backend processes eg publishing, market environment maintenance, model interaction. Some causes of slowness eg publish delays, slow recalc</p>
-                </article>
             </section>
 
             <section style="margin-top: 40px;">
                 <h2>Reflection</h2>
-                <p>If I could approach this project again, I would push to involve a wider pool of users earlier in the process. Our research was at times reliant on a small minority of participants, which carried the risk of skewing insights toward individual preferences rather than representative needs.</p>
-                <p>I would also look for better ways to spread user insights through the wider team. Research findings were sometimes siloed within the design function, when they could have had a greater impact if shared more consistently with developers, product owners and stakeholders throughout the engagement.</p>
-                <h3 style="margin-top: 40px;">What worked well</h3>
-                <ul>
-                    <li>Three amigos sessions whenever a developer picked up a ticket, ensuring shared understanding before work began</li>
-                    <li>On-the-fly conversations with developers as they worked through tickets, catching issues early</li>
-                    <li>Close collaboration with test on identifying, raising and resolving bugs</li>
-                    <li>Regular bug triage calls to stay on top of quality</li>
-                    <li>UX and architecture combining perspectives to build a full picture of the problem</li>
-                </ul>
+                <p>This project offered a range of challenges, from discovery right through to MVP build and future enhancements. I think that having a client that bought in to our User Centred Design approach was essential for its success, as the domain and workflows were complex and demanded sensible decision making.</p>
+                <p>If I could approach this project again, I would push to involve a wider pool of users earlier in the process. Our research was at times reliant on a small group of willing participants. Not only could this have skewed decision making towards individual preference, it was also trickier to recruit research participants when our core group became too busy.</p>
             </section>
         </main>
     </div>
