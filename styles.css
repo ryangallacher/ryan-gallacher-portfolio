@@ -460,6 +460,117 @@ h3 {
     line-height: var(--lh-h3);
 }
 
+/* ============================================
+   Spacing System — Project Pages
+   40px between sections/content blocks
+   16px from headings to their content
+   ============================================ */
+
+/* Gap between hero and first/last section */
+.content-container main {
+    padding-top: var(--sp-10);
+    padding-bottom: var(--sp-10);
+}
+
+/* Sections within project page main content */
+.content-container main > section + section,
+.research-section + .research-section,
+.research-section + .project-wrapup,
+.value-banner-section + .research-section {
+    margin-top: var(--sp-10);
+}
+
+/* h2: 40px above (section-level heading), 16px below to content */
+.content-container main h2,
+.research-section h2 {
+    margin-top: var(--sp-10);
+    margin-bottom: var(--sp-4);
+}
+
+/* First h2 in a section shouldn't double up spacing */
+.content-container main > section > h2:first-child,
+.research-section > .research-header:first-child h2 {
+    margin-top: 0;
+}
+
+/* h3: 40px above, 16px below */
+.content-container main h3,
+.research-section h3 {
+    margin-top: var(--sp-10);
+    margin-bottom: var(--sp-4);
+}
+
+/* h3 immediately after h2: tighter coupling */
+.content-container main h2 + h3,
+.research-section h2 + h3 {
+    margin-top: var(--sp-4);
+}
+
+/* h3 inside research-header blocks: tighter spacing (same section) */
+.research-header h3 {
+    margin-top: var(--sp-6);
+    margin-bottom: var(--sp-4);
+}
+
+/* Headings inside components should not inherit section-level spacing */
+.postit-card h3,
+.postit-grid > h3,
+.tradeoff-side h3,
+.complexity-layer-title,
+.context-grid h3,
+.core-value-panel-label {
+    margin-top: 0;
+    margin-bottom: var(--sp-2);
+}
+
+/* Paragraphs following headings: no extra top margin (heading's margin-bottom handles it) */
+.content-container main h2 + p,
+.content-container main h3 + p,
+.research-section h2 + p,
+.research-section h3 + p {
+    margin-top: 0;
+}
+
+/* Images within project content: 40px above */
+.content-container main > section > img,
+.content-container main > section > figure,
+.research-section > img {
+    margin-top: var(--sp-10);
+}
+
+/* Captions immediately after images: tight */
+.content-container main img + .caption,
+.research-section img + .caption {
+    margin-top: var(--sp-2);
+}
+
+/* Content blocks: 40px above */
+.content-container main .postit-grid,
+.content-container main .tradeoff-graphic,
+.content-container main .synthesis-split,
+.content-container main .complexity-framework,
+.content-container main .publish-images,
+.content-container main .context-grid,
+.content-container main .scenario1-grid,
+.research-section .postit-grid,
+.research-section .core-value-panels,
+.research-section .dependency-chain {
+    margin-top: var(--sp-10);
+}
+
+/* Zoomable and standalone images within project content: 40px above */
+.content-container main .zoomable,
+.research-section .zoomable,
+.research-section > img {
+    margin-top: var(--sp-10);
+}
+
+/* Images immediately after headings: tighter */
+.content-container main h3 + img,
+.content-container main h3 + .zoomable {
+    margin-top: var(--sp-4);
+}
+
 /* Display text styles */
 .display-lg {
     font-size: var(--fs-display-lg);
@@ -2513,6 +2624,7 @@ img {
     display: flex;
     gap: 0;
     margin-top: 40px;
+    margin-bottom: 0;
 }
 
 .hero-stat {
@@ -2533,7 +2645,7 @@ img {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .hero-stat-number {
@@ -2541,6 +2653,7 @@ img {
     font-weight: 400;
     color: var(--color-bg-surface);
     line-height: 1.3;
+    margin: 0;
 }
 
 .hero-section .hero-image {
@@ -2937,7 +3050,7 @@ img {
 }
 
 .research-section {
-    padding: 20px 40px;
+    padding: 0 40px;
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -2962,8 +3075,8 @@ img {
 }
 
 .research-header h2 {
-    font-size: var(--fs-h1);
-    line-height: var(--lh-h1);
+    font-size: var(--fs-h2);
+    line-height: var(--lh-h2);
     color: var(--color-ink);
     margin: 0;
 }
@@ -4530,17 +4643,6 @@ blockquote footer {
         height: 32px;
     }
 
-    .synthesis-split {
-        flex-direction: column;
-    }
-
-    .synthesis-split .synthesis-text {
-        flex: 1;
-    }
-
-    .synthesis-split .synthesis-image {
-        max-width: 100%;
-    }
 }
 
 /* Synthesis split layout */
@@ -4572,10 +4674,12 @@ blockquote footer {
 @media (max-width: 768px) {
     .synthesis-split {
         flex-direction: column;
+        gap: 24px;
     }
 
     .synthesis-split .synthesis-image {
         max-width: 100%;
+        width: 100%;
     }
 }
 
