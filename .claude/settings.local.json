@@ -9,7 +9,8 @@
       "Bash(npx sharp-cli:*)",
       "WebFetch(domain:unpkg.com)",
       "WebFetch(domain:app.unpkg.com)",
-      "WebFetch(domain:carbondesignsystem.com)"
+      "WebFetch(domain:carbondesignsystem.com)",
+      "Bash(grep:*)"
     ]
   }
 }
