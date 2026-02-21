@@ -153,7 +153,7 @@
         <h3>The existing core journey</h3>
         <p class="dependency-description">At this stage, the primary verification method was done using biometrics, with the user providing a few details and taking live photos of an ID document and their face. Using two third party systems, the system then used user input to match their identity records to the specific user interacting with the service.</p>
         <p class="dependency-description">This method was deemed by Product to be the most sensible starting place, as it generally sees the highest pass rates for most people. It's also more secure than other methods like knowledge based verification.</p>
-        <img src="Assets/Icons/vyi.svg" alt="ScotAccount identity verification flow diagram" loading="lazy" decoding="async" style="width: 100%;">
+        <img src="Assets/Icons/vyi.svg" alt="ScotAccount identity verification flow diagram" loading="lazy" decoding="async" class="img-full">
         <h3>Honing in on the sticking points</h3>
         <p class="dependency-description">Taking photos was overwhelmingly the most problematic part of the biometric process for test participants. This was due to a number of reasons, namely:</p>
         <ul>
@@ -164,7 +164,7 @@
             <li>Lighting conditions</li>
             <li>Difficulty interpreting error messaging from our third party image capture technology</li>
         </ul>
-        <img class="zoomable" src="Assets/Images/Compressed/image issues highlight.png" alt="Highlighted image capture issues in the identity verification flow" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <img class="zoomable" src="Assets/Images/Compressed/image issues highlight.png" alt="Highlighted image capture issues in the identity verification flow" loading="lazy" decoding="async" class="img-card">
         <p class="caption">This image is taken from a sensemaking board the team and I used after the research. It clearly demonstrates the concentration of talking points (mostly negative) on the image capture part of the flow</p>
         <div class="postit-grid">
             <h3>Key insights</h3>
@@ -186,12 +186,12 @@
             </div>
         </div>
         <h3>The difference between what participants say and do</h3>
-        <img class="zoomable" src="Assets/Images/Compressed/sg single ease.png" alt="Single Ease Question scale showing participant responses from 1 (Very difficult) to 7 (Very easy)" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <img class="zoomable" src="Assets/Images/Compressed/sg single ease.png" alt="Single Ease Question scale showing participant responses from 1 (Very difficult) to 7 (Very easy)" loading="lazy" decoding="async" class="img-card">
         <p class="caption">Fascinatingly, when asked for their subjective opinion on the session after the fact, every participant said that they found the experience relatively easy - even one participant that got stuck on the first photo and needed to borrow a phone from the User Researcher to complete the task. I think this told us a lot about bias and self-reported evidence.</p>
         <h2>Fixing the image capture process</h2>
         <p class="dependency-description">I worked with our development team to plug some gaps in the existing flow, for example: providing suitable routing for situations where the user's device can't detect a camera. I also worked with our Content Designer to adjust some messaging, to ensure users had what they needed before they got to the image capture stage.</p>
-        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2026-02-16 at 11.01.05 (1).png" alt="Camera not detected flow diagram showing desktop and mobile handoff scenarios" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2025-01-30 at 16.42.17 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2026-02-16 at 11.01.05 (1).png" alt="Camera not detected flow diagram showing desktop and mobile handoff scenarios" loading="lazy" decoding="async" class="img-card">
+        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2025-01-30 at 16.42.17 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" class="img-card">
         <h2>New insights from the live service</h2>
         <p class="dependency-description">Going live with Disclosure meant that real analytics data began to trickle down from production. This complemented our ongoing qualitative research activities by providing hard performance numbers, pinpointing where we were seeing specific failure points that we should explore further.</p>
         <p class="dependency-summary">Crucially, we were seeing an initial identity verification pass rate of ~53%, which was a considerable amount lower than the ~65% benchmark hit by similar national identity services.</p>
@@ -203,15 +203,15 @@
             <li>Poor image quality</li>
         </ul>
         <p class="dependency-description">I worked with another Interaction Designer to produce a set of 'retry scenario' designs that aimed to get more users through the process successfully.</p>
-        <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-            <img class="zoomable" src="Assets/Images/Compressed/sg maps.png" alt="Scottish Government service maps" loading="lazy" decoding="async" style="width: 48%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-            <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260122_142740.png" alt="ScotAccount Select your photo ID screen showing identity document options" loading="lazy" decoding="async" style="width: 48%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <div class="grid-2-equal">
+            <img class="zoomable img-card" src="Assets/Images/Compressed/sg maps.png" alt="Scottish Government service maps" loading="lazy" decoding="async">
+            <img class="zoomable img-card" src="Assets/Images/Compressed/AI_Snip_20260122_142740.png" alt="ScotAccount Select your photo ID screen showing identity document options" loading="lazy" decoding="async">
         </div>
         <h3>The impact of retry scenario designs</h3>
-        <div style="padding: 1rem; background-color: #f5f5f5; border-left: 4px solid #2e7d32; max-width: 700px;">
-            <p style="margin: 0; color: #333; font-size: 0.95rem;">These design changes drove pass rates from <strong style="font-size: 1.4rem;">53%</strong> to <strong style="font-size: 1.4rem;">80%</strong>. Critically, performance remained consistently above 76% for months after implementation, demonstrating this was a fundamental UX improvement, not a temporary spike.</p>
+        <div class="callout-success">
+            <p>These design changes drove pass rates from <strong class="callout-stat">53%</strong> to <strong class="callout-stat">80%</strong>. Critically, performance remained consistently above 76% for months after implementation, demonstrating this was a fundamental UX improvement, not a temporary spike.</p>
         </div>
-        <img class="zoomable" src="Assets/Images/Compressed/scotaccount-graph-anno.png" alt="Graph showing ScotAccount identity verification pass rate improvement from 53% to 80%" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+        <img class="zoomable" src="Assets/Images/Compressed/scotaccount-graph-anno.png" alt="Graph showing ScotAccount identity verification pass rate improvement from 53% to 80%" loading="lazy" decoding="async" class="img-card">
     </section>
 
     <!-- Designing for Trust -->
@@ -243,11 +243,11 @@
         </blockquote>
         <h3>Alternative verification routes</h3>
         <p class="dependency-description">I worked with a Service Designer to define new user flows that, at appropriate points, would route users to processes that were designed to work for them. Namely, this involved reshuffling the journey by adding upfront screening questions and drop off points that led to alternative methods.</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: end;">
-            <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2024-06-27 at 15.49.42 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-            <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2024-06-27 at 15.49.57 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
-            <p class="caption" style="margin-top: 0;">Working out the logic that would lead users to each route</p>
-            <p class="caption" style="margin-top: 0;">Routing the user towards the appropriate process: Biometric, Knowledge Based Verification or Vouching. This involved designing the seams between organisations and systems, as we used a third party supplier for the Vouching route</p>
+        <div class="grid-2-equal">
+            <img class="zoomable img-card" src="Assets/Images/Compressed/Screenshot 2024-06-27 at 15.49.42 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async">
+            <img class="zoomable img-card" src="Assets/Images/Compressed/Screenshot 2024-06-27 at 15.49.57 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async">
+            <p class="caption">Working out the logic that would lead users to each route</p>
+            <p class="caption">Routing the user towards the appropriate process: Biometric, Knowledge Based Verification or Vouching. This involved designing the seams between organisations and systems, as we used a third party supplier for the Vouching route</p>
         </div>
     </section>
 
@@ -257,16 +257,15 @@
             <h2>Where is ScotAccount now?</h2>
             <p>ScotAccount was shortlisted as one of three finalists in the 2025 Civil Service Awards' <a href="https://www.civilserviceawards.com/delivering-for-citizens-award-2/" target="_blank" rel="noopener">"Delivering for Citizens"</a> category, recognising its proven value to the people of Scotland. The awards attracted 2,500 entries across all categories and featured a wide range of programmes from across the UK Public Sector.</p>
 
-            <div style="margin-top: 16px; padding: 1rem; background-color: #f5f5f5; border-left: 4px solid #2e7d32; max-width: 700px;">
-                <p style="margin: 0; color: #333; font-size: 0.95rem;">As of 2025, around 10,000 new ScotAccounts are created weekly, and <strong style="font-size: 1.4rem;">99%</strong> of users choose to save their details for reuse. This stat speaks to the team's ability to build trust in the service, in turn driving the value it provides.</p>
+            <div class="callout-success">
+                <p>As of 2025, around 10,000 new ScotAccounts are created weekly, and <strong class="callout-stat">99%</strong> of users choose to save their details for reuse. This stat speaks to the team's ability to build trust in the service, in turn driving the value it provides.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-        </ul>
+        <p>&copy; <span id="year"></span> Ryan Gallacher. All rights reserved.</p>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
 
     <!-- Back to top button -->

@@ -261,6 +261,38 @@ These are the reusable patterns in the codebase. Reference existing HTML pages f
 ### Eyebrow Text
 - `.eyebrow-text` — `--fs-body-sm`, uppercase, `letter-spacing: 0.05em`, `--color-text-secondary`
 
+### Utility Classes
+- `.cta-group` — flex container for CTA button groups (gap: `--sp-4`)
+- `.btn-icon` — inline icon inside buttons (uses petrol SVG filter)
+- `.img-full` — `width: 100%` for full-width images
+- `.img-card` — full-width image with 8px radius, border, and subtle shadow
+- `.grid-2-equal` — 2-column equal grid, collapses to 1 column on mobile (768px)
+- `.callout-success` — green-bordered callout box for key stats/results
+- `.callout-stat` — large stat number inside callouts (1.4rem)
+- `.callout-highlight` — emphasized paragraph text (1.25rem, weight 600)
+
+---
+
+## Grid System
+
+A 12-column grid with gap and responsive utilities.
+
+### Base
+- `.grid-12` — `display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--sp-6)`
+
+### Column Spans
+- `.col-span-1` through `.col-span-12`
+
+### Gap Utilities
+- `.gap-1` through `.gap-10` — maps to `--sp-*` tokens
+
+### Responsive Variants
+- `@media (max-width: 768px)`: `.col-span-md-6`, `.col-span-md-12`
+- `@media (max-width: 480px)`: `.col-span-sm-12`
+
+### Quick Layouts
+- `.grid-2-equal` — simple 2-column layout, collapses on mobile
+
 ---
 
 ## Page Types

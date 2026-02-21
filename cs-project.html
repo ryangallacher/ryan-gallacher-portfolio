@@ -66,9 +66,9 @@
 
                 <h3>Understanding Our Key Stakeholders</h3>
                 <p>Our first priority was to seek clarity and alignment around common goals and priorities for the project. We did this primarily through a handful of in-person sessions with senior stakeholders like Trading Floor Managers, Quants and technical Subject Matter Experts. These sessions also helped us get to grips with the domain, which would help equip us for early user sessions.</p>
-                <img class="zoomable" src="Assets/Images/Compressed/Picture 1 (1).png" alt="Key stakeholders" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px;">
+                <img class="zoomable img-card" src="Assets/Images/Compressed/Picture 1 (1).png" alt="Key stakeholders" loading="lazy" decoding="async">
                 <p class="caption">Our Miro board where we collated notes and findings from stakeholder sessions. Virtual whiteboarding helped the UX team collaborate, as we could compare and discuss our findings in one place.</p>
-                <img class="zoomable" src="Assets/Images/Compressed/func-mapping.png" alt="Functional mapping" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px;">
+                <img class="zoomable img-card" src="Assets/Images/Compressed/func-mapping.png" alt="Functional mapping" loading="lazy" decoding="async">
                 <p class="caption">An epic mapping workshop run by our Principal Architect, which helped my UX colleague and I understand the existing features and their relative importance and complexity from the business' point of view.</p>
 
                 <h3>User Research</h3>
@@ -174,7 +174,7 @@
                 <p>By the end of the 6 week discovery, the team had collated and synthesised a range of insights from both user and technical perspectives, allowing us to form a full picture of the problem space.</p>
                 <p>My research activities played a key role in helping shape a high level roadmap for the coming months, along with an initial backlog. To summarise, these are the areas we deemed to be in and out of scope for the upcoming phases of the project:</p>
 
-                <div class="tradeoff-graphic" style="grid-template-columns: 1fr 1fr; align-items: start;">
+                <div class="tradeoff-graphic grid-2-equal" style="align-items: start;">
                     <div class="tradeoff-side">
                         <h3>In Scope</h3>
                         <ul>
@@ -196,17 +196,17 @@
                 <h3>Applying what we'd discovered</h3>
                 <p>With backend processes deemed too costly and time-intensive to unpick, I took on a key role within the overall delivery — using Design to do the heavy lifting and patch over some of the areas where the backend mess was holding users back. One key example of that was one of the core causes of system slowness: publishing.</p>
                 <p>Our understanding of the publishing problem was twofold. From the architecture side, we knew that publishing was a major cause of slowness — because lots of users were all maintaining the same set of data, publishes could queue up and bog the system down. From the Design side, I'd observed that users got no feedback when they pressed publish. They couldn't tell whether it had succeeded, failed, or was just slow, so they would try to republish. This created a vicious cycle: repeated publishes added to the queue behind the scenes, slowing the system even further.</p>
-                <div class="publish-images" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: end;">
+                <div class="publish-images grid-2-equal">
                     <figure style="margin: 0;">
-                        <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260215_211222.png" alt="Republish confirmation dialog warning users that republishing before completion may cause slowness" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                        <img class="zoomable img-card" src="Assets/Images/Compressed/AI_Snip_20260215_211222.png" alt="Republish confirmation dialog warning users that republishing before completion may cause slowness" loading="lazy" decoding="async">
                         <p class="caption">A confirmation dialog to warn users that republishing before the current publish completes may cause slowness.</p>
                     </figure>
                     <figure style="margin: 0;">
-                        <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260215_211700.png" alt="Publish status bar showing real-time feedback on publish progress and pending publishes" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                        <img class="zoomable img-card" src="Assets/Images/Compressed/AI_Snip_20260215_211700.png" alt="Publish status bar showing real-time feedback on publish progress and pending publishes" loading="lazy" decoding="async">
                         <p class="caption">A status queue to give users real-time feedback on publish progress, aiming to give users confidence that the quickest way to keep up with the market is to wait.</p>
                     </figure>
                 </div>
-                <p style="font-size: 1.25rem; font-weight: 600;">I was able to produce simple Design solutions that tackled a key user problem through strategically placed friction and feedback, without us having to do the grunt work of untangling the underlying systems.</p>
+                <p class="callout-highlight">I was able to produce simple Design solutions that tackled a key user problem through strategically placed friction and feedback, without us having to do the grunt work of untangling the underlying systems.</p>
             </section>
 
             <!-- Pull Quote -->
@@ -262,15 +262,15 @@
                 <h3>Scenario 1: Finding events within a rough date range</h3>
                 <p><strong>User knows:</strong> the general date range they're interested in.<br><strong>Interested in:</strong> highest impact events - <em>"when I'm pricing stuff I need to get the info quickly and get it right, this is noise"</em></p>
                 <div class="scenario1-grid">
-                    <img class="zoomable scenario1-img1" src="Assets/Images/Compressed/AI_Snip_20260215_220424.png" alt="Date dropdown filter for selecting month range in Scenario 1" loading="lazy" decoding="async" style="border-radius: 8px;">
-                    <img class="zoomable scenario1-img2" src="Assets/Images/Compressed/bp-filter.png" alt="Basis point filter with radio options for No Filter, greater than 0, 5, 10, and 20" loading="lazy" decoding="async" style="border-radius: 8px;">
+                    <img class="zoomable scenario1-img1" src="Assets/Images/Compressed/AI_Snip_20260215_220424.png" alt="Date dropdown filter for selecting month range in Scenario 1" loading="lazy" decoding="async" class="img-card">
+                    <img class="zoomable scenario1-img2" src="Assets/Images/Compressed/bp-filter.png" alt="Basis point filter with radio options for No Filter, greater than 0, 5, 10, and 20" loading="lazy" decoding="async" class="img-card">
                     <p class="caption scenario1-cap1">A date-range dropdown lets users quickly narrow down to the period they care about. The instinctive solution for locating items within a time range might be a date range filter, but the way event data was structured meant that it wasn't always clear which dates would be relevant. Having the flexibility to jump to different time ranges without removing dates from the dataset was a less risky alternative.</p>
                     <p class="caption scenario1-cap2">Combining this with a filter for the most impactful events allows the user to remove excess noise from the view, without the risk of missing important information.</p>
                 </div>
                 <h3>Scenario 2: Checking recently edited events</h3>
                 <p><strong>User knows:</strong> name of event, often who updated it, impact numbers they may need to match manually.<br><strong>Interested in:</strong> recently updated event data, specific event identifiers.</p>
                 <figure style="margin: 0; max-width: 900px;">
-                    <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260216_072942.png" alt="Event table with filter options for recently edited events" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px;">
+                    <img class="zoomable img-card" src="Assets/Images/Compressed/AI_Snip_20260216_072942.png" alt="Event table with filter options for recently edited events" loading="lazy" decoding="async">
                     <p class="caption">Exploration into options that facilitate quick, low effort location of specific events. Our project sponsor particularly liked the 'recently edited' suggestion.</p>
                 </figure>
             </section>
@@ -307,12 +307,12 @@
                     While this strategy would allow for a smoother transition towards a standalone solution, it provided a tricky environment to design for in the interim. Here are some examples of design decisions we made to compensate for the challenges our delivery strategy brought:
                 </p>
                 <h3>Designing for the containers</h3>
-                <img class="zoomable" src="Assets/Images/Compressed/cs-tooltip.png" alt="CS project tooltip design" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px;">
+                <img class="zoomable" src="Assets/Images/Compressed/cs-tooltip.png" alt="CS project tooltip design" loading="lazy" decoding="async" class="img-card">
                 <p class="caption">Screen real estate was tight due to functionality being cased inside individual containers. This, combined with a user need to be able to compare numbers from different grid columns, meant that we had to go in-depth on defining tooltip interaction patterns with the Developers.</p>
                 <h3>Feedback in the absence of a global notification system</h3>
                 <p>Designs had to communicate emerging alerts and errors that were often generated by the system rather than the user. These would often relate to specific cells within contained grids, which made notifying the user difficult.</p>
-                <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260215_123927.png" alt="UI flow showing successful and unsuccessful server call handling with error banners and contextual tooltips" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px;">
-                <img class="zoomable" src="Assets/Icons/cs-table-warn.svg" alt="Table warning state" loading="lazy" decoding="async" style="width: 100%; border-radius: 8px;">
+                <img class="zoomable" src="Assets/Images/Compressed/AI_Snip_20260215_123927.png" alt="UI flow showing successful and unsuccessful server call handling with error banners and contextual tooltips" loading="lazy" decoding="async" class="img-card">
+                <img class="zoomable" src="Assets/Icons/cs-table-warn.svg" alt="Table warning state" loading="lazy" decoding="async" class="img-card">
 
             </section>
 
@@ -325,9 +325,6 @@
     </div>
 
     <footer>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-        </ul>
         <p>&copy; <span id="year"></span> Ryan Gallacher. All rights reserved.</p>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
