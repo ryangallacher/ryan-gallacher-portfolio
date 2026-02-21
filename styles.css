@@ -472,6 +472,17 @@ h3 {
     padding-bottom: var(--sp-10);
 }
 
+/* Homepage: hero and video sections go flush to header/footer */
+.content-container main > .hero:first-child {
+    margin-top: calc(-1 * var(--sp-10));
+    padding-top: var(--sp-10);
+}
+
+.content-container main > .video-section:last-child {
+    margin-bottom: calc(-1 * var(--sp-10));
+    padding-bottom: var(--sp-10);
+}
+
 /* Sections within project page main content */
 .content-container main > section + section,
 .research-section + .research-section,
