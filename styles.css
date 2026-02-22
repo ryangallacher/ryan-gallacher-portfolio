@@ -1154,19 +1154,18 @@ footer ul li a:hover {
 }
 
 .project-card {
-    width: 100%; /* Full width, one per line */
+    width: 100%;
     box-sizing: border-box;
-    background-color: var(--n-0); /* White background */
+    background-color: var(--n-0);
     border: 1px solid rgba(3, 76, 83, 0.25);
     box-shadow: none;
     display: flex;
-    flex-direction: row; /* Horizontal layout */
-    overflow: hidden; /* Ensure content doesn't overflow */
-    transition: background-color var(--motion-fast), box-shadow var(--motion-fast), transform var(--motion-fast); /* Smooth transition for hover effects */
-    text-decoration: none; /* Remove underline from links */
-    color: inherit; /* Inherit text color */
-    border-radius: 4px; /* Add corner radius to project cards */
-    min-height: 320px; /* Minimum height for consistent card sizing */
+    flex-direction: row;
+    overflow: hidden;
+    transition: background-color var(--motion-fast), box-shadow var(--motion-fast), transform var(--motion-fast);
+    text-decoration: none;
+    color: inherit;
+    border-radius: 4px;
 }
 
 .project-card:hover {
@@ -1201,23 +1200,31 @@ footer ul li a:hover {
 }
 
 .project-card-content {
-    padding: var(--sp-8); /* Add padding around the content */
-    flex: 1; /* Take remaining space */
+    padding: var(--sp-8);
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.project-card-content h3 {
+.project-card .project-card-content h3 {
+    margin-top: 0;
     margin-bottom: var(--sp-2);
+}
+
+.project-card-content .tags {
+    margin-top: var(--sp-2);
+}
+
+.project-card-content p {
+    margin: var(--sp-3) 0 0;
 }
 
 /* Project card stats container */
 .project-card-stats {
     display: flex;
     gap: var(--sp-8);
-    margin-top: auto;
-    margin-bottom: 0;
+    margin-top: var(--sp-10);
 }
 
 .project-card-stat {
@@ -1289,8 +1296,8 @@ footer ul li a:hover {
 
 .tags {
     display: flex;
-    gap: var(--sp-2); /* Space between tags */
-    margin-bottom: var(--sp-10);
+    flex-wrap: wrap;
+    gap: var(--sp-2);
 }
 
 .tag {
