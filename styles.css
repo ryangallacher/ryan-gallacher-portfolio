@@ -485,9 +485,15 @@ h3 {
 
 /* Sections within project page main content */
 .content-container main > section + section,
+.hero-section + .research-section,
 .research-section + .research-section,
 .research-section + .project-wrapup,
 .value-banner-section + .research-section {
+    margin-top: var(--sp-10);
+}
+
+.research-section + footer,
+.project-wrapup + footer {
     margin-top: var(--sp-10);
 }
 
@@ -2568,7 +2574,7 @@ img {
    Project Template Page Styles
    ============================================ */
 .hero-section {
-    padding: var(--sp-10);
+    padding: var(--sp-10) 0;
     min-height: 500px;
     background-color: var(--color-teal-base);
     background-image: linear-gradient(to bottom, var(--color-teal-base), rgba(1, 38, 41, 0.55));
@@ -2585,6 +2591,7 @@ img {
     gap: var(--sp-16);
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 40px;
     position: relative;
     z-index: 1;
     width: 100%;
@@ -3028,6 +3035,15 @@ img {
     margin-right: auto;
 }
 
+/* Images must not exceed their container or the 1400px content column */
+.page-cs .discovery-section > img,
+.page-cs .delivery-section > img {
+    display: block;
+    max-width: min(100%, 1400px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* CS page postit overrides */
 .page-cs .postit-grid {
     background-color: transparent;
@@ -3097,6 +3113,11 @@ img {
     align-items: start;
 }
 
+/* Single-child research-header: span full width (no content in column 2) */
+.research-header > :only-child {
+    grid-column: 1 / -1;
+}
+
 .research-header + .research-header {
     margin-top: var(--sp-6);
 }
@@ -3109,6 +3130,11 @@ img {
 }
 
 .research-header-body {
+    max-width: 720px;
+}
+
+h2 + .research-header-body,
+h3 + .research-header-body {
     margin-top: var(--sp-4);
 }
 
@@ -3533,6 +3559,8 @@ blockquote footer {
    ============================================ */
 .value-banner-section {
     padding: var(--sp-6) 40px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .value-banner {
@@ -3541,8 +3569,6 @@ blockquote footer {
     background-color: var(--n-900);
     border-radius: 8px;
     padding: 28px var(--sp-10);
-    max-width: 1400px;
-    margin: 0 auto;
     gap: var(--sp-10);
 }
 
@@ -4416,11 +4442,12 @@ blockquote footer {
 
 @media (max-width: 1024px) {
     .hero-section {
-        padding: var(--sp-16) var(--sp-6);
+        padding: var(--sp-16) 0;
     }
 
     .hero-wrapper {
         gap: var(--sp-10);
+        padding: 0 var(--sp-6);
     }
 
     .main-content {
@@ -4510,13 +4537,14 @@ blockquote footer {
 
 @media (max-width: 768px) {
     .hero-section {
-        padding: var(--sp-10) var(--sp-4);
+        padding: var(--sp-10) 0;
         min-height: auto;
     }
 
     .hero-wrapper {
         flex-direction: column;
         text-align: center;
+        padding: 0 var(--sp-4);
     }
 
     .hero-wrapper > .back-button {
@@ -4647,7 +4675,11 @@ blockquote footer {
 
 @media (max-width: 480px) {
     .hero-section {
-        padding: var(--sp-6) 12px;
+        padding: var(--sp-6) 0;
+    }
+
+    .hero-wrapper {
+        padding: 0 16px;
     }
 
     .hero-content h1 {
@@ -4705,7 +4737,7 @@ blockquote footer {
     .project-wrapup,
     .contact-section,
     .why-section {
-        padding: var(--sp-6) 20px;
+        padding: var(--sp-6) 16px;
     }
 
     .best-practices h2,

@@ -155,10 +155,16 @@ Use these over raw palette tokens when the context is clear:
 
 ## Layout
 
-- **Max content width**: 1200px, centred with `margin: 0 auto`
-- **Content padding**: `0 24px` horizontal
-- **Prose max-width**: 720px (paragraphs, lists within sections)
+Two content column widths are used depending on page type. Never mix them on the same page.
+
+| Page type | Max-width | Horizontal padding | CSS pattern |
+|-----------|-----------|-------------------|-------------|
+| Project pages | 1400px | 40px | `.hero-wrapper`, `.research-section` |
+| Homepage / About / Contact | 1200px | 24px (`--sp-6`) | `.content-container` |
+
+- **Prose max-width**: 720px for body text within `.research-header-body`
 - **Border radius**: 4px for images and cards, 6px for buttons and inputs, 8px for timeline cards, 50% for circular buttons
+- Hero and all content sections on a project page share the same 1400px/40px constraint — this is what keeps the left edge aligned throughout the page
 
 ---
 
@@ -303,10 +309,80 @@ A 12-column grid with gap and responsive utilities.
 - h1 uses `display-lg` scale
 
 ### Project Pages (e.g. `scotaccount-project.html`)
-- Body class: `.page-scotaccount`, `.page-cs`, etc.
-- Structure: header → hero section → value banner (optional) → research sections → footer
-- No `.content-container` wrapper — sections are full-width with internal max-width
-- h1 uses `--fs-h1` scale
+
+**Never use `.content-container` on project pages.** All sections are full-width at the `<body>` level; width is constrained internally by `.hero-wrapper` and `.research-section` (both 1400px max-width, 40px horizontal padding). This shared constraint is what keeps the hero left edge and content left edge aligned.
+
+Body class: `.page-[slug]` (e.g. `.page-cs`, `.page-scotaccount`)
+h1 uses `--fs-h1` scale
+
+#### Required HTML skeleton — copy this exactly for every new project page
+
+```html
+<body class="page-[slug]">
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">Ryan Gallacher</a>
+    </div>
+  </header>
+
+  <!-- Hero — full-width dark background, content constrained to 1400px/40px -->
+  <section class="hero-section">
+    <div class="hero-wrapper">
+      <a href="index.html" class="back-button">← Back</a>
+      <div class="hero-content">
+        <p class="eyebrow-text">Client / Organisation</p>
+        <h1>Project Title</h1>
+        <p>One or two sentence summary.</p>
+        <dl class="hero-stats">
+          <div class="hero-stat">
+            <dt class="hero-stat-label">My Responsibilities</dt>
+            <dd class="hero-stat-number">UX Design, User Research</dd>
+          </div>
+          <div class="hero-stat">
+            <dt class="hero-stat-label">Duration</dt>
+            <dd class="hero-stat-number">~ N Months</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="hero-image">
+        <img src="..." alt="..." fetchpriority="high" decoding="async">
+      </div>
+    </div>
+  </section>
+
+  <!-- Value banner (optional) — only include if you have measurable outcomes -->
+  <section class="value-banner-section"> ... </section>
+
+  <!-- Content sections — each constrained to 1400px/40px, same as hero-wrapper -->
+  <section class="research-section">
+    <div class="research-header">
+      <div>
+        <h2>Section Title</h2>
+      </div>
+    </div>
+    <!-- Sub-section: heading in col 1, body in col 2 -->
+    <div class="research-header">
+      <div>
+        <h3>Sub-heading</h3>
+      </div>
+      <div class="research-header-body">
+        <p>Body text.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repeat <section class="research-section"> for each major section -->
+
+  <footer> ... </footer>
+  <div id="lightbox"> ... </div>
+  <button id="back-to-top"> ... </button>
+</body>
+```
+
+#### research-header rules
+- **One child** → spans full width automatically (CSS handles this)
+- **Two children** → left column gets heading, right column gets body text
+- Never put content outside `.research-section` directly in `<body>`
 
 ### About Page (`about.html`)
 - Body class: `.about-page`
@@ -336,3 +412,4 @@ A 12-column grid with gap and responsive utilities.
 - Add navigation links to project page headers (they only show the logo)
 - Use `!important` unless overriding third-party styles
 - Create new CSS files — all styles go in `styles.css`
+- Use `.content-container` on project pages — it uses the wrong max-width (1200px) and will misalign the hero and content columns
