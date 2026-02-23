@@ -541,6 +541,7 @@ h3 {
 }
 
 /* Paragraphs following headings: no extra top margin (heading's margin-bottom handles it) */
+.content-container main h1 + p,
 .content-container main h2 + p,
 .content-container main h3 + p,
 .research-section h2 + p,
@@ -1101,6 +1102,9 @@ footer ul li a:hover {
     padding: 0 var(--sp-6); /* Add padding to ensure content doesn't touch the edges */
 }
 
+.content-container main > section > h1,
+.content-container main > section > h2,
+.content-container main > section > h3,
 .content-container main > section > p,
 .content-container main > section > ol,
 .content-container main > section > ul {
@@ -1127,10 +1131,11 @@ footer ul li a:hover {
 }
 
 .hero-text h1 {
-    margin-bottom: var(--sp-2); /* 8px between h1 and text */
+    margin-bottom: var(--sp-6); /* 24px between h1 and text */
 }
 
 .hero-text > p {
+    margin-top: 0;
     margin-bottom: var(--sp-10); /* 40px between text and button */
 }
 
@@ -1402,7 +1407,7 @@ footer ul li a:hover {
     align-items: center;
     gap: var(--sp-2);
     font-weight: bold;
-    margin: 0 0 10px 0;
+    margin-bottom: var(--sp-3);
 }
 
 .error-summary ul {
@@ -1445,7 +1450,7 @@ footer {
 footer ul {
     list-style: none;
     padding: 0;
-    margin: 0 0 16px 0;
+    margin-bottom: var(--sp-4);
     display: flex;
     justify-content: center;
     gap: var(--sp-6);
@@ -1474,7 +1479,7 @@ footer ul li a:hover {
 }
 
 .video-section h2 {
-    margin-bottom: var(--sp-3);
+    margin-bottom: var(--sp-6);
 }
 
 .video-section p {
@@ -1582,7 +1587,7 @@ footer ul li a:hover {
 }
 
 .activities-list h4 {
-    margin: 0 0 8px 0;
+    margin-bottom: var(--sp-2);
 }
 
 .activities-list p {
@@ -1683,8 +1688,8 @@ footer ul li a:hover {
 .about-page .timeline-container .timeline-node {
     top: 1px;
 }
-.about-page .timeline-content h3 { margin: 0 0 6px 0; }
-.about-page .timeline-content .meta { margin: 0 0 8px 0; color: var(--color-text-secondary); font-size: var(--fs-body-compact); }
+.about-page .timeline-content h3 { margin-bottom: var(--sp-2); }
+.about-page .timeline-content .meta { margin-bottom: var(--sp-2); color: var(--color-text-secondary); font-size: var(--fs-body-compact); }
 .about-page .timeline-content .description { margin: 0; line-height: var(--lh-body); }
 .about-page .timeline-label { display: none; }
 
@@ -2380,7 +2385,7 @@ footer ul li a:hover {
     /* Blockquotes */
     blockquote {
         padding: var(--sp-3) var(--sp-3);
-        margin: 0 0 0.75rem 0;
+        margin-bottom: var(--sp-3);
     }
 
     /* Callouts */
@@ -2897,7 +2902,7 @@ img {
     font-size: var(--fs-body);
     font-weight: 600;
     color: var(--color-ink);
-    margin: 0 0 8px 0;
+    margin-bottom: var(--sp-2);
 }
 
 .complexity-layer-definition {
@@ -2937,7 +2942,7 @@ img {
     font-size: var(--fs-h3);
     font-weight: 600;
     color: var(--color-ink);
-    margin: 0 0 16px 0;
+    margin-bottom: var(--sp-4);
 }
 
 .contact-intro p {
@@ -3133,16 +3138,12 @@ img {
     font-size: var(--fs-h2);
     line-height: var(--lh-h2);
     color: var(--color-ink);
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: var(--sp-4);
 }
 
 .research-header-body {
     max-width: 720px;
-}
-
-h2 + .research-header-body,
-h3 + .research-header-body {
-    margin-top: var(--sp-4);
 }
 
 .research-header-body p {
@@ -3177,7 +3178,7 @@ h3 + .research-header-body {
     font-size: var(--fs-h3);   /* 24px — scales with heading variables */
     line-height: 1.75rem;
     color: var(--color-ink);
-    margin: 0 0 24px 0;
+    margin-bottom: var(--sp-6);
     font-weight: 600;
     font-style: italic;
 }
@@ -3202,14 +3203,14 @@ h3 + .research-header-body {
     font-size: var(--fs-body);
     font-weight: 600;
     color: var(--color-ink);
-    margin: 0 0 12px 0;
+    margin-bottom: var(--sp-3);
 }
 
 .research-card p {
     font-size: var(--fs-body-sm);
     line-height: var(--lh-body);
     color: var(--color-text-secondary);
-    margin: 0 0 20px 0;
+    margin-bottom: var(--sp-5);
 }
 
 .research-image {
@@ -3263,7 +3264,7 @@ h3 + .research-header-body {
     font-size: var(--fs-h3);
     line-height: var(--lh-h3);
     color: var(--color-ink);
-    margin: 0 0 12px 0;
+    margin-bottom: var(--sp-3);
 }
 
 .research-topic-intro p {
@@ -3307,7 +3308,7 @@ h3 + .research-header-body {
     line-height: 1.5;
     font-style: normal;
     color: var(--color-ink);
-    margin: 0 0 24px 0;
+    margin-bottom: var(--sp-6);
 }
 
 blockquote footer {
@@ -3695,7 +3696,7 @@ blockquote footer {
     font-size: var(--fs-h3);
     font-weight: 600;
     color: var(--teal-base);
-    margin: 0 0 4px;
+    margin-bottom: var(--sp-1);
 }
 
 .core-value-panel--after .core-value-panel-label {
@@ -3722,7 +3723,7 @@ blockquote footer {
     line-height: var(--lh-body);
     color: var(--color-text-secondary);
     text-align: center;
-    margin: 0 0 32px;
+    margin-bottom: var(--sp-8);
     max-width: 300px;
 }
 
@@ -3805,7 +3806,7 @@ blockquote footer {
     font-size: var(--fs-body);
     line-height: var(--lh-body);
     color: var(--color-ink);
-    margin: 0 0 24px;
+    margin-bottom: var(--sp-6);
     max-width: 620px;
 }
 
@@ -3905,14 +3906,14 @@ blockquote footer {
     line-height: var(--lh-body);
     font-weight: 700;
     color: var(--teal-base);
-    margin: 0 0 12px;
+    margin-bottom: var(--sp-3);
 }
 
 .weighted-left-sidebar p {
     font-size: var(--fs-body-sm);
     line-height: var(--lh-body);
     color: var(--color-ink);
-    margin: 0 0 24px;
+    margin-bottom: var(--sp-6);
 }
 
 .weighted-left-sidebar ul {
@@ -3999,7 +4000,7 @@ blockquote footer {
 }
 
 .bbox-card-inner h3 {
-    margin: 0 0 8px;
+    margin-bottom: var(--sp-2);
 }
 
 .bbox-card-inner p {
@@ -4008,7 +4009,7 @@ blockquote footer {
 }
 
 .bbox-card-inner.pull-quote p {
-    margin: 0 0 24px 0;
+    margin-bottom: var(--sp-6);
 }
 
 /* ============================================
@@ -4029,7 +4030,7 @@ blockquote footer {
     font-size: var(--fs-h1);
     font-weight: 600;
     color: var(--color-ink);
-    margin: 0 0 12px 0;
+    margin-bottom: var(--sp-3);
 }
 
 .testimonial-section .section-header p {
@@ -4125,7 +4126,7 @@ blockquote footer {
     font-size: var(--fs-h1);
     font-weight: 600;
     color: var(--color-ink);
-    margin: 0 0 12px 0;
+    margin-bottom: var(--sp-3);
 }
 
 .masonry-gallery .section-header p {
@@ -4333,7 +4334,7 @@ blockquote footer {
     font-size: var(--fs-h3);
     font-weight: 600;
     color: var(--color-ink);
-    margin: 0 0 30px 0;
+    margin-bottom: var(--sp-8);
     display: flex;
     align-items: center;
     gap: var(--sp-4);
@@ -4358,7 +4359,7 @@ blockquote footer {
     font-size: var(--fs-body);
     font-weight: 600;
     color: var(--color-ink);
-    margin: 0 0 8px 0;
+    margin-bottom: var(--sp-2);
 }
 
 .contact-section .contact-item p {
@@ -4810,7 +4811,7 @@ blockquote footer {
 }
 
 .synthesis-split .synthesis-text h3 {
-    margin: 0 0 12px 0;
+    margin-bottom: var(--sp-3);
 }
 
 .synthesis-split .synthesis-text p {
