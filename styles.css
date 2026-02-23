@@ -1475,7 +1475,7 @@ footer ul li a:hover {
 
 /* Video section base styles */
 .video-section {
-    padding: var(--sp-6) 0 64px;
+    padding: 0 0 var(--sp-16);
 }
 
 .video-section h2 {
@@ -1483,7 +1483,7 @@ footer ul li a:hover {
 }
 
 .video-section p {
-    margin-bottom: var(--sp-6);
+    margin-bottom: var(--sp-10);
 }
 
 /* Why section — 2-col icon + text grid */
@@ -1633,7 +1633,7 @@ footer ul li a:hover {
 
 /* Featured work section */
 .featured-work {
-    padding-bottom: var(--sp-6); /* Bottom padding only */
+    padding-bottom: 0;
 }
 
 .featured-work h2 {
