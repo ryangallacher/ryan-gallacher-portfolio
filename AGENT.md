@@ -394,6 +394,26 @@ h1 uses `--fs-h1` scale
 
 ---
 
+## Principles
+
+- **Agent agnostic by default:** Any tooling, config, docs, or conventions should work across agents (Claude, Cursor, Copilot, etc.) unless there's a specific reason to go agent-specific. Prefer `AGENTS.md` over `CLAUDE.md`, repo-local files over agent memory, and open formats over proprietary ones.
+
+## Information Architecture
+
+When new information, documentation, or research arrives — use this table to decide where it goes.
+
+| Type of content | Where it goes | Notes |
+|----------------|---------------|-------|
+| Design tokens and visual standards | `AGENT.md` (this file) | Single source of truth for agents and humans |
+| New page templates or component patterns | `AGENT.md` under the relevant section | Keep co-located with other patterns |
+| Research or external articles | Create `references/` and add a summary file | Summarise key points and relevance — don't just link |
+| Sensitive config or secrets | `.env` (never committed) | Never write secrets to the repo |
+
+**Rules:**
+- Repo-local always beats agent-specific memory. If it's worth keeping, it belongs in the repo.
+- All styles go in `styles.css` — do not create new CSS files.
+- If content doesn't fit any category above, ask before creating a new top-level directory.
+
 ## Do's and Don'ts
 
 **Do:**
