@@ -1,6 +1,7 @@
 {
   "permissions": {
     "allow": [
+      "Read(//c/Users/Ryan/Documents/GitHub/**)",
       "Bash(git checkout:*)",
       "WebFetch(domain:raw.githubusercontent.com)",
       "WebFetch(domain:github.com)",
