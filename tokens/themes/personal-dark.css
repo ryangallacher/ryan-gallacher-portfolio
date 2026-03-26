@@ -1,0 +1,41 @@
+/* Personal brand — dark theme
+ * Overrides semantic color tokens for dark mode.
+ * Values are PLACEHOLDERS — to be agreed at Checkpoint A before component work begins.
+ *
+ * Reference: crp-tool-postmvp dark mode structure informed the approach.
+ * Dark surface values are approximate — final values to be confirmed with user.
+ *
+ * TODO (Checkpoint A): Confirm all values below before shipping.
+ */
+
+[data-theme="personal-dark"] {
+  color-scheme: dark;
+
+  /* ── Surface (dark) ─────────────────────────────────────────────────── */
+  --color-surface-default:  #0f1112;  /* Near-black canvas */
+  --color-surface-subtle:   #161a1b;  /* Slightly lighter than canvas */
+  --color-surface-raised:   #1e2324;  /* Raised cards on dark bg */
+  --color-surface-disabled: #1a1d1e;  /* Disabled areas */
+
+  /* ── Text (dark) ────────────────────────────────────────────────────── */
+  --color-text-primary:   #f0f0f0;    /* Near-white primary text */
+  --color-text-secondary: #9aa0a6;    /* Muted text on dark bg */
+  --color-text-muted:     #6e7479;    /* Placeholder/hint text */
+  --color-text-disabled:  #454a4e;    /* Disabled text */
+
+  /* ── Border (dark) ──────────────────────────────────────────────────── */
+  --color-border-default: #2e3133;    /* Subtle border on dark bg */
+  --color-border-strong:  #454a4e;    /* Stronger border */
+
+  /* ── Interactive (petrol — stays broadly the same, may need lightening) */
+  /* TODO: Verify contrast ratio in dark mode — petrol-500 on dark surface */
+  --color-interactive-default: #067a84;   /* Lightened for dark bg contrast */
+  --color-interactive-hover:   #056b74;
+  --color-interactive-active:  #045d65;
+
+  /* ── Feedback backgrounds (dark mode — softer, darker versions) ─────── */
+  --color-feedback-success-bg: #0a2e1a;
+  --color-feedback-warning-bg: #2a2000;
+  --color-feedback-danger-bg:  #2e0a08;
+  --color-feedback-info-bg:    #0a2426;
+}

@@ -1,0 +1,12 @@
+/* Border radius primitives
+ * Scale cross-referenced from ai-practice hardcoded values and crp-tool validated tokens.
+ * No --radius-pill — pill shapes (tags, badges) use border-radius: 999px at component level.
+ */
+
+:root {
+  --radius-xs:     2px;   /* Post-it cards, subtle corners */
+  --radius-sm:     4px;   /* Cards, images, chips */
+  --radius-md:     6px;   /* Buttons, inputs — crp-tool validated */
+  --radius-lg:     8px;   /* Modals, panels, large cards */
+  --radius-circle: 50%;   /* Avatars, circular nodes */
+}

@@ -1,3 +1,8 @@
+/* Design system tokens — local copy synced from rg-design-system
+ * Run `npm run sync-tokens` after updating the design system */
+@import url('./tokens/index.css');
+@import url('./tokens/themes/personal-light.css');
+
 @media (max-width: 1024px) {
     .header-container {
         padding-top: 0 !important;
@@ -118,10 +123,10 @@ html, body {
     font-size: 1.1rem;
     line-height: 1.6;
 }
-/* Fonts: Source Sans 3 (variable) and Lora — loaded via the link in your HTML head */
+/* Font family bridge aliases — point to design system tokens */
 :root {
-    --ff-sans: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    --ff-serif: 'Lora', Georgia, Cambria, 'Times New Roman', Times, serif;
+    --ff-sans: var(--font-family-sans);
+    --ff-serif: var(--font-family-display);
 }
 /* Pattern background section for SVG scaling and cropping (container-relative) */
 .pattern-bg {
@@ -221,203 +226,189 @@ html, body {
     -webkit-mask-image: linear-gradient(to left, black 0%, transparent 60%), linear-gradient(to bottom, transparent 0%, black 100%);
 }
 
-/* Typography scale (use rems for accessibility and scalability)
-   Base font-size: var(--fs-body) = 1rem. Based on Figma text styles. */
+/* ============================================
+   Design System Bridge Aliases
+   Maps ai-practice variable names to design system tokens.
+   These can be removed progressively as components are
+   migrated to reference design system tokens directly.
+   ============================================ */
 :root {
-  /* Display */
-  --fs-display-lg: 3.75rem;   /* 60px */
-  --lh-display-lg: 4.5rem;    /* 72px */
-  --fs-display-sm: 3rem;      /* 48px */
-  --lh-display-sm: 3.5rem;    /* 56px */
+  /* ── Typography — font sizes ───────────────────────────────────────────── */
+  --fs-display-lg:   var(--font-size-display-lg);  /* 60px — brand token */
+  --fs-display-sm:   var(--font-size-display-sm);  /* 48px — brand token */
+  --fs-h1:           var(--font-size-4xl);          /* 36px */
+  --fs-h2:           var(--font-size-3xl);          /* 32px */
+  --fs-h3:           var(--font-size-2xl);          /* 24px */
+  --fs-body:         var(--font-size-md);           /* 16px */
+  --fs-body-sm:      var(--font-size-sm);           /* 14px */
+  --fs-body-compact: var(--font-size-xs);           /* 12px */
+  --fs-label-lg:     var(--font-size-sm);           /* 14px */
+  --fs-label:        var(--font-size-xs);           /* 12px */
+  --fs-button:       var(--font-size-sm);
+  --fs-table:        var(--font-size-sm);
 
-  /* Headings */
-  --fs-h1: 2.25rem;           /* 36px */
-  --lh-h1: 2.75rem;           /* 44px */
-  --fs-h2: 2rem;              /* 32px */
-  --lh-h2: 2.5rem;            /* 40px */
-  --fs-h3: 1.5rem;            /* 24px */
-  --lh-h3: 2.25rem;           /* 36px */
+  /* ── Typography — line heights ─────────────────────────────────────────── */
+  /* Kept as absolute rem values: responsive breakpoints override these.
+   * TODO: migrate to unitless design system ratios once responsive overrides are refactored. */
+  --lh-display-lg:   4.5rem;                   /* 72px */
+  --lh-display-sm:   3.5rem;                   /* 56px */
+  --lh-h1:           2.75rem;                  /* 44px */
+  --lh-h2:           2.5rem;                   /* 40px */
+  --lh-h3:           2.25rem;                  /* 36px */
+  --lh-body:         var(--line-height-body);  /* 1.5 */
+  --lh-body-sm:      1.25rem;                  /* 20px — TODO: no exact unitless token */
+  --lh-body-compact: 1rem;                     /* 16px — TODO: no exact unitless token */
+  --lh-label-lg:     1.25rem;                  /* 20px */
+  --lh-label:        1rem;                     /* 16px */
 
-  /* Body */
-  --fs-body: 1rem;            /* 16px */
-  --lh-body: 1.5rem;          /* 24px */
-  --fs-body-sm: 0.875rem;     /* 14px */
-  --lh-body-sm: 1.25rem;      /* 20px */
-  --fs-body-compact: 0.75rem; /* 12px */
-  --lh-body-compact: 1rem;    /* 16px */
+  /* ── Spacing ───────────────────────────────────────────────────────────── */
+  --sp-1:  var(--space-1);   /* 4px */
+  --sp-2:  var(--space-2);   /* 8px */
+  --sp-3:  var(--space-3);   /* 12px */
+  --sp-4:  var(--space-4);   /* 16px */
+  --sp-5:  var(--space-5);   /* 20px */
+  --sp-6:  var(--space-6);   /* 24px */
+  --sp-8:  var(--space-8);   /* 32px */
+  --sp-10: var(--space-10);  /* 40px */
+  --sp-12: var(--space-12);  /* 48px */
+  --sp-16: var(--space-16);  /* 64px */
+  --sp-20: var(--space-20);  /* 80px */
 
-  /* Label */
-  --fs-label-lg: 0.875rem;    /* 14px */
-  --lh-label-lg: 1.25rem;     /* 20px */
-  --fs-label: 0.75rem;        /* 12px */
-  --lh-label: 1rem;           /* 16px */
+  /* ── Color primitives — neutral ────────────────────────────────────────── */
+  --n-0:   var(--color-neutral-0);
+  --n-50:  var(--color-neutral-50);
+  --n-100: var(--color-neutral-100);
+  --n-200: var(--color-neutral-200);
+  --n-300: var(--color-neutral-300);
+  --n-400: var(--color-neutral-400);
+  --n-500: var(--color-neutral-500);
+  --n-600: var(--color-neutral-600);
+  --n-800: var(--color-neutral-800);
+  --n-900: var(--color-neutral-900);
 
-  /* Common aliases */
-  --fs-button: var(--fs-body-sm);
-  --fs-table: var(--fs-body-sm);
-}
+  /* ── Color primitives — petrol ─────────────────────────────────────────── */
+  --p-base:   var(--color-petrol-500);
+  --p-hover:  var(--color-petrol-700);
+  --p-active: var(--color-petrol-900);
+  --p-tint:   var(--color-petrol-50);
 
-/* Spacing scale (multiples of 4)
-   Use these for consistent vertical rhythm */
-:root {
-  --sp-1: 0.25rem;   /* 4px */
-  --sp-2: 0.5rem;    /* 8px */
-  --sp-3: 0.75rem;   /* 12px */
-  --sp-4: 1rem;      /* 16px */
-  --sp-5: 1.25rem;   /* 20px */
-  --sp-6: 1.5rem;    /* 24px */
-  --sp-8: 2rem;      /* 32px */
-  --sp-10: 2.5rem;   /* 40px */
-  --sp-12: 3rem;     /* 48px */
-  --sp-16: 4rem;     /* 64px */
-  --sp-20: 5rem;     /* 80px */
-}
+  /* ── Color primitives — teal ───────────────────────────────────────────── */
+  --teal-base:   var(--color-teal-500);
+  --teal-hover:  var(--color-teal-600);
+  --teal-active: var(--color-teal-700);
+  --teal-vivid:  var(--color-teal-300);
+  --teal-light:  var(--color-teal-50);
 
-/* Color system: core neutrals, brands, shadows, interactions, forms, feedback */
-:root {
-  /* --- Neutral Scale --- */
-  --n-0: #FFFFFF;
-  --n-50: #F9FAFA;
-  --n-100: #F0F4F4;
-  --n-200: #E1E8E8;
-  --n-300: #9BA9A9;
-  --n-400: #7A8B8D;
-  --n-500: #5E6E70;
-  --n-600: #455456;
-  --n-800: #233D4D;
-  --n-900: #142224;
+  /* ── Color primitives — peach ──────────────────────────────────────────── */
+  --peach-base:   var(--color-peach-400);
+  --peach-hover:  var(--color-peach-600);
+  --peach-active: var(--color-peach-700);
+  --peach-light:  var(--color-peach-50);
 
-  /* --- Brand Petrol --- */
-  --p-base: #034C53;
-  --p-hover: #023D42;
-  --p-active: #012629;
-  --p-tint: #E6EDEE;
+  /* ── Color primitives — accent orange ─────────────────────────────────── */
+  --a-base:   var(--color-orange-400);
+  --a-hover:  var(--color-orange-600);
+  --a-active: var(--color-orange-700);
+  --a-light:  var(--color-orange-50);
+  --a-text:   var(--color-neutral-900);
 
-  /* --- Teal --- */
-  --teal-base: #007074;
-  --teal-hover: #005B5E;
-  --teal-active: #004547;
-  --teal-vivid: #00C4C8;
-  --teal-light: #E6F1F1;
+  /* ── Color primitives — red / green / blue ─────────────────────────────── */
+  --red-base:   var(--color-red-500);
+  --red-hover:  var(--color-red-600);
+  --red-active: var(--color-red-700);
+  --red-light:  var(--color-red-50);
 
-  /* --- Peach --- */
-  --peach-base: #F79B72;
-  --peach-hover: #DF8C67;
-  --peach-active: #C77D5C;
-  --peach-light: #FFF7F1;
+  --green-base:   var(--color-green-500);
+  --green-hover:  var(--color-green-600);
+  --green-active: var(--color-green-700);
+  --green-light:  var(--color-green-50);
 
-  /* --- Accent Orange --- */
-  --a-base: #FE7F2D;
-  --a-hover: #E57229;
-  --a-active: #CC6624;
-  --a-light: #FFF3E6;
-  --a-text: #142224;
+  --blue-base:    var(--color-blue-500);
+  --blue-hover:   var(--color-blue-600);
+  --blue-active:  var(--color-blue-700);
+  --blue-visited: var(--color-blue-visited);
 
-  /* --- Semantic Red --- */
-  --red-base: #DA1E28;
-  --red-hover: #C41B24;
-  --red-active: #AE1820;
-  --red-light: #FBE8E9;
+  /* ── Functional UI mappings ─────────────────────────────────────────────── */
+  /* NOTE: --color-ink maps to n-800 (not n-900) — preserves original ai-practice text color.
+   * Design system --color-text-primary is n-900. Align these when the portfolio is reviewed. */
+  --color-ink: var(--color-neutral-800);
 
-  /* --- Semantic Green --- */
-  --green-base: #4A9A51;
-  --green-hover: #428A49;
-  --green-active: #3B7B41;
-  --green-light: #EDF5EE;
+  /* These share a name with design system tokens — no bridge alias needed:
+   * --color-text-secondary, --color-text-disabled,
+   * --color-border-default, --color-border-strong,
+   * --color-link-default, --color-link-hover, --color-link-active, --color-link-visited,
+   * --color-focus-ring, --shadow-sm, --shadow-md */
 
-  /* --- Functional UI Mappings --- */
-  /* Text */
-  --color-ink: var(--n-800);
-  --color-text-secondary: var(--n-500);
-  --color-text-disabled: var(--n-300);
+  --color-bg-body:           var(--color-surface-subtle);   /* n-50 */
+  --color-bg-surface:        var(--color-surface-default);  /* n-0 */
+  --color-bg-surface-alt:    var(--color-surface-raised);   /* n-100 */
+  --color-bg-surface-raised: var(--color-neutral-200);      /* n-200 — no direct semantic match */
+  --color-bg-disabled:       var(--color-surface-disabled); /* n-200 */
 
-  /* Backgrounds */
-  --color-bg-body: var(--n-50);
-  --color-bg-surface: var(--n-0);
-  --color-bg-surface-alt: var(--n-100);
-  --color-bg-surface-raised: var(--n-200);
-  --color-bg-disabled: var(--n-200);
+  /* ── Brand color aliases ────────────────────────────────────────────────── */
+  --color-brand-ink-base:    var(--color-neutral-800);
+  --color-brand-ink-wash:    var(--color-neutral-100);
+  --color-brand-ink-pattern: var(--color-neutral-50);
 
-  /* Borders */
-  --color-border-default: var(--n-200);
-  --color-border-strong: var(--n-300);
+  --color-teal-base:    var(--color-teal-500);
+  --color-teal-wash:    var(--color-teal-50);
+  --color-teal-pattern: var(--color-petrol-50);
 
-  /* Brand / Pattern-safe variants */
-  --color-brand-ink-base: var(--n-800);
-  --color-brand-ink-wash: var(--n-100);
-  --color-brand-ink-pattern: var(--n-50);
+  --color-camel-base:    var(--color-peach-400);
+  --color-camel-wash:    var(--color-peach-50);
+  --color-camel-pattern: var(--color-orange-50);
 
-  --color-teal-base: var(--p-base);
-  --color-teal-wash: var(--teal-light);
-  --color-teal-pattern: var(--p-tint);
-
-  --color-camel-base: var(--peach-base);
-  --color-camel-wash: var(--peach-light);
-  --color-camel-pattern: var(--a-light);
-
-  /* Elevation / Shadows */
+  /* ── Shadows ────────────────────────────────────────────────────────────── */
+  /* --shadow-sm and --shadow-md provided by design system (same values) */
   --shadow-level-1: var(--shadow-sm);
   --shadow-level-2: var(--shadow-md);
-  --shadow-level-3: 0 8px 16px rgba(20, 34, 36, 0.14);
-  --shadow-sm: 0 2px 4px rgba(20, 34, 36, 0.08);
-  --shadow-md: 0 4px 12px rgba(20, 34, 36, 0.12);
+  --shadow-level-3: var(--shadow-lg);
 
-  /* Motion */
-  --motion-fast: 150ms ease-in-out;
+  /* ── Motion ─────────────────────────────────────────────────────────────── */
+  --motion-fast: var(--duration-medium) var(--easing-standard);
 
-  /* --- Link Blue --- */
-  --blue-base: #0066CC;
-  --blue-hover: #004C99;
-  --blue-active: #003366;
-  --blue-visited: #551A8B;
-
-  /* Interactive States */
-  --color-link-default: var(--blue-base);
-  --color-link-hover: var(--blue-hover);
-  --color-link-active: var(--blue-active);
-  --color-link-visited: var(--blue-visited);
-  --color-focus-ring: var(--p-base); /* Brand petrol color for focus states */
-
-  /* Hover tints: subtle translucent variations of base colours */
-  --ink-hover-bg: rgba(35, 61, 77, 0.06);
+  /* ── Hover tints ────────────────────────────────────────────────────────── */
+  /* TODO: token gap — rgba() values can't reference CSS custom properties for color.
+   * These would need a dedicated token approach or CSS color-mix() in future. */
+  --ink-hover-bg:   rgba(35, 61, 77, 0.06);
   --camel-hover-bg: rgba(247, 155, 114, 0.12);
-  --teal-hover-bg: rgba(0, 112, 116, 0.08);
-  --surface-hover: rgba(35, 61, 77, 0.03);
+  --teal-hover-bg:  rgba(0, 112, 116, 0.08);
+  --surface-hover:  rgba(35, 61, 77, 0.03);
 
-  --btn-primary-bg: var(--p-base);
-  --btn-primary-text: var(--n-0);
-  --btn-primary-hover-bg: var(--p-hover);
-  --btn-primary-disabled-bg: var(--n-200);
-  --btn-primary-disabled-text: var(--n-300);
+  /* ── Button tokens ──────────────────────────────────────────────────────── */
+  --btn-primary-bg:            var(--color-interactive-default);
+  --btn-primary-text:          var(--color-text-on-interactive);
+  --btn-primary-hover-bg:      var(--color-interactive-hover);
+  --btn-primary-disabled-bg:   var(--color-surface-disabled);
+  --btn-primary-disabled-text: var(--color-text-disabled);
 
-  --btn-secondary-text: var(--n-800);
-  --btn-secondary-border: var(--n-800);
-  --btn-secondary-hover-bg: var(--n-100);
+  --btn-secondary-text:     var(--color-neutral-800);
+  --btn-secondary-border:   var(--color-neutral-800);
+  --btn-secondary-hover-bg: var(--color-neutral-100);
 
-  /* Forms */
-  --input-bg: var(--n-100);
-  --input-border: var(--n-300);
-  --input-border-hover: var(--n-500);
-  --input-border-focus: var(--p-base);
-  --input-focus-ring: var(--teal-light);
-  --input-inset-shadow: inset 0 1px 2px rgba(20, 34, 36, 0.06);
+  /* ── Form tokens ────────────────────────────────────────────────────────── */
+  --input-bg:           var(--color-surface-subtle);
+  --input-border:       var(--color-border-strong);
+  --input-border-hover: var(--color-neutral-500);
+  --input-border-focus: var(--color-interactive-default);
+  --input-focus-ring:   var(--color-teal-50);
+  --input-inset-shadow: var(--shadow-inset);
+  --input-error-border: var(--color-feedback-danger-border);
+  --input-error-bg:     var(--color-feedback-danger-bg);
 
-  --input-error-border: var(--red-base);
-  --input-error-bg: var(--red-light);
+  /* ── Feedback tokens ────────────────────────────────────────────────────── */
+  --info-base:      var(--color-feedback-info-text);
+  --info-bg:        var(--color-feedback-info-bg);
 
-  /* Semantic Feedback */
-  --info-base: var(--teal-base);
-  --info-bg: var(--teal-light);
+  --success-base:   var(--color-feedback-success-text);
+  --success-bg:     var(--color-feedback-success-bg);
 
-  --success-base: var(--green-base);
-  --success-bg: var(--green-light);
+  --warning-base:   var(--color-neutral-800); /* Dark text for accessibility */
+  --warning-bg:     var(--color-feedback-warning-bg);
+  --warning-accent: var(--color-orange-400);  /* Icons/borders only — never text */
 
-  --warning-base: var(--n-800); /* Dark text for accessibility - never use orange for text */
-  --warning-bg: var(--a-light);
-  --warning-accent: var(--a-base); /* Use only for icons/borders, not text */
-
-  --error-base: var(--red-base);
-  --error-bg: var(--red-light);
+  --error-base: var(--color-feedback-danger-text);
+  --error-bg:   var(--color-feedback-danger-bg);
 }
 
 html {

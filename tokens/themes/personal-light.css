@@ -1,0 +1,18 @@
+/* Personal brand — light theme
+ * Imports the personal brand color primitives and brand layer.
+ * Semantic tokens defined in tokens/semantic/color.css already default to this palette.
+ * This file explicitly scopes them under [data-theme="personal-light"] for multi-theme support.
+ *
+ * Consumers: import tokens/index.css then this file.
+ * Toggle dark mode: document.documentElement.setAttribute('data-theme', 'personal-dark')
+ */
+
+@import '../primitives/color-personal.css';
+@import '../brand/typography.css';
+@import '../brand/color.css';
+
+/* No overrides needed — personal-light is the default palette.
+ * The :root values in semantic/color.css already map to this brand's primitives. */
+[data-theme="personal-light"] {
+  color-scheme: light;
+}

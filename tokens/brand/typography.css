@@ -1,0 +1,18 @@
+/* Brand typography — personal brand layer
+ * Lora display font and editorial type scale.
+ * Only imported with personal themes — not part of tokens/index.css.
+ * UI components use --font-family-sans (Source Sans 3) from primitives.
+ * Editorial/display components (Hero, PullQuote, PatternCard) use --font-family-display.
+ */
+
+:root {
+  --font-family-display: 'Lora', Georgia, Cambria, 'Times New Roman', Times, serif;
+
+  /* Editorial size scale — larger than UI scale, paired with Lora */
+  --font-size-display-sm: var(--font-size-5xl);   /* 3rem   / 48px */
+  --font-size-display-lg: var(--font-size-6xl);   /* 3.75rem / 60px */
+
+  /* Display line heights */
+  --line-height-display-sm: 1.17;  /* 56px at 48px base */
+  --line-height-display-lg: 1.2;   /* 72px at 60px base */
+}

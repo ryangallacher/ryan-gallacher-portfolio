@@ -1,0 +1,29 @@
+/* Design token entry point
+ *
+ * Imports:
+ *   - Personal brand color primitives (single-brand system for now)
+ *   - Shared non-color primitives (spacing, typography, radius, shadow, motion, z-index)
+ *   - Semantic color aliases (stable contract for components)
+ *
+ * NOT imported here (import separately per consumer):
+ *   - tokens/themes/personal-dark.css  — import when dark mode toggle is needed
+ *   - tokens/brand/typography.css      — import for editorial/display components (Lora)
+ *   - tokens/brand/color.css           — import for brand personality tokens
+ *
+ * Usage (React/Vite):
+ *   import '@rg/design-system/tokens/index.css';
+ *   import '@rg/design-system/tokens/themes/personal-dark.css'; // if dark mode needed
+ *
+ * Usage (vanilla HTML):
+ *   <link rel="stylesheet" href="tokens/index.css">
+ *   <link rel="stylesheet" href="tokens/themes/personal-dark.css"> (optional)
+ */
+
+@import './primitives/color-personal.css';
+@import './primitives/spacing.css';
+@import './primitives/typography.css';
+@import './primitives/radius.css';
+@import './primitives/shadow.css';
+@import './primitives/motion.css';
+@import './primitives/z-index.css';
+@import './semantic/color.css';

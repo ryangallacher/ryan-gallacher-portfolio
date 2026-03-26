@@ -1,0 +1,16 @@
+/* Shadow primitives
+ * Source: ai-practice/styles.css — shadow-sm, shadow-md, and shadow levels.
+ * Color is neutral-900 (#142224) at low opacity for brand cohesion.
+ */
+
+:root {
+  --shadow-sm: 0 2px 4px rgba(20, 34, 36, 0.08);    /* Subtle elevation — cards at rest */
+  --shadow-md: 0 4px 12px rgba(20, 34, 36, 0.12);   /* Medium elevation — dropdowns, popovers */
+  --shadow-lg: 0 8px 16px rgba(20, 34, 36, 0.14);   /* High elevation — modals, dialogs */
+
+  /* Focus ring shadow (used alongside border for keyboard focus) */
+  --shadow-focus: 0 0 0 3px rgba(3, 76, 83, 0.25);  /* Petrol-tinted ring */
+
+  /* Inset shadow for inputs */
+  --shadow-inset: inset 0 1px 2px rgba(20, 34, 36, 0.06);
+}

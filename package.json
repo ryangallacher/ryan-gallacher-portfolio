@@ -1,0 +1,11 @@
+{
+  "name": "ai-practice",
+  "private": true,
+  "scripts": {
+    "lint:css": "stylelint \"**/*.css\" --ignore-path .stylelintignore",
+    "sync-tokens": "rm -rf tokens && cp -r ../rg-design-system/tokens ./tokens"
+  },
+  "devDependencies": {
+    "stylelint": "^16.26.1"
+  }
+}

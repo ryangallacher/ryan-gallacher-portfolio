@@ -1,0 +1,17 @@
+/* Motion primitives
+ * Durations and easing functions for transitions and animations.
+ * Source: crp-tool-postmvp for duration naming; easing from ai-practice usage patterns.
+ */
+
+:root {
+  /* ── Durations ────────────────────────────────────────────────────────── */
+  --duration-fast:   100ms;  /* Micro interactions — hover states, toggles */
+  --duration-medium: 150ms;  /* Standard interactions — focus, open/close */
+  --duration-slow:   300ms;  /* Deliberate transitions — page elements, modals */
+
+  /* ── Easing ───────────────────────────────────────────────────────────── */
+  --easing-standard: ease-in-out;  /* Default — smooth in and out */
+  --easing-enter:    ease-out;     /* Element entering view — fast start, settle */
+  --easing-exit:     ease-in;      /* Element leaving view — starts slow, accelerates */
+  --easing-linear:   linear;       /* Continuous loops — spinners, progress bars */
+}

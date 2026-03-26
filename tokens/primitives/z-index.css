@@ -1,0 +1,16 @@
+/* Z-index primitives
+ * Stacking order for layered UI elements. Defined from scratch — neither reference repo
+ * had explicit z-index tokens. Scale uses hundreds to allow room for one-off adjustments.
+ */
+
+:root {
+  --z-index-base:           0;    /* Default stacking context */
+  --z-index-raised:        10;    /* Slightly raised — sticky table headers, inline overlays */
+  --z-index-dropdown:     100;    /* Dropdowns, select menus */
+  --z-index-sticky:       200;    /* Sticky navigation bars */
+  --z-index-fixed:        300;    /* Fixed positioned elements */
+  --z-index-modal-backdrop: 400;  /* Modal backdrop */
+  --z-index-modal:        500;    /* Modal dialogs */
+  --z-index-popover:      600;    /* Popovers, tooltips above modals */
+  --z-index-toast:        700;    /* Toast notifications — always on top */
+}

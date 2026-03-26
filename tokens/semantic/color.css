@@ -1,0 +1,62 @@
+/* Semantic color tokens — stable contract
+ * Maps primitive colors to intent-based aliases.
+ * Components ONLY consume these tokens — never primitives directly.
+ * Personal brand palette (petrol/teal) is the default; other brands override via theme files.
+ *
+ * Naming: --color-{category}-{variant}
+ */
+
+:root {
+  /* ── Text ─────────────────────────────────────────────────────────────── */
+  --color-text-primary:        var(--color-neutral-900);   /* Main body text */
+  --color-text-secondary:      var(--color-neutral-500);   /* Supporting/secondary text */
+  --color-text-muted:          var(--color-neutral-400);   /* Placeholder, hints */
+  --color-text-disabled:       var(--color-neutral-300);   /* Disabled state text */
+  --color-text-on-interactive: var(--color-neutral-0);     /* Text on interactive (button) bg */
+
+  /* ── Surface ──────────────────────────────────────────────────────────── */
+  --color-surface-default:  var(--color-neutral-0);        /* Main page/card surface */
+  --color-surface-subtle:   var(--color-neutral-50);       /* Zebra rows, code blocks */
+  --color-surface-raised:   var(--color-neutral-100);      /* Raised cards, inset panels */
+  --color-surface-disabled: var(--color-neutral-200);      /* Disabled input backgrounds */
+
+  /* ── Border ───────────────────────────────────────────────────────────── */
+  --color-border-default: var(--color-neutral-200);        /* Default dividers, card borders */
+  --color-border-strong:  var(--color-neutral-300);        /* Prominent borders, separators */
+
+  /* ── Interactive ──────────────────────────────────────────────────────── */
+  /* Primary action colour — petrol brand anchor */
+  --color-interactive-default:  var(--color-petrol-500);   /* Resting */
+  --color-interactive-hover:    var(--color-petrol-700);   /* Hover */
+  --color-interactive-active:   var(--color-petrol-900);   /* Pressed */
+  --color-interactive-disabled: var(--color-neutral-300);  /* Disabled */
+
+  /* ── Focus ────────────────────────────────────────────────────────────── */
+  --color-focus-ring: var(--color-petrol-500);             /* Keyboard focus indicator */
+
+  /* ── Link ─────────────────────────────────────────────────────────────── */
+  --color-link-default: var(--color-blue-500);
+  --color-link-hover:   var(--color-blue-600);
+  --color-link-active:  var(--color-blue-700);
+  --color-link-visited: var(--color-blue-visited);
+
+  /* ── Feedback — Success ───────────────────────────────────────────────── */
+  --color-feedback-success-text:   var(--color-green-500);
+  --color-feedback-success-bg:     var(--color-green-50);
+  --color-feedback-success-border: var(--color-green-500);
+
+  /* ── Feedback — Warning ───────────────────────────────────────────────── */
+  --color-feedback-warning-text:   var(--color-neutral-900);  /* Dark text on light bg */
+  --color-feedback-warning-bg:     var(--color-orange-50);
+  --color-feedback-warning-border: var(--color-orange-400);
+
+  /* ── Feedback — Danger ────────────────────────────────────────────────── */
+  --color-feedback-danger-text:   var(--color-red-500);
+  --color-feedback-danger-bg:     var(--color-red-50);
+  --color-feedback-danger-border: var(--color-red-500);
+
+  /* ── Feedback — Info ──────────────────────────────────────────────────── */
+  --color-feedback-info-text:   var(--color-teal-500);
+  --color-feedback-info-bg:     var(--color-teal-50);
+  --color-feedback-info-border: var(--color-teal-500);
+}

@@ -1,0 +1,19 @@
+/* Brand color aliases — personal brand layer
+ * Personality-level color names used by editorial/brand components.
+ * Not intended for UI components — those use semantic tokens only.
+ * Only imported with personal themes.
+ */
+
+:root {
+  /* Brand identity anchors */
+  --color-brand-primary: var(--color-petrol-500);       /* Main brand anchor */
+  --color-brand-primary-wash: var(--color-petrol-50);   /* Tinted brand backgrounds */
+
+  /* Editorial section palette (used in hero, pattern backgrounds, etc.) */
+  --color-brand-ink:       var(--color-neutral-900);    /* Dark ink — editorial headers */
+  --color-brand-ink-wash:  var(--color-neutral-100);    /* Light ink backgrounds */
+  --color-brand-teal:      var(--color-teal-500);       /* Teal accent */
+  --color-brand-teal-wash: var(--color-teal-50);        /* Teal backgrounds */
+  --color-brand-peach:     var(--color-peach-400);      /* Warm accent */
+  --color-brand-peach-wash: var(--color-peach-50);      /* Warm backgrounds */
+}

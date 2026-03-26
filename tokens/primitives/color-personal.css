@@ -1,0 +1,61 @@
+/* Personal brand color primitives
+ * Source: ai-practice/styles.css — values extracted, re-named to design system convention.
+ * These are raw values. Never reference these in components — use semantic tokens only.
+ */
+
+:root {
+  /* ── Neutral ──────────────────────────────────────────────────────────── */
+  --color-neutral-0:   #ffffff;  /* Pure white */
+  --color-neutral-50:  #f9fafa;  /* Off-white backgrounds */
+  --color-neutral-100: #f0f4f4;  /* Subtle tint */
+  --color-neutral-200: #e1e8e8;  /* Light borders, disabled surfaces */
+  --color-neutral-300: #9ba9a9;  /* Borders, disabled text */
+  --color-neutral-400: #7a8b8d;  /* Muted/placeholder text */
+  --color-neutral-500: #5e6e70;  /* Secondary text */
+  --color-neutral-600: #455456;  /* Supporting text */
+  --color-neutral-800: #233d4d;  /* Strong text variant */
+  --color-neutral-900: #142224;  /* Primary text, near-black */
+
+  /* ── Petrol (brand primary — darkest teal, strong identity) ───────────── */
+  --color-petrol-50:  #e6edee;  /* Lightest tint — hover bg, washes */
+  --color-petrol-500: #034c53;  /* Base — primary interactive, brand anchor */
+  --color-petrol-700: #023d42;  /* Hover */
+  --color-petrol-900: #012629;  /* Active/pressed */
+
+  /* ── Teal (secondary — brighter, lighter than petrol) ────────────────── */
+  --color-teal-50:  #e6f1f1;    /* Light tint — info backgrounds */
+  --color-teal-300: #00c4c8;   /* Vivid accent */
+  --color-teal-500: #007074;   /* Base */
+  --color-teal-600: #005b5e;   /* Hover */
+  --color-teal-700: #004547;   /* Active */
+
+  /* ── Peach ────────────────────────────────────────────────────────────── */
+  --color-peach-50:  #fff7f1;   /* Light wash */
+  --color-peach-400: #f79b72;  /* Base */
+  --color-peach-600: #df8c67;  /* Hover */
+  --color-peach-700: #c77d5c;  /* Active */
+
+  /* ── Orange (accent) ─────────────────────────────────────────────────── */
+  --color-orange-50:  #fff3e6;  /* Light wash — warning backgrounds */
+  --color-orange-400: #fe7f2d; /* Base — accent, warning border */
+  --color-orange-600: #e57229; /* Hover */
+  --color-orange-700: #cc6624; /* Active */
+
+  /* ── Red (danger/error) ───────────────────────────────────────────────── */
+  --color-red-50:  #fbe8e9;    /* Light wash — error backgrounds */
+  --color-red-500: #da1e28;   /* Base — error */
+  --color-red-600: #c41b24;   /* Hover */
+  --color-red-700: #ae1820;   /* Active */
+
+  /* ── Green (success) ─────────────────────────────────────────────────── */
+  --color-green-50:  #edf5ee;  /* Light wash — success backgrounds */
+  --color-green-500: #4a9a51; /* Base */
+  --color-green-600: #428a49; /* Hover */
+  --color-green-700: #3b7b41; /* Active */
+
+  /* ── Blue (links) ────────────────────────────────────────────────────── */
+  --color-blue-500:    #0066cc; /* Default link */
+  --color-blue-600:    #004c99; /* Hover link */
+  --color-blue-700:    #003366; /* Active link */
+  --color-blue-visited: #551a8b; /* Visited link */
+}
