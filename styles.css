@@ -25,7 +25,7 @@
 .cta-icon-wrapper {
     display: inline-flex;
     align-items: center;
-    margin-right: 6px;
+    margin-right: var(--sp-2);
 }
 .cta-arrow-icon {
     display: inline;
@@ -43,12 +43,12 @@
 }
 /* Secondary button for CV (white background, border) */
 .btn-secondary {
-    height: 40px;
+    height: var(--sp-10);
     padding: 0 var(--sp-6);
     background: var(--n-0);
     color: var(--btn-primary-bg, #1a1a1a);
     border: 2px solid var(--btn-primary-bg, #1a1a1a);
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     font-size: var(--fs-button, 1rem);
     font-weight: 600;
     text-align: center;
@@ -94,7 +94,7 @@
     background: var(--n-0);
     box-shadow: -4px 0 24px 0 rgba(20, 34, 36, 0.10);
     border-radius: 0;
-    padding: 3rem 3rem 3rem 2.5rem;
+    padding: var(--sp-12) var(--sp-12) var(--sp-12) var(--sp-10);
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -120,7 +120,7 @@ html, body {
 .pattern-card p {
     margin: 0;
     color: var(--n-600);
-    font-size: 1.1rem;
+    font-size: var(--fs-body-lg);
     line-height: 1.6;
 }
 /* Font family bridge aliases — point to design system tokens */
@@ -246,6 +246,8 @@ html, body {
   --fs-label:        var(--font-size-xs);           /* 12px */
   --fs-button:       var(--font-size-sm);
   --fs-table:        var(--font-size-sm);
+  --fs-body-lg:      var(--font-size-lg);   /* 18px — large body, no heading level */
+  --fs-body-xl:      var(--font-size-xl);   /* 20px — oversize body / small heading */
 
   /* ── Typography — line heights ─────────────────────────────────────────── */
   /* Kept as absolute rem values: responsive breakpoints override these.
@@ -1014,7 +1016,7 @@ footer ul li a:hover {
     font-weight: 500;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: var(--sp-2);
     margin-bottom: var(--sp-16);
     opacity: 0.85;
     transition: opacity 0.2s ease;
@@ -1326,9 +1328,9 @@ footer ul li a:hover {
 .contact-form-container input,
 .contact-form-container textarea {
     margin-bottom: 0; /* Remove bottom margin to control spacing with error messages */
-    padding: 10px; /* Adjust padding to match GOV.UK design system */
+    padding: var(--sp-3); /* 12px — on 4px grid, replaces off-grid 10px */
     border: 2px solid var(--input-border); /* Use design system input border */
-    border-radius: 6px;
+    border-radius: var(--radius-md);
     font-size: var(--fs-body); /* 16px base */
     width: 100%; /* Ensure inputs take full width */
     box-sizing: border-box; /* Include padding and border in element's total width and height */
@@ -1363,12 +1365,12 @@ footer ul li a:hover {
 
 .contact-form-container button {
     margin-top: var(--sp-10); /* 40px between button and whatever is above it */
-    height: 40px; /* Fixed height */
+    height: var(--sp-10); /* 40px fixed height */
     padding: 0 var(--sp-6); /* 24px horizontal padding, vertical centered by height */
     background-color: var(--btn-primary-bg); /* Primary button color */
     color: var(--btn-primary-text);
     border: none;
-    border-radius: 6px; /* 6px corner radius */
+    border-radius: var(--radius-md);
     font-size: var(--fs-button);
     font-weight: 600;
     text-align: center;
@@ -1387,7 +1389,7 @@ footer ul li a:hover {
 
 .error-summary {
     border: 2px solid var(--error-base);
-    padding: 15px;
+    padding: var(--sp-4);
     background-color: var(--error-bg);
     color: var(--color-ink);
     margin-bottom: var(--sp-5);
@@ -1408,15 +1410,15 @@ footer ul li a:hover {
 }
 
 .error-icon {
-    width: 20px;
-    height: 20px;
+    width: var(--sp-5);
+    height: var(--sp-5);
     display: inline-block;
     vertical-align: middle;
     margin-right: var(--sp-2);
 }
 
 .error-summary ul li {
-    margin-bottom: 5px;
+    margin-bottom: var(--sp-1);
 }
 
 .error-summary ul li a {
@@ -1639,13 +1641,13 @@ footer ul li a:hover {
 /* Remove About page timeline overrides so they don't affect other timelines */
 
 .company-group {
-    margin-bottom: 36px;
+    margin-bottom: var(--sp-8);
 }
 .company-header {
     margin-left: 0; /* keep header aligned with content */
     margin-bottom: var(--sp-3);
 }
-.company-name { margin: 0; font-size: 1.125rem; }
+.company-name { margin: 0; font-size: var(--fs-body-lg); }
 .company-meta { margin: 0; color: var(--color-text-secondary); }
 .company-timeline { margin-left: 0; }
 
@@ -1698,7 +1700,7 @@ footer ul li a:hover {
     position: absolute;
     left: 35px;
     top: 0;
-    bottom: -40px;
+    bottom: calc(-1 * var(--sp-10));
     width: 2px;
     background: var(--n-200);
     z-index: 0;
@@ -1718,7 +1720,7 @@ footer ul li a:hover {
         position: static;
         width: auto;
         text-align: left;
-        margin-bottom: 6px;
+        margin-bottom: var(--sp-2);
         display: block;
     }
     .about-page .timeline-content { padding: var(--sp-3) 0 0 0; }
@@ -1743,7 +1745,7 @@ footer ul li a:hover {
     display: flex;
     align-items: center;
     gap: var(--sp-3);
-    margin-bottom: 30px;
+    margin-bottom: var(--sp-8);
     padding-left: var(--sp-4);
 }
 
@@ -1752,15 +1754,15 @@ footer ul li a:hover {
     height: 40px;
     background: var(--color-bg-surface, white);
     border: 2px solid var(--color-border-default, #e0e0e0);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: var(--fs-body-lg);
 }
 
 .timeline-month {
-    font-size: 18px;
+    font-size: var(--fs-body-lg);
     font-weight: 600;
     color: var(--color-ink, #1a1a1a);
 }
@@ -1822,7 +1824,7 @@ footer ul li a:hover {
     flex: 1;
     background: var(--color-bg-surface, white);
     border: 1px solid var(--color-border-default, #e0e0e0);
-    border-radius: 8px;
+    border-radius: var(--radius-lg);
     padding: var(--sp-5);
     box-shadow: var(--shadow-level-1, 0 1px 3px rgba(0, 0, 0, 0.05));
 }
@@ -1837,7 +1839,7 @@ footer ul li a:hover {
 }
 
 .timeline-label {
-    padding: 2px var(--sp-2);
+    padding: var(--sp-1) var(--sp-2);
     background: var(--color-bg-surface-alt, #f3f4f6);
     border-radius: 4px;
     font-weight: 500;
@@ -1850,7 +1852,7 @@ footer ul li a:hover {
 }
 
 .timeline-title {
-    font-size: 20px;
+    font-size: var(--fs-body-xl);
     font-weight: 600;
     color: var(--color-ink, #1a1a1a);
     margin-bottom: var(--sp-4);
@@ -1899,7 +1901,7 @@ footer ul li a:hover {
 }
 
 .section-title {
-    font-size: 15px;
+    font-size: var(--fs-body-sm);
     font-weight: 600;
     color: var(--color-ink, #1a1a1a);
     margin-bottom: var(--sp-2);
@@ -1928,9 +1930,9 @@ footer ul li a:hover {
     content: '';
     position: absolute;
     left: 0;
-    top: 8px;
-    width: 6px;
-    height: 6px;
+    top: var(--sp-2);
+    width: var(--sp-1);
+    height: var(--sp-1);
     background: var(--color-teal-base, #3b82f6);
     border-radius: 50%;
 }
@@ -1947,7 +1949,7 @@ footer ul li a:hover {
 
 .sub-item-status {
     display: inline-block;
-    padding: 2px var(--sp-2);
+    padding: var(--sp-1) var(--sp-2);
     background: var(--info-bg, #dbeafe);
     color: var(--info-base, #1e40af);
     border-radius: 4px;
@@ -2231,13 +2233,13 @@ footer ul li a:hover {
     }
 
     .project-card-stat-number {
-        font-size: 1.75rem;
+        font-size: var(--fs-h3);
     }
 
     /* Tags */
     .tag {
-        font-size: 0.625rem; /* 10px */
-        padding: 2px 6px;
+        font-size: var(--fs-body-compact);
+        padding: var(--sp-1) var(--sp-2);
     }
 
     /* Featured work section */
@@ -2318,7 +2320,7 @@ footer ul li a:hover {
     /* Timeline adjustments for mobile */
 @media (max-width: 600px) {
     .timeline-container {
-        padding: 0 8px;
+        padding: 0 var(--sp-2);
     }
     .timeline-container .timeline-item {
         padding-left: var(--sp-10);
@@ -2362,7 +2364,7 @@ footer ul li a:hover {
 
     /* Work history section mobile */
     .work-history {
-        padding: 0 12px;
+        padding: 0 var(--sp-3);
     }
 
     .company-group {
@@ -2638,20 +2640,21 @@ img {
     font-weight: 600;
     letter-spacing: 0.1em;
     color: rgba(255, 255, 255, 0.7);
+    margin: 0 0 var(--sp-2) 0; /* tight gap to h1 — eyebrow is decorative label */
 }
 
 .hero-content h1 {
-    margin: var(--sp-5) 0;
+    margin: 0 0 var(--sp-6) 0; /* no top margin (eyebrow handles that gap); 24px below to description */
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: var(--sp-4);
     color: var(--color-bg-surface);
     font-size: 2.5rem;
     line-height: 1.2;
 }
 
 .hero-content p {
-    margin: var(--sp-3) 0;
+    margin: 0 0 var(--sp-4) 0; /* single-direction bottom only; 16px between paragraphs */
     font-size: var(--fs-body);
     line-height: var(--lh-body);
     color: var(--color-bg-surface);
@@ -2906,7 +2909,7 @@ img {
 
 .complexity-insights {
     list-style: disc;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 var(--sp-5);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -3004,7 +3007,7 @@ img {
 .postit-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: var(--sp-8);
     padding: var(--sp-16) var(--sp-10);
     max-width: 100%;
     margin: 0 auto;
@@ -3027,7 +3030,7 @@ img {
 .page-cs .delivery-section {
     background-color: var(--n-100);
     max-width: none;
-    padding: var(--sp-10) 40px var(--sp-16);
+    padding: var(--sp-10) var(--sp-10) var(--sp-16);
 }
 
 /* Re-constrain all inner content */
@@ -3544,12 +3547,12 @@ blockquote footer {
 
 /* Large stat number inside callouts */
 .callout-stat {
-    font-size: 1.4rem;
+    font-size: var(--fs-h3);
 }
 
 /* Highlighted callout text */
 .callout-highlight {
-    font-size: 1.25rem;
+    font-size: var(--fs-body-xl);
     font-weight: 600;
 }
 
@@ -3557,7 +3560,7 @@ blockquote footer {
    Value Proposition Banner
    ============================================ */
 .value-banner-section {
-    padding: var(--sp-6) 40px;
+    padding: var(--sp-6) var(--sp-10);
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -3566,8 +3569,8 @@ blockquote footer {
     display: flex;
     align-items: center;
     background-color: var(--n-900);
-    border-radius: 8px;
-    padding: 28px var(--sp-10);
+    border-radius: var(--radius-lg);
+    padding: var(--sp-8) var(--sp-10);
     gap: var(--sp-10);
 }
 
@@ -3578,8 +3581,8 @@ blockquote footer {
 }
 
 .value-banner-tagline p {
-    font-family: 'Lora', serif;
-    font-size: 1.25rem;
+    font-family: var(--ff-serif);
+    font-size: var(--fs-body-xl);
     font-weight: 500;
     color: var(--n-0);
     line-height: 1.4;
@@ -3596,8 +3599,8 @@ blockquote footer {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    padding: 0 32px;
+    gap: var(--sp-2);
+    padding: 0 var(--sp-8);
 }
 
 .value-banner-item:last-child {
@@ -3605,7 +3608,7 @@ blockquote footer {
 }
 
 .value-banner-eyebrow {
-    font-size: 0.7rem;
+    font-size: var(--fs-label);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -3722,7 +3725,7 @@ blockquote footer {
     .core-value-panels {
         grid-template-columns: 1fr;
         gap: var(--sp-6);
-        padding: var(--sp-6) 16px;
+        padding: var(--sp-6) var(--sp-4);
     }
 
     .core-value-arrow {
@@ -3730,7 +3733,7 @@ blockquote footer {
     }
 
     .core-value-section {
-        padding: var(--sp-10) var(--sp-6) 60px;
+        padding: var(--sp-10) var(--sp-6) var(--sp-16);
     }
 }
 
@@ -3751,7 +3754,7 @@ blockquote footer {
 .dependency-node {
     flex: 1 1 0;
     min-width: 150px;
-    padding: var(--sp-6) 20px;
+    padding: var(--sp-6) var(--sp-5);
     border: 1.5px solid var(--n-200);
     border-radius: 4px;
     text-align: center;
