@@ -479,9 +479,9 @@ h3 {
     margin-top: var(--space-heading-to-body);
 }
 
-/* h3 inside research-header blocks: same-section, tighter */
+/* h3 inside research-header blocks: inter-block gap (research-header + research-header) handles vertical space */
 .research-header h3 {
-    margin-top: var(--space-title-to-content);
+    margin-top: 0;
     margin-bottom: var(--space-heading-to-body);
 }
 
@@ -3062,6 +3062,17 @@ img {
     margin: 0 auto;
 }
 
+/* Section-to-section spacing — these live in body, not a flex container.
+   At ≤1024px the section padding-top/bottom handles vertical rhythm.
+   At desktop (>1024px) there is no padding, so margins are required. */
+@media (min-width: 1025px) {
+    .value-banner-section + .research-section,
+    .research-section + .research-section,
+    .research-section + .project-wrapup {
+        margin-top: var(--space-between-blocks);
+    }
+}
+
 .project-wrapup {
     padding: var(--sp-5) var(--sp-10);
     max-width: 1400px;
@@ -3083,7 +3094,12 @@ img {
 }
 
 .research-header + .research-header {
-    margin-top: var(--sp-6);
+    margin-top: var(--space-between-blocks);
+}
+
+/* First subsection after section title — tighter coupling */
+.research-header:first-child + .research-header {
+    margin-top: var(--space-title-to-content);
 }
 
 .research-header h2 {
@@ -3091,7 +3107,7 @@ img {
     line-height: var(--lh-h2);
     color: var(--color-ink);
     margin-top: 0;
-    margin-bottom: var(--sp-4);
+    margin-bottom: 0;
 }
 
 .research-header-body {
