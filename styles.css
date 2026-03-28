@@ -3,24 +3,7 @@
 @import url('./tokens/index.css');
 @import url('./tokens/themes/personal-light.css');
 
-@media (max-width: 1024px) {
-    .header-container {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-}
-@media (max-width: 768px) {
-    .header-container {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-}
-@media (max-width: 480px) {
-    .header-container {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
-}
+
 /* Restore arrow icon hover animation for CTA */
 .cta-icon-wrapper {
     display: inline-flex;
@@ -455,74 +438,54 @@ h3 {
 
 /* ============================================
    Spacing System — Project Pages
-   40px between sections/content blocks
-   16px from headings to their content
+   Uses semantic tokens — values are responsive at 600px automatically.
+   --space-between-blocks: 32px mobile / 40px desktop
+   --space-heading-to-body: 16px fixed
    ============================================ */
 
-/* Gap between hero and first/last section */
+/* Main content: flex column — gap handles all section-to-section spacing.
+   No padding-top needed; hero goes flush to header naturally (first flex item has no gap above it). */
 .content-container main {
-    padding-top: var(--sp-10);
-    padding-bottom: var(--sp-10);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-between-blocks);
+    padding-bottom: var(--space-between-blocks);
 }
 
-/* Homepage: hero and video sections go flush to header/footer */
-.content-container main > .hero:first-child {
-    margin-top: calc(-1 * var(--sp-10));
-    padding-top: var(--sp-10);
-}
-
-.content-container main > .video-section:last-child {
-    margin-bottom: calc(-1 * var(--sp-10));
-    padding-bottom: var(--sp-10);
-}
-
-/* Sections within project page main content */
-.content-container main > section + section,
-.hero-section + .research-section,
-.research-section + .research-section,
-.research-section + .project-wrapup,
-.value-banner-section + .research-section {
-    margin-top: var(--sp-10);
-}
-
-.research-section + footer,
-.project-wrapup + footer {
-    margin-top: var(--sp-10);
-}
-
-/* h2: 40px above (section-level heading), 16px below to content */
+/* h2: section-level heading — between-blocks gap above, heading-to-body below.
+   Note: margin-top retained for document-flow headings (not a component child). */
 .content-container main h2,
 .research-section h2 {
-    margin-top: var(--sp-10);
-    margin-bottom: var(--sp-4);
+    margin-top: var(--space-between-blocks);
+    margin-bottom: var(--space-heading-to-body);
 }
 
-/* First h2 in a section shouldn't double up spacing */
+/* First h2 in a section — no double spacing */
 .content-container main > section > h2:first-child,
 .research-section > .research-header:first-child h2 {
     margin-top: 0;
 }
 
-/* h3: 40px above, 16px below */
+/* h3: subsection heading */
 .content-container main h3,
 .research-section h3 {
-    margin-top: var(--sp-10);
-    margin-bottom: var(--sp-4);
+    margin-top: var(--space-between-blocks);
+    margin-bottom: var(--space-heading-to-body);
 }
 
 /* h3 immediately after h2: tighter coupling */
 .content-container main h2 + h3,
 .research-section h2 + h3 {
-    margin-top: var(--sp-4);
+    margin-top: var(--space-heading-to-body);
 }
 
-/* h3 inside research-header blocks: tighter spacing (same section) */
+/* h3 inside research-header blocks: same-section, tighter */
 .research-header h3 {
-    margin-top: var(--sp-6);
-    margin-bottom: var(--sp-4);
+    margin-top: var(--space-title-to-content);
+    margin-bottom: var(--space-heading-to-body);
 }
 
-/* Headings inside components should not inherit section-level spacing */
+/* Headings inside components — reset section-level spacing */
 .postit-card h3,
 .postit-grid > h3,
 .tradeoff-side h3,
@@ -533,7 +496,7 @@ h3 {
     margin-bottom: var(--sp-2);
 }
 
-/* Paragraphs following headings: no extra top margin (heading's margin-bottom handles it) */
+/* Paragraphs following headings: heading's margin-bottom handles the gap */
 .content-container main h1 + p,
 .content-container main h2 + p,
 .content-container main h3 + p,
@@ -542,12 +505,12 @@ h3 {
     margin-top: 0;
 }
 
-/* Images within project content: 40px above */
+/* Images and figures within project content */
 .content-container main > section > img,
 .content-container main > section > figure,
 .research-section > img,
 .research-section > figure {
-    margin-top: var(--sp-10);
+    margin-top: var(--space-between-blocks);
 }
 
 /* Captions immediately after images: tight */
@@ -556,7 +519,7 @@ h3 {
     margin-top: var(--sp-2);
 }
 
-/* Content blocks: 40px above */
+/* Content blocks within sections */
 .content-container main .postit-grid,
 .content-container main .tradeoff-graphic,
 .content-container main .synthesis-split,
@@ -572,15 +535,10 @@ h3 {
 .research-section .context-grid,
 .research-section .scenario1-grid,
 .research-section .core-value-panels,
-.research-section .dependency-chain {
-    margin-top: var(--sp-10);
-}
-
-/* Zoomable and standalone images within project content: 40px above */
+.research-section .dependency-chain,
 .content-container main .zoomable,
-.research-section .zoomable,
-.research-section > img {
-    margin-top: var(--sp-10);
+.research-section .zoomable {
+    margin-top: var(--space-between-blocks);
 }
 
 /* Images immediately after headings: tighter */
@@ -588,7 +546,7 @@ h3 {
 .content-container main h3 + .zoomable,
 .research-section h3 + img,
 .research-section h3 + .zoomable {
-    margin-top: var(--sp-4);
+    margin-top: var(--space-heading-to-body);
 }
 
 /* Display text styles */
@@ -1958,10 +1916,6 @@ footer ul li a:hover {
     margin-top: var(--sp-1);
 }
 
-@media (max-width: 900px) {
-    /* No override needed, column layout is default */
-    /* Removed left: 17px for .timeline-node to fix alignment */
-}
 
 /* ============================================
    RESPONSIVE DESIGN - Mobile First Breakpoints
@@ -2017,7 +1971,7 @@ footer ul li a:hover {
     }
 
     .header-container nav ul li a {
-        padding: 0 8px;
+        padding: 0 var(--sp-2);
         font-size: var(--fs-body-sm);
     }
 
@@ -2028,7 +1982,7 @@ footer ul li a:hover {
 
     /* Content container */
     .content-container {
-        padding: 0 16px;
+        padding: 0 var(--sp-4);
     }
 
     /* Hero section - stack vertically */
@@ -2127,7 +2081,7 @@ footer ul li a:hover {
 
     /* Work history section */
     .work-history {
-        padding: 0 16px;
+        padding: 0 var(--sp-4);
     }
 
     /* Case study articles */
@@ -2173,7 +2127,7 @@ footer ul li a:hover {
 
     /* Content */
     .content-container {
-        padding: 0 12px;
+        padding: 0 var(--sp-3);
     }
 
     /* Hero */
@@ -2434,7 +2388,7 @@ footer ul li a:hover {
     }
 
     .content-container {
-        padding: 0 8px;
+        padding: 0 var(--sp-2);
     }
 
     .project-card-image-wrapper {
@@ -2596,7 +2550,7 @@ img {
     gap: var(--sp-16);
     max-width: 1400px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 var(--sp-10);
     position: relative;
     z-index: 1;
     width: 100%;
@@ -2660,10 +2614,14 @@ img {
     color: var(--color-bg-surface);
 }
 
+.hero-content p:last-of-type {
+    margin-bottom: var(--sp-10); /* 40px gap before hero-stats */
+}
+
 .hero-stats {
     display: flex;
     gap: 0;
-    margin-top: var(--sp-10);
+    margin-top: 0;
     margin-bottom: 0;
 }
 
@@ -2711,7 +2669,7 @@ img {
 
 .tabs-section {
     border-bottom: 1px solid var(--color-border-default);
-    padding: 0 40px;
+    padding: 0 var(--sp-10);
     margin: 0;
 }
 
@@ -3099,7 +3057,7 @@ img {
 }
 
 .research-section {
-    padding: 0 40px;
+    padding: 0 var(--sp-10);
     max-width: 1400px;
     margin: 0 auto;
 }
@@ -3153,7 +3111,7 @@ img {
 
 .user-need {
     margin: 0;
-    padding: var(--sp-4) var(--sp-6) 16px 24px;
+    padding: var(--sp-4) var(--sp-6);
     border-left: 3px solid var(--color-ink);
     font-style: normal;
 }
@@ -3662,7 +3620,7 @@ blockquote footer {
 
 /* Core Value Diagram */
 .core-value-section {
-    padding: var(--sp-16) var(--sp-10) 80px;
+    padding: var(--sp-16) var(--sp-10) var(--sp-20);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -3785,7 +3743,7 @@ blockquote footer {
 
 .dependency-arrow {
     flex-shrink: 0;
-    padding: 0 8px;
+    padding: 0 var(--sp-2);
     color: var(--n-300);
     display: flex;
     align-items: center;
@@ -4576,11 +4534,11 @@ blockquote footer {
     }
 
     .hero-stat {
-        padding: 0 16px;
+        padding: 0 var(--sp-4);
     }
 
     .value-banner-section {
-        padding: var(--sp-6) 16px;
+        padding: var(--sp-6) var(--sp-4);
     }
 
     .value-banner {
@@ -4601,7 +4559,7 @@ blockquote footer {
     }
 
     .bbox-section {
-        padding: var(--sp-6) 16px;
+        padding: var(--sp-6) var(--sp-4);
     }
 
     .bbox-grid {
@@ -4609,7 +4567,7 @@ blockquote footer {
     }
 
     .tabs-section {
-        padding: 0 16px;
+        padding: 0 var(--sp-4);
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -4626,7 +4584,7 @@ blockquote footer {
 
     .main-content {
         flex-direction: column;
-        padding: var(--sp-8) 16px;
+        padding: var(--sp-8) var(--sp-4);
         gap: var(--sp-8);
     }
 
@@ -4645,7 +4603,7 @@ blockquote footer {
     .project-wrapup,
     .contact-section,
     .why-section {
-        padding: var(--sp-8) 16px;
+        padding: var(--sp-8) var(--sp-4);
     }
 
     .practice-item {
@@ -4663,7 +4621,7 @@ blockquote footer {
     }
 
     .postit-grid {
-        padding: var(--sp-8) 16px;
+        padding: var(--sp-8) var(--sp-4);
         gap: var(--sp-5);
     }
 }
@@ -4681,7 +4639,7 @@ blockquote footer {
     }
 
     .hero-wrapper {
-        padding: 0 16px;
+        padding: 0 var(--sp-4);
     }
 
     .hero-content h1 {
@@ -4699,11 +4657,11 @@ blockquote footer {
     }
 
     .hero-stat {
-        padding: 0 12px;
+        padding: 0 var(--sp-3);
     }
 
     .tabs-section {
-        padding: 0 12px;
+        padding: 0 var(--sp-3);
     }
 
     .tabs {
@@ -4720,7 +4678,7 @@ blockquote footer {
     }
 
     .main-content {
-        padding: var(--sp-6) 12px;
+        padding: var(--sp-6) var(--sp-3);
     }
 
     .stats-grid {
@@ -4739,7 +4697,7 @@ blockquote footer {
     .project-wrapup,
     .contact-section,
     .why-section {
-        padding: var(--sp-6) 16px;
+        padding: var(--sp-6) var(--sp-4);
     }
 
     .best-practices h2,
@@ -4765,7 +4723,7 @@ blockquote footer {
     }
 
     .postit-grid {
-        padding: var(--sp-6) 12px;
+        padding: var(--sp-6) var(--sp-3);
         grid-template-columns: 1fr;
     }
 

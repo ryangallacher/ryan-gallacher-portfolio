@@ -20,7 +20,18 @@
 
   /* ── Semantic layout spacing ──────────────────────────────────────────── */
   /* Source: crp-tool-postmvp — validated spacing rules for page rhythm */
-  --space-header-to-content: var(--space-16);  /* 64px — page title to first content block */
-  --space-title-to-content:  var(--space-8);   /* 32px — section heading to its content */
-  --space-between-blocks:    var(--space-10);  /* 40px — between major content sections */
+  /* Mobile-first defaults (< 600px) */
+  --space-header-to-content: var(--space-12);  /* 48px — page title to first content block */
+  --space-title-to-content:  var(--space-6);   /* 24px — section heading to its content */
+  --space-between-blocks:    var(--space-8);   /* 32px — between major content sections */
+  --space-heading-to-body:   var(--space-4);   /* 16px — heading to immediately following body copy (fixed) */
+}
+
+@media (min-width: 600px) {
+  :root {
+    --space-header-to-content: var(--space-16);  /* 64px */
+    --space-title-to-content:  var(--space-8);   /* 32px */
+    --space-between-blocks:    var(--space-10);  /* 40px */
+    /* --space-heading-to-body stays fixed at 16px */
+  }
 }
