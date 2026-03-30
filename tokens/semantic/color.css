@@ -15,10 +15,11 @@
   --color-text-on-interactive: var(--color-neutral-0);     /* Text on interactive (button) bg */
 
   /* ── Surface ──────────────────────────────────────────────────────────── */
-  --color-surface-default:  var(--color-neutral-0);        /* Main page/card surface */
-  --color-surface-subtle:   var(--color-neutral-50);       /* Zebra rows, code blocks */
-  --color-surface-raised:   var(--color-neutral-100);      /* Raised cards, inset panels */
-  --color-surface-disabled: var(--color-neutral-200);      /* Disabled input backgrounds */
+  --color-surface-default:   var(--color-neutral-0);        /* Main page/card surface */
+  --color-surface-subtle:    var(--color-neutral-50);       /* Zebra rows, code blocks */
+  --color-surface-raised:    var(--color-neutral-100);      /* Raised cards, inset panels */
+  --color-surface-elevated:  var(--color-neutral-200);      /* Tooltip backgrounds, speech-bubble tails */
+  --color-surface-disabled:  var(--color-neutral-200);      /* Disabled input backgrounds */
 
   /* ── Border ───────────────────────────────────────────────────────────── */
   --color-border-default: var(--color-neutral-200);        /* Default dividers, card borders */
