@@ -12,7 +12,14 @@
       "WebFetch(domain:app.unpkg.com)",
       "WebFetch(domain:carbondesignsystem.com)",
       "Bash(grep:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Read(//c/Users/Ryan/.claude/projects/c--Users-Ryan-Documents-GitHub-ai-practice/f55be561-69a3-4d3e-a890-abb3c712c393/tool-results/**)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Ryan\\Documents\\GitHub\\agentic-dev-boilerplate\\references",
+      "C:\\Users\\Ryan\\Documents\\GitHub\\agentic-dev-boilerplate",
+      "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system\\tokens\\primitives",
+      "\\tmp"
     ]
   }
 }

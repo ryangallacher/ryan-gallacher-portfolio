@@ -1082,7 +1082,7 @@ footer ul li a:hover {
 }
 
 .hero-text h1 {
-    margin-bottom: var(--sp-6); /* 24px between h1 and text */
+    margin-bottom: var(--sp-6); /* 24px — display-lg heading to content */
 }
 
 .hero-text > p {
@@ -1954,6 +1954,11 @@ footer ul li a:hover {
         --lh-h2: 2rem;             /* 32px down from 40px */
         --fs-h3: 1.25rem;          /* 20px down from 24px */
         --lh-h3: 1.75rem;          /* 28px down from 32px */
+        /* Spacing scale */
+        --sp-10: 2rem;             /* 32px down from 40px */
+        --sp-12: 2.5rem;           /* 40px down from 48px */
+        --sp-16: 3rem;             /* 48px down from 64px */
+        --sp-20: 3.5rem;           /* 56px down from 80px */
     }
 
     h1 {
@@ -1995,6 +2000,10 @@ footer ul li a:hover {
         padding-right: 0;
         order: 2;
         text-align: center;
+    }
+
+    .hero-text h1 {
+        margin-bottom: var(--sp-4); /* 16px — heading scaled down to ~40px */
     }
 
     .hero-text .cta-button {
@@ -2112,6 +2121,12 @@ footer ul li a:hover {
         --lh-h2: 1.5rem;           /* 24px */
         --fs-h3: 1.125rem;         /* 18px down from 24px */
         --lh-h3: 1.5rem;           /* 24px down from 32px */
+        /* Spacing scale */
+        --sp-8: 1.5rem;            /* 24px down from 32px */
+        --sp-10: 1.5rem;           /* 24px down from 40px */
+        --sp-12: 2rem;             /* 32px down from 48px */
+        --sp-16: 2.5rem;           /* 40px down from 64px */
+        --sp-20: 3rem;             /* 48px down from 80px */
     }
 
     /* Header - compact for mobile */
@@ -4537,6 +4552,7 @@ blockquote footer {
     .hero-content h1 {
         justify-content: center;
         font-size: var(--fs-h2);
+        margin-bottom: var(--sp-4); /* 16px — heading scaled down to h2 size */
     }
 
     .hero-section .hero-image {

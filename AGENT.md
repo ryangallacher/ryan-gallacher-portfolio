@@ -57,7 +57,10 @@ Based on a 4px grid. Use `--sp-*` tokens for all margin and padding values.
 ### Spacing Rules
 
 - **40px (`--sp-10`)** between sections, between content blocks, and above h2/h3 headings
-- **16px (`--sp-4`)** from a heading to its content (paragraph, image, component)
+- Heading-to-content gap scales with font size:
+  - **24px (`--sp-6`)** — `display-lg` (60px, homepage h1)
+  - **24px (`--sp-6`)** — `display-sm` (48px, about page h1)
+  - **16px (`--sp-4`)** — `h1` (36px) and smaller
 - **8px (`--sp-2`)** from image to caption, label to field
 - First heading in a section gets `margin-top: 0` (the section spacing handles it)
 - h3 directly after h2: use `--sp-4` (tighter coupling)
@@ -179,6 +182,32 @@ Two content column widths are used depending on page type. Never mix them on the
 | `600px` | Large phones / timeline collapse |
 | `480px` | Mobile phones |
 | `360px` | Small mobiles |
+
+### Responsive Token Scaling
+
+Font and spacing tokens are overridden via `:root` at breakpoints — do not hardcode values at each breakpoint, update the token instead.
+
+**Typography (`768px` and `480px`)**
+
+| Token | Desktop | 768px | 480px |
+|-------|---------|-------|-------|
+| `--fs-display-lg` / `--lh-display-lg` | 60px / 72px | 40px / 48px | 32px / 40px |
+| `--fs-display-sm` / `--lh-display-sm` | 48px / 56px | 32px / 40px | 24px / 32px |
+| `--fs-h1` / `--lh-h1` | 36px / 44px | 28px / 36px | 24px / 32px |
+| `--fs-h2` / `--lh-h2` | 32px / 40px | 24px / 32px | 20px / 24px |
+| `--fs-h3` / `--lh-h3` | 24px / 36px | 20px / 28px | 18px / 24px |
+
+**Spacing (`768px` and `480px`)**
+
+| Token | Desktop | 768px | 480px |
+|-------|---------|-------|-------|
+| `--sp-8` | 32px | 32px | 24px |
+| `--sp-10` | 40px | 32px | 24px |
+| `--sp-12` | 48px | 40px | 32px |
+| `--sp-16` | 64px | 48px | 40px |
+| `--sp-20` | 80px | 56px | 48px |
+
+Tokens `--sp-1` through `--sp-6` do not scale — they are small enough to remain consistent.
 
 ---
 
