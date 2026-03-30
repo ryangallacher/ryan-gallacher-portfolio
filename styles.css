@@ -28,7 +28,7 @@
 .btn-secondary {
     height: var(--space-10);
     padding: 0 var(--space-6);
-    background: var(--n-0);
+    background: var(--color-neutral-0);
     color: var(--btn-primary-bg, #1a1a1a);
     border: 2px solid var(--btn-primary-bg, #1a1a1a);
     border-radius: var(--radius-md);
@@ -48,9 +48,9 @@
     transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 .btn-secondary:hover {
-    border-color: var(--p-base, #034C53);
-    color: var(--p-base, #034C53);
-    background: var(--p-tint);
+    border-color: var(--color-petrol-500, #034C53);
+    color: var(--color-petrol-500, #034C53);
+    background: var(--color-petrol-50);
     outline: none;
 }
 
@@ -74,7 +74,7 @@
     right: 0;
     height: 100%;
     left: 50%;
-    background: var(--n-0);
+    background: var(--color-neutral-0);
     box-shadow: -4px 0 24px 0 rgba(20, 34, 36, 0.10);
     border-radius: 0;
     padding: var(--space-12) var(--space-12) var(--space-12) var(--space-10);
@@ -97,18 +97,18 @@ html, body {
     margin-top: 0;
     margin-bottom: 1rem;
     font-size: var(--font-size-3xl);
-    color: var(--n-900);
+    color: var(--color-neutral-900);
 }
 
 .pattern-card p {
     margin: 0;
-    color: var(--n-600);
+    color: var(--color-neutral-600);
     font-size: var(--font-size-lg);
     line-height: 1.6;
 }
 /* Pattern background section for SVG scaling and cropping (container-relative) */
 .pattern-bg {
-    background: var(--n-900);
+    background: var(--color-neutral-900);
     width: 100vw;
     min-width: 100vw;
     height: 650px;
@@ -211,60 +211,6 @@ html, body {
    migrated to reference design system tokens directly.
    ============================================ */
 :root {
-  /* ── Color primitives — neutral ────────────────────────────────────────── */
-  --n-0:   var(--color-neutral-0);
-  --n-50:  var(--color-neutral-50);
-  --n-100: var(--color-neutral-100);
-  --n-200: var(--color-neutral-200);
-  --n-300: var(--color-neutral-300);
-  --n-400: var(--color-neutral-400);
-  --n-500: var(--color-neutral-500);
-  --n-600: var(--color-neutral-600);
-  --n-800: var(--color-neutral-800);
-  --n-900: var(--color-neutral-900);
-
-  /* ── Color primitives — petrol ─────────────────────────────────────────── */
-  --p-base:   var(--color-petrol-500);
-  --p-hover:  var(--color-petrol-700);
-  --p-active: var(--color-petrol-900);
-  --p-tint:   var(--color-petrol-50);
-
-  /* ── Color primitives — teal ───────────────────────────────────────────── */
-  --teal-base:   var(--color-teal-500);
-  --teal-hover:  var(--color-teal-600);
-  --teal-active: var(--color-teal-700);
-  --teal-vivid:  var(--color-teal-300);
-  --teal-light:  var(--color-teal-50);
-
-  /* ── Color primitives — peach ──────────────────────────────────────────── */
-  --peach-base:   var(--color-peach-400);
-  --peach-hover:  var(--color-peach-600);
-  --peach-active: var(--color-peach-700);
-  --peach-light:  var(--color-peach-50);
-
-  /* ── Color primitives — accent orange ─────────────────────────────────── */
-  --a-base:   var(--color-orange-400);
-  --a-hover:  var(--color-orange-600);
-  --a-active: var(--color-orange-700);
-  --a-light:  var(--color-orange-50);
-  --a-text:   var(--color-neutral-900);
-
-  /* ── Color primitives — red / green / blue ─────────────────────────────── */
-  --red-base:   var(--color-red-500);
-  --red-hover:  var(--color-red-600);
-  --red-active: var(--color-red-700);
-  --red-light:  var(--color-red-50);
-
-  --green-base:   var(--color-green-500);
-  --green-hover:  var(--color-green-600);
-  --green-active: var(--color-green-700);
-  --green-light:  var(--color-green-50);
-
-  --blue-base:    var(--color-blue-500);
-  --blue-hover:   var(--color-blue-600);
-  --blue-active:  var(--color-blue-700);
-  --blue-visited: var(--color-blue-visited);
-
   /* ── Functional UI mappings ─────────────────────────────────────────────── */
   /* NOTE: --color-ink maps to n-800 (not n-900) — preserves original ai-practice text color.
    * Design system --color-text-primary is n-900. Align these when the portfolio is reviewed. */
@@ -818,14 +764,14 @@ select:focus-visible,
 .error-summary a:focus-visible {
     outline: 3px solid var(--color-focus-ring);
     outline-offset: 2px;
-    background-color: var(--p-tint);
+    background-color: var(--color-petrol-50);
 }
 
 @supports not selector(:focus-visible) {
     .error-summary a:focus {
         outline: 3px solid var(--color-focus-ring);
         outline-offset: 2px;
-        background-color: var(--p-tint);
+        background-color: var(--color-petrol-50);
     }
 }
 
@@ -900,7 +846,7 @@ footer ul li a:hover {
 .header-container .logo {
     flex: 0 0 auto;
     font-family: var(--font-family-display);
-    color: var(--p-base);
+    color: var(--color-petrol-500);
     text-decoration: none;
     font-size: var(--font-size-2xl);
     line-height: 1.2;
@@ -915,13 +861,13 @@ footer ul li a:hover {
 .header-container .logo:active,
 .header-container .logo:focus,
 .header-container .logo:hover {
-    color: var(--p-base);
+    color: var(--color-petrol-500);
     text-decoration: none;
 }
 
 .back-button {
     text-decoration: none;
-    color: var(--n-0);
+    color: var(--color-neutral-0);
     font-size: var(--font-size-md);
     font-weight: 500;
     display: inline-flex;
@@ -934,7 +880,7 @@ footer ul li a:hover {
 
 .back-button:visited,
 .back-button:active {
-    color: var(--n-0);
+    color: var(--color-neutral-0);
 }
 
 .back-button:hover {
@@ -1064,7 +1010,7 @@ footer ul li a:hover {
 .project-card {
     width: 100%;
     box-sizing: border-box;
-    background-color: var(--n-0);
+    background-color: var(--color-neutral-0);
     border: 1px solid rgba(3, 76, 83, 0.25);
     box-shadow: none;
     display: flex;
@@ -1077,7 +1023,7 @@ footer ul li a:hover {
 }
 
 .project-card:hover {
-    background-color: var(--n-50); /* Subtle off-white on hover */
+    background-color: var(--color-neutral-50); /* Subtle off-white on hover */
     box-shadow: var(--shadow-level-3); /* Elevated shadow on hover */
     transform: translateY(-2px); /* Subtle lift effect */
     text-decoration: none; /* No underline on hover */
@@ -1139,7 +1085,7 @@ footer ul li a:hover {
     display: flex;
     flex-direction: column;
     padding-left: var(--space-4);
-    border-left: 4px solid var(--peach-base); /* Vertical line next to numbers */
+    border-left: 4px solid var(--color-peach-400); /* Vertical line next to numbers */
 }
 
 .project-card-stat-number {
@@ -1209,8 +1155,8 @@ footer ul li a:hover {
 }
 
 .tag {
-    background-color: var(--n-200);
-    color: var(--n-800);
+    background-color: var(--color-neutral-200);
+    color: var(--color-neutral-800);
     padding: var(--space-2);
     border-radius: 6px;
     border: none;
@@ -1343,7 +1289,7 @@ footer ul li a:hover {
 }
 
 footer {
-    background-color: var(--n-200);
+    background-color: var(--color-neutral-200);
     color: var(--color-ink);
     padding: var(--space-4) var(--space-6);
     margin-top: 0;
@@ -1612,7 +1558,7 @@ footer ul li a:hover {
     top: 0;
     bottom: calc(-1 * var(--space-10));
     width: 2px;
-    background: var(--n-200);
+    background: var(--color-neutral-200);
     z-index: 0;
 }
 
@@ -1780,34 +1726,34 @@ footer ul li a:hover {
    Timeline Colored Variant
    ============================================ */
 .timeline-colored .timeline-icon {
-    background: var(--p-base);
-    border-color: var(--p-hover);
-    color: var(--n-0);
+    background: var(--color-petrol-500);
+    border-color: var(--color-petrol-700);
+    color: var(--color-neutral-0);
 }
 
 .timeline-colored .timeline-line {
-    background: var(--n-200);
+    background: var(--color-neutral-200);
 }
 
 .timeline-colored .timeline-node {
-    background: var(--teal-base); /* Teal inner */
-    border: 3px solid var(--n-0); /* White middle ring */
-    box-shadow: 0 0 0 2px var(--n-200); /* Light outer ring */
+    background: var(--color-teal-500); /* Teal inner */
+    border: 3px solid var(--color-neutral-0); /* White middle ring */
+    box-shadow: 0 0 0 2px var(--color-neutral-200); /* Light outer ring */
 }
 
 .timeline-colored .timeline-content {
-    background: var(--n-0);
-    border-color: var(--n-200);
+    background: var(--color-neutral-0);
+    border-color: var(--color-neutral-200);
 }
 
 .timeline-colored .timeline-label {
-    background: var(--teal-light);
-    color: var(--p-base);
+    background: var(--color-teal-50);
+    color: var(--color-petrol-500);
 }
 
 .timeline-colored .sub-item-status {
-    background: var(--peach-light);
-    color: var(--peach-active);
+    background: var(--color-peach-50);
+    color: var(--color-peach-700);
 }
 
 .section-title {
@@ -2404,7 +2350,7 @@ img {
     right: 12px;
     background: rgba(0, 0, 0, 0.5);
     border: none;
-    color: var(--n-0);
+    color: var(--color-neutral-0);
     font-size: var(--font-size-2xl);
     cursor: pointer;
     line-height: 1;
@@ -2884,7 +2830,7 @@ img {
     padding: var(--space-16) var(--space-10);
     max-width: 100%;
     margin: 0 auto;
-    background-color: var(--peach-base);
+    background-color: var(--color-peach-400);
 }
 
 .postit-grid > h3 {
@@ -2901,7 +2847,7 @@ img {
 /* CS page discovery and delivery sections: full-bleed background */
 .page-cs .discovery-section,
 .page-cs .delivery-section {
-    background-color: var(--n-100);
+    background-color: var(--color-neutral-100);
     max-width: none;
     padding: var(--space-10) var(--space-10) var(--space-16);
 }
@@ -2941,11 +2887,11 @@ img {
 }
 
 .page-cs .postit-card:nth-child(odd) {
-    background-color: var(--teal-vivid);
+    background-color: var(--color-teal-300);
 }
 
 .page-cs .postit-card:nth-child(even) {
-    background-color: var(--peach-base);
+    background-color: var(--color-peach-400);
 }
 
 .page-cs .postit-card p {
@@ -3244,8 +3190,8 @@ blockquote footer {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--teal-base);
-    background-color: var(--teal-light);
+    color: var(--color-teal-500);
+    background-color: var(--color-teal-50);
     padding: var(--space-1) var(--space-3);
     border-radius: 20px;
     margin-bottom: var(--space-4);
@@ -3297,7 +3243,7 @@ blockquote footer {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: var(--n-300);
+    background-color: var(--color-neutral-300);
     flex-shrink: 0;
 }
 
@@ -3423,7 +3369,7 @@ blockquote footer {
     margin-top: var(--space-4);
     padding: var(--space-4);
     background-color: var(--color-bg-surface-alt);
-    border-left: 4px solid var(--green-base);
+    border-left: 4px solid var(--color-green-500);
     max-width: 700px;
 }
 
@@ -3457,7 +3403,7 @@ blockquote footer {
 .value-banner {
     display: flex;
     align-items: center;
-    background-color: var(--n-900);
+    background-color: var(--color-neutral-900);
     border-radius: var(--radius-lg);
     padding: var(--space-8) var(--space-10);
     gap: var(--space-10);
@@ -3466,14 +3412,14 @@ blockquote footer {
 .value-banner-tagline {
     flex: 0 0 260px;
     padding-right: var(--space-10);
-    border-right: 1px solid var(--n-600);
+    border-right: 1px solid var(--color-neutral-600);
 }
 
 .value-banner-tagline p {
     font-family: var(--font-family-display);
     font-size: var(--font-size-xl);
     font-weight: 500;
-    color: var(--n-0);
+    color: var(--color-neutral-0);
     line-height: 1.4;
     margin: 0;
 }
@@ -3501,26 +3447,26 @@ blockquote footer {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--teal-base);
+    color: var(--color-teal-500);
 }
 
 .value-banner-value {
     font-size: var(--font-size-md);
     font-weight: 400;
-    color: var(--n-0);
+    color: var(--color-neutral-0);
 }
 
 /* ScotAccount page overrides */
 .page-scotaccount .value-banner {
     align-items: stretch;
-    background-color: var(--teal-light);
+    background-color: var(--color-teal-50);
 }
 
 .page-scotaccount .value-banner-tagline {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    border-right-color: var(--teal-light);
+    border-right-color: var(--color-teal-50);
 }
 
 .page-scotaccount .value-banner-tagline p {
@@ -3535,7 +3481,7 @@ blockquote footer {
     font-weight: 400;
     text-transform: none;
     letter-spacing: normal;
-    color: var(--teal-base);
+    color: var(--color-teal-500);
 }
 
 .page-scotaccount .value-banner-item {
@@ -3568,22 +3514,22 @@ blockquote footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid var(--n-200, #ddd);
+    border: 1px solid var(--color-neutral-200, #ddd);
     border-radius: 8px;
     padding: var(--space-8) var(--space-6);
-    background: var(--n-0);
+    background: var(--color-neutral-0);
 }
 
 .core-value-panel-label {
     font-family: var(--font-family-sans);
     font-size: var(--font-size-2xl);
     font-weight: 600;
-    color: var(--teal-base);
+    color: var(--color-teal-500);
     margin-bottom: var(--space-1);
 }
 
 .core-value-panel--after .core-value-panel-label {
-    color: var(--teal-base);
+    color: var(--color-teal-500);
 }
 
 .core-value-svg {
@@ -3596,7 +3542,7 @@ blockquote footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--n-300);
+    color: var(--color-neutral-300);
     flex-shrink: 0;
 }
 
@@ -3644,10 +3590,10 @@ blockquote footer {
     flex: 1 1 0;
     min-width: 150px;
     padding: var(--space-6) var(--space-5);
-    border: 1.5px solid var(--n-200);
+    border: 1.5px solid var(--color-neutral-200);
     border-radius: 4px;
     text-align: center;
-    background-color: var(--n-0);
+    background-color: var(--color-neutral-0);
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -3675,7 +3621,7 @@ blockquote footer {
 .dependency-arrow {
     flex-shrink: 0;
     padding: 0 var(--space-2);
-    color: var(--n-300);
+    color: var(--color-neutral-300);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3697,7 +3643,7 @@ blockquote footer {
     font-size: var(--font-size-md);
     line-height: var(--line-height-body);
     font-weight: 600;
-    color: var(--n-500);
+    color: var(--color-neutral-500);
     margin: var(--space-8) 0 var(--space-10);
     max-width: 620px;
 }
@@ -3754,7 +3700,7 @@ blockquote footer {
 .weighted-left-subtitle {
     font-family: 'Lora', serif;
     font-size: var(--font-size-2xl);
-    color: var(--teal-base);
+    color: var(--color-teal-500);
     margin: var(--space-1) 0 0;
     font-weight: 500;
     font-style: italic;
@@ -3779,16 +3725,16 @@ blockquote footer {
 }
 
 .weighted-left-sidebar {
-    background-color: var(--n-50);
+    background-color: var(--color-neutral-50);
     padding: var(--space-8);
-    border-left: 3px solid var(--teal-base);
+    border-left: 3px solid var(--color-teal-500);
 }
 
 .weighted-left-sidebar h3 {
     font-size: var(--font-size-md);
     line-height: var(--line-height-body);
     font-weight: 700;
-    color: var(--teal-base);
+    color: var(--color-teal-500);
     margin-bottom: var(--space-3);
 }
 
@@ -3818,7 +3764,7 @@ blockquote footer {
     content: '+';
     position: absolute;
     left: 0;
-    color: var(--teal-base);
+    color: var(--color-teal-500);
     font-weight: 600;
 }
 
@@ -3848,7 +3794,7 @@ blockquote footer {
 
 .bbox-card {
     position: relative;
-    border: 1px solid var(--teal-vivid);
+    border: 1px solid var(--color-teal-300);
     border-radius: 2px;
     padding: 0;
     background: var(--color-bg-surface-alt);
@@ -3858,8 +3804,8 @@ blockquote footer {
     position: absolute;
     width: 8px;
     height: 8px;
-    background: var(--n-0);
-    border: 1px solid var(--teal-vivid);
+    background: var(--color-neutral-0);
+    border: 1px solid var(--color-teal-300);
     z-index: 1;
 }
 
@@ -3938,8 +3884,8 @@ blockquote footer {
 }
 
 .testimonial-card.card-dark {
-    background: var(--n-800);
-    border-color: var(--n-800);
+    background: var(--color-neutral-800);
+    border-color: var(--color-neutral-800);
 }
 
 .testimonial-card.card-medium {
@@ -4075,8 +4021,8 @@ blockquote footer {
 
 /* Featured quote container */
 .gallery-item.featured-quote {
-    background: var(--a-base);
-    border-color: var(--a-base);
+    background: var(--color-orange-400);
+    border-color: var(--color-orange-400);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -4090,7 +4036,7 @@ blockquote footer {
 .gallery-item.featured-quote .stat-number {
     font-size: var(--font-size-display-sm);
     font-weight: 700;
-    color: var(--n-0);
+    color: var(--color-neutral-0);
     line-height: 1;
     margin: 0;
 }
@@ -4098,7 +4044,7 @@ blockquote footer {
 .gallery-item.featured-quote .stat-label {
     font-size: var(--font-size-md);
     font-weight: 500;
-    color: var(--n-0);
+    color: var(--color-neutral-0);
     line-height: 1.4;
     margin: 0;
 }
@@ -4292,14 +4238,14 @@ blockquote footer {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: var(--teal-light);
+    background-color: var(--color-teal-50);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .tradeoff-circle svg {
-    fill: var(--teal-base);
+    fill: var(--color-teal-500);
 }
 
 @media (max-width: 768px) {
@@ -4379,7 +4325,7 @@ blockquote footer {
         padding-right: 0;
         padding-bottom: var(--space-6);
         border-right: none;
-        border-bottom: 1px solid var(--n-600);
+        border-bottom: 1px solid var(--color-neutral-600);
         width: 100%;
     }
 
