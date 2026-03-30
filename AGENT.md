@@ -8,8 +8,8 @@ This is a UX design portfolio built with static HTML, CSS, and vanilla JS. All s
 
 | Token | Family | Usage |
 |-------|--------|-------|
-| `--ff-serif` | Lora | Headings (h1–h3), display text, logo, stat numbers |
-| `--ff-sans` | Source Sans 3 | Body text, labels, buttons, navigation, everything else |
+| `--font-family-display` | Lora | Headings (h1–h3), display text, logo, stat numbers |
+| `--font-family-sans` | Source Sans 3 | Body text, labels, buttons, navigation, everything else |
 
 Headings use `font-weight: 400`. Body uses `font-weight: 400`, with `600` for emphasis/buttons.
 
@@ -19,52 +19,54 @@ Headings use `font-weight: 400`. Body uses `font-weight: 400`, with `600` for em
 
 All text must use these tokens. Never hardcode font sizes.
 
-| Token | Size | Line-height | Ratio | Usage |
-|-------|------|-------------|-------|-------|
-| `--fs-display-lg` / `--lh-display-lg` | 60px | 72px | 1.20 | Homepage h1 |
-| `--fs-display-sm` / `--lh-display-sm` | 48px | 56px | 1.17 | About page section heading |
-| `--fs-h1` / `--lh-h1` | 36px | 44px | 1.22 | Project page h1 |
-| `--fs-h2` / `--lh-h2` | 32px | 40px | 1.25 | Section headings |
-| `--fs-h3` / `--lh-h3` | 24px | 36px | 1.50 | Sub-section headings |
-| `--fs-body` / `--lh-body` | 16px | 24px | 1.50 | Default body text |
-| `--fs-body-sm` / `--lh-body-sm` | 14px | 20px | 1.43 | Eyebrow text, labels, buttons, table text |
-| `--fs-body-compact` / `--lh-body-compact` | 12px | 16px | 1.33 | Captions, meta text |
-| `--fs-label-lg` / `--lh-label-lg` | 14px | 20px | 1.43 | Large labels |
-| `--fs-label` / `--lh-label` | 12px | 16px | 1.33 | Tags, small labels |
+| Token | Size | Line-height token | Ratio | Usage |
+|-------|------|-------------------|-------|-------|
+| `--font-size-display-lg` | 60px | `--line-height-display-lg` | 1.20 | Homepage h1 |
+| `--font-size-display-sm` | 48px | `--line-height-display-sm` | 1.17 | About page section heading |
+| `--font-size-4xl` | 36px | `--line-height-tight` | 1.2 | Project page h1 |
+| `--font-size-3xl` | 32px | `--line-height-snug` | 1.35 | Section headings |
+| `--font-size-2xl` | 24px | `--line-height-snug` | 1.35 | Sub-section headings |
+| `--font-size-md` | 16px | `--line-height-body` | 1.5 | Default body text |
+| `--font-size-sm` | 14px | `1.25rem` | 1.43 | Eyebrow text, labels, buttons, table text |
+| `--font-size-xs` | 12px | `1rem` | 1.33 | Captions, meta text |
+| `--font-size-lg` | 18px | `--line-height-body` | 1.5 | Large body |
+| `--font-size-xl` | 20px | `--line-height-body` | 1.5 | Oversize body / small heading |
 
-Aliases: `--fs-button` and `--fs-table` both map to `--fs-body-sm`.
+Line heights for body-sm and smaller are hardcoded (`1.25rem`, `1rem`) — no design system token equivalent. Line heights for headings are unitless ratios that scale automatically with responsive font sizes.
+
+Aliases: `--font-size-sm` covers button text and table text.
 
 ---
 
 ## Spacing Scale
 
-Based on a 4px grid. Use `--sp-*` tokens for all margin and padding values.
+Based on a 4px grid. Use `--space-*` tokens for all margin and padding values.
 
 | Token | Value | Common use |
 |-------|-------|------------|
-| `--sp-1` | 4px | Tight gaps |
-| `--sp-2` | 8px | Between label and field, caption to image |
-| `--sp-3` | 12px | Minor internal spacing |
-| `--sp-4` | 16px | Heading to its content |
-| `--sp-5` | 20px | — |
-| `--sp-6` | 24px | Inner padding, nav gaps |
-| `--sp-8` | 32px | Card content padding, grid gaps |
-| `--sp-10` | 40px | **Section spacing, heading margin-top** |
-| `--sp-12` | 48px | Large section padding |
-| `--sp-16` | 64px | Major vertical gaps |
-| `--sp-20` | 80px | Page-level padding |
+| `--space-1` | 4px | Tight gaps |
+| `--space-2` | 8px | Between label and field, caption to image |
+| `--space-3` | 12px | Minor internal spacing |
+| `--space-4` | 16px | Heading to its content |
+| `--space-5` | 20px | — |
+| `--space-6` | 24px | Inner padding, nav gaps |
+| `--space-8` | 32px | Card content padding, grid gaps |
+| `--space-10` | 40px | **Section spacing, heading margin-top** |
+| `--space-12` | 48px | Large section padding |
+| `--space-16` | 64px | Major vertical gaps |
+| `--space-20` | 80px | Page-level padding |
 
 ### Spacing Rules
 
-- **40px (`--sp-10`)** between sections, between content blocks, and above h2/h3 headings
+- **40px (`--space-10`)** between sections, between content blocks, and above h2/h3 headings
 - Heading-to-content gap scales with font size:
-  - **24px (`--sp-6`)** — `display-lg` (60px, homepage h1)
-  - **24px (`--sp-6`)** — `display-sm` (48px, about page h1)
-  - **16px (`--sp-4`)** — `h1` (36px) and smaller
-- **8px (`--sp-2`)** from image to caption, label to field
+  - **24px (`--space-6`)** — `display-lg` (60px, homepage h1)
+  - **24px (`--space-6`)** — `display-sm` (48px, about page h1)
+  - **16px (`--space-4`)** — `h1` (36px) and smaller
+- **8px (`--space-2`)** from image to caption, label to field
 - First heading in a section gets `margin-top: 0` (the section spacing handles it)
-- h3 directly after h2: use `--sp-4` (tighter coupling)
-- h3 inside `.research-header`: use `--sp-6` top, `--sp-4` bottom
+- h3 directly after h2: use `--space-4` (tighter coupling)
+- h3 inside `.research-header`: use `--space-6` top, `--space-4` bottom
 - Component-internal headings (post-it cards, panels, etc.): `margin-top: 0`
 
 ---
@@ -76,72 +78,89 @@ Always use CSS variables. Never hardcode hex values.
 ### Neutrals
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--n-0` | #FFFFFF | Surface background |
-| `--n-50` | #F9FAFA | Body background |
-| `--n-100` | #F0F4F4 | Alternate surface, input background |
-| `--n-200` | #E1E8E8 | Borders, tags, footer, disabled backgrounds |
-| `--n-300` | #9BA9A9 | Stronger borders, disabled text |
-| `--n-400` | #7A8B8D | — |
-| `--n-500` | #5E6E70 | Secondary text |
-| `--n-600` | #455456 | — |
-| `--n-800` | #233D4D | Primary text (`--color-ink`) |
-| `--n-900` | #142224 | Darkest, used sparingly |
+| `--color-neutral-0` | #FFFFFF | Surface background |
+| `--color-neutral-50` | #F9FAFA | Body background |
+| `--color-neutral-100` | #F0F4F4 | Alternate surface, input background |
+| `--color-neutral-200` | #E1E8E8 | Borders, tags, footer, disabled backgrounds |
+| `--color-neutral-300` | #9BA9A9 | Stronger borders, disabled text |
+| `--color-neutral-400` | #7A8B8D | — |
+| `--color-neutral-500` | #5E6E70 | Secondary text |
+| `--color-neutral-600` | #455456 | — |
+| `--color-neutral-800` | #233D4D | Primary text |
+| `--color-neutral-900` | #142224 | Darkest, used sparingly |
 
 ### Brand Petrol (Primary)
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--p-base` | #034C53 | Primary buttons, focus rings, logo |
-| `--p-hover` | #023D42 | Button hover |
-| `--p-active` | #012629 | Button active |
-| `--p-tint` | #E6EDEE | Light petrol backgrounds |
+| `--color-petrol-500` | #034C53 | Primary buttons, focus rings, logo |
+| `--color-petrol-700` | #023D42 | Button hover |
+| `--color-petrol-900` | #012629 | Button active |
+| `--color-petrol-50` | #E6EDEE | Light petrol backgrounds |
 
 ### Teal
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--teal-base` | #007074 | Accents, timeline nodes |
-| `--teal-hover` | #005B5E | — |
-| `--teal-active` | #004547 | — |
-| `--teal-vivid` | #00C4C8 | Highlight accents |
-| `--teal-light` | #E6F1F1 | Light teal backgrounds |
+| `--color-teal-500` | #007074 | Accents, timeline nodes |
+| `--color-teal-600` | #005B5E | — |
+| `--color-teal-700` | #004547 | — |
+| `--color-teal-300` | #00C4C8 | Highlight accents |
+| `--color-teal-50` | #E6F1F1 | Light teal backgrounds |
 
 ### Peach
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--peach-base` | #F79B72 | Stat borders, decorative accents |
-| `--peach-hover` | #DF8C67 | — |
-| `--peach-active` | #C77D5C | — |
-| `--peach-light` | #FFF7F1 | Light peach backgrounds |
+| `--color-peach-400` | #F79B72 | Stat borders, decorative accents |
+| `--color-peach-600` | #DF8C67 | — |
+| `--color-peach-700` | #C77D5C | — |
+| `--color-peach-50` | #FFF7F1 | Light peach backgrounds |
 
 ### Accent Orange
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--a-base` | #FE7F2D | Icons/borders only — never for text |
-| `--a-hover` | #E57229 | — |
-| `--a-active` | #CC6624 | — |
-| `--a-light` | #FFF3E6 | Warning backgrounds |
+| `--color-orange-400` | #FE7F2D | Icons/borders only — never for text |
+| `--color-orange-600` | #E57229 | — |
+| `--color-orange-700` | #CC6624 | — |
+| `--color-orange-50` | #FFF3E6 | Warning backgrounds |
 
 ### Semantic
 | Token | Hex | Usage |
 |-------|-----|-------|
-| `--red-base` | #DA1E28 | Errors |
-| `--green-base` | #4A9A51 | Success |
-| `--blue-base` | #0066CC | Links |
+| `--color-red-500` | #DA1E28 | Errors |
+| `--color-green-500` | #4A9A51 | Success |
+| `--color-blue-500` | #0066CC | Links |
 
-### Functional Mappings (prefer these)
+### Semantic Surface & Text (prefer these)
 Use these over raw palette tokens when the context is clear:
 
 | Token | Maps to | Usage |
 |-------|---------|-------|
-| `--color-ink` | `--n-800` | Primary text |
-| `--color-text-secondary` | `--n-500` | Secondary/muted text |
-| `--color-text-disabled` | `--n-300` | Disabled text |
-| `--color-bg-body` | `--n-50` | Page background |
-| `--color-bg-surface` | `--n-0` | Card/panel backgrounds |
-| `--color-bg-surface-alt` | `--n-100` | Alternate surfaces |
-| `--color-border-default` | `--n-200` | Default borders |
-| `--color-border-strong` | `--n-300` | Emphasized borders |
-| `--color-link-default` | `--blue-base` | Link text |
-| `--color-focus-ring` | `--p-base` | Keyboard focus outlines |
+| `--color-neutral-800` | — | Primary text (intentionally 800, not 900) |
+| `--color-text-secondary` | `--color-neutral-500` | Secondary/muted text |
+| `--color-text-disabled` | `--color-neutral-300` | Disabled text |
+| `--color-text-on-interactive` | `--color-neutral-0` | Text on buttons |
+| `--color-surface-subtle` | `--color-neutral-50` | Page background |
+| `--color-surface-default` | `--color-neutral-0` | Card/panel backgrounds |
+| `--color-surface-raised` | `--color-neutral-100` | Alternate surfaces |
+| `--color-surface-elevated` | `--color-neutral-200` | Tooltip backgrounds, speech-bubble tails |
+| `--color-surface-disabled` | `--color-neutral-200` | Disabled input backgrounds |
+| `--color-border-default` | `--color-neutral-200` | Default borders |
+| `--color-border-strong` | `--color-neutral-300` | Emphasized borders |
+| `--color-link-default` | `--color-blue-500` | Link text |
+| `--color-focus-ring` | `--color-petrol-500` | Keyboard focus outlines |
+| `--color-interactive-default` | `--color-petrol-500` | Interactive elements at rest |
+| `--color-interactive-hover` | `--color-petrol-700` | Interactive elements on hover |
+| `--color-interactive-active` | `--color-petrol-900` | Interactive elements on press |
+
+### Feedback tokens
+| Token | Usage |
+|-------|-------|
+| `--color-feedback-danger-text` | Error text |
+| `--color-feedback-danger-bg` | Error background |
+| `--color-feedback-danger-border` | Error border |
+| `--color-feedback-success-text` | Success text |
+| `--color-feedback-success-bg` | Success background |
+| `--color-feedback-info-text` | Info text |
+| `--color-feedback-info-bg` | Info background |
 
 ---
 
@@ -151,8 +170,10 @@ Use these over raw palette tokens when the context is clear:
 |-------|-------|
 | `--shadow-sm` | `0 2px 4px rgba(20, 34, 36, 0.08)` |
 | `--shadow-md` | `0 4px 12px rgba(20, 34, 36, 0.12)` |
-| `--shadow-level-3` | `0 8px 16px rgba(20, 34, 36, 0.14)` |
-| `--motion-fast` | `150ms ease-in-out` |
+| `--shadow-lg` | `0 8px 16px rgba(20, 34, 36, 0.14)` |
+| `--shadow-inset` | `inset 0 1px 2px rgba(20, 34, 36, 0.06)` |
+
+For transitions, use `var(--duration-medium) var(--easing-standard)` (150ms ease-in-out). There is no single `--motion-fast` alias — write both tokens.
 
 ---
 
@@ -163,7 +184,7 @@ Two content column widths are used depending on page type. Never mix them on the
 | Page type | Max-width | Horizontal padding | CSS pattern |
 |-----------|-----------|-------------------|-------------|
 | Project pages | 1400px | 40px | `.hero-wrapper`, `.research-section` |
-| Homepage / About / Contact | 1200px | 24px (`--sp-6`) | `.content-container` |
+| Homepage / About / Contact | 1200px | 24px (`--space-6`) | `.content-container` |
 
 - **Prose max-width**: 720px for body text within `.research-header-body`
 - **Border radius**: 4px for images and cards, 6px for buttons and inputs, 8px for timeline cards, 50% for circular buttons
@@ -185,29 +206,31 @@ Two content column widths are used depending on page type. Never mix them on the
 
 ### Responsive Token Scaling
 
-Font and spacing tokens are overridden via `:root` at breakpoints — do not hardcode values at each breakpoint, update the token instead.
+Font and spacing tokens are overridden via `:root` at breakpoints inside the design system token files — do not hardcode values at each breakpoint, update the token instead.
 
 **Typography (`768px` and `480px`)**
 
 | Token | Desktop | 768px | 480px |
 |-------|---------|-------|-------|
-| `--fs-display-lg` / `--lh-display-lg` | 60px / 72px | 40px / 48px | 32px / 40px |
-| `--fs-display-sm` / `--lh-display-sm` | 48px / 56px | 32px / 40px | 24px / 32px |
-| `--fs-h1` / `--lh-h1` | 36px / 44px | 28px / 36px | 24px / 32px |
-| `--fs-h2` / `--lh-h2` | 32px / 40px | 24px / 32px | 20px / 24px |
-| `--fs-h3` / `--lh-h3` | 24px / 36px | 20px / 28px | 18px / 24px |
+| `--font-size-display-lg` (via `--font-size-6xl`) | 60px | 40px | 32px |
+| `--font-size-display-sm` (via `--font-size-5xl`) | 48px | 32px | 24px |
+| `--font-size-4xl` | 36px | 28px | 24px |
+| `--font-size-3xl` | 32px | 24px | 20px |
+| `--font-size-2xl` | 24px | 20px | 18px |
+
+Line heights for headings are unitless ratios (`--line-height-tight` 1.2, `--line-height-snug` 1.35) — they scale automatically with font size.
 
 **Spacing (`768px` and `480px`)**
 
 | Token | Desktop | 768px | 480px |
 |-------|---------|-------|-------|
-| `--sp-8` | 32px | 32px | 24px |
-| `--sp-10` | 40px | 32px | 24px |
-| `--sp-12` | 48px | 40px | 32px |
-| `--sp-16` | 64px | 48px | 40px |
-| `--sp-20` | 80px | 56px | 48px |
+| `--space-8` | 32px | 32px | 24px |
+| `--space-10` | 40px | 32px | 24px |
+| `--space-12` | 48px | 40px | 32px |
+| `--space-16` | 64px | 48px | 40px |
+| `--space-20` | 80px | 56px | 48px |
 
-Tokens `--sp-1` through `--sp-6` do not scale — they are small enough to remain consistent.
+Tokens `--space-1` through `--space-6` do not scale — they are small enough to remain consistent.
 
 ---
 
@@ -215,7 +238,7 @@ Tokens `--sp-1` through `--sp-6` do not scale — they are small enough to remai
 
 - **Focus states**: Use `:focus-visible` with `outline: 3px solid var(--color-focus-ring); outline-offset: 3px`. Always include `@supports not selector(:focus-visible)` fallback.
 - **Semantic HTML**: Use `section`, `nav`, `main`, `header`, `footer`, `article`, `dl`/`dt`/`dd` where appropriate.
-- **Colour contrast**: Never use orange (`--a-base`) or peach (`--peach-base`) as text colours — they fail WCAG contrast on light backgrounds. Use them only for icons, borders, and decorative elements.
+- **Colour contrast**: Never use orange (`--color-orange-400`) or peach (`--color-peach-400`) as text colours — they fail WCAG contrast on light backgrounds. Use them only for icons, borders, and decorative elements.
 - **Images**: Always include meaningful `alt` text. Use `loading="lazy"` and `decoding="async"` for below-fold images. Use `fetchpriority="high"` for hero images.
 
 ---
@@ -226,26 +249,26 @@ These are the reusable patterns in the codebase. Reference existing HTML pages f
 
 ### Header
 - `.header-container` — 48px height, logo left, nav right
-- Logo uses `--ff-serif` in `--p-base` colour
+- Logo uses `--font-family-display` in `--color-petrol-500` colour
 - Nav links use animated underline on hover
 
 ### Footer
-- `footer` — `--n-200` background, centred nav links and copyright
+- `footer` — `--color-neutral-200` background, centred nav links and copyright
 - Copyright year set dynamically via JS (`id="year"`)
 
 ### Buttons
-- **Primary** (`.btn-primary`, `.cta-button`): 40px height, 24px horizontal padding, 6px radius, `--p-base` background
+- **Primary** (`.btn-primary`, `.cta-button`): 40px height, 24px horizontal padding, 6px radius, `--color-interactive-default` background
 - **Secondary** (`.btn-secondary`): Same dimensions, white background with 2px border
-- Both shift to hover states using `--p-hover`
+- Both shift to hover states using `--color-interactive-hover`
 
 ### Hero — Homepage
 - `.hero` inside `.content-container` — two-column flex (text left, image right)
 - Uses `.line-grid-accent` for background pattern
-- h1 uses `display-lg` size
+- h1 uses `--font-size-display-lg`
 
 ### Hero — Project Pages
 - `.hero-section > .hero-wrapper` — dark background, full-width
-- Includes `.back-button`, `.eyebrow-text`, h1 (uses `--fs-h1`), description paragraphs, and `.hero-stats` (dl/dt/dd)
+- Includes `.back-button`, `.eyebrow-text`, h1 (uses `--font-size-4xl`), description paragraphs, and `.hero-stats` (dl/dt/dd)
 - `.hero-image` holds the project screenshot
 
 ### Value Banner
@@ -278,7 +301,7 @@ These are the reusable patterns in the codebase. Reference existing HTML pages f
 - Content includes h3, `.tags`, description, and optional `.project-card-stats`
 
 ### Tags
-- `.tags` container with `.tag` spans — `--n-200` background, `--fs-label` size, 6px radius
+- `.tags` container with `.tag` spans — `--color-neutral-200` background, `--font-size-xs` size, 6px radius
 
 ### Lightbox
 - Images with `.zoomable` class trigger a `#lightbox` overlay on click
@@ -294,10 +317,10 @@ These are the reusable patterns in the codebase. Reference existing HTML pages f
 - About page variant uses 2-column grid with date left, content right
 
 ### Eyebrow Text
-- `.eyebrow-text` — `--fs-body-sm`, uppercase, `letter-spacing: 0.05em`, `--color-text-secondary`
+- `.eyebrow-text` — `--font-size-sm`, uppercase, `letter-spacing: 0.05em`, `--color-text-secondary`
 
 ### Utility Classes
-- `.cta-group` — flex container for CTA button groups (gap: `--sp-4`)
+- `.cta-group` — flex container for CTA button groups (gap: `--space-4`)
 - `.btn-icon` — inline icon inside buttons (uses petrol SVG filter)
 - `.img-full` — `width: 100%` for full-width images
 - `.img-card` — full-width image with 8px radius, border, and subtle shadow
@@ -313,13 +336,13 @@ These are the reusable patterns in the codebase. Reference existing HTML pages f
 A 12-column grid with gap and responsive utilities.
 
 ### Base
-- `.grid-12` — `display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--sp-6)`
+- `.grid-12` — `display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--space-6)`
 
 ### Column Spans
 - `.col-span-1` through `.col-span-12`
 
 ### Gap Utilities
-- `.gap-1` through `.gap-10` — maps to `--sp-*` tokens
+- `.gap-1` through `.gap-10` — maps to `--space-*` tokens
 
 ### Responsive Variants
 - `@media (max-width: 768px)`: `.col-span-md-6`, `.col-span-md-12`
@@ -335,14 +358,14 @@ A 12-column grid with gap and responsive utilities.
 ### Homepage (`index.html`)
 - Body: no special class
 - Structure: header → `.content-container > main` → hero → featured work → video section → footer
-- h1 uses `display-lg` scale
+- h1 uses `--font-size-display-lg`
 
 ### Project Pages (e.g. `scotaccount-project.html`)
 
 **Never use `.content-container` on project pages.** All sections are full-width at the `<body>` level; width is constrained internally by `.hero-wrapper` and `.research-section` (both 1400px max-width, 40px horizontal padding). This shared constraint is what keeps the hero left edge and content left edge aligned.
 
 Body class: `.page-[slug]` (e.g. `.page-cs`, `.page-scotaccount`)
-h1 uses `--fs-h1` scale
+h1 uses `--font-size-4xl`
 
 #### Required HTML skeleton — copy this exactly for every new project page
 
@@ -449,8 +472,8 @@ When new information, documentation, or research arrives — use this table to d
 - Use CSS variables for all colours, sizes, and spacing
 - Use semantic HTML elements
 - Add `:focus-visible` styles to all interactive elements
-- Use `--sp-10` (40px) for spacing between sections and above headings
-- Use `--sp-4` (16px) between headings and their content
+- Use `--space-10` (40px) for spacing between sections and above headings
+- Use `--space-4` (16px) between headings and their content
 - Test at all breakpoints
 - Use `loading="lazy"` on below-fold images
 
@@ -462,3 +485,4 @@ When new information, documentation, or research arrives — use this table to d
 - Use `!important` unless overriding third-party styles
 - Create new CSS files — all styles go in `styles.css`
 - Use `.content-container` on project pages — it uses the wrong max-width (1200px) and will misalign the hero and content columns
+- Use old bridge token names (`--sp-*`, `--fs-*`, `--lh-*`, `--ff-*`, `--n-*`, `--p-base`, `--color-ink`, `--color-bg-*`, `--btn-*`, `--input-border`, `--motion-fast`) — the bridge has been removed; these names are undefined
