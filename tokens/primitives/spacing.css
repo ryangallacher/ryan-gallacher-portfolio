@@ -21,10 +21,18 @@
   /* ── Semantic layout spacing ──────────────────────────────────────────── */
   /* Source: crp-tool-postmvp — validated spacing rules for page rhythm */
   /* Mobile-first defaults (< 600px) */
-  --space-header-to-content: var(--space-12);  /* 48px — page title to first content block */
-  --space-title-to-content:  var(--space-6);   /* 24px — section heading to its content */
-  --space-between-blocks:    var(--space-8);   /* 32px — between major content sections */
-  --space-heading-to-body:   var(--space-4);   /* 16px — heading to immediately following body copy (fixed) */
+  --space-header-to-content:   var(--space-12);  /* 48px — page title to first content block */
+  --space-title-to-content:    var(--space-6);   /* 24px — section heading to its content */
+  --space-between-blocks:      var(--space-8);   /* 32px — between major content sections */
+  --space-heading-to-body:     var(--space-4);   /* 16px — h1 and smaller to following body copy */
+  --space-display-to-body:     var(--space-6);   /* 24px — display headings (48px+) to following body copy */
+  /*
+   * Heading-to-body gap scales with font size — validated in ai-practice:
+   *   display-lg (60px) → --space-display-to-body (24px)
+   *   display-sm (48px) → --space-display-to-body (24px)
+   *   h1 (36px) and below → --space-heading-to-body (16px)
+   * Use the appropriate token based on the heading size, not a flat rule.
+   */
 }
 
 @media (min-width: 600px) {
@@ -32,6 +40,30 @@
     --space-header-to-content: var(--space-16);  /* 64px */
     --space-title-to-content:  var(--space-8);   /* 32px */
     --space-between-blocks:    var(--space-10);  /* 40px */
-    /* --space-heading-to-body stays fixed at 16px */
+  }
+}
+
+/* ── Responsive primitive scaling ─────────────────────────────────────────
+ * Larger spacing tokens scale down at tablet and mobile.
+ * Tokens --space-1 through --space-6 do not scale — small enough to stay fixed.
+ * Validated in ai-practice (2026-03-30).
+ * ────────────────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  :root {
+    --space-10: 2rem;    /* 32px  (was 40px) */
+    --space-12: 2.5rem;  /* 40px  (was 48px) */
+    --space-16: 3rem;    /* 48px  (was 64px) */
+    --space-20: 3.5rem;  /* 56px  (was 80px) */
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --space-8:  1.5rem;  /* 24px  (was 32px) */
+    --space-10: 1.5rem;  /* 24px  (was 40px) */
+    --space-12: 2rem;    /* 32px  (was 48px) */
+    --space-16: 2.5rem;  /* 40px  (was 64px) */
+    --space-20: 3rem;    /* 48px  (was 80px) */
   }
 }
