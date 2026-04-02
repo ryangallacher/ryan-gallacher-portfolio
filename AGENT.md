@@ -8,8 +8,8 @@ This is a UX design portfolio built with static HTML, CSS, and vanilla JS. All s
 
 | Token | Family | Usage |
 |-------|--------|-------|
-| `--font-family-display` | Lora | Headings (h1–h3), display text, logo, stat numbers |
-| `--font-family-sans` | Source Sans 3 | Body text, labels, buttons, navigation, everything else |
+| `--font-family-display` | Lora | h1, h2, display text, logo, stat numbers |
+| `--font-family-sans` | Source Sans 3 | h3–h6, body text, labels, buttons, navigation, everything else |
 
 Headings use `font-weight: 400`. Body uses `font-weight: 400`, with `600` for emphasis/buttons.
 
