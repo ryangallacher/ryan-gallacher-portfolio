@@ -449,6 +449,7 @@ h1 uses `--font-size-4xl`
 ## Principles
 
 - **Agent agnostic by default:** Any tooling, config, docs, or conventions should work across agents (Claude, Cursor, Copilot, etc.) unless there's a specific reason to go agent-specific. Prefer `AGENTS.md` over `CLAUDE.md`, repo-local files over agent memory, and open formats over proprietary ones.
+- **Cite design sources:** Every design recommendation must cite a specific source — a named component or pattern from a design system (Carbon, GOV.UK, Material, etc.), a specific article or guideline, or a WCAG criterion by number. "General principles" is not an acceptable citation. This applies to conversational design opinions as well as implementation decisions. If no named pattern exists for a given case, say so explicitly before recommending.
 
 ## Information Architecture
 
