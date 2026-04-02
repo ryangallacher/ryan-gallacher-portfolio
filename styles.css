@@ -977,6 +977,11 @@ footer ul li a:hover {
     justify-content: space-between;
 }
 
+.project-card-content .eyebrow-text {
+    margin-top: 0;
+    margin-bottom: var(--space-2);
+}
+
 .project-card .project-card-content h3 {
     margin-top: 0;
     margin-bottom: var(--space-2);
@@ -990,11 +995,31 @@ footer ul li a:hover {
     margin: var(--space-3) 0 0;
 }
 
+/* Project card footer — anchors stats + CTA to bottom of content column */
+.project-card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    margin-top: var(--space-10);
+}
+
+.project-card-cta {
+    font-size: var(--font-size-sm);
+    font-family: var(--font-family-sans);
+    font-weight: 600;
+    color: var(--color-interactive-default);
+    transition: color var(--duration-medium) var(--easing-standard);
+}
+
+.project-card:hover .project-card-cta {
+    color: var(--color-interactive-hover);
+}
+
 /* Project card stats container */
 .project-card-stats {
     display: flex;
     gap: var(--space-8);
-    margin-top: var(--space-10);
+    margin-top: 0;
 }
 
 .project-card-stat {
@@ -1005,12 +1030,12 @@ footer ul li a:hover {
 }
 
 .project-card-stat-number {
-    font-size: 2.5rem; /* 40px */
+    font-size: var(--font-size-4xl);
     font-weight: 400;
     font-family: var(--font-family-display);
     color: var(--color-neutral-800);
     line-height: 1;
-    margin-bottom: var(--space-2);
+    margin: 0 0 var(--space-2) 0;
 }
 
 .project-card-stat-label {
@@ -1842,8 +1867,6 @@ footer ul li a:hover {
 
     .project-card-stats {
         gap: var(--space-6);
-        margin-top: var(--space-4);
-        margin-bottom: var(--space-4);
     }
 
     .project-card-stat-number {
@@ -1972,8 +1995,6 @@ footer ul li a:hover {
 
     .project-card-stats {
         gap: var(--space-4);
-        margin-top: var(--space-3);
-        margin-bottom: var(--space-3);
     }
 
     .project-card-stat-number {

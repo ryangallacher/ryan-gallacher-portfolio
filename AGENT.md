@@ -446,6 +446,19 @@ h1 uses `--font-size-4xl`
 
 ---
 
+## References and Skills
+
+Shared guidance lives in `references/` and `skills/` — synced from `agentic-dev-boilerplate`. Read these before making recommendations:
+
+- [`references/source-weighting.md`](references/source-weighting.md) — how to weight sources when forming recommendations (read this first)
+- [`references/accessibility-checklist.md`](references/accessibility-checklist.md) — WCAG 2.1 AA quick reference
+- [`references/mental-health-ux-patterns.md`](references/mental-health-ux-patterns.md) — UX patterns for vulnerable users / public sector
+- [`references/figma-mcp-workflow.md`](references/figma-mcp-workflow.md) — Figma MCP tool usage
+
+Available skills: `accessibility`, `frontend-ui-engineering`, `rg-ui-standards`, `component-states`, `web-quality-audit`, `core-web-vitals`, `performance-optimization`
+
+---
+
 ## Principles
 
 - **Agent agnostic by default:** Any tooling, config, docs, or conventions should work across agents (Claude, Cursor, Copilot, etc.) unless there's a specific reason to go agent-specific. Prefer `AGENTS.md` over `CLAUDE.md`, repo-local files over agent memory, and open formats over proprietary ones.
