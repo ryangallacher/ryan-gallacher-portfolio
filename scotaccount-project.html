@@ -4,21 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScotAccount Project</title>
+    <title>ScotAccount Beta — Ryan Gallacher | UX Designer</title>
+    <meta name="description" content="How I helped The Scottish Government improve ScotAccount's identity verification pass rate from 53% to 80%, enabling half a million citizens to access public services digitally.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,100..900&family=Lora:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="page-scotaccount">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">Ryan Gallacher</a>
         </div>
     </header>
 
+    <main id="main-content" tabindex="-1">
     <section class="hero-section">
         <div class="hero-wrapper">
-            <a href="index.html" class="back-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor"><path d="M10 16L20 6l1.4 1.4-8.6 8.6 8.6 8.6L20 26z"/></svg> Back</a>
+            <a href="index.html" class="back-button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true"><path d="M10 16L20 6l1.4 1.4-8.6 8.6 8.6 8.6L20 26z"/></svg> Back</a>
             <div class="hero-content">
                 <p class="eyebrow-text">The Scottish Government</p>
                 <h1>ScotAccount Beta</h1>
@@ -164,10 +169,10 @@
             <li>Lighting conditions</li>
             <li>Difficulty interpreting error messaging from our third party image capture technology</li>
         </ul>
-        <img class="zoomable" src="Assets/Images/Compressed/image issues highlight.png" alt="Highlighted image capture issues in the identity verification flow" loading="lazy" decoding="async" class="img-card">
+        <img class="zoomable img-card" src="Assets/Images/Compressed/image issues highlight.png" alt="Highlighted image capture issues in the identity verification flow" loading="lazy" decoding="async">
         <p class="caption">This image is taken from a sensemaking board the team and I used after the research. It clearly demonstrates the concentration of talking points (mostly negative) on the image capture part of the flow</p>
+        <h3>Key insights</h3>
         <div class="postit-grid">
-            <h3>Key insights</h3>
             <div class="postit-card">
                 <h3>Participant 1:</h3>
                 <p>Participant used a blue ring binder as a dark background when taking photos of their ID</p>
@@ -186,12 +191,12 @@
             </div>
         </div>
         <h3>The difference between what participants say and do</h3>
-        <img class="zoomable" src="Assets/Images/Compressed/sg single ease.png" alt="Single Ease Question scale showing participant responses from 1 (Very difficult) to 7 (Very easy)" loading="lazy" decoding="async" class="img-card">
+        <img class="zoomable img-card" src="Assets/Images/Compressed/sg single ease.png" alt="Single Ease Question scale showing participant responses from 1 (Very difficult) to 7 (Very easy)" loading="lazy" decoding="async">
         <p class="caption">Fascinatingly, when asked for their subjective opinion on the session after the fact, every participant said that they found the experience relatively easy - even one participant that got stuck on the first photo and needed to borrow a phone from the User Researcher to complete the task. I think this told us a lot about bias and self-reported evidence.</p>
         <h2>Fixing the image capture process</h2>
         <p class="dependency-description">I worked with our development team to plug some gaps in the existing flow, for example: providing suitable routing for situations where the user's device can't detect a camera. I also worked with our Content Designer to adjust some messaging, to ensure users had what they needed before they got to the image capture stage.</p>
-        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2026-02-16 at 11.01.05 (1).png" alt="Camera not detected flow diagram showing desktop and mobile handoff scenarios" loading="lazy" decoding="async" class="img-card">
-        <img class="zoomable" src="Assets/Images/Compressed/Screenshot 2025-01-30 at 16.42.17 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async" class="img-card">
+        <img class="zoomable img-card" src="Assets/Images/Compressed/Screenshot 2026-02-16 at 11.01.05 (1).png" alt="Camera not detected flow diagram showing desktop and mobile handoff scenarios" loading="lazy" decoding="async">
+        <img class="zoomable img-card" src="Assets/Images/Compressed/Screenshot 2025-01-30 at 16.42.17 (1).png" alt="ScotAccount screenshot" loading="lazy" decoding="async">
         <h2>New insights from the live service</h2>
         <p class="dependency-description">Going live with Disclosure meant that real analytics data began to trickle down from production. This complemented our ongoing qualitative research activities by providing hard performance numbers, pinpointing where we were seeing specific failure points that we should explore further.</p>
         <p class="dependency-summary">Crucially, we were seeing an initial identity verification pass rate of ~53%, which was a considerable amount lower than the ~65% benchmark hit by similar national identity services.</p>
@@ -211,7 +216,7 @@
         <div class="callout-success">
             <p>These design changes drove pass rates from <strong class="callout-stat">53%</strong> to <strong class="callout-stat">80%</strong>. Critically, performance remained consistently above 76% for months after implementation, demonstrating this was a fundamental UX improvement, not a temporary spike.</p>
         </div>
-        <img class="zoomable" src="Assets/Images/Compressed/scotaccount-graph-anno.png" alt="Graph showing ScotAccount identity verification pass rate improvement from 53% to 80%" loading="lazy" decoding="async" class="img-card">
+        <img class="zoomable img-card" src="Assets/Images/Compressed/scotaccount-graph-anno.png" alt="Graph showing ScotAccount identity verification pass rate improvement from 53% to 80%" loading="lazy" decoding="async">
     </section>
 
     <!-- Designing for Trust -->
@@ -219,8 +224,6 @@
         <div class="research-header">
             <div>
                 <h2>Designing for trust and accessibility at scale</h2>
-            </div>
-            <div class="research-header-body">
             </div>
         </div>
         <p class="dependency-description">Our pass rate was now stable and the system was exceeding expectation, but as we looked to scale, we needed to ensure that the service was accessible to a wider user base. We knew from our research, for example, that citizens may:</p>
@@ -263,9 +266,10 @@
         </div>
     </section>
 
+    </main>
+
     <footer>
         <p>&copy; <span id="year"></span> Ryan Gallacher. All rights reserved.</p>
-    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     </footer>
 
     <!-- Back to top button -->
@@ -276,25 +280,44 @@
     </button>
 
     <!-- Lightbox overlay -->
-    <div id="lightbox" class="lightbox-overlay" aria-hidden="true">
-        <button class="lightbox-close" aria-label="Close">&times;</button>
+    <div id="lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+        <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
         <img class="lightbox-img" src="" alt="">
     </div>
 
     <script>
+    // Copyright year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     // Lightbox for zoomable images
     (function() {
         var overlay = document.getElementById('lightbox');
         var lightboxImg = overlay.querySelector('.lightbox-img');
         var closeBtn = overlay.querySelector('.lightbox-close');
+        var lastFocused = null;
 
+        // Make zoomable images keyboard accessible
         document.querySelectorAll('.zoomable').forEach(function(img) {
-            img.addEventListener('click', function() {
+            img.setAttribute('tabindex', '0');
+            img.setAttribute('role', 'button');
+            img.setAttribute('aria-haspopup', 'dialog');
+
+            function openLightbox() {
+                lastFocused = img;
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
                 overlay.classList.add('active');
                 overlay.setAttribute('aria-hidden', 'false');
                 document.body.style.overflow = 'hidden';
+                closeBtn.focus();
+            }
+
+            img.addEventListener('click', openLightbox);
+            img.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openLightbox();
+                }
             });
         });
 
@@ -304,6 +327,7 @@
             lightboxImg.classList.remove('zoomed');
             overlay.style.overflow = 'hidden';
             document.body.style.overflow = '';
+            if (lastFocused) lastFocused.focus();
         }
 
         closeBtn.addEventListener('click', closeLightbox);
@@ -320,11 +344,19 @@
             }
         });
 
+        // Trap focus within lightbox while open
+        overlay.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                closeBtn.focus();
+            }
+        });
+
         overlay.addEventListener('click', function(e) {
             if (e.target === overlay) closeLightbox();
         });
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'Escape' && overlay.classList.contains('active')) closeLightbox();
         });
     })();
 

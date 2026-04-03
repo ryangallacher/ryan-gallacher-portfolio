@@ -319,12 +319,23 @@ h3 {
     margin-top: 0;
 }
 
+/* Reset browser-default figure margin (1em 40px) */
+figure {
+    margin: 0;
+}
+
 /* Images and figures within project content */
 .content-container main > section > img,
 .content-container main > section > figure,
 .research-section > img,
 .research-section > figure {
     margin-top: var(--space-between-blocks);
+}
+
+/* Prevent double margin-top when a zoomable image is inside a figure */
+.research-section figure .zoomable,
+.content-container main figure .zoomable {
+    margin-top: 0;
 }
 
 /* Captions immediately after images: tight */
@@ -694,6 +705,30 @@ select:focus-visible,
 /* Ensure footer hover uses color system */
 footer ul li a:hover {
     background-color: rgba(35, 61, 77, 0.06);
+}
+
+/* Skip link */
+.skip-link {
+    position: absolute;
+    top: -44px;
+    left: var(--space-4);
+    z-index: 9999;
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--color-neutral-900);
+    color: var(--color-neutral-0);
+    font-family: var(--font-family-sans);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    border-radius: 0 0 6px 6px;
+    text-decoration: none;
+    transition: top var(--duration-medium) var(--easing-standard);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+    top: 0;
+    outline: 3px solid var(--color-focus-ring);
+    outline-offset: 3px;
 }
 
 /* Back to top button */
@@ -2891,7 +2926,8 @@ img {
     grid-column: 1 / -1;
 }
 
-.research-header + .research-header {
+/* Any element preceding a research-header gets full block gap */
+.research-section > * + .research-header {
     margin-top: var(--space-between-blocks);
 }
 
@@ -4146,6 +4182,11 @@ blockquote footer {
     gap: var(--space-12);
     align-items: center;
     justify-content: center;
+}
+
+/* Two-column tradeoff (no icon column) aligns list tops */
+.tradeoff-graphic.grid-2-equal {
+    align-items: start;
 }
 
 .tradeoff-side h3 {
