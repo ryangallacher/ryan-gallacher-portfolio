@@ -31,6 +31,13 @@
   /* ── Font weights ─────────────────────────────────────────────────────── */
   --font-weight-regular:  400;
   --font-weight-semibold: 600;
+
+  /* ── Prose measure ───────────────────────────────────────────────────────
+   * Max line length for body copy. 65ch ≈ 65 characters in the current font.
+   * Sits within the 45–75 char readability range (Bringhurst; GOV.UK DS).
+   * Use on prose containers — not UI chrome (labels, buttons, nav).
+   * ──────────────────────────────────────────────────────────────────────── */
+  --prose-max-width: 65ch;
 }
 
 /* ── Responsive type scaling ──────────────────────────────────────────────

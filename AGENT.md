@@ -186,7 +186,7 @@ Two content column widths are used depending on page type. Never mix them on the
 | Project pages | 1400px | 40px | `.hero-wrapper`, `.research-section` |
 | Homepage / About / Contact | 1200px | 24px (`--space-6`) | `.content-container` |
 
-- **Prose max-width**: 720px for body text within `.research-header-body`
+- **Prose max-width**: `var(--prose-max-width)` (65ch) for all body copy — applies to `.research-header-body`, `.wrapup-content p`, `.dependency-description`, `.dependency-summary`, `.complexity-intro`, and `.content-container main > section > p/ol/ul`. Change the single token to adjust line length globally.
 - **Border radius**: 4px for images and cards, 6px for buttons and inputs, 8px for timeline cards, 50% for circular buttons
 - Hero and all content sections on a project page share the same 1400px/40px constraint — this is what keeps the left edge aligned throughout the page
 
@@ -325,8 +325,7 @@ These are the reusable patterns in the codebase. Reference existing HTML pages f
 - `.img-full` — `width: 100%` for full-width images
 - `.img-card` — full-width image with 8px radius, border, and subtle shadow
 - `.grid-2-equal` — 2-column equal grid, collapses to 1 column on mobile (768px)
-- `.callout-success` — green-bordered callout box for key stats/results
-- `.callout-stat` — large stat number inside callouts (1.4rem)
+- `.callout-info` — peach-bordered callout box for key stats/results
 - `.callout-highlight` — emphasized paragraph text (1.25rem, weight 600)
 
 ---

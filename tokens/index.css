@@ -11,8 +11,8 @@
  *   - tokens/brand/color.css           — import for brand personality tokens
  *
  * Usage (React/Vite):
- *   import '@rg/design-system/tokens/index.css';
- *   import '@rg/design-system/tokens/themes/personal-dark.css'; // if dark mode needed
+ *   import '@ryangallacher/design-system/tokens/index.css';
+ *   import '@ryangallacher/design-system/tokens/themes/personal-dark.css'; // if dark mode needed
  *
  * Usage (vanilla HTML):
  *   <link rel="stylesheet" href="tokens/index.css">
