@@ -2916,6 +2916,7 @@ img {
    At ≤1024px the section padding-top/bottom handles vertical rhythm.
    At desktop (>1024px) there is no padding, so margins are required. */
 @media (min-width: 1025px) {
+    .hero-section + .research-section,
     .value-banner-section + .research-section,
     .research-section + .research-section,
     .research-section + .project-wrapup {
@@ -3374,6 +3375,7 @@ blockquote footer {
 
 /* Highlighted callout text */
 .callout-highlight {
+    margin-top: var(--space-between-blocks);
     font-size: var(--font-size-xl);
     font-weight: 600;
 }
