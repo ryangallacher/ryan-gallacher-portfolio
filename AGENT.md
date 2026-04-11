@@ -19,20 +19,20 @@ Headings use `font-weight: 400`. Body uses `font-weight: 400`, with `600` for em
 
 All text must use these tokens. Never hardcode font sizes.
 
-| Token | Size | Line-height token | Ratio | Usage |
-|-------|------|-------------------|-------|-------|
-| `--font-size-display-lg` | 60px | `--line-height-display-lg` | 1.20 | Homepage h1 |
-| `--font-size-display-sm` | 48px | `--line-height-display-sm` | 1.17 | About page section heading |
-| `--font-size-4xl` | 36px | `--line-height-tight` | 1.2 | Project page h1 |
-| `--font-size-3xl` | 32px | `--line-height-snug` | 1.35 | Section headings |
-| `--font-size-2xl` | 24px | `--line-height-snug` | 1.35 | Sub-section headings |
-| `--font-size-md` | 16px | `--line-height-body` | 1.5 | Default body text |
-| `--font-size-sm` | 14px | `1.25rem` | 1.43 | Eyebrow text, labels, buttons, table text |
-| `--font-size-xs` | 12px | `1rem` | 1.33 | Captions, meta text |
-| `--font-size-lg` | 18px | `--line-height-body` | 1.5 | Large body |
-| `--font-size-xl` | 20px | `--line-height-body` | 1.5 | Oversize body / small heading |
+| Token | Size | Line-height token | Ratio | Grid result | Usage |
+|-------|------|-------------------|-------|-------------|-------|
+| `--font-size-6xl` | 60px | `--line-height-6xl` | 1.2 | 72px | Homepage h1 |
+| `--font-size-5xl` | 48px | `--line-height-5xl` | 1.1667 | 56px | About page section heading |
+| `--font-size-4xl` | 36px | `--line-height-4xl` | 1.2222 | 44px | Project page h1 |
+| `--font-size-3xl` | 32px | `--line-height-3xl` | 1.375 | 44px | Section headings |
+| `--font-size-2xl` | 24px | `--line-height-2xl` | 1.3333 | 32px | Sub-section headings |
+| `--font-size-xl` | 20px | `--line-height-xl` | 1.6 | 32px | Oversize body / small heading |
+| `--font-size-lg` | 18px | `--line-height-lg` | 1.5556 | 28px | Large body |
+| `--font-size-md` | 16px | `--line-height-md` | 1.5 | 24px | Default body text |
+| `--font-size-sm` | 14px | `--line-height-sm` | 1.4286 | 20px | Eyebrow text, labels, buttons, table text |
+| `--font-size-xs` | 12px | `--line-height-xs` | 1.3333 | 16px | Captions, meta text |
 
-Line heights for body-sm and smaller are hardcoded (`1.25rem`, `1rem`) — no design system token equivalent. Line heights for headings are unitless ratios that scale automatically with responsive font sizes.
+All line-height tokens are per-size to guarantee 4px grid snapping. Each ratio = target grid px / font size px.
 
 Aliases: `--font-size-sm` covers button text and table text.
 
@@ -144,6 +144,7 @@ Use these over raw palette tokens when the context is clear:
 | `--color-surface-elevated` | `--color-neutral-200` | Tooltip backgrounds, speech-bubble tails |
 | `--color-surface-disabled` | `--color-neutral-200` | Disabled input backgrounds |
 | `--color-border-default` | `--color-neutral-200` | Default borders |
+| `--color-border-subtle` | `rgba(3, 76, 83, 0.30)` | Tinted card borders |
 | `--color-border-strong` | `--color-neutral-300` | Emphasized borders |
 | `--color-link-default` | `--color-blue-500` | Link text |
 | `--color-focus-ring` | `--color-petrol-500` | Keyboard focus outlines |
@@ -187,7 +188,7 @@ Two content column widths are used depending on page type. Never mix them on the
 | Homepage / About / Contact | 1200px | 24px (`--space-6`) | `.content-container` |
 
 - **Prose max-width**: `var(--prose-max-width)` (65ch) for all body copy — applies to `.research-header-body`, `.wrapup-content p`, `.dependency-description`, `.dependency-summary`, `.complexity-intro`, and `.content-container main > section > p/ol/ul`. Change the single token to adjust line length globally.
-- **Border radius**: 4px for images and cards, 6px for buttons and inputs, 8px for timeline cards, 50% for circular buttons
+- **Border radius**: 4px for images, 6px for cards, buttons and inputs, 8px for timeline cards, 50% for circular buttons
 - Hero and all content sections on a project page share the same 1400px/40px constraint — this is what keeps the left edge aligned throughout the page
 
 ---
@@ -489,6 +490,7 @@ When new information, documentation, or research arrives — use this table to d
 - Use `--space-4` (16px) between headings and their content
 - Test at all breakpoints
 - Use `loading="lazy"` on below-fold images
+- Use **Carbon Design System** as the sole source of icons and pictograms — fetch SVGs from `https://github.com/carbon-design-system/carbon/tree/main/packages/icons/src/svg/32/`. Custom SVGs are permitted only for bespoke diagrams and illustrations (e.g. flow diagrams, before/after comparisons), not for UI icons or pictograms.
 
 **Don't:**
 - Hardcode hex values, pixel font sizes, or spacing values

@@ -17,7 +17,13 @@
       "Bash(sed -i 's/var\\(--lh-body-compact\\)/1rem/g' styles.css)",
       "Bash(sed -i 's/var\\(--lh-body-sm\\)/1.25rem/g' styles.css)",
       "Bash(sed -i 's/var\\(--lh-label-lg\\)/1.25rem/g' styles.css)",
-      "mcp__playwright__browser_navigate"
+      "mcp__playwright__browser_navigate",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__query-docs",
+      "Read(//c/Users/Ryan/.claude/projects/c--Users-Ryan-Documents-GitHub-RG-Design-System/memory/**)",
+      "Read(//c/Users/Ryan/.claude/projects/c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate/memory/**)",
+      "Read(//c/Users/Ryan/.claude/projects/c--Users-Ryan-Documents-GitHub-sense-check/memory/**)",
+      "Read(//c/Users/Users/Ryan/Documents/GitHub/ai-practice/**)"
     ],
     "defaultMode": "bypassPermissions",
     "additionalDirectories": [
@@ -25,7 +31,12 @@
       "C:\\Users\\Ryan\\Documents\\GitHub\\agentic-dev-boilerplate",
       "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system\\tokens\\primitives",
       "\\tmp",
-      "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system\\tokens\\semantic"
+      "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system\\tokens\\semantic",
+      "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system\\references",
+      "C:\\Users\\Ryan\\Documents\\GitHub\\rg-design-system",
+      "C:\\Users\\Ryan\\.claude\\projects\\c--Users-Ryan-Documents-GitHub-RG-Design-System\\memory",
+      "C:\\Users\\Ryan\\.claude\\projects\\c--Users-Ryan-Documents-GitHub-agentic-dev-boilerplate\\memory",
+      "C:\\Users\\Ryan\\.claude\\projects\\c--Users-Ryan-Documents-GitHub-sense-check\\memory"
     ]
   }
 }

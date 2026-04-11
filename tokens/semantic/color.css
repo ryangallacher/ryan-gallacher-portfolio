@@ -23,6 +23,7 @@
 
   /* ── Border ───────────────────────────────────────────────────────────── */
   --color-border-default: var(--color-neutral-200);        /* Default dividers, card borders */
+  --color-border-subtle:  rgba(3, 76, 83, 0.30);           /* Tinted card borders */
   --color-border-strong:  var(--color-neutral-300);        /* Prominent borders, separators */
 
   /* ── Interactive ──────────────────────────────────────────────────────── */
