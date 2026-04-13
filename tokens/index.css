@@ -8,7 +8,7 @@
  * NOT imported here (import separately per consumer):
  *   - tokens/themes/personal-dark.css  — import when dark mode toggle is needed
  *   - tokens/brand/typography.css      — import for editorial/display components (Lora)
- *   - tokens/brand/color.css           — import for brand personality tokens
+ *   - tokens/brand/color.css           — import for brand personality tokens (rg-design-system path: tokens/brands/personal.css)
  *
  * Usage (React/Vite):
  *   import '@ryangallacher/design-system/tokens/index.css';

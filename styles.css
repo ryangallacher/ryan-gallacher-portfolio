@@ -2,6 +2,7 @@
  * Run `npm run sync-tokens` after updating the design system */
 @import url('./tokens/index.css');
 @import url('./tokens/themes/personal-light.css');
+@import url('./tokens/registers/branded.css');
 
 
 /* Restore arrow icon hover animation for CTA */
@@ -425,7 +426,7 @@ blockquote {
     padding: var(--space-3) var(--space-4);
     border-radius: 4px;
     background-color: var(--color-surface-elevated);
-    border-left: 4px solid var(--color-peach-400);
+    border-left: 4px solid var(--color-brand-peach);
     font-size: var(--font-size-md);
     line-height: var(--line-height-md);
 }
@@ -509,11 +510,11 @@ a.btn-primary:visited {
 
 /* Branded link utility: use when you want camel brand color */
 a.link--brand, .link--brand {
-    color: var(--color-peach-400);
+    color: var(--color-brand-peach);
 }
 
 a.link--brand:hover, .link--brand:hover {
-    color: var(--color-peach-400);
+    color: var(--color-brand-peach);
     text-decoration: underline;
 }
 
@@ -984,7 +985,7 @@ footer ul li a:hover {
     width: 40%;
     min-height: 100%;
     position: relative;
-    background-color: var(--color-teal-50);
+    background-color: var(--color-brand-teal-wash);
     background-image: radial-gradient(circle, rgba(0, 112, 116, 0.15) 1px, transparent 1px);
     background-size: 16px 16px;
     border-radius: 4px 0 0 4px;
@@ -992,7 +993,7 @@ footer ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-6);
+    padding: var(--space-4);
 }
 
 .project-card-image-wrapper img {
@@ -1019,7 +1020,7 @@ footer ul li a:hover {
 
 .project-card .project-card-content h3 {
     margin-top: 0;
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-2);
 }
 
 .project-card-content .tags {
@@ -1034,8 +1035,8 @@ footer ul li a:hover {
 .project-card-footer {
     display: flex;
     flex-direction: column;
-    gap: var(--space-6);
-    margin-top: var(--space-8);
+    gap: var(--space-4);
+    margin-top: var(--space-6);
 }
 
 .project-card-cta {
@@ -1077,11 +1078,11 @@ footer ul li a:hover {
     display: flex;
     flex-direction: column;
     padding-left: var(--space-4);
-    border-left: 4px solid var(--color-peach-400); /* Vertical line next to numbers */
+    border-left: 4px solid var(--color-brand-peach); /* Vertical line next to numbers */
 }
 
 .project-card-stat-number {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     font-weight: 400;
     font-family: var(--font-family-display);
     color: var(--color-neutral-800);
@@ -1147,8 +1148,8 @@ footer ul li a:hover {
 }
 
 .tag {
-    background-color: var(--color-teal-50);
-    color: var(--color-teal-700);
+    background-color: var(--color-brand-teal-wash);
+    color: var(--color-teal-700); /* TODO: no brand/semantic token for teal-700; needs --color-brand-teal-strong if this becomes a formal token */
     padding: var(--space-1);
     border-radius: 4px;
     border: none;
@@ -1479,7 +1480,7 @@ footer ul li a:hover {
 }
 
 .featured-work h2 {
-    margin-bottom: var(--space-6); /* 24px gap to cards */
+    margin-bottom: var(--space-title-to-content);
 }
 
 /* Timeline styles for about page */
@@ -1729,7 +1730,7 @@ footer ul li a:hover {
 }
 
 .timeline-colored .timeline-node {
-    background: var(--color-teal-500); /* Teal inner */
+    background: var(--color-brand-teal); /* Teal inner */
     border: 3px solid var(--color-neutral-0); /* White middle ring */
     box-shadow: 0 0 0 2px var(--color-neutral-200); /* Light outer ring */
 }
@@ -1740,13 +1741,13 @@ footer ul li a:hover {
 }
 
 .timeline-colored .timeline-label {
-    background: var(--color-teal-50);
+    background: var(--color-surface-expressive-secondary);
     color: var(--color-petrol-500);
 }
 
 .timeline-colored .sub-item-status {
-    background: var(--color-peach-50);
-    color: var(--color-peach-700);
+    background: var(--color-brand-peach-wash);
+    color: var(--color-peach-700); /* TODO: no brand/semantic token for peach-700; needs --color-brand-peach-strong if this becomes a formal token */
 }
 
 .section-title {
@@ -1919,10 +1920,6 @@ footer ul li a:hover {
 
     .project-card-stats {
         gap: var(--space-6);
-    }
-
-    .project-card-stat-number {
-        font-size: var(--font-size-3xl);
     }
 
     /* Tags - allow wrapping */
@@ -2547,7 +2544,7 @@ img {
 
 .tabs a.active {
     color: var(--color-neutral-800);
-    border-bottom-color: var(--color-peach-400);
+    border-bottom-color: var(--color-brand-peach);
 }
 
 .tabs a:hover {
@@ -2593,7 +2590,7 @@ img {
     font-size: var(--font-size-display-sm);
     line-height: var(--line-height-display-sm);
     font-weight: 300;
-    color: var(--color-peach-400);
+    color: var(--color-brand-peach);
     margin-bottom: 10px;
 }
 
@@ -2604,7 +2601,7 @@ img {
 }
 
 .stat-label a {
-    color: var(--color-peach-400);
+    color: var(--color-brand-peach);
     text-decoration: underline;
 }
 
@@ -2755,7 +2752,7 @@ img {
 }
 
 .postit-card {
-    background-color: var(--color-peach-50);
+    background-color: var(--color-surface-expressive-primary);
     border: 1px solid var(--color-border-default);
     border-radius: 2px;
     padding: var(--space-6);
@@ -2774,7 +2771,7 @@ img {
     right: -1px;
     width: 31px;
     height: 31px;
-    background-color: var(--color-peach-50);
+    background-color: var(--color-surface-expressive-primary);
     border-right: 1px solid var(--color-border-default);
     border-top: 1px solid var(--color-border-default);
     pointer-events: none;
@@ -2819,7 +2816,7 @@ img {
     padding: var(--space-16) var(--space-10);
     max-width: 100%;
     margin: 0 auto;
-    background-color: var(--color-peach-400);
+    background-color: var(--color-accent-expressive);
 }
 
 .postit-grid > h3 {
@@ -2876,11 +2873,11 @@ img {
 }
 
 .page-cs .postit-card:nth-child(odd) {
-    background-color: var(--color-teal-300);
+    background-color: var(--color-brand-teal-vivid);
 }
 
 .page-cs .postit-card:nth-child(even) {
-    background-color: var(--color-peach-400);
+    background-color: var(--color-accent-expressive);
 }
 
 .page-cs .postit-card p {
@@ -3181,8 +3178,8 @@ blockquote footer {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-teal-500);
-    background-color: var(--color-teal-50);
+    color: var(--color-brand-teal);
+    background-color: var(--color-brand-teal-wash);
     padding: var(--space-1) var(--space-3);
     border-radius: 20px;
     margin-bottom: var(--space-4);
@@ -3359,9 +3356,9 @@ blockquote footer {
 .callout-info {
     margin-top: var(--space-between-blocks);
     padding: var(--space-4) var(--space-6);
-    background-color: var(--color-peach-50);
-    border: 1px solid var(--color-peach-400);
-    border-left: 4px solid var(--color-peach-400);
+    background-color: var(--color-surface-expressive-primary);
+    border: 1px solid var(--color-accent-expressive);
+    border-left: 4px solid var(--color-accent-expressive);
     max-width: var(--prose-max-width);
 }
 
@@ -3436,7 +3433,7 @@ blockquote footer {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--color-teal-500);
+    color: var(--color-brand-teal);
 }
 
 .value-banner-value {
@@ -3448,14 +3445,14 @@ blockquote footer {
 /* ScotAccount page overrides */
 .page-scotaccount .value-banner {
     align-items: stretch;
-    background-color: var(--color-teal-50);
+    background-color: var(--color-surface-expressive-secondary);
 }
 
 .page-scotaccount .value-banner-tagline {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    border-right-color: var(--color-teal-50);
+    border-right-color: var(--color-surface-expressive-secondary);
 }
 
 .page-scotaccount .value-banner-tagline p {
@@ -3470,7 +3467,7 @@ blockquote footer {
     font-weight: 400;
     text-transform: none;
     letter-spacing: normal;
-    color: var(--color-teal-500);
+    color: var(--color-brand-teal);
 }
 
 .page-scotaccount .value-banner-item {
@@ -3513,12 +3510,12 @@ blockquote footer {
     font-family: var(--font-family-sans);
     font-size: var(--font-size-2xl);
     font-weight: 600;
-    color: var(--color-teal-500);
+    color: var(--color-brand-teal);
     margin-bottom: var(--space-1);
 }
 
 .core-value-panel--after .core-value-panel-label {
-    color: var(--color-teal-500);
+    color: var(--color-brand-teal);
 }
 
 .core-value-svg {
@@ -3690,7 +3687,7 @@ blockquote footer {
 .weighted-left-subtitle {
     font-family: 'Lora', serif;
     font-size: var(--font-size-2xl);
-    color: var(--color-teal-500);
+    color: var(--color-brand-teal);
     margin: var(--space-1) 0 0;
     font-weight: 500;
     font-style: italic;
@@ -3717,14 +3714,14 @@ blockquote footer {
 .weighted-left-sidebar {
     background-color: var(--color-neutral-50);
     padding: var(--space-8);
-    border-left: 3px solid var(--color-teal-500);
+    border-left: 3px solid var(--color-brand-teal);
 }
 
 .weighted-left-sidebar h3 {
     font-size: var(--font-size-md);
     line-height: var(--line-height-md);
     font-weight: 700;
-    color: var(--color-teal-500);
+    color: var(--color-brand-teal);
     margin-bottom: var(--space-3);
 }
 
@@ -3754,7 +3751,7 @@ blockquote footer {
     content: '+';
     position: absolute;
     left: 0;
-    color: var(--color-teal-500);
+    color: var(--color-brand-teal);
     font-weight: 600;
 }
 
@@ -3784,7 +3781,7 @@ blockquote footer {
 
 .bbox-card {
     position: relative;
-    border: 1px solid var(--color-teal-300);
+    border: 1px solid var(--color-brand-teal-vivid);
     border-radius: 2px;
     padding: 0;
     background: var(--color-surface-raised);
@@ -3795,7 +3792,7 @@ blockquote footer {
     width: 8px;
     height: 8px;
     background: var(--color-neutral-0);
-    border: 1px solid var(--color-teal-300);
+    border: 1px solid var(--color-brand-teal-vivid);
     z-index: 1;
 }
 
@@ -4189,7 +4186,7 @@ blockquote footer {
 }
 
 .contact-section .contact-item a {
-    color: var(--color-peach-400);
+    color: var(--color-brand-peach);
 }
 
 /* Tradeoff Graphic */
@@ -4233,14 +4230,14 @@ blockquote footer {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    background-color: var(--color-teal-50);
+    background-color: var(--color-brand-teal-wash);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .tradeoff-circle svg {
-    fill: var(--color-teal-500);
+    fill: var(--color-brand-teal);
 }
 
 @media (max-width: 768px) {

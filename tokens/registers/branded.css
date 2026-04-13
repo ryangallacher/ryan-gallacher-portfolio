@@ -1,0 +1,17 @@
+/* Register: branded — expressive surfaces
+ * Applies the personal brand palette to expressive surface tokens.
+ * Set [data-register="branded"] on the root element (or a section) to activate.
+ * This is the default register for personal brand projects.
+ *
+ * These three tokens are the only register-level overrides.
+ * All other tokens come from the semantic layer and are unaffected by register.
+ *
+ * Import alongside tokens/index.css and tokens/brand/color.css.
+ */
+
+:root,
+[data-register="branded"] {
+  --color-surface-expressive-primary:   var(--color-brand-peach-wash);  /* Postit cards, callout backgrounds */
+  --color-surface-expressive-secondary: var(--color-brand-teal-wash);   /* Value banners, timeline labels */
+  --color-accent-expressive:            var(--color-brand-peach);       /* Postit grid bg, callout borders */
+}
