@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "lint:css": "stylelint \"**/*.css\" --ignore-path .stylelintignore",
-    "sync-tokens": "rm -rf tokens && cp -r ../rg-design-system/tokens ./tokens"
+    "sync-tokens": "rm -rf tokens && cp -r ../rg-design-system/tokens ./tokens && mkdir -p src/foundations && cp ../rg-design-system/src/foundations/typography.css ./src/foundations/typography.css"
   },
   "devDependencies": {
     "stylelint": "^16.26.1"

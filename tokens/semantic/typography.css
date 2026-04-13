@@ -3,29 +3,37 @@
  * Each class maps a Figma text style to its full set of properties.
  * Always use these classes instead of raw primitive tokens in components.
  *
+ * Line heights are set per style, not derived from font-size tokens.
+ * Values follow Carbon and GOV.UK conventions: tight for headings (1.2–1.3),
+ * standard for body (1.5), loose for editorial/quote (1.6), 1 for numerals.
+ *
  * Categories:
- *   Display  — Lora, regular, large editorial headings
- *   Heading  — Source Sans 3, semibold, UI headings (H1–H3)
+ *   Display  — Lora, regular, large editorial headings (60px, 48px)
+ *   Heading  — Source Sans 3, semibold, UI headings (36px, 24px, 20px)
  *   Body     — Source Sans 3, regular, reading text
  *   Label    — Source Sans 3, semibold, UI chrome / form labels / buttons
  *   Eyebrow  — Source Sans 3, semibold, uppercase, above headings
  *   Quote    — Lora, italic, pull quotes and inline quotations
+ *   Numeral  — Lora, regular weight, standalone numeric metrics and stats
+ *
+ * Synced from: rg-design-system/src/foundations/typography.css
+ * Run `npm run sync-tokens` after updating the design system.
  */
 
 /* ── Display ─────────────────────────────────────────────────────────────── */
 
 .text-display-lg {
   font-family: var(--font-family-display);
-  font-size: var(--font-size-6xl);   /* 60px */
-  line-height: 4.5rem;               /* 72px */
+  font-size: var(--font-size-6xl);  /* 60px */
+  line-height: 1.2;
   font-weight: var(--font-weight-regular);
   font-style: normal;
 }
 
 .text-display-sm {
   font-family: var(--font-family-display);
-  font-size: var(--font-size-5xl);   /* 48px */
-  line-height: 3.75rem;              /* 60px */
+  font-size: var(--font-size-5xl);  /* 48px */
+  line-height: 1.25;
   font-weight: var(--font-weight-regular);
   font-style: normal;
 }
@@ -34,22 +42,22 @@
 
 .text-heading-1 {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-4xl);   /* 36px */
-  line-height: 2.75rem;              /* 44px */
+  font-size: var(--font-size-4xl);  /* 36px */
+  line-height: 1.25;
   font-weight: var(--font-weight-semibold);
 }
 
 .text-heading-2 {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-2xl);   /* 24px */
-  line-height: 2rem;                 /* 32px */
+  font-size: var(--font-size-2xl);  /* 24px */
+  line-height: 1.3;
   font-weight: var(--font-weight-semibold);
 }
 
 .text-heading-3 {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-xl);    /* 20px */
-  line-height: 1.5rem;               /* 24px */
+  font-size: var(--font-size-xl);   /* 20px */
+  line-height: 1.3;
   font-weight: var(--font-weight-semibold);
 }
 
@@ -57,22 +65,22 @@
 
 .text-body-regular {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-md);    /* 16px */
-  line-height: 1.5rem;               /* 24px */
+  font-size: var(--font-size-md);   /* 16px */
+  line-height: 1.5;
   font-weight: var(--font-weight-regular);
 }
 
 .text-body-small {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-sm);    /* 14px */
-  line-height: 1.25rem;              /* 20px */
+  font-size: var(--font-size-sm);   /* 14px */
+  line-height: 1.5;
   font-weight: var(--font-weight-regular);
 }
 
 .text-body-compact {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-xs);    /* 12px */
-  line-height: 1rem;                 /* 16px */
+  font-size: var(--font-size-xs);   /* 12px */
+  line-height: 1.4;
   font-weight: var(--font-weight-regular);
 }
 
@@ -80,22 +88,22 @@
 
 .text-label-xl {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-md);    /* 16px */
-  line-height: 1.5rem;               /* 24px */
+  font-size: var(--font-size-md);   /* 16px */
+  line-height: 1.25;
   font-weight: var(--font-weight-semibold);
 }
 
 .text-label-large {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-sm);    /* 14px */
-  line-height: 1.25rem;              /* 20px */
+  font-size: var(--font-size-sm);   /* 14px */
+  line-height: 1.25;
   font-weight: var(--font-weight-semibold);
 }
 
 .text-label-small {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-xs);    /* 12px */
-  line-height: 1rem;                 /* 16px */
+  font-size: var(--font-size-xs);   /* 12px */
+  line-height: 1.25;
   font-weight: var(--font-weight-semibold);
 }
 
@@ -103,8 +111,8 @@
 
 .text-eyebrow {
   font-family: var(--font-family-sans);
-  font-size: var(--font-size-sm);    /* 14px */
-  line-height: 1.25rem;              /* 20px */
+  font-size: var(--font-size-sm);   /* 14px */
+  line-height: 1.25;
   font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -114,8 +122,30 @@
 
 .text-quote {
   font-family: var(--font-family-display);
-  font-size: var(--font-size-xl);    /* 20px */
-  line-height: 2rem;                 /* 32px */
+  font-size: var(--font-size-xl);   /* 20px */
+  line-height: 1.6;
   font-weight: var(--font-weight-regular);
   font-style: italic;
+}
+
+/* ── Numeral ─────────────────────────────────────────────────────────────── */
+/* Lora at display sizes for numeric content — stats, percentages, key metrics,
+ * counts, dates, and callout figures.
+ * Use when: a standalone number or measurement needs visual weight without
+ *   acting as a prose heading — e.g. "94%", "12,000 users", "3.2x".
+ * Avoid when: the text is a prose heading, body copy, or decorative non-numeric
+ *   content. Use .text-display-* for large editorial headings instead.        */
+
+.text-numeral-lg {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-3xl);  /* 32px */
+  line-height: 1;
+  font-weight: var(--font-weight-regular);
+}
+
+.text-numeral-sm {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-2xl);  /* 24px */
+  line-height: 1;
+  font-weight: var(--font-weight-regular);
 }

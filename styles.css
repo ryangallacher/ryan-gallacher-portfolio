@@ -224,32 +224,33 @@ body {
     color: var(--color-neutral-800);
 }
 
-/* Default heading styles */
-h1, h2 {
-    font-family: var(--font-family-display);
-    font-weight: 400;
-    margin: 0;
-}
-
-h3, h4, h5, h6 {
-    font-family: var(--font-family-sans);
-    font-weight: 400;
-    margin: 0;
-}
-
+/* Default heading styles
+ * h1: display-lg (Lora 60px) — default for unmigrated pages; add .text-display-lg or .text-heading-1 class to override
+ * h2–h6: sans semibold, matching .text-heading-* classes
+ * Migrated pages add a .text-* class directly; element selectors are the fallback only.
+ */
 h1 {
+    font-family: var(--font-family-display);
+    font-weight: var(--font-weight-regular);
     font-size: var(--font-size-display-lg);
-    line-height: var(--line-height-display-lg);
+    line-height: 1.2;
+    margin: 0;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-sans);
+    font-weight: var(--font-weight-semibold);
+    margin: 0;
 }
 
 h2 {
-    font-size: var(--font-size-3xl);
-    line-height: var(--line-height-3xl);
+    font-size: var(--font-size-2xl);   /* 24px — matches .text-heading-2 */
+    line-height: 1.3;
 }
 
 h3 {
-    font-size: var(--font-size-2xl);
-    line-height: var(--line-height-2xl);
+    font-size: var(--font-size-xl);    /* 20px — matches .text-heading-3 */
+    line-height: 1.3;
 }
 
 /* ============================================
@@ -1082,11 +1083,8 @@ footer ul li a:hover {
 }
 
 .project-card-stat-number {
-    font-size: var(--font-size-2xl);
-    font-weight: 400;
-    font-family: var(--font-family-display);
+    /* text-numeral-sm: Lora, 24px, weight 400, line-height 1 */
     color: var(--color-neutral-800);
-    line-height: 1;
     margin: 0 0 var(--space-2) 0;
 }
 
@@ -2044,10 +2042,6 @@ footer ul li a:hover {
 
     .project-card-stats {
         gap: var(--space-4);
-    }
-
-    .project-card-stat-number {
-        font-size: var(--font-size-2xl);
     }
 
     /* Tags */
