@@ -1463,6 +1463,16 @@ footer ul li a:hover {
     padding-left: var(--space-6);
 }
 
+/* Certifications section */
+.certifications {
+    padding: var(--space-6) 0;
+}
+
+.certifications h2 {
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-4);
+}
+
 /* Eyebrow text */
 .eyebrow-text {
     font-size: var(--font-size-sm);
